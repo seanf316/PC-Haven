@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-green: rgb(80, 221, 75);
+    --bg-black: rgb(0, 0, 0);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: calc(100vh - 111px);
+    font-family: 'Lato', sans-serif;
+}
+
+/* Helper Styles */
+
+.bg-green {
+    background-color: var(--bg-green);
+}
+
+.bg-black {
+    background-color: var(--bg-black);
+}
+
+.cta {
+    background: var(--bg-green);
+    border: 2px solid var(--bg-black);
+    color: var(--bg-black);
+}
+
+.cta:hover,
+.cta:active,
+.cta:focus {
+    background: var(--bg-black);
+    border: 2px solid var(--bg-black);
+    color: var(--bg-green);
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Header */
+
+.header-container {
+    padding-top: 111px;
+}
+
+.logo {
+    font-size: 2rem;
+    border: 3px solid var(--bg-green);
+    max-width: fit-content;
+    padding: .1rem .3rem;
+    color: var(--bg-green);
+    text-transform: uppercase;
+}
+
+.form-control input::placeholder {
+    color: var(--bg-green);
+}
+
+/* Navbar */
+
+i.fa-solid.fa-bars {
+    font-size: 1.5rem;
+    color: var(--bg-green);
+}
+
+a.nav-link {
+    color: var(--bg-green);
+}
+
+.navbar a.nav-link {
+    color: white;
+}
+
+.navbar a.nav-link:hover,
+.navbar a.nav-link:active,
+.navbar a.nav-link:focus {
+    color: var(--bg-green);
+}
+
+a.nav-link:hover,
+a.nav-link:active,
+a.nav-link:focus {
+    color: white;
+}
+
+.navbar-toggler {
+    padding: .6rem .6rem;
+    font-size: 1rem;
+    color: white;
+    border-color: white;
+}
+
+
+
+#delivery-banner p {
+    font-size: .9rem;
+    font-weight: 700;
+    padding: .3rem;
+}
+
+/* Homepage */
+
+.hero {
+    min-height: calc(100vh - 111px);
+}
+
+.hero img {
+    max-width: 100%;
+}
+
+.shop-now-button {
+    min-width: 260px;
+    font-weight: 700;
+}
+
+.input-group input {
+    border: 1px solid var(--bg-green);
+}
+
+.input-group input:focus {
+    background-color: var(--bg-black);
+    color: white;
+    border: 1px solid var(--bg-green);
+}
+
+.input-group input::placeholder {
+    color: var(--bg-green);
+}
+
+.input-group button {
+    background-color: var(--bg-black);
+    border: 1px solid var(--bg-green);
+    color: var(--bg-green);
+}
+
+.input-group button:hover,
+.input-group button:focus {
+    background-color: var(--bg-green);
+    border: 1px solid var(--bg-green);
+    color: var(--bg-black);
+}
+
+a.category-badge>span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
+
+
+/* Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 157px;
+    }
+
+    body {
+        height: calc(100vh - 157px);
+    }
+
+    .hero {
+        min-height: calc(100vh - 157px);
+    }
+
+    #delivery-banner p {
+        font-size: 1.2rem;
+        padding: .3rem;
+    }
+}
