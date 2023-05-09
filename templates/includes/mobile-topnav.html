@@ -6,12 +6,12 @@
             <p class="my-0">Search</p>
         </div>
     </a>
-    <div class="dropdown-menu border-0 bg-black w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+    <div class="dropdown-menu border-0 bg-offwhite w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="">
             <div class="input-group w-100">
-                <input class="form-control bg-black rounded-0" type="text" name="q" placeholder="Search our site">
+                <input class="form-control bg-offwhite rounded-0" type="text" name="q" placeholder="Search Product">
                 <div class="input-group-append">
-                    <button class="form-control form-control rounded-0" type="submit" aria-label="Search Product">
+                    <button class="form-control rounded-0" type="submit" aria-label="Search Product">
                         <span class="icon">
                             <i class="fas fa-search"></i>
                         </span>
@@ -22,8 +22,8 @@
     </div>
 </li>
 <li class="list-inline-item dropdown">
-    <a class="text-white nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
             <p class="my-0">My Account</p>
@@ -35,15 +35,15 @@
         <a href="" class="dropdown-item">Product Management</a>
         {% endif %}
         <a href="" class="dropdown-item">My Profile</a>
-        <a href="" class="dropdown-item">Logout</a>
+        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
         {% else %}
-        <a href="" class="dropdown-item">Register</a>
-        <a href="" class="dropdown-item">Login</a>
+        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
         {% endif %}
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none"
+    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}{% endif %} nav-link d-block d-lg-none"
         href="">
         <div class="text-center">
             <div><i class="fa-solid fa-cart-shopping"></i></div>
