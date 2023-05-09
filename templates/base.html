@@ -39,12 +39,18 @@
 </head>
 
 <body class="d-flex flex-column">
-    <header class="container-fluid fixed-top">
-        <div id="topnav" class="row pt-lg-2 d-none d-lg-flex bg-black">
+    <header class="container-fluid box fixed-top">
+        <div id="banner" class="row text-center">
+            <div class="col-12 bg-green">
+                <p class="logo-font my-1 text-uppercase">Free delivery on orders over ${{ free_shipping_threshold }}!
+                </p>
+            </div>
+        </div>
+        <div id="topnav" class="row pt-lg-2 d-none d-lg-flex bg-offwhite">
             {% include 'includes/topnav.html' %}
         </div>
         <div class="row">
-            <nav class="navbar navbar-expand-lg bg-black w-100">
+            <nav class="navbar navbar-expand-lg bg-offwhite w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                     aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
@@ -52,12 +58,6 @@
                 {% include 'includes/mobile-topnav.html' %}
                 {% include 'includes/main-nav.html' %}
             </nav>
-        </div>
-        <div id="delivery-banner" class="row text-center">
-            <div class="col-12 bg-green text-black">
-                <p class="logo-font my-1 text-uppercase">Free delivery on orders over ${{ free_shipping_threshold }}!
-                </p>
-            </div>
         </div>
     </header>
 
