@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "storages",
     # Apps
     "home",
+    "products",
 ]
 
 SITE_ID = 1
