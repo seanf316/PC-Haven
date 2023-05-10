@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Other
     "crispy_forms",
     "storages",
+    "djrichtextfield",
     # Apps
     "home",
     "products",
@@ -190,6 +191,20 @@ if "USE_AWS" in os.environ:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+DJRICHTEXTFIELD_CONFIG = {
+    "js": ["//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"],
+    "init_template": "djrichtextfield/init/ckeditor.js",
+    "settings": {
+        "toolbar": [
+            ["Format", "Bold", "Italic", "Underline"],
+            ["NumberedList", "BulletedList"],
+            ["Undo", "Redo"],
+            ["Maximize"],
+        ],
+        "format_tags": "p;h1;h2;h3",
+    },
+}
 
 # Account Setup
 
