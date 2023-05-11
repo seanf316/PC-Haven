@@ -10,10 +10,14 @@ placeholder = (
 class CategoryGroup(models.Model):
     """ A model for the Category Group of the Product """
     
-    verbose_name_plural = 'Categories'
-    
     name = models.CharField(max_length=200)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    
+    class Meta:
+        """"
+        Alters the name of the Category Group in the admin panel
+        """
+        verbose_name_plural = 'Categories'
     
     def __str__(self):
         return self.name
@@ -24,10 +28,15 @@ class CategoryGroup(models.Model):
 
 class SubCategory(models.Model):
     """ A model for the Sub Category of the Product """
-    
-    verbose_name_plural = 'Sub Categories'
+            
     name = models.CharField(max_length=200)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    
+    class Meta:
+        """"
+        Alters the name of the Sub Category in the admin panel
+        """
+        verbose_name_plural = 'Sub Categories'
     
     def __str__(self):
         return self.name
@@ -41,7 +50,7 @@ class Product(models.Model):
     category = models.ForeignKey(
         "CategoryGroup", null=True, blank=True, on_delete=models.SET_NULL
     )
-    sub_categeory = models.ForeignKey(
+    sub_category = models.ForeignKey(
         "SubCategory", null=True, blank=True, on_delete=models.SET_NULL
     )
     sku = models.CharField(max_length=254, unique=True)
@@ -69,6 +78,12 @@ class Product(models.Model):
         auto_now_add=True,
         null=True,
     )
+
+    class Meta:
+        """"
+        Alters the order of the Products in the admin panel
+        """
+        ordering = ('name',)
 
     def __str__(self):
         return self.name
