@@ -1,6 +1,11 @@
 from django.db import models
 from djrichtextfield.models import RichTextField
+from django_resized import ResizedImageField
 from django.utils.text import slugify
+
+placeholder = (
+    "https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.png"
+)
 
 class CategoryGroup(models.Model):
     """ A model for the Category Group of the Product """
@@ -49,7 +54,15 @@ class Product(models.Model):
     information = RichTextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = ResizedImageField(
+        size=[600, None],
+        quality=75,
+        upload_to="media/products",
+        force_format="WEBP",
+        blank=False,
+        null=False,
+        default=placeholder
+    )
     stock_level = models.IntegerField(default=0)
     in_stock = models.BooleanField(default=True)
     created_on = models.DateTimeField(
