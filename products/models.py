@@ -2,6 +2,8 @@ from django.db import models
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 from django.utils.text import slugify
+import string
+import random
 
 placeholder = (
     "https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.png"
@@ -53,7 +55,7 @@ class Product(models.Model):
     sub_category = models.ForeignKey(
         "SubCategory", null=True, blank=True, on_delete=models.SET_NULL
     )
-    sku = models.CharField(max_length=254, unique=True)
+    sku = models.CharField(max_length=254, null=True, blank=True, unique=True)
     name = models.CharField(max_length=254)
     slug = models.SlugField(
         max_length=254, null=True,
