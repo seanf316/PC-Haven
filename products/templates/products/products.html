@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Products Start -->
+<section class="products">
+    <div class="container h-100">
+        <div class="row flex-wrap-reverse align-items-center h-100">
+            <div class="col-12 col-md-5 my-auto">
+                {% for product in products%}
+                <p>{{ product.name|safe }}</p>
+                <p>{{ product.description|safe }}</p>
+                <p>{{ product.information|safe }}</p>
+                <img src="{{ product.image }}" alt="">
+                <p>{{ product.price }}</p>
+                {% endfor %}
+            </div>
+        </div>
+</section>
+<!-- Products End -->
+{% endblock %}
