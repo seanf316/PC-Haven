@@ -66,7 +66,7 @@ class Product(models.Model):
     image = ResizedImageField(
         size=[600, None],
         quality=75,
-        upload_to="media/products",
+        upload_to="products",
         force_format="WEBP",
         blank=False,
         null=False,
