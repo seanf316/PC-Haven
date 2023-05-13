@@ -8,11 +8,10 @@
 
 :root {
     --bg-green: rgb(34, 95, 33);
-    --bg-offwhite: rgba(252, 249, 248, 0.884);
+    --bg-offwhite: rgba(252, 249, 248, 0.972);
     --bg-white: #ffffff;
     --bg-grey: rgba(195, 184, 173, 0.2);
     --primary-text: #3e3d3d;
-
 }
 
 .header-container {
@@ -27,6 +26,7 @@ body {
     height: calc(100vh - 111px);
     font-family: 'Lato', sans-serif;
     background-color: var(--bg-grey);
+    color: var(--primary-text);
 }
 
 /* Helper Styles */
@@ -57,6 +57,17 @@ body {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.h-10 {
+    height: 10%;
+}
+
+.h-20 {
+    height: 20%;
+}
+
+.h-35 {
+    height: 35%;
+}
 
 /* from Bulma */
 .icon {
@@ -249,7 +260,7 @@ input:focus:-khtml-autofill {
 @media (min-width: 1200px) {
 
     .container {
-        max-width: 80%;
+        max-width: 86%;
     }
 }
 
@@ -268,4 +279,22 @@ input:focus:-khtml-autofill {
         min-height: calc(100vh - 165px);
     }
 
+}
+
+.card {
+    border: 3px solid var(--bg-green);
+}
+
+.prod-category {
+    border: 1px solid var(--bg-green);
+}
+
+.prod-category a {
+    color: var(--bg-green);
+}
+
+.prod-category a:hover {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
 }
