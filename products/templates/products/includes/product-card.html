@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row no-gutters">
+        {% for product in products%}
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2 d-flex">
+            <div class="card p-1 flex-fill">
+                <a href="" class="text-right favourite"><i class="fa-regular fa-heart"></i></a>
+                <!-- <a href="" class="text-right favourite"><i class="fa-solid fa-heart"></i></a> -->
+                <div class="card-img-top p-1">
+                    <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+                </div>
+                <div
+                    class="card-body d-flex flex-column justify-content-center align-items-center h-10 bg-green text-white">
+                    <span class="text-center font-weight-bold">{{ product.name|safe }}</span>
+                </div>
+                {% if product.category and product.category.name != "components" %}
+                <p class="mt-1 mb-0 p-1 small text-center prod-category">
+                    <a href="{% url 'products' %}?category={{ product.category.name }}">
+                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                    </a>
+                </p>
+                {% endif %}
+                {% if product.category and product.category.name == "components" %}
+                <p class="mt-1 mb-0 p-1 small text-center prod-category">
+                    <a href="{% url 'products' %}?category={{ product.category.name }}">
+                        <i class="fas fa-tag mr-1"></i>{{ product.sub_category.friendly_name }}
+                    </a>
+                </p>
+                {% endif %}
+                <!-- <div class="card-body h-50 flex-fill">
+                    <p class="font-weight-bold">Features:</p>
+                    <div class="text-muted pl-3">
+                        <p>{{ product.description|safe}}</p>
+                    </div>
+                </div> -->
+                <div class="card-body h-20 flex-fill text-center">
+                    <p>€{{ product.price }}</p>
+                    <a href="#" class="btn cta cart-add">ADD&nbsp;&nbsp;<i class="fa-solid fa-cart-shopping"></i></a>
+                    <p class="small pt-2"><i class="fa-regular fa-square-check fa-sm"></i> In Stock</p>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:1 %}
+        <div class="col-12 d-sm-none">
+            <hr class="style-eight">
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:2 %}
+        <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
+            <hr class="style-eight">
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:3 %}
+        <div class="col-12 d-none d-lg-block d-xl-none">
+            <hr class="style-eight">
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:4 %}
+        <div class="col-12 d-none d-xl-block">
+            <hr class="style-eight">
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>

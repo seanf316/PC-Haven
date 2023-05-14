@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -13,45 +17,17 @@
 <!-- Products Start -->
 <section class="products">
     <div class="container-fluid">
-        <div class="row bg-green text-white mb-2 p-1">
+        <div class="row bg-green text-white mb-5 p-1">
             <div class="col-12 text-center">
                 <h1>All Products</h1>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row no-gutters">
-            {% for product in products%}
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2 d-flex">
-                <div class="card p-1 flex-fill">
-                    <div class="card-img-top p-1 text-center">
-                        <img src="{{ product.image.url }}" class="img-fluid h-100" alt="{{ product.name }}">
-                    </div>
-                    <div
-                        class="card-body d-flex flex-column justify-content-center align-items-center h-10 bg-green text-white">
-                        <span class="text-center font-weight-bold">{{ product.name|safe }}</span>
-                    </div>
-                    {% if product.category %}
-                    <p class="mt-1 mb-0 p-1 small text-center prod-category">
-                        <a href="{% url 'products' %}?category={{ product.category.name }}">
-                            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                        </a>
-                    </p>
-                    {% endif %}
-                    <div class="card-body h-35 flex-fill">
-                        <p class="font-weight-bold">Features:</p>
-                        <div class="text-muted pl-3">
-                            <p>{{ product.description|safe}}</p>
-                        </div>
-                    </div>
-                    <div class="card-body h-20 flex-fill text-center text-white">
-                        <p>€{{ product.price }}</p>
-                        <a href="#" class="btn cta">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+
+    <!-- Product Card -->
+    {% include "./includes/product-card.html" %}
+    <!-- Product End -->
+
 </section>
 <!-- Products End -->
 {% endblock %}
