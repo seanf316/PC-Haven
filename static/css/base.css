@@ -65,10 +65,6 @@ body {
     height: 20%;
 }
 
-.h-35 {
-    height: 35%;
-}
-
 /* from Bulma */
 .icon {
     align-items: center;
@@ -281,20 +277,3 @@ input:focus:-khtml-autofill {
 
 }
 
-.card {
-    border: 3px solid var(--bg-green);
-}
-
-.prod-category {
-    border: 1px solid var(--bg-green);
-}
-
-.prod-category a {
-    color: var(--bg-green);
-}
-
-.prod-category a:hover {
-    text-transform: uppercase;
-    font-weight: 700;
-    text-decoration: none;
-}
