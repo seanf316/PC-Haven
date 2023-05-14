@@ -1,6 +1,7 @@
 from django.db import models
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
+from django.core.validators import MinValueValidator
 from django.utils.text import slugify
 import string
 import random
@@ -74,7 +75,7 @@ class Product(models.Model):
         null=False,
         default=placeholder
     )
-    stock_level = models.IntegerField(default=0)
+    stock_level = models.IntegerField(default=1, validators=[MinValueValidator(1)])
     in_stock = models.BooleanField(default=True)
     created_on = models.DateTimeField(
         auto_now_add=True,
