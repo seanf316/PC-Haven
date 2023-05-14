@@ -75,7 +75,7 @@ class Product(models.Model):
         null=False,
         default=placeholder
     )
-    stock_level = models.IntegerField(default=1, validators=[MinValueValidator(1)])
+    stock_level = models.IntegerField(default=1, validators=[MinValueValidator(0)])
     in_stock = models.BooleanField(default=True)
     created_on = models.DateTimeField(
         auto_now_add=True,
