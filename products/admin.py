@@ -10,13 +10,12 @@ class ProductAdmin(admin.ModelAdmin):
     """
     
     list_display = (
+        'name',
         'category',
         'sub_category',
         'sku',
-        'name',
         'price',
-        'in_stock',
-        'image')
+        'in_stock')
     
     search_fields = (
         'name',
