@@ -6,10 +6,6 @@ from django.utils.text import slugify
 import string
 import random
 
-placeholder = (
-    "https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.png"
-)
-
 class CategoryGroup(models.Model):
     """ A model for the Category Group of the Product """
     
@@ -71,9 +67,8 @@ class Product(models.Model):
         quality=75,
         upload_to="products",
         force_format="WEBP",
-        blank=False,
-        null=False,
-        default=placeholder
+        blank=True,
+        null=True,
     )
     stock_level = models.IntegerField(default=1, validators=[MinValueValidator(0)])
     in_stock = models.BooleanField(default=True)
