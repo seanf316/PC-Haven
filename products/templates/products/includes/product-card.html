@@ -6,7 +6,14 @@
                 <a href="" class="text-right favourite"><i class="fa-regular fa-heart"></i></a>
                 <!-- <a href="" class="text-right favourite"><i class="fa-solid fa-heart"></i></a> -->
                 <div class="card-img-top p-1">
-                    <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+                    {% if product.image %}
+                    <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image.url }}" class="img-fluid"
+                            alt="{{ product.name }}"></a>
+                    {% else %}
+                    <a href="{% url 'product_detail' product.id %}"><img
+                            src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+                            class="img-fluid" alt="{{ product.name }}"></a>
+                    {% endif %}
                 </div>
                 <div
                     class="card-body d-flex flex-column justify-content-center align-items-center h-10 bg-green text-white">
@@ -26,14 +33,8 @@
                     </a>
                 </p>
                 {% endif %}
-                <!-- <div class="card-body h-50 flex-fill">
-                    <p class="font-weight-bold">Features:</p>
-                    <div class="text-muted pl-3">
-                        <p>{{ product.description|safe}}</p>
-                    </div>
-                </div> -->
                 <div class="card-body h-20 flex-fill text-center">
-                    <p>€{{ product.price }}</p>
+                    <p class="text-green font-weight-bold text-lg">€{{ product.price }}</p>
                     <a href="#" class="btn cta cart-add">ADD&nbsp;&nbsp;<i class="fa-solid fa-cart-shopping"></i></a>
                     <p class="small pt-2"><i class="fa-regular fa-square-check fa-sm"></i> In Stock</p>
                 </div>
