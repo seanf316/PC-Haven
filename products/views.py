@@ -9,8 +9,20 @@ def allproducts(request):
 
     products = Product.objects.all()
     query = None
+    categories = None
+    subcategories = None
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = CategoryGroup.objects.filter(name__in=categories)
+            
+        if 'sub_category' in request.GET:
+            subcategories = request.GET['sub_category'].split(',')
+            products = products.filter(sub_category__name__in=subcategories)
+            subcategories = SubCategory.objects.filter(name__in=subcategories)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -22,6 +34,8 @@ def allproducts(request):
     context = {
         "products": products,
         "search_query": query,
+        'categories': categories,
+        'subcategories': subcategories,
     }
 
     return render(request, "products/products.html", context)
