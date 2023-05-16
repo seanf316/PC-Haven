@@ -15,16 +15,12 @@
     --primary-text: #3e3d3d;
 }
 
-.header-container {
-    padding-top: 111px;
-}
-
 html {
     height: 100%;
 }
 
 body {
-    height: calc(100vh - 111px);
+    height: calc(100vh - 93px);
     font-family: 'Lato', sans-serif;
     background: var(--bg-offwhite);
     color: var(--primary-text);
@@ -105,6 +101,10 @@ body {
 
 /* Navbar */
 
+.navbar {
+    padding: 0 .8rem;
+}
+
 a.nav-link {
     color: var(--primary-text);
 }
@@ -151,9 +151,8 @@ i.fa-solid.fa-bars {
     color: var(--bg-white);
 }
 
-.menu-area {
+.mega-menu {
     position: static;
-    width: 100%;
 }
 
 .mega-area {
@@ -170,7 +169,7 @@ i.fa-solid.fa-bars {
 /* Homepage */
 
 .hero {
-    min-height: calc(100vh - 111px);
+    min-height: calc(100vh - 93px);
     background: url('https://pc-haven.s3.eu-north-1.amazonaws.com/media/pchaven/wave.svg') no-repeat center center;
 }
 
@@ -299,15 +298,11 @@ input:focus:-khtml-autofill {
 @media (min-width: 992px) {
 
     body {
-        height: calc(100vh - 165px);
+        height: calc(100vh - 150px);
     }
-
-    .header-container {
-        padding-top: 165px;
-    }
-
+    
     .hero {
-        min-height: calc(100vh - 165px);
+        min-height: calc(100vh - 150px);
     }
 
 }
