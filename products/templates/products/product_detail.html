@@ -1,0 +1,99 @@
+{% extends "base.html" %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}" />
+{% endblock %} {% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %} {% block content %}
+<!-- Product Start -->
+<section class="product">
+    <div class="container">
+        <!-- Features Start -->
+        <div class="row mt-5 p-1 bg-green border-green flex-fill rounded w-100 mx-auto">
+            <div class="col-lg-4 bg-white align-items-center p-2 d-flex flex-column rounded">
+                <a href="" class="favourite ml-auto"><i class="fa-regular fa-heart"></i></a>
+                {% if product.image %}
+                <img src="{{ product.image.url }}" width="600" height="450" class="img-fluid"
+                    alt="{{ product.name }}" />
+                {% else %}
+                <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+                    class="img-fluid flex-fill" alt="{{ product.name }}" />
+                {% endif %}
+            </div>
+            <div class="col-lg-8 p-2">
+                <h1 class="text-center text-white">{{ product.name}}</h1>
+                <div class="row bg-white w-100 m-0">
+                    <div class="col-lg-6">
+                        <p class="font-weight-bold text-lg text-uppercase text-green pt-2">
+                            Features
+                        </p>
+                        <div class="pl-3 features">
+                            <p>{{ product.description|safe }}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="pt-2">
+                            <span class="font-weight-bold text-lg text-green">Customer Rating = <i
+                                    class="fa-solid fa-star"></i> 0 / 5</span><br />
+                            <span class="font-italic text-prime small">Be the first to rate this product</span>
+                        </div>
+                        <p class="text-lg pt-3">
+                            <span class="text-green font-weight-bold">Price: </span>
+                            €{{ product.price }}
+                        </p>
+                        <p class="pt-2 text-green font-weight-bold text-lg">
+                            <i class="fa-regular fa-square-check"></i>
+                            {{ product.stock_level}} In Stock
+                        </p>
+                    </div>
+                </div>
+                <div class="row bg-white w-100 m-0">
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Features Start -->
+    </div>
+
+    <div class="container">
+        <!-- Description/Reviews Start -->
+        <div class="row mt-2 mb-5 w-100 p-1 border-green mx-auto rounded-lg bg-white">
+            <div class="col-12 p-0">
+                <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item flex-grow-1" role="presentation">
+                        <button class="nav-link active w-100 text-uppercase font-weight-bold text-green text-lg m-0"
+                            id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab"
+                            aria-controls="pills-home" aria-selected="true">
+                            Description
+                        </button>
+                    </li>
+                    <li class="nav-item flex-grow-1" role="presentation">
+                        <button class="nav-link w-100 text-uppercase font-weight-bold text-green text-lg m-0"
+                            id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button"
+                            role="tab" aria-controls="pills-profile" aria-selected="false">
+                            Reviews
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content px-2" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <h2>{{ product.name}}</h2>
+                        <hr>
+                        <p>{{ product.information|safe}}</p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Description/Reviews End -->
+    </div>
+</section>
+<!-- Products End -->
+{% endblock %}

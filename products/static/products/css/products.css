@@ -1,18 +1,15 @@
 :root {
-    --bg-green: rgb(34, 95, 33);
+    --bg-green: #0d8065;
     --bg-offwhite: rgba(252, 249, 248, 0.972);
     --bg-white: #ffffff;
     --bg-grey: rgba(195, 184, 173, 0.2);
     --primary-text: #3e3d3d;
 }
 
+/* All Products */
+
 .card {
     border: 2px solid var(--bg-green);
-}
-
-.card:hover {
-    --bg-green: rgb(34, 95, 33);
-    
 }
 
 .fa-regular.fa-heart,
@@ -52,4 +49,54 @@
     border-style: dotted;
     width: 90%;
     margin: 1rem auto;
+}
+
+/* Product Detail */
+
+.border-white {
+    border: 2px solid var(--bg-white);
+}
+
+.border-green {
+    border: 2px solid var(--bg-green);
+}
+
+.product h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.features {
+    margin-top: -1rem;
+    font-size: .9rem;
+}
+
+/* Decription/Review */
+
+.product .nav-item {
+    background-color: var(--bg-white);
+    border: 2px solid var(--bg-green);
+    font-weight: 700;
+    margin: 0 .1rem;
+}
+
+.product .nav-item .active {
+    background-color: var(--bg-green);
+    font-weight: 700;
+    margin: 0 .1rem;
+    border-radius: 0;
+}
+
+.product button:hover {
+    color: var(--bg-white);
+    background-color: var(--bg-green);
+    border-radius: 0;
+}
+
+.product h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--bg-green);
 }
