@@ -4,10 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --primary-text: #3e3d3d;
 }
 
 :root {
-    --bg-green: rgb(34, 95, 33);
+    --bg-green: #0d8065;
     --bg-offwhite: rgba(252, 249, 248, 0.972);
     --bg-white: #ffffff;
     --bg-grey: rgba(195, 184, 173, 0.2);
@@ -25,11 +26,23 @@ html {
 body {
     height: calc(100vh - 111px);
     font-family: 'Lato', sans-serif;
-    background-color: var(--bg-grey);
+    background: var(--bg-offwhite);
     color: var(--primary-text);
 }
 
 /* Helper Styles */
+
+.text-prime {
+    color: var(--primary-text);
+}
+
+.text-green {
+    color: var(--bg-green);
+}
+
+.text-lg {
+    font-size: 1.2rem;
+}
 
 .bg-green {
     background-color: var(--bg-green);
@@ -127,6 +140,11 @@ i.fa-solid.fa-bars {
     border-color: var(--bg-green);
 }
 
+.dropdown-item:hover {
+    background-color: var(--bg-green);
+    color: var(--bg-white);
+}
+
 #banner p {
     font-size: .9rem;
     font-weight: 700;
@@ -137,6 +155,7 @@ i.fa-solid.fa-bars {
 
 .hero {
     min-height: calc(100vh - 111px);
+    background: url('https://pc-haven.s3.eu-north-1.amazonaws.com/media/pchaven/wave.svg') no-repeat center center;
 }
 
 .shop-now-button {
