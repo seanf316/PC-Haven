@@ -34,10 +34,15 @@
     color: var(--bg-green);
 }
 
-.prod-category a:hover {
+.prod-category a:hover,
+.category-white a:hover {
     text-transform: uppercase;
     font-weight: 700;
     text-decoration: none;
+}
+
+.category-white a {
+    color: var(--bg-white);
 }
 
 .cart-add {
@@ -64,7 +69,6 @@
 .product h1 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
 }
 
 .features {
