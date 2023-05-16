@@ -151,6 +151,22 @@ i.fa-solid.fa-bars {
     color: var(--bg-white);
 }
 
+.menu-area {
+    position: static;
+    width: 100%;
+}
+
+.mega-area {
+    position: absolute;
+    width: 98%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    border: none;
+    margin-top: .5rem;
+    border: 1px solid var(--bg-green);
+}
+
 /* Homepage */
 
 .hero {
