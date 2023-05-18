@@ -12,17 +12,22 @@
 {% block content %}
 <!-- Hero Start -->
 <section class="hero">
-    <div class="container h-100">
-        <div class="row flex-wrap-reverse align-items-center h-100">
-            <div class="col-12 col-md-5 my-auto d-flex flex-column align-items-center justify-content-center">
-                <h1 class="text-uppercase pb-3 text-white text-center">
-                    Build your<br>dream PC
+    <div class="container">
+        <div class="row flex-wrap-reverse align-items-center">
+            <div
+                class="col-12 col-md-6 mb-3 p-3 d-flex flex-column align-items-center justify-content-center text-white">
+                <h1 class="text-uppercase text-center font-weight-bold rounded">
+                    Build your dream PC
                 </h1>
-                <a href="" class="shop-now-button btn btn-lg cta rounded-0 text-uppercase py-3">Shop Now</a>
+                <p>Welcome to PC HAVEN, your ultimate destination for top-quality PC components. We are passionate
+                    about providing you with the latest and most cutting-edge hardware to fuel your technological
+                    ambitions. Whether you're a hardcore gamer, a creative professional, or a tech enthusiast, we've
+                    got you covered.</p>
+                <a href="{% url 'products' %}" class="shop-now-button btn cta text-uppercase">Shop Now</a>
             </div>
-            <div class="col-12 col-md-7 my-auto d-flex justify-content-center">
-                <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/pchaven/hero.webp" width="500" height="500"
-                    class="img-fluid" alt="">
+            <div class="col-12 col-md-6 my-auto d-flex justify-content-center align-items-center">
+                <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/pchaven/hero.webp" class="img-fluid"
+                    alt="">
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --primary-text: #3e3d3d;
+    font-family: 'Lato', sans-serif;
 }
 
 :root {
@@ -20,13 +20,12 @@ html {
 }
 
 body {
-    height: calc(100vh - 93px);
     font-family: 'Lato', sans-serif;
     background: var(--bg-offwhite);
     color: var(--primary-text);
 }
 
-/* Helper Styles */
+/* ------------------------------------ Helper Styles ------------------------------------ */
 
 .text-prime {
     color: var(--primary-text);
@@ -74,16 +73,7 @@ body {
     height: 20%;
 }
 
-/* from Bulma */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-/* Header */
+/* ------------------------------------ Navbar ------------------------------------ */
 
 .logo {
     font-size: 2rem;
@@ -94,34 +84,47 @@ body {
     text-transform: uppercase;
 }
 
-.form-control input::placeholder {
+.input-group input::placeholder {
     color: var(--bg-green);
     font-style: italic;
 }
 
-/* Navbar */
-
-.navbar {
-    padding: 0 .8rem;
+.input-group input {
+    border: 1px solid var(--bg-green);
 }
 
-a.nav-link {
-    color: var(--primary-text);
+.input-group input:focus {
+    background-color: var(--bg-offwhite);
+    color: var(--bg-green);
+    border: 1px solid var(--bg-green);
+    box-shadow: none;
+}
+
+.input-group button {
+    background-color: var(--bg-offwhite);
+    border: 1px solid var(--bg-green);
+    color: var(--bg-green);
+}
+
+.input-group button:hover,
+.input-group button:focus {
+    background-color: var(--bg-green);
+    border: 1px solid var(--bg-green);
+    color: var(--bg-offwhite);
+}
+
+.navbar {
+    padding: 0rem .5rem;
 }
 
 .navbar a.nav-link {
     color: var(--primary-text);
+    padding: 0.15rem;
 }
 
 .navbar a.nav-link:hover,
 .navbar a.nav-link:active,
 .navbar a.nav-link:focus {
-    color: var(--bg-green);
-}
-
-a.nav-link:hover,
-a.nav-link:active,
-a.nav-link:focus {
     color: var(--bg-green);
 }
 
@@ -145,12 +148,6 @@ i.fa-solid.fa-bars {
     color: var(--bg-white);
 }
 
-#banner p {
-    font-size: .9rem;
-    font-weight: 700;
-    color: var(--bg-white);
-}
-
 .mega-menu {
     position: static;
 }
@@ -166,45 +163,34 @@ i.fa-solid.fa-bars {
     border: 1px solid var(--bg-green);
 }
 
-/* Homepage */
+/* ------------------------------------ Homepage ------------------------------------ */
 
 .hero {
-    min-height: calc(100vh - 93px);
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 100px);
     background: url('https://pc-haven.s3.eu-north-1.amazonaws.com/media/pchaven/wave.svg') no-repeat center center;
 }
 
+.hero h1 {
+    font-size: 1.4rem;
+    background-color: var(--bg-white);
+    color: var(--bg-green);
+    padding: .3rem 1rem;
+}
+
 .shop-now-button {
-    min-width: 260px;
+    min-width: 150px;
     font-weight: 700;
 }
 
-.input-group input {
-    border: 1px solid var(--bg-green);
+.hero p {
+    padding: 0 1rem;
 }
 
-.input-group input:focus {
-    background-color: var(--bg-offwhite);
-    color: var(--bg-green);
-    border: 1px solid var(--bg-green);
-    box-shadow: none;
-}
-
-.input-group input::placeholder {
-    color: var(--bg-green);
-    font-style: italic;
-}
-
-.input-group button {
-    background-color: var(--bg-offwhite);
-    border: 1px solid var(--bg-green);
-    color: var(--bg-green);
-}
-
-.input-group button:hover,
-.input-group button:focus {
-    background-color: var(--bg-green);
-    border: 1px solid var(--bg-green);
-    color: var(--bg-offwhite);
+.hero img {
+    width: 80%;
+    height: 80%;
 }
 
 a.category-badge>span.badge:hover {
@@ -212,7 +198,7 @@ a.category-badge>span.badge:hover {
     color: #fff !important;
 }
 
-/* All Auth */
+/* ------------------------------------ All Auth ------------------------------------ */
 
 .allauth-form h2 {
     color: var(--bg-green);
@@ -284,26 +270,101 @@ input:focus:-khtml-autofill {
     border: 2px solid var(--bg-green);
 }
 
-/* Media Queries */
+/* ------------------------------------ Breadcrumbs ------------------------------------ */
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
+.breadcrumb {
+    background: var(--bg-offwhite);
+}
+
+.breadcrumb-item a {
+    color: var(--bg-green);
+}
+
+.breadcrumb-item a:hover {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: var(--primary-text);
+}
+
+
+/* ------------------------------------ Media Queries ------------------------------------ */
+
+@media screen and (min-width: 768px) {
+
+    .hero p {
+        padding: 0 .5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .hero img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .navbar a.nav-link {
+        color: var(--primary-text);
+        padding: 0 1rem;
+    }
+
+    .hero {
+        min-height: calc(100vh - 128px);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
 
     .container {
-        max-width: 86%;
+        max-width: 80%;
     }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        padding: 0 3rem;
+    }
+
+    .shop-now-button {
+        min-width: 260px;
+        font-weight: 700;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .mega-area {
+        width: 84%;
+    }
+
 }
 
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
+@media screen and (min-width: 1400px) {
 
-    body {
-        height: calc(100vh - 150px);
+    .hero h1 {
+        margin-bottom: 1rem;
     }
-    
-    .hero {
-        min-height: calc(100vh - 150px);
+
+    .hero p {
+        padding: 0 6rem;
     }
 
 }
-
