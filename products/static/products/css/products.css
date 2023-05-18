@@ -6,7 +6,7 @@
     --primary-text: #3e3d3d;
 }
 
-/* All Products */
+/* ------------------------------------ All Products ------------------------------------ */
 
 .card {
     border: 2px solid var(--bg-green);
@@ -76,7 +76,7 @@
     font-size: .9rem;
 }
 
-/* Decription/Review */
+/* ------------------------------------ Decription/Review ------------------------------------ */
 
 .product .nav-item {
     background-color: var(--bg-white);
@@ -104,3 +104,25 @@
     font-weight: 700;
     color: var(--bg-green);
 }
+
+/* ------------------------------------ Pagination ------------------------------------ */
+
+.page-item a {
+    color: var(--bg-green);
+}
+
+.page-item a:hover {
+    background: var(--bg-green);
+    color: var(--bg-white);
+}
+
+.page-item a:focus {
+    box-shadow: none;
+}
+
+.page-item.active a {
+    color: var(--bg-white)!important;
+    background-color: var(--bg-green)!important;
+    border: none;
+}
+
