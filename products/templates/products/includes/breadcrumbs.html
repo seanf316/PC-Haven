@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
+                <ol class="breadcrumb px-0 px-lg-2 mb-0">
                     {% if search_query%}
                     <li class="breadcrumb-item active" aria-current="page">Search Results for <strong><i>
                                 {{ search_query }}</i></strong></li>
@@ -21,8 +21,7 @@
                     {% if subcategories %}
                     {% for subcategory in subcategories %}
                     <li class="breadcrumb-item active" aria-current="page">
-                        <a href="{% url 'products' %}?sub_category={{ subcategory.name }}">
-                            {{ subcategory.friendly_name }}</a>
+                        {{ subcategory.friendly_name }}
                     </li>
                     {% endfor %}
                     {% endif %}
