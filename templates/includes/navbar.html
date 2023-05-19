@@ -85,62 +85,21 @@
                                 Products</a>
                             <hr class="my-0 w-75 mx-auto">
                             <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                            <a href="{% url 'products' %}?sort=category&sort=sub_category&direction=asc" class="dropdown-item ">By
+                            <a href="{% url 'products' %}?sort=category&sort=sub_category&direction=asc"
+                                class="dropdown-item ">By
                                 Category</a>
                         </div>
+                        {% for category in allcategories %}
                         <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
-                            <a href="{% url 'products' %}?category=cases"
-                                class="dropdown-item text-green font-weight-bold">Cases</a>
+                            <a href="{% url 'products' %}?category={{ category.name }}"
+                                class="dropdown-item text-green font-weight-bold">{{ category.friendly_name }}</a>
                             <hr class="my-0 w-75 mx-auto">
-                            <a href="{% url 'products' %}?category=cases&sub_category=full_tower"
-                                class="dropdown-item">Full Tower</a>
-                            <a href="{% url 'products' %}?category=cases&sub_category=midi_tower"
-                                class="dropdown-item ">Midi Tower</a>
-                            <a href="{% url 'products' %}?category=cases&sub_category=mini_tower"
-                                class="dropdown-item ">Mini Tower</a>
+                            {% for subcategory in category.sub_categories.all %}
+                            <a href="{% url 'products' %}?category={{category.name}}&sub_category={{ subcategory.name }}"
+                                class="dropdown-item">{{ subcategory.friendly_name }}</a>
+                            {% endfor %}
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
-                            <a href="{% url 'products' %}?category=graphics_cards"
-                                class="dropdown-item text-green font-weight-bold">Graphics Cards</a>
-                            <hr class="my-0 w-75 mx-auto">
-                            <a href="{% url 'products' %}?category=graphics_cards&sub_category=nvidia_geforce"
-                                class="dropdown-item">Nvidia
-                                GeForce</a>
-                            <a href="{% url 'products' %}?category=graphics_cards&sub_category=amd_radeon"
-                                class="dropdown-item ">AMD Radeon</a>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
-                            <a href="{% url 'products' %}?category=processors"
-                                class="dropdown-item text-green font-weight-bold">Processors</a>
-                            <hr class="my-0 w-75 mx-auto">
-                            <a href="{% url 'products' %}?category=processors&sub_category=intel"
-                                class="dropdown-item">Intel</a>
-                            <a href="{% url 'products' %}?category=processors&sub_category=amd"
-                                class="dropdown-item ">AMD</a>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
-                            <a href="{% url 'products' %}?category=motherboards"
-                                class="dropdown-item text-green font-weight-bold">Motherboards</a>
-                            <hr class="my-0 w-75 mx-auto">
-                            <a href="{% url 'products' %}?category=motherboards&sub_category=atx"
-                                class="dropdown-item">ATX</a>
-                            <a href="{% url 'products' %}?category=motherboards&sub_category=micro_atx"
-                                class="dropdown-item ">Micro ATX</a>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
-                            <a href="{% url 'products' %}?category=components"
-                                class="dropdown-item text-green font-weight-bold">Componants</a>
-                            <hr class="my-0 w-75 mx-auto">
-                            <a href="{% url 'products' %}?category=components&sub_category=ram"
-                                class="dropdown-item">Ram</a>
-                            <a href="{% url 'products' %}?category=components&sub_category=power_supplies"
-                                class="dropdown-item ">Power
-                                Supplies</a>
-                            <a href="{% url 'products' %}?category=components&sub_category=cpu_coolers"
-                                class="dropdown-item ">CPU
-                                Coolers</a>
-                        </div>
-
+                        {% endfor %}
                     </div>
                 </div>
             </li>
@@ -159,7 +118,6 @@
                     Contact Us
                 </a>
             </li>
-
         </ul>
     </div>
     <li class="list-inline-item d-lg-block d-none">
