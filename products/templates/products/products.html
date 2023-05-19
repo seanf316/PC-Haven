@@ -19,15 +19,26 @@
     <div class="container-fluid">
         <div class="row bg-green text-white mb-1 p-1">
             <div class="col-12 text-center">
+                {% if selected_category %}
+                {% for category in allcategories %}
+                {% if category.name == selected_category %}
+                <h1>{{ category.friendly_name }}</h1>
+                {% endif %}
+                {% endfor %}
+                {% else %}
                 <h1>All Products</h1>
+                {% endif %}
             </div>
         </div>
     </div>
     <!-- Breadcrumbs -->
     {% include "./includes/breadcrumbs.html" %}
 
+    <!-- Category Badges -->
+    {% include "./includes/category_badges.html" %}
+
     <!-- Product Card -->
-    {% include "./includes/product-card.html" %}
+    {% include "./includes/product_card.html" %}
 
     <!-- Pagination -->
     {% include "./includes/pagination.html" %}
