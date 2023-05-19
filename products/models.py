@@ -11,6 +11,7 @@ class CategoryGroup(models.Model):
     
     name = models.CharField(max_length=200)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    sub_categories = models.ManyToManyField('SubCategory')
     
     class Meta:
         """"
