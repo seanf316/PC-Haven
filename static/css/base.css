@@ -193,11 +193,6 @@ i.fa-solid.fa-bars {
     height: 80%;
 }
 
-a.category-badge>span.badge:hover {
-    background: #212529 !important;
-    color: #fff !important;
-}
-
 /* ------------------------------------ All Auth ------------------------------------ */
 
 .allauth-form h2 {
@@ -270,7 +265,21 @@ input:focus:-khtml-autofill {
     border: 2px solid var(--bg-green);
 }
 
-/* ------------------------------------ Breadcrumbs ------------------------------------ */
+/* ------------------------------------ Breadcrumbs/Category Sorting ------------------------------------ */
+
+a.category-badge span {
+    background: var(--bg-green) !important;
+    color: #fff !important;
+}
+
+a.category-badge span:hover,
+a.category-badge span:active,
+a.category-badge span:focus {
+    background: var(--bg-white) !important;
+    color: var(--bg-green) !important;
+}
+
+
 
 .breadcrumb {
     background: var(--bg-offwhite);
@@ -365,7 +374,7 @@ input:focus:-khtml-autofill {
     }
 
     .hero p {
-        padding: 0 4rem;
+        padding: 0 3rem;
     }
 
 }
