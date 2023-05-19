@@ -33,6 +33,7 @@ DEBUG = "DEVELOPMENT" in os.environ
 ALLOWED_HOSTS = [
     "pc-haven.herokuapp.com",
     "localhost",
+    "8000-seanf316-pchaven-lppnru9p4ne.ws-eu97.gitpod.io",
 ]
 
 
