@@ -85,9 +85,10 @@
                                 Products</a>
                             <hr class="my-0 w-75 mx-auto">
                             <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                            <a href="{% url 'products' %}?sort=category&sort=sub_category&direction=asc"
-                                class="dropdown-item ">By
+                            <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By
                                 Category</a>
+                            <a href="{% url 'products' %}?sort=sub_category&direction=asc" class="dropdown-item ">By
+                                Sub-Category</a>
                         </div>
                         {% for category in allcategories %}
                         <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
