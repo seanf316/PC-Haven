@@ -18,7 +18,7 @@
                 class="card-body d-flex flex-column justify-content-center align-items-center h-10 bg-green text-white">
                 <span class="text-center font-weight-bold">{{ product.name|safe }}</span>
             </div>
-            {% if product.category %}
+            {% if product.sub_category %}
             <p class="mt-1 mb-0 p-1 small text-center prod-category">
                 <a
                     href="{% url 'products' %}?category={{ product.category.name }}&sub_category={{ product.sub_category.name}}">

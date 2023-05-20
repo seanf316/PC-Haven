@@ -24,16 +24,10 @@
             </div>
             <div class="col-lg-8 p-2">
                 <h1 class="text-center text-white mb-0">{{ product.name}}</h1>
-                {% if product.category and product.category.name != "components" %}
+                {% if product.sub_category %}
                 <p class="mb-0 p-1 small text-center category-white">
-                    <a href="{% url 'products' %}?category={{ product.category.name }}">
-                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                    </a>
-                </p>
-                {% endif %}
-                {% if product.category and product.category.name == "components" %}
-                <p class="mb-0 p-1 small text-center category-white">
-                    <a href="{% url 'products' %}?category={{ product.category.name }}">
+                    <a
+                        href="{% url 'products' %}?category={{ product.category.name }}&sub_category={{ product.sub_category.name}}">
                         <i class="fas fa-tag mr-1"></i>{{ product.sub_category.friendly_name }}
                     </a>
                 </p>
@@ -57,10 +51,16 @@
                             <span class="text-green font-weight-bold">Price: </span>
                             €{{ product.price }}
                         </p>
+                        {% if product.in_stock %}
                         <p class="pt-2 text-green font-weight-bold text-lg">
                             <i class="fa-regular fa-square-check"></i>
                             {{ product.stock_level}} In Stock
                         </p>
+                        {% else %}
+                        <p class="pt-2 font-weight-bold text-lg"><i
+                                class="fa-regular fa-rectangle-xmark text-danger"></i> Out of
+                            Stock</p>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="row bg-white w-100 m-0">
