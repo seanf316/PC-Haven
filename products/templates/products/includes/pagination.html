@@ -5,20 +5,14 @@
             <ul class="pagination rounded">
                 {% if products.has_previous %}
                 <li class="page-item"><a class="page-link bg-green text-white"
-                        href="?page={{ products.previous_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if 'category' in request.GET %}&category={{ request.GET.category|stringformat:'s' }}{% endif %}{% if 'sub_category' in request.GET %}&sub_category={{ request.GET.sub_category|stringformat:'s' }}{% endif %}">Previous</a>
+                        href="?page={{ products.previous_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if 'category' in request.GET %}&category={{ request.GET.category|stringformat:'s' }}{% endif %}{% if 'sub_category' in request.GET %}&sub_category={{ request.GET.sub_category|stringformat:'s' }}{% endif %}">Prev</a>
                 </li>
                 {% endif %}
-                {% for num in products.paginator.page_range %}
-                {% if products.number == num %}
-                <li class="page-item active"><a class="page-link"
-                        href="?page={{ num }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if 'category' in request.GET %}&category={{ request.GET.category|stringformat:'s' }}{% endif %}{% if 'sub_category' in request.GET %}&sub_category={{ request.GET.sub_category|stringformat:'s' }}{% endif %}">
-                        {{ num }}</a></li>
-                {% else %}
-                <li class="page-item"><a class="page-link"
-                        href="?page={{ num }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if 'category' in request.GET %}&category={{ request.GET.category|stringformat:'s' }}{% endif %}{% if 'sub_category' in request.GET %}&sub_category={{ request.GET.sub_category|stringformat:'s' }}{% endif %}">
-                        {{ num }}</a></li>
-                {% endif %}
-                {% endfor %}
+
+                <span class="d-flex justify-content-center align-items-center px-2 text-green font-weight-bold">
+                    Page {{ products.number }} of {{ products.paginator.num_pages }}
+                </span>
+
                 {% if products.has_next %}
                 <li class="page-item"><a class="page-link bg-green text-white"
                         href="?page={{ products.next_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if 'category' in request.GET %}&category={{ request.GET.category|stringformat:'s' }}{% endif %}{% if 'sub_category' in request.GET %}&sub_category={{ request.GET.sub_category|stringformat:'s' }}{% endif %}">Next</a>
