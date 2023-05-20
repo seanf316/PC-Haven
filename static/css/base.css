@@ -279,8 +279,6 @@ a.category-badge span:focus {
     color: var(--bg-green) !important;
 }
 
-
-
 .breadcrumb {
     background: var(--bg-offwhite);
 }
@@ -299,6 +297,16 @@ a.category-badge span:focus {
     color: var(--primary-text);
 }
 
+/* ------------------------------------ Back To Top ------------------------------------ */
+
+#btn-back-to-top {
+    display: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
 
 /* ------------------------------------ Media Queries ------------------------------------ */
 
