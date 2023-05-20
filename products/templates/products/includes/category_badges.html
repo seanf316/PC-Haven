@@ -1,17 +1,24 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12 mb-3">
-            {% for category in allcategories %}
-            {% if category.name == selected_category %}
-            {% for subcategory in category.sub_categories.all %}
-            <a class="category-badge text-decoration-none"
-                href="{% url 'products' %}?category={{ category.name }}&sub_category={{ subcategory.name }}">
-                <span class="p-2 badge badge-white text-black rounded">
-                    {{ subcategory.friendly_name }}</span>
-            </a>
-            {% endfor %}
-            {% endif %}
-            {% endfor %}
-        </div>
+<div class="row">
+    <div class="col-12 mb-2">
+        {% if categories %}
+        {% for category in allcategories %}
+        {% if category.name == selected_category %}
+        {% for subcategory in category.sub_categories.all %}
+        <a class="category-badge text-decoration-none"
+            href="{% url 'products' %}?category={{ category.name }}&sub_category={{ subcategory.name }}">
+            <span class="p-2 badge badge-white text-black rounded">
+                {{ subcategory.friendly_name }}</span>
+        </a>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {% else %}
+        {% for category in allcategories %}
+        <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ category.name }}">
+            <span class="p-2 badge badge-white text-black rounded">
+                {{ category.friendly_name }}</span>
+        </a>
+        {% endfor %}
+        {% endif %}
     </div>
 </div>

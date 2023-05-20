@@ -56,7 +56,7 @@
     margin: 1rem auto;
 }
 
-/* Product Detail */
+/* ------------------------------------ Product Detail ------------------------------------ */
 
 .border-white {
     border: 2px solid var(--bg-white);
@@ -126,3 +126,10 @@
     border: none;
 }
 
+/* ------------------------------------ Sorting ------------------------------------ */
+
+.custom-select:focus,
+.custom-select:active {
+    box-shadow: var(--bg-green) !important;
+    outline: var(--bg-green) !important;
+}

@@ -1,58 +1,57 @@
-<div class="container">
-    <div class="row no-gutters mb-2">
-        {% for product in products%}
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex pr-lg-2 pb-2">
-            <div class="card p-1 flex-fill">
-                <a href="" class="text-right favourite"><i class="fa-regular fa-heart"></i></a>
-                <!-- <a href="" class="text-right favourite"><i class="fa-solid fa-heart"></i></a> -->
-                <div class="card-img-top p-1">
-                    {% if product.image %}
-                    <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image.url }}" class="img-fluid"
-                            alt="{{ product.name }}"></a>
-                    {% else %}
-                    <a href="{% url 'product_detail' product.id %}"><img
-                            src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
-                            class="img-fluid" alt="{{ product.name }}"></a>
-                    {% endif %}
-                </div>
-                <div
-                    class="card-body d-flex flex-column justify-content-center align-items-center h-10 bg-green text-white">
-                    <span class="text-center font-weight-bold">{{ product.name|safe }}</span>
-                </div>
-                {% if product.category %}
-                <p class="mt-1 mb-0 p-1 small text-center prod-category">
-                    <a
-                        href="{% url 'products' %}?category={{ product.category.name }}&sub_category={{ product.sub_category.name}}">
-                        <i class="fas fa-tag mr-1"></i>{{ product.sub_category.friendly_name }}
-                    </a>
-                </p>
+<div class="row my-2">
+    {% for product in products%}
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex">
+        <div class="card p-1 flex-fill">
+            <a href="" class="text-right favourite"><i class="fa-regular fa-heart"></i></a>
+            <!-- <a href="" class="text-right favourite"><i class="fa-solid fa-heart"></i></a> -->
+            <div class="card-img-top p-1">
+                {% if product.image %}
+                <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image.url }}" class="img-fluid"
+                        alt="{{ product.name }}"></a>
+                {% else %}
+                <a href="{% url 'product_detail' product.id %}"><img
+                        src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp" class="img-fluid"
+                        alt="{{ product.name }}"></a>
                 {% endif %}
-                <div class="card-body h-20 flex-fill text-center">
-                    <p class="text-green font-weight-bold text-lg">€{{ product.price }}</p>
-                    <a href="#" class="btn cta cart-add">ADD&nbsp;&nbsp;<i class="fa-solid fa-cart-shopping"></i></a>
-                    <p class="small pt-2"><i class="fa-regular fa-square-check fa-sm"></i> In Stock</p>
-                </div>
+            </div>
+            <div
+                class="card-body d-flex flex-column justify-content-center align-items-center h-10 bg-green text-white">
+                <span class="text-center font-weight-bold">{{ product.name|safe }}</span>
+            </div>
+            {% if product.category %}
+            <p class="mt-1 mb-0 p-1 small text-center prod-category">
+                <a
+                    href="{% url 'products' %}?category={{ product.category.name }}&sub_category={{ product.sub_category.name}}">
+                    <i class="fas fa-tag mr-1"></i>{{ product.sub_category.friendly_name }}
+                </a>
+            </p>
+            {% endif %}
+            <div class="card-body h-20 flex-fill text-center">
+                <p class="text-green font-weight-bold text-lg">€{{ product.price }}</p>
+                <a href="#" class="btn cta cart-add">ADD&nbsp;&nbsp;<i class="fa-solid fa-cart-shopping"></i></a>
+                <p class="small pt-2"><i class="fa-regular fa-square-check fa-sm"></i> In Stock</p>
             </div>
         </div>
-        {% if forloop.counter|divisibleby:1 %}
-        <div class="col-12 d-sm-none">
-            <hr>
-        </div>
-        {% endif %}
-        {% if forloop.counter|divisibleby:2 %}
-        <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
-            <hr>
-        </div>
-        {% endif %}
-        {% if forloop.counter|divisibleby:3 %}
-        <div class="col-12 d-none d-lg-block d-xl-none">
-            <hr>
-        </div>
-        {% endif %}
-        {% if forloop.counter|divisibleby:4 %}
-        <div class="col-12 d-none d-xl-block">
-            <hr>
-        </div>
-        {% endif %}
-        {% endfor %}
     </div>
+    {% if forloop.counter|divisibleby:1 %}
+    <div class="col-12 d-sm-none">
+        <hr>
+    </div>
+    {% endif %}
+    {% if forloop.counter|divisibleby:2 %}
+    <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
+        <hr>
+    </div>
+    {% endif %}
+    {% if forloop.counter|divisibleby:3 %}
+    <div class="col-12 d-none d-lg-block d-xl-none">
+        <hr>
+    </div>
+    {% endif %}
+    {% if forloop.counter|divisibleby:4 %}
+    <div class="col-12 d-none d-xl-block">
+        <hr>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>

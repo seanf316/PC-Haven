@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages
-from django.db.models import Q
+from django.db.models import Q, Count
 from .models import Product, CategoryGroup, SubCategory
 
 
@@ -9,6 +9,7 @@ def allproducts(request):
     """A view to show all products, including sorting and search queries"""
 
     products = Product.objects.all()
+    total_products = Product.objects.count()
     query = None
     categories = None
     subcategories = None
@@ -68,6 +69,7 @@ def allproducts(request):
         "subcategories": subcategories,
         "current_sorting": current_sorting,
         "selected_category": selected_category,
+        "total_products": total_products,
     }
 
     return render(request, "products/products.html", context)

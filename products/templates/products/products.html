@@ -31,18 +31,25 @@
             </div>
         </div>
     </div>
-    <!-- Breadcrumbs -->
-    {% include "./includes/breadcrumbs.html" %}
 
-    <!-- Category Badges -->
-    {% include "./includes/category_badges.html" %}
+    <div class="container">
+        <!-- Breadcrumbs -->
+        {% include "./includes/breadcrumbs.html" %}
 
-    <!-- Product Card -->
-    {% include "./includes/product_card.html" %}
+        <!-- Category Badges -->
+        {% include "./includes/category_badges.html" %}
 
-    <!-- Pagination -->
-    {% include "./includes/pagination.html" %}
+        <!-- Product Sorting -->
+        {% if products|length >= 2 %}
+        {% include "./includes/product_sorting.html" %}
+        {% endif %}
 
+        <!-- Product Card -->
+        {% include "./includes/product_card.html" %}
+
+        <!-- Pagination -->
+        {% include "./includes/pagination.html" %}
+    </div>
 </section>
 <!-- Products End -->
 {% endblock %}
