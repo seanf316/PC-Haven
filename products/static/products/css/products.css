@@ -6,6 +6,12 @@
     --primary-text: #3e3d3d;
 }
 
+/* ------------------------------------ Helpers ------------------------------------ */
+
+.text-sm {
+    font-size: .9rem;
+}
+
 /* ------------------------------------ All Products ------------------------------------ */
 
 .card {
@@ -91,13 +97,14 @@
     background-color: var(--bg-white);
     border: 2px solid var(--bg-green);
     font-weight: 700;
-    margin: 0 .1rem;
+    margin: .1rem .1rem;
+    width: 100%;
 }
 
 .product .nav-item .active {
     background-color: var(--bg-green);
     font-weight: 700;
-    margin: 0 .1rem;
+    margin: .1rem .1rem;
     border-radius: 0;
 }
 
@@ -141,4 +148,56 @@
 .custom-select:active {
     box-shadow: var(--bg-green) !important;
     outline: var(--bg-green) !important;
+}
+
+/* ------------------------------------ Edit Product ------------------------------------ */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    color: #dc3545;
+    border-radius: 0;
+}
+
+.prod-form label {
+    color: var(--bg-green);
+    font-weight: 700;
+}
+
+.prod-form input {
+    border: 1px solid var(--bg-green);
+}
+
+.prod-form select {
+    border: 1px solid var(--bg-green);
+}
+
+/* ------------------------------------ Product Management ------------------------------------ */
+
+
+
+@media screen and (min-width: 768px) {
+
+    .product .nav-item {
+        width: fit-content;
+    }
 }
