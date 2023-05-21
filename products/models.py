@@ -66,7 +66,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = ResizedImageField(
-        size=[600, None],
+        size=[600, 450],
         quality=75,
         upload_to="products",
         force_format="WEBP",
