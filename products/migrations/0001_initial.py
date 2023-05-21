@@ -2,47 +2,103 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import djrichtextfield.models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='CategoryGroup',
+            name="CategoryGroup",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200)),
-                ('friendly_name', models.CharField(blank=True, max_length=254, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=200)),
+                (
+                    "friendly_name",
+                    models.CharField(blank=True, max_length=254, null=True),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='SubCategory',
+            name="SubCategory",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200)),
-                ('friendly_name', models.CharField(blank=True, max_length=254, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=200)),
+                (
+                    "friendly_name",
+                    models.CharField(blank=True, max_length=254, null=True),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('sku', models.CharField(max_length=254, unique=True)),
-                ('name', models.CharField(max_length=254)),
-                ('slug', models.SlugField(blank=True, editable=False, max_length=254, null=True, unique=True)),
-                ('description', djrichtextfield.models.RichTextField()),
-                ('information', djrichtextfield.models.RichTextField()),
-                ('price', models.DecimalField(decimal_places=2, max_digits=6)),
-                ('image_url', models.URLField(blank=True, max_length=1024, null=True)),
-                ('image', models.ImageField(blank=True, null=True, upload_to='')),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='products.categorygroup')),
-                ('sub_categeory', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='products.subcategory')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("sku", models.CharField(max_length=254, unique=True)),
+                ("name", models.CharField(max_length=254)),
+                (
+                    "slug",
+                    models.SlugField(
+                        blank=True,
+                        editable=False,
+                        max_length=254,
+                        null=True,
+                        unique=True,
+                    ),
+                ),
+                ("price", models.DecimalField(decimal_places=2, max_digits=6)),
+                (
+                    "image_url",
+                    models.URLField(blank=True, max_length=1024, null=True),
+                ),
+                (
+                    "image",
+                    models.ImageField(blank=True, null=True, upload_to=""),
+                ),
+                (
+                    "category",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        to="products.categorygroup",
+                    ),
+                ),
+                (
+                    "sub_categeory",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        to="products.subcategory",
+                    ),
+                ),
             ],
         ),
     ]
