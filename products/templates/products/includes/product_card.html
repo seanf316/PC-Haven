@@ -37,6 +37,15 @@
                 <p class="small pt-2"><i class="fa-regular fa-rectangle-xmark fa-sm text-danger"></i> Out of Stock</p>
                 {% endif %}
             </div>
+            {% if request.user.is_superuser %}
+            <div class="text-center">
+                <a href="{% url 'edit_product' product.id %}" class="text-green btn text-sm">Edit <i
+                        class="fa-solid fa-sm fa-pencil"></i></a>
+                <span class="text-sm">|</span>
+                <a href="{% url 'edit_product' product.id %}" class="text-danger btn text-sm">Delete <i
+                        class="fa-solid fa-trash"></i></a>
+            </div>
+            {% endif %}
         </div>
     </div>
     {% if forloop.counter|divisibleby:1 %}
