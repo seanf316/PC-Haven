@@ -1,5 +1,4 @@
 from django.db import models
-from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 from django.core.validators import MinValueValidator
 from django.utils.text import slugify
@@ -62,8 +61,8 @@ class Product(models.Model):
     slug = models.SlugField(
         max_length=254, null=True, blank=True, unique=True, editable=False
     )
-    description = RichTextField()
-    information = RichTextField()
+    description = models.TextField()
+    information = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = ResizedImageField(
