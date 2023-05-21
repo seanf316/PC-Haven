@@ -4,14 +4,14 @@
         <div class="card p-1 flex-fill">
             <a href="" class="text-right favourite"><i class="fa-regular fa-heart"></i></a>
             <!-- <a href="" class="text-right favourite"><i class="fa-solid fa-heart"></i></a> -->
-            <div class="card-img-top p-1">
+            <div class="card-img-top p-1 h-40 text-center">
                 {% if product.image %}
-                <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image.url }}" class="img-fluid"
-                        alt="{{ product.name }}"></a>
+                <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image.url }}"
+                        class="img-fluid h-100" alt="{{ product.name }}"></a>
                 {% else %}
                 <a href="{% url 'product_detail' product.id %}"><img
-                        src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp" class="img-fluid"
-                        alt="{{ product.name }}"></a>
+                        src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+                        class="img-fluid h-100" alt="{{ product.name }}"></a>
                 {% endif %}
             </div>
             <div
@@ -38,6 +38,7 @@
                 {% endif %}
             </div>
             {% if request.user.is_superuser %}
+            <hr class="mb-0">
             <div class="text-center">
                 <a href="{% url 'edit_product' product.id %}" class="text-green btn text-sm">Edit <i
                         class="fa-solid fa-sm fa-pencil"></i></a>

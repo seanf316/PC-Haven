@@ -73,6 +73,16 @@ body {
     height: 20%;
 }
 
+.h-40 {
+    height: 40%;
+}
+
+.row > .col,
+.row > [class*="col-"] {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
 /* ------------------------------------ Navbar ------------------------------------ */
 
 .logo {
