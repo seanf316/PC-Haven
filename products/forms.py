@@ -20,18 +20,23 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = "__all__"
-        exclude = ["sku", "in_stock", "category"]
+        exclude = ["sku", "in_stock"]
 
         widgets = {
+            "features": SummernoteWidget(),
             "description": SummernoteWidget(),
-            "information": SummernoteWidget(),
             "image": CustomClearableFileInput(),
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        categories = CategoryGroup.objects.all()
+        category_friendly_names = [
+            (c.id, c.get_friendly_name()) for c in categories
+        ]
         subcategories = SubCategory.objects.all()
         sub_category_friendly_names = [
             (c.id, c.get_friendly_name()) for c in subcategories
         ]
+        self.fields["category"].choices = category_friendly_names
         self.fields["sub_category"].choices = sub_category_friendly_names
