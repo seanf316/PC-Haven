@@ -40,11 +40,8 @@
             {% if request.user.is_superuser %}
             <hr class="mb-0">
             <div class="text-center">
-                <a href="{% url 'edit_product' product.id %}" class="text-green btn text-sm">Edit <i
+                <a href="{% url 'edit_product' product.id %}" class="text-green btn text-sm">Manage Product <i
                         class="fa-solid fa-sm fa-pencil"></i></a>
-                <span class="text-sm">|</span>
-                <a href="{% url 'edit_product' product.id %}" class="text-danger btn text-sm">Delete <i
-                        class="fa-solid fa-trash"></i></a>
             </div>
             {% endif %}
         </div>
@@ -71,3 +68,9 @@
     {% endif %}
     {% endfor %}
 </div>
+
+<script>
+    function closeModal(modalId) {
+        $('#delete' + modalId).modal('hide');
+    }
+</script>
