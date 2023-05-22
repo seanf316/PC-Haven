@@ -54,7 +54,7 @@ def allproducts(request):
             queries = (
                 Q(name__icontains=query)
                 | Q(description__icontains=query)
-                | Q(information__icontains=query)
+                | Q(features__icontains=query)
                 | Q(category__name__icontains=query)
                 | Q(sub_category__name__icontains=query)
             )
@@ -117,7 +117,7 @@ def add_product(request):
     else:
         form = ProductForm()
 
-    template = "products/product_management.html"
+    template = "products/add_product.html"
     context = {
         "form": form,
     }
@@ -153,7 +153,9 @@ def edit_product(request, product_id):
             )
     else:
         form = ProductForm(instance=product)
-        messages.info(request, f"You are editing {product.name}")
+        messages.info(
+            request, f"{user.username} you are editing {product.name}"
+        )
 
     template = "products/edit_product.html"
     context = {
@@ -162,3 +164,20 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_id):
+    """Delete a product from the store"""
+    user = request.user
+
+    if not user.is_superuser:
+        messages.error(
+            request, f"Sorry {user.username}, only store owners can do that."
+        )
+        return redirect(reverse("home"))
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, "Product deleted!")
+    return redirect(reverse("products"))
