@@ -37,8 +37,8 @@
                         <p class="font-weight-bold text-lg text-uppercase text-green pt-2">
                             Features
                         </p>
-                        <div class="pl-3 features">
-                            <p>{{ product.description|safe }}</p>
+                        <div class="features">
+                            <p>{{ product.features|safe }}</p>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -63,9 +63,20 @@
                         {% endif %}
                     </div>
                 </div>
+                <div class="row bg-white w-100 mx-auto d-flex flex-column justify-content-center">
+                    <div class="col-12">
+                        {% if request.user.is_superuser %}
+                        <hr class="mb-0">
+                        <div class="text-center">
+                            <a href="{% url 'edit_product' product.id %}" class="text-green btn text-sm">Manage Product <i
+                                class="fa-solid fa-sm fa-pencil"></i></a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
                 <div class="row bg-white w-100 m-0">
                     <div class="col-12">
-                        <hr>
+                        <hr class="mt-0">
                     </div>
                 </div>
             </div>
@@ -98,7 +109,7 @@
                         aria-labelledby="pills-home-tab">
                         <h2>{{ product.name}}</h2>
                         <hr>
-                        <p>{{ product.information|safe}}</p>
+                        <p>{{ product.description|safe}}</p>
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         ...

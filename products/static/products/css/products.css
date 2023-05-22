@@ -91,6 +91,10 @@
     font-size: .9rem;
 }
 
+.features ul {
+    padding-left: .8rem!important;
+}
+
 /* ------------------------------------ Decription/Review ------------------------------------ */
 
 .product .nav-item {
