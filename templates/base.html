@@ -44,9 +44,30 @@
 <body class="d-flex flex-column">
     <header class="container-fluid box">
         <div id="banner" class="row text-center text-white font-weight-bold">
-            <div class="col-12 bg-green">
-                <p class="logo-font my-1 text-uppercase">Free shipping on orders over ${{ free_shipping_threshold }}!
-                </p>
+            <div class="col-12 bg-green py-2">
+                <div id="delivery-slider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item text-center active">
+                            <p class="banner-font font-italic mb-0"><i
+                                    class="fa-solid fa-sm- fa-flip-horizontal fa-truck banner-icon"></i> Free shipping
+                                on orders over €{{ free_shipping_threshold }}!</p>
+                        </div>
+                        {% if free_shipping_delta == 0 %}
+                        <div class="carousel-item text-center">
+                            <p class="banner-font font-italic mb-0"><i
+                                    class="fa-solid fa-flip-horizontal fa-truck banner-icon"></i>
+                                Nice! You qualify for free shipping!!!</p>
+                        </div>
+                        {% else %}
+                        <div class="carousel-item text-center">
+                            <p class="banner-font font-italic mb-0"><i
+                                    class="fa-solid fa-flip-horizontal fa-truck banner-icon"></i>
+                                Spend just <strong>€{{ free_shipping_delta }} more to qualify for free
+                                    shipping!</strong></p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
