@@ -52,10 +52,14 @@
         </div>
     </li>
     <li class="list-inline-item d-lg-none">
-        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}{% endif %} nav-link"
-            href="{% url 'view_cart' %}">
+        <a class="{% if grand_total %}text-green font-weight-bold{% endif %} nav-link" href="{% url 'view_cart' %}">
             <div class="text-center">
-                <div><i class="fa-solid fa-cart-shopping fa-lg"></i></div>
+                <div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    {% if product_count %}
+                    <span class='product-counter'>{{ product_count }}</span>
+                    {% endif %}
+                </div>
                 <p class="my-0">
                     {% if grand_total %}
                     €{{ grand_total|floatformat:2 }}
@@ -167,10 +171,14 @@
         </div>
     </li>
     <li class="list-inline-item d-lg-block d-none">
-        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}{% endif %} nav-link"
-            href="{% url 'view_cart' %}">
+        <a class="{% if grand_total %} text-green font-weight-bold{% endif %} nav-link" href="{% url 'view_cart' %}">
             <div class="text-center">
-                <div><i class="fa-solid fa-cart-shopping"></i></div>
+                <div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    {% if product_count %}
+                    <span class='product-counter'>{{ product_count }}</span>
+                    {% endif %}
+                </div>
                 <p class="my-0">
                     {% if grand_total %}
                     €{{ grand_total|floatformat:2 }}
