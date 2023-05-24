@@ -73,14 +73,6 @@
 
 /* ------------------------------------ Product Detail ------------------------------------ */
 
-.border-white {
-    border: 2px solid var(--bg-white);
-}
-
-.border-green {
-    border: 2px solid var(--bg-green);
-}
-
 .product h1 {
     font-size: 1.5rem;
     font-weight: 700;

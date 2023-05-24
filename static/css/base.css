@@ -32,7 +32,7 @@ body {
 }
 
 .text-green {
-    color: var(--bg-green);
+    color: var(--bg-green)!important;
 }
 
 .text-lg {
@@ -45,6 +45,14 @@ body {
 
 .bg-offwhite {
     background-color: var(--bg-offwhite);
+}
+
+.border-white {
+    border: 2px solid var(--bg-white);
+}
+
+.border-green {
+    border: 2px solid var(--bg-green);
 }
 
 .btn:hover,
@@ -194,12 +202,26 @@ i.fa-solid.fa-bars {
     border: 1px solid var(--bg-green);
 }
 
+.product-counter {
+    background: var(--bg-offwhite);
+    border: 1px solid var(--bg-green);
+    color: var(--bg-green);
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    margin: 0;
+    font-size: 12px;
+    position: absolute;
+    transform: translateX(-10%);
+    transform: translateY(-50%);
+}
+
 /* ------------------------------------ Homepage ------------------------------------ */
 
 .hero {
     display: flex;
     align-items: center;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 120px);
     background: url('https://pc-haven.s3.eu-north-1.amazonaws.com/media/pchaven/wave.svg') no-repeat center center;
 }
 
@@ -343,6 +365,10 @@ a.category-badge span:focus {
 
 @media screen and (min-width: 768px) {
 
+    #banner {
+        font-size: 1.2rem;
+    }
+
     .hero p {
         padding: 0 .5rem;
     }
@@ -371,7 +397,7 @@ a.category-badge span:focus {
     }
 
     .hero {
-        min-height: calc(100vh - 128px);
+        min-height: calc(100vh - 140px);
     }
 
     .hero h1 {
