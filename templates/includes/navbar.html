@@ -52,7 +52,7 @@
         </div>
     </li>
     <li class="list-inline-item d-lg-none">
-        <a class="{% if grand_total %}text-green font-weight-bold{% endif %} nav-link" href="{% url 'view_cart' %}">
+        <a class="{% if grand_total %}cart-green font-weight-bold{% endif %} nav-link" href="{% url 'view_cart' %}">
             <div class="text-center">
                 <div>
                     <i class="fa-solid fa-cart-shopping"></i>
@@ -171,7 +171,7 @@
         </div>
     </li>
     <li class="list-inline-item d-lg-block d-none">
-        <a class="{% if grand_total %} text-green font-weight-bold{% endif %} nav-link" href="{% url 'view_cart' %}">
+        <a class="{% if grand_total %} cart-green font-weight-bold{% endif %} nav-link" href="{% url 'view_cart' %}">
             <div class="text-center">
                 <div>
                     <i class="fa-solid fa-cart-shopping"></i>

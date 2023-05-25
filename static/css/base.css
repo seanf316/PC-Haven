@@ -32,7 +32,7 @@ body {
 }
 
 .text-green {
-    color: var(--bg-green)!important;
+    color: var(--bg-green);
 }
 
 .text-lg {
@@ -53,6 +53,10 @@ body {
 
 .border-green {
     border: 2px solid var(--bg-green);
+}
+
+.border-green-light {
+    border: 1px solid var(--bg-green);
 }
 
 .btn:hover,
@@ -159,6 +163,10 @@ body {
 .navbar a.nav-link {
     color: var(--primary-text);
     padding: 0.5rem;
+}
+
+.cart-green {
+    color: var(--bg-green)!important;
 }
 
 .navbar a.nav-link:hover,
