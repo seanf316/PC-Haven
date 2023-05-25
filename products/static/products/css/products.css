@@ -41,14 +41,14 @@
 }
 
 .prod-category a:hover,
-.category-white a:hover {
+.category-green a:hover {
     text-transform: uppercase;
     font-weight: 700;
     text-decoration: none;
 }
 
-.category-white a {
-    color: var(--bg-white);
+.category-green a {
+    color: var(--bg-green);
 }
 
 .cart-add {

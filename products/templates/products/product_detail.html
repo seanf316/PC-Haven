@@ -7,138 +7,163 @@
     </div>
 </div>
 {% endblock %} {% block content %}
-<!-- Product Start -->
+<!-- Product Detail -->
 <section class="product">
     <div class="container">
-        <!-- Features Start -->
-        <div class="row mt-5 p-1 bg-green border-green flex-fill rounded w-100 mx-auto">
-            <div class="col-lg-4 bg-white align-items-center p-2 d-flex flex-column rounded">
-                <a href="" class="favourite ml-auto p-1"><i class="fa-regular fa-heart"></i></a>
-                {% if product.image %}
-                <img src="{{ product.image.url }}" width="600" height="450" class="img-fluid"
-                    alt="{{ product.name }}" />
-                {% else %}
-                <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
-                    class="img-fluid flex-fill" alt="{{ product.name }}" />
-                {% endif %}
-            </div>
-            <div class="col-lg-8 p-2">
-                <h1 class="text-center text-white mb-0">{{ product.name}}</h1>
+        <div class="row w-100 mx-auto">
+            <div class="col-12 text-green text-center">
+                <hr>
+                <h1 class="mb-0">{{ product.name}}</h1>
                 {% if product.sub_category %}
-                <p class="mb-0 p-1 small text-center category-white">
+                <p class="mb-0 p-1 small category-green">
                     <a
                         href="{% url 'products' %}?category={{ product.category.name }}&sub_category={{ product.sub_category.name}}">
                         <i class="fas fa-tag mr-1"></i>{{ product.sub_category.friendly_name }}
                     </a>
                 </p>
                 {% endif %}
-                <div class="row bg-white w-100 m-0">
-                    <div class="col-lg-6">
-                        <p class="font-weight-bold text-lg text-uppercase text-green pt-2">
-                            Features
-                        </p>
-                        <div class="features">
+                <hr>
+            </div>
+        </div>
+        <!-- Features Start -->
+        <div class="row bg-green p-1 w-100 mx-auto rounded">
+            <div class="col-12 col-lg-4 d-flex flex-column bg-white border-green rounded py-2">
+                <div class="ml-auto p-1">
+                    <a href="" class="favourite"><i class="fa-regular fa-heart"></i></a>
+                </div>
+                <div class="text-center d-flex flex-fill">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" width="500" height="400" class="img-fluid flex-fill"
+                        alt="{{ product.name }}" />
+                    {% else %}
+                    <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+                        class="img-fluid flex-fill" alt="{{ product.name }}" />
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-lg-8 bg-white border-green rounded">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="mt-3 pl-2">
+                            <span class="font-weight-bold text-uppercase text-green">
+                                Features
+                            </span>
+                        </div>
+                        <div class="features pl-2">
                             <p>{{ product.features|safe }}</p>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <div class="pt-2">
-                            <span class="font-weight-bold text-lg text-green">Customer Rating = <i
+                    <div class="col-12 col-md-6">
+                        <div class="mt-3 pl-2">
+                            <span class="font-weight-bold text-uppercase text-green">Customer Rating = <i
                                     class="fa-solid fa-star"></i> 0 / 5</span><br />
                             <span class="font-italic text-prime small">Be the first to rate this product</span>
                         </div>
-                        <p class="text-lg pt-3">
-                            <span class="text-green font-weight-bold">Price: </span>
-                            €{{ product.price }}
-                        </p>
-                        {% if product.in_stock %}
-                        <p class="pt-2 text-green font-weight-bold text-lg">
-                            <i class="fa-regular fa-square-check"></i>
-                            {{ product.stock_level}} In Stock
-                        </p>
-                        {% else %}
-                        <p class="pt-2 font-weight-bold text-lg"><i
-                                class="fa-regular fa-rectangle-xmark text-danger"></i> Out of
-                            Stock</p>
-                        {% endif %}
                     </div>
                 </div>
-                <div class="row bg-white w-100 mx-auto d-flex flex-column justify-content-center">
-                    <div class="col-12">
-                        {% if request.user.is_superuser %}
-                        <hr class="mb-0">
-                        <div class="text-center">
-                            <a href="{% url 'edit_product' product.id %}" class="text-green btn text-sm">Manage Product
-                                <i class="fa-solid fa-sm fa-pencil"></i></a>
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="row bg-white w-100 m-0">
-                    <div class="col-12">
-                        <hr class="mt-0">
-                        <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
-                            {% csrf_token %}
-                            <div class="form-row">
-                                <div class="col-12">
-                                    <p class="mt-3"><strong>Quantity:</strong></p>
-                                    <div class="form-group w-50">
+                <hr>
+                <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-5 d-flex mt-2">
+                                    <div class="pl-2">
+                                        <p>
+                                            <span class="text-green font-weight-bold">Price: </span>
+                                            €{{ product.price }}
+                                        </p>
+                                    </div>
+                                    <div class="pl-5">
+                                        {% if product.in_stock %}
+                                        <p>
+                                            <i class="fa-regular fa-square-check text-green"></i>
+                                            {{ product.stock_level}} In Stock
+                                        </p>
+                                        {% else %}
+                                        <p><i class="fa-regular fa-rectangle-xmark text-danger"></i> Out of
+                                            Stock</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-7 px-4 d-flex flex-fill">
+                                    <div class="pr-3 mt-2">
+                                        <p class="text-green font-weight-bold">Qty:</p>
+                                    </div>
+                                    <div class="form-group flex-fill">
                                         <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="decrement-qty btn btn-black rounded-0"
+                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
                                             <input class="form-control qty_input" type="number" name="quantity"
-                                                value="1" min="1" max="99" data-item_id="{{ product.id }}"
-                                                id="id_qty_{{ product.id }}">
+                                                value="1" min="1" max="{{product.stock_level}}"
+                                                data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                            <div class="input-group-append">
+                                                <button class="increment-qty btn btn-black rounded-0"
+                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-12">
-                                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                            </div>
+                            <hr>
+                            <div class="row mb-3">
+                                <div class="col-12 col-md-8 mx-auto d-flex flex-wrap">
+                                    <a href="{% url 'products' %}" class="btn cta flex-grow-1 font-weight-bold">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5"
-                                        value="Add to Bag">
+                                    <button type="submit" name="action" value="Add To Cart"
+                                        class="btn cta flex-grow-1 font-weight-bold">ADD&nbsp;&nbsp;<i
+                                            class="fa-solid fa-cart-shopping"></i></button>
                                 </div>
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
-        <!-- Features Start -->
     </div>
 
+    <!-- Description/Reviews Start -->
     <div class="container">
-        <!-- Description/Reviews Start -->
         <div class="row mt-2 mb-5 w-100 p-1 border-green mx-auto rounded-lg bg-white">
             <div class="col-12 p-0">
                 <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
                     <li class="nav-item flex-grow-1" role="presentation">
                         <button class="nav-link active w-100 text-uppercase font-weight-bold text-green text-lg m-0"
-                            id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab"
-                            aria-controls="pills-home" aria-selected="true">
+                            id="pills-description-tab" data-toggle="pill" data-target="#pills-description" type="button"
+                            role="tab" aria-controls="pills-description" aria-selected="true">
                             Description
                         </button>
                     </li>
                     <li class="nav-item flex-grow-1" role="presentation">
                         <button class="nav-link w-100 text-uppercase font-weight-bold text-green text-lg m-0"
-                            id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button"
-                            role="tab" aria-controls="pills-profile" aria-selected="false">
+                            id="pills-reviews-tab" data-toggle="pill" data-target="#pills-reviews" type="button"
+                            role="tab" aria-controls="pills-reviews" aria-selected="false">
                             Reviews
                         </button>
                     </li>
                 </ul>
                 <div class="tab-content px-2" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                        aria-labelledby="pills-home-tab">
+                    <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+                        aria-labelledby="pills-description-tab">
                         <h2>{{ product.name}}</h2>
                         <hr>
                         <p>{{ product.description|safe}}</p>
                     </div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="tab-pane fade" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
                         ...
                     </div>
                 </div>
@@ -148,4 +173,9 @@
     </div>
 </section>
 <!-- Products End -->
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'products/js/quantityprod.js' %}"></script>
 {% endblock %}
