@@ -18,15 +18,18 @@ def view_cart(request):
 def add_to_cart(request, product_id):
     """Add a product and its quantity to the cart"""
 
-    quantity = int(request.POST.get("quantity"))
-    redirect_url = request.POST.get("redirect_url")
-    cart = request.session.get("cart", {})
+    if request.method == "POST":
+        quantity = int(request.POST.get("quantity"))
 
-    if product_id in list(cart.keys()):
-        cart[product_id] += quantity
+        cart = request.session.get("cart", {})
+        if product_id in cart:
+            cart[product_id] += quantity
+        else:
+            cart[product_id] = quantity
+
+        request.session["cart"] = cart
+
+        return redirect(reverse("view_cart"))
+
     else:
-        cart[product_id] = quantity
-
-    request.session["cart"] = cart
-
-    return render(request, "cart/cart.html")
+        return HttpResponse("Invalid request")
