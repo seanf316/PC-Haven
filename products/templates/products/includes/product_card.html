@@ -29,7 +29,12 @@
             <div class="card-body h-20 flex-fill text-center">
                 <p class="text-green font-weight-bold text-lg">€{{ product.price }}</p>
                 {% if product.in_stock %}
-                <a href="#" class="btn cta cart-add">ADD&nbsp;&nbsp;<i class="fa-solid fa-cart-shopping"></i></a>
+                <form action="{% url 'add_to_cart' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn cta cart-add">ADD&nbsp;&nbsp;<i
+                            class="fa-solid fa-cart-shopping"></i></button>
+                </form>
                 <p class="small pt-2"><i class="fa-regular fa-square-check fa-sm"></i> In Stock</p>
                 {% else %}
                 <a href="#" class="btn text-green cart-add oostock">ADD&nbsp;&nbsp;<i
