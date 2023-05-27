@@ -57,3 +57,48 @@ def edit_cart(request, product_id):
     request.session["cart"] = cart
 
     return redirect(reverse("view_cart"))
+
+
+def delete_from_cart(request, product_id):
+    """Remove a product and its quantity from the cart"""
+
+    try:
+        product = get_object_or_404(Product, id=product_id)
+        cart = request.session.get("cart", {})
+
+        if product_id in cart:
+            del cart[product_id]
+            messages.success(
+                request, f"Removed all {product.name} from your cart"
+            )
+
+            request.session["cart"] = cart
+            return redirect(reverse("view_cart"))
+            return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, f"Error removing item: {e}")
+
+        return HttpResponse(status=500)
+
+
+def delete_all_cart(request):
+    """Remove all products from cart"""
+
+    try:
+        cart = request.session.get("cart", {})
+
+        if cart:
+            products = Product.objects.filter(id__in=cart.keys())
+
+            request.session["cart"] = {}
+            messages.success(request, "All items removed from your cart")
+
+        else:
+            messages.info(request, "Your cart is already empty")
+
+        return redirect(reverse("view_cart"))
+
+    except Exception as e:
+        messages.error(request, f"Error removing items: {e}")
+        return HttpResponse(status=500)
