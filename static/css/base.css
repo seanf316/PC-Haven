@@ -110,12 +110,6 @@ body {
     height: 40%;
 }
 
-.row > .col,
-.row > [class*="col-"] {
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
 /* ------------------------------------ Navbar ------------------------------------ */
 
 .logo {
@@ -367,6 +361,28 @@ a.category-badge span:focus {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
+}
+
+/* ------------------------------------ Cart ------------------------------------ */
+
+.cart a {
+    cursor: pointer;
+}
+
+.cart-shop:hover {
+    color: var(--bg-white);
+    background: var(--bg-green);
+}
+
+.credit-cards img {
+    height: 3rem;
+    width: 5rem;
+}
+
+.qty_input::-webkit-inner-spin-button,
+.qty_input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* ------------------------------------ Media Queries ------------------------------------ */
