@@ -2,10 +2,12 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from django.contrib.auth.models import User
 
 
 def cart_contents(request):
     "Function to manage the items in customer cart"
+    user = request.user
     cart_items = []
     total = 0
     product_count = 0
@@ -20,6 +22,7 @@ def cart_contents(request):
                 "product_id": product_id,
                 "quantity": quantity,
                 "product": product,
+                "product_count": product_count,
             }
         )
 
@@ -40,6 +43,7 @@ def cart_contents(request):
         "free_shipping_delta": free_shipping_delta,
         "free_shipping_threshold": settings.FREE_SHIPPING_THRESHOLD,
         "grand_total": grand_total,
+        "user": user,
     }
 
     return context
