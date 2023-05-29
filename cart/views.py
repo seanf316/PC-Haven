@@ -19,17 +19,22 @@ def add_to_cart(request, product_id):
     """Add a product and its quantity to the cart"""
 
     if request.method == "POST":
+        product = get_object_or_404(Product, id=product_id)
         quantity = int(request.POST.get("quantity"))
 
         cart = request.session.get("cart", {})
         if product_id in cart:
             cart[product_id] += quantity
+            messages.success(
+                request,
+                f"Updated {product.name} quantity to {cart[product_id]}",
+            )
         else:
             cart[product_id] = quantity
-
+            messages.success(request, f"Added {product.name} to cart.")
         request.session["cart"] = cart
 
-        return redirect(reverse("view_cart"))
+        return redirect(reverse("products"))
 
     else:
         return HttpResponse("Invalid request")
@@ -42,19 +47,20 @@ def edit_cart(request, product_id):
     quantity = int(request.POST.get("quantity"))
     cart = request.session.get("cart", {})
 
-    if quantity > 0:
-        cart[product_id] = quantity
-        messages.success(
-            request, f"Updated {product.name} quantity to {cart[product_id]}"
-        )
+    if quantity != cart.get(product_id):
+        if quantity > 0:
+            cart[product_id] = quantity
+            messages.success(
+                request,
+                f"Updated {product.name} quantity to {cart[product_id]}",
+            )
+        else:
+            cart.pop(product_id)
+            messages.success(
+                request, f"Removed {quantity} {product.name} from your cart"
+            )
 
-    else:
-        cart.pop(product_id)
-        messages.success(
-            request, f"Removed {quantity} {product.name} from your cart"
-        )
-
-    request.session["cart"] = cart
+        request.session["cart"] = cart
 
     return redirect(reverse("view_cart"))
 
@@ -68,11 +74,17 @@ def delete_from_cart(request, product_id):
 
         if product_id in cart:
             del cart[product_id]
-            messages.success(
-                request, f"Removed all {product.name} from your cart"
-            )
-
             request.session["cart"] = cart
+            
+            if cart:
+                messages.success(
+                request, f"Removed all {product.name} from your cart"
+                )
+            else:
+                messages.success(
+                request, f"Removed all {product.name} from your cart. Cart is now empty!"
+                )
+
             return redirect(reverse("view_cart"))
             return HttpResponse(status=200)
 
