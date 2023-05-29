@@ -49,14 +49,14 @@
                     <div class="carousel-inner">
                         <div class="carousel-item text-center active">
                             <p class="banner-font font-italic mb-0"><i
-                                    class="fa-solid fa-sm- fa-flip-horizontal fa-truck banner-icon"></i> Free shipping
+                                    class="fa-solid fa-sm- fa-flip-horizontal fa-truck banner-icon"></i> Free delivery
                                 on orders over €{{ free_shipping_threshold }}!</p>
                         </div>
                         {% if free_shipping_delta == 0 %}
                         <div class="carousel-item text-center">
                             <p class="banner-font font-italic mb-0"><i
                                     class="fa-solid fa-flip-horizontal fa-truck banner-icon"></i>
-                                Nice! You qualify for free shipping!!!</p>
+                                Nice! You qualify for free delivery!!!</p>
                         </div>
                         {% endif %}
                     </div>
@@ -69,7 +69,21 @@
     </header>
 
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -80,6 +94,9 @@
     {% endblock %}
 
     {% block postloadjs %}
+    {% if messages %}
+    <script src="{% static 'js/message.js' %}"></script>
+    {% endif %}
     {% endblock %}
 </body>
 
