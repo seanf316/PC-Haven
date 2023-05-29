@@ -385,6 +385,62 @@ a.category-badge span:focus {
     margin: 0;
 }
 
+/* ------------------------------------ Toasts ------------------------------------ */
+
+.message-container {
+    position: fixed;
+    top: 120px;
+    right: 15px;
+    z-index: 99999999999;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+.arrow-success {
+    border-bottom-color: var(--bg-green) !important;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+
+.cart-wrapper {
+    min-height: 7rem;
+    max-height: 12rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* ------------------------------------ Media Queries ------------------------------------ */
 
 @media screen and (min-width: 768px) {
@@ -430,6 +486,10 @@ a.category-badge span:focus {
 
     .hero p {
         padding: 0 2rem;
+    }
+
+    .message-container {
+        top: 141px;
     }
 }
 
