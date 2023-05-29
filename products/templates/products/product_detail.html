@@ -17,6 +17,7 @@
 <!-- Product Detail -->
 <section class="product">
     <div class="container">
+
         <div class="row w-100 mx-auto">
             <div class="col-12 text-green text-center">
                 <hr>
@@ -32,6 +33,25 @@
                 <hr>
             </div>
         </div>
+
+        <!-- Breadcrumbs -->
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb  px-0 mb-0">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'products' %}">All Products</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}">
+                                {{ product.category.friendly_name }}</a></li>
+                        <li class="breadcrumb-item"><a
+                                href="{% url 'products' %}?category={{ product.category.name }}&subcategory={{ product.sub_category.name }}">
+                                {{ product.sub_category.friendly_name }}</a></li>
+                        <li class="breadcrumb-item active current-item-crumb" aria-current="page">{{ product.name}}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
         <!-- Features Start -->
         <div class="row bg-green p-1 w-100 mx-auto rounded">
             <div class="col-12 col-lg-4 d-flex flex-column bg-white border-green rounded py-2">
