@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toast.toast('show');
 
-    toast.on('mouseenter', function () {
+    toast.on('mouseenter touchstart', function () {
         $(this).toast('show');
         clearTimeout(hideTimeout);
     });
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         toast.toast('hide');
     }, 3000);
 
-    toast.on('mouseleave', function () {
+    toast.on('mouseleave touchend', function () {
         hideTimeout = setTimeout(function () {
             toast.toast('hide');
         }, 3000);
