@@ -21,8 +21,13 @@
         <div class="row">
             <div class="col-12">
                 <hr>
+                {% if request.user.is_authenticated %}
+                <h1 class="logo-font text-green text-center mb-4">{{user.username}}'s Shopping Cart <i
+                        class="fa-solid fa-cart-shopping"></i></h1>
+                {% else %}
                 <h1 class="logo-font text-green text-center mb-4">My Shopping Cart <i
                         class="fa-solid fa-cart-shopping"></i></h1>
+                {% endif %}
                 <hr>
             </div>
         </div>
@@ -41,6 +46,11 @@
                         <div class="bg-white text-center img-container">
                             <a href="{% url 'product_detail' item.product.id %}"><img class="img-fluid rounded"
                                     src="{{ item.product.image.url }}"></a>
+                        </div>
+                        {% else %}
+                        <div class="bg-white text-center img-container">
+                            <a href="{% url 'product_detail' item.product.id %}"><img class="img-fluid rounded"
+                                    src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"></a>
                         </div>
                         {% endif %}
                     </div>
@@ -96,7 +106,7 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class="col-12 col-md-6 col-lg-4 px-0 px-md-3">
+            <div class="col-12 col-md-6 col-lg-4 p-0 pl-md-3">
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-1 w-100">
@@ -106,13 +116,13 @@
                                     Shopping</span>
                             </a>
                         </div>
-                        <div class="bg-green text-white text-lg text-center font-weight-bold">
-                            <p class="m-0 py-2">CART SUMMARY</p>
-                        </div>
                     </div>
                 </div>
                 <div class="row my-2">
                     <div class="col-12">
+                        <div class="bg-green text-white text-lg text-center font-weight-bold">
+                            <p class="m-0 py-2">CART SUMMARY</p>
+                        </div>
                         <div class="border-green p-2">
                             <p><span class="font-weight-bold text-green">Items:</span> {{ product_count }}</p>
                             <p><span class="font-weight-bold text-green">Subtotal:</span>
@@ -139,7 +149,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div>
-                            <a href=""
+                            <a href="{% url 'checkout' %}"
                                 class="border-green text-green cart-shop btn rounded-0 font-weight-bold text-lg w-100 m-0">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
