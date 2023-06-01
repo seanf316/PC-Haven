@@ -33,7 +33,7 @@ DEBUG = "DEVELOPMENT" in os.environ
 ALLOWED_HOSTS = [
     "pc-haven.herokuapp.com",
     "localhost",
-    "8000-seanf316-pchaven-lppnru9p4ne.ws-eu97.gitpod.io",
+    "8000-seanf316-pchaven-lppnru9p4ne.ws-eu98.gitpod.io",
 ]
 
 
@@ -263,3 +263,10 @@ else:
 
 FREE_SHIPPING_THRESHOLD = 100
 STANDARD_SHIPPING_PERCENTAGE = 10
+
+# Stripe
+STRIPE_CURRENCY = "eur"
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
+STRIPE_WH_SECRET = os.environ.get("STRIPE_WH_SECRET")
+DEFAULT_FROM_EMAIL = "pchaven.com"
