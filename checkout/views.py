@@ -123,3 +123,36 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
+
+def checkout_success(request, order_number):
+    """
+    Handle successful checkouts
+    """
+    user = request.user
+    save_info = request.session.get("save_info")
+    order = get_object_or_404(Order, order_number=order_number)
+    if user.is_authenticated:
+        messages.success(
+            request,
+            f"Thank You {user.username}! Order successfully processed! \
+            Your order number is {order_number}. A confirmation \
+            email will be sent to {order.email}.",
+        )
+    else:
+        messages.success(
+            request,
+            f"Thank You! Order successfully processed! \
+            Your order number is {order_number}. A confirmation \
+            email will be sent to {order.email}.",
+        )
+
+    if "cart" in request.session:
+        del request.session["cart"]
+
+    template = "checkout/checkout_success.html"
+    context = {
+        "order": order,
+    }
+
+    return render(request, template, context)
