@@ -1,0 +1,47 @@
+:root {
+    --bg-green: #0d8065;
+    --bg-offwhite: rgba(252, 249, 248, 0.972);
+    --bg-white: #ffffff;
+    --bg-grey: rgba(195, 184, 173, 0.2);
+    --primary-text: #3e3d3d;
+}
+
+.checkout .card-header:hover {
+    background-color: var(--bg-white);
+    color: var(--bg-green)!important;
+    cursor: pointer;
+}
+
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 2px solid var(--bg-green);
+    margin-top: .5rem;
+}
