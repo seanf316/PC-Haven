@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cart_tools %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Checkout -->
+<section class="checkout">
+    <div class="container mb-2">
+        <div class="row">
+            <div class="col-12">
+                <hr>
+                <h1 class="logo-font text-green text-center mb-4">Checkout <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </h1>
+                <hr>
+            </div>
+        </div>
+        {% if cart_items %}
+        <div class="row mb-2">
+            <div class="col-12">
+                <div class="bg-green text-white text-lg text-center font-weight-bold">
+                    <p class="m-0 py-2">ORDER SUMMARY</p>
+                </div>
+                <div class="border-green bg-white">
+                    <p class="m-2"><span class="font-weight-bold text-green">Items:</span> {{ product_count }}</p>
+                    <p class="m-2"><span class="font-weight-bold text-green">Subtotal:</span>
+                        €{{ total | floatformat:2 }}</p>
+                    {% if free_shipping_delta == 0 %}
+                    <p class="m-2"><span class="font-weight-bold text-green">Delivery:</span>
+                        Free</p>
+                    {% else %}
+                    <p class="m-2"><span class="font-weight-bold text-green">Delivery:</span>
+                        €{{ shipping|floatformat:2 }}</p>
+                    {% endif %}
+                    <p class="m-2"><span class="font-weight-bold text-green">Grand Total:</span>
+                        €{{ grand_total|floatformat:2 }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row w-100 mx-auto">
+            <div class="col-12 col-md-6 col-lg-6">
+                {% for item in cart_items %}
+                <div class="row border-green bg-white cart-item-row p-2 mb-3">
+                    <div class="col-12 col-lg-4 mb-lg-0 mb-2">
+                        {% if item.product.image %}
+                        <div class="bg-white text-center img-container">
+                            <a href="{% url 'product_detail' item.product.id %}"><img class="img-fluid rounded"
+                                    src="{{ item.product.image.url }}"></a>
+                        </div>
+                        {% else %}
+                        <div class="bg-white text-center img-container">
+                            <a href="{% url 'product_detail' item.product.id %}"><img class="img-fluid rounded"
+                                    src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"></a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-12 col-lg-8 mb-lg-0 mb-3">
+                        <p class="my-0 text-lg text-green"><strong>{{ item.product.name }}</strong></p>
+                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                        <p class="my-1"><span class="font-weight-bold text-green">Price:</span>
+                            €{{ item.product.price }}</p>
+                        <p class="my-1"><span class="font-weight-bold text-green">Qty:</span>
+                            {{ item.quantity }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 p-0 pl-md-3">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <div class="accordion border-green rounded-0" id="accordionExample">
+                            <div class="card rounded-0">
+                                <div class="card-header bg-green text-white" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+                                    id="headingOne">
+                                    <p class="mb-0 text-lg text-center text-uppercase">
+                                        Delivery Information <i class="fa-solid fa-circle-chevron-down"></i>
+                                    </p>
+                                </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                                            {% csrf_token %}
+                                            <fieldset class="rounded px-3 mb-1 allauth-form">
+                                                <legend
+                                                    class="fieldset-label small text-green font-weight-bold px-2 w-auto">
+                                                    Customer
+                                                    Details</legend>
+                                                {{ order_form.full_name | as_crispy_field }}
+                                                {{ order_form.email | as_crispy_field }}
+                                                {{ order_form.phone_number | as_crispy_field }}
+                                            </fieldset>
+                                            <fieldset class="rounded px-3 mb-2 allauth-form">
+                                                <legend
+                                                    class="fieldset-label small text-green font-weight-bold px-2 w-auto">
+                                                    Delivery
+                                                    Address:</legend>
+                                                {{ order_form.street_address1 | as_crispy_field }}
+                                                {{ order_form.street_address2 | as_crispy_field }}
+                                                {{ order_form.town_or_city | as_crispy_field }}
+                                                {{ order_form.county | as_crispy_field }}
+                                                {{ order_form.postcode | as_crispy_field }}
+                                                {{ order_form.country | as_crispy_field }}
+                                            </fieldset>
+                                            <div class="form-check text-center px-3 mb-3">
+                                                {% if user.is_authenticated %}
+                                                <label class="form-check-label" for="id-save-info">Save
+                                                    this
+                                                    delivery information to my
+                                                    profile</label>
+                                                <input class="form-check-input ml-2 mr-0" type="checkbox"
+                                                    id="id-save-info" name="save-info" checked>
+                                                {% else %}
+                                                <label class="form-check-label" for="id-save-info">
+                                                    <a class="text-green font-weight-bold"
+                                                        href="{% url 'account_signup' %}">Create an
+                                                        account</a> or
+                                                    <a class="text-green font-weight-bold"
+                                                        href="{% url 'account_login' %}">login</a>
+                                                    to save this information
+                                                </label>
+                                                {% endif %}
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div>
+                            <p class="mb-0 font-weight-bold text-green">Enter your card details below:</p>
+                        </div>
+                        <!-- A Stripe card element will go here -->
+                        <div class="mb-3 px-3" id="card-element"></div>
+
+                        <!-- Used to display form errors -->
+                        <div class="text-danger mb-3" id="card-errors" role="alert"></div>
+
+                        <div class="submit-button mb-2 d-flex flex-wrap">
+                            <a href="{% url 'view_cart' %}" class="btn text-lg cta flex-grow-1">
+                                <span class="icon">
+                                    <i class="fas fa-sm fa-chevron-left"></i>
+                                </span>
+                                <span class="font-weight-bold">Adjust Cart <i
+                                        class="fa-solid fa-cart-shopping"></i></span>
+                            </a>
+                            <button id="submit-button" form="payment-form" class="btn cta flex-grow-1">
+                                <span class="font-weight-bold text-lg">Complete Purchase <span class="icon">
+                                        <i class="fas fa-lock"></i>
+                                    </span></span>
+                            </button>
+                        </div>
+                        <p class="small text-green font-italic my-0">
+                            <span class="icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </span>
+                            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col-12 col-md-6 mx-auto text-center text-lg">
+                {% if request.user.is_authenticated %}
+                <div>
+                    <p class="mt-5"><span class="font-weight-bold text-green text-uppercase">
+                            {{ user.username }}</span> your cart is empty.<br>Take a look at some of the Products
+                        we have to purchase.
+                    </p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="text-uppercase cta btn-lg icon"><i class="fas fa-chevron-left"></i> Keep
+                            Shopping</span>
+                    </a>
+                </div>
+                <div class="my-5">
+                    <p>Alternatively if there is a specific product you are looking for that we do not stock please get
+                        in
+                        touch with us.</p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="text-uppercase cta btn-lg icon">Contact
+                            Us &nbsp;<i class="fa-regular fa-paper-plane"></i></span>
+                    </a>
+                </div>
+                {% else %}
+                <div>
+                    <p class="mt-5">Your cart is empty.<br>Take a look at some of the Products we have to purchase.
+                    </p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="text-uppercase cta btn-lg icon"><i class="fas fa-chevron-left"></i> Keep
+                            Shopping</span>
+                    </a>
+                </div>
+                <div class="my-5">
+                    <p>Alternatively if there is a specific product you are looking for that we do not stock please get
+                        in
+                        touch with us.</p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="text-uppercase cta btn-lg icon"></i> Contact
+                            Us &nbsp;<i class="fa-regular fa-paper-plane"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}
