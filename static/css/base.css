@@ -62,7 +62,7 @@ body {
 .btn:hover,
 .btn:active,
 .btn:focus {
-    box-shadow: none!important;
+    box-shadow: none !important;
 }
 
 .cta {
@@ -160,7 +160,7 @@ body {
 }
 
 .cart-green {
-    color: var(--bg-green)!important;
+    color: var(--bg-green) !important;
 }
 
 .navbar a.nav-link:hover,
@@ -347,7 +347,7 @@ a.category-badge span:focus {
     text-decoration: none;
 }
 
-.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb .breadcrumb-item+.breadcrumb-item::before {
     content: ">";
     color: var(--primary-text);
 }
@@ -405,10 +405,10 @@ a.category-badge span:focus {
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;

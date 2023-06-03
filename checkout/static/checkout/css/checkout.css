@@ -59,6 +59,10 @@ select option[value=""] {
     font-style: italic;
 }
 
+.order-number {
+    word-break: break-all;
+}
+
 #loading-overlay {
     display: none;
     position: fixed;
