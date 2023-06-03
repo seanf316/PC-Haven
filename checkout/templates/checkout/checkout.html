@@ -91,7 +91,7 @@
                                         Delivery Information <i class="fa-solid fa-circle-chevron-down"></i>
                                     </p>
                                 </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                     data-parent="#accordionExample">
                                     <div class="card-body">
                                         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -150,10 +150,10 @@
                         </div>
                         <!-- A Stripe card element will go here -->
                         <div class="mb-3 px-3" id="card-element"></div>
-
                         <!-- Used to display form errors -->
                         <div class="text-danger mb-3" id="card-errors" role="alert"></div>
-
+                        <!-- Pass the client secret to the view so we can get the payment intent id -->
+                        <input form="payment-form" type="hidden" value="{{ client_secret }}" name="client_secret">
                         <div class="submit-button mb-2 d-flex flex-wrap">
                             <a href="{% url 'view_cart' %}" class="btn text-lg cta flex-grow-1">
                                 <span class="icon">
@@ -223,6 +223,9 @@
         </div>
         {% endif %}
         {% endif %}
+    </div>
+    <div id="loading-overlay">
+        <div class="loader text-lg">PROCESSING.....</div>
     </div>
 </section>
 {% endblock %}
