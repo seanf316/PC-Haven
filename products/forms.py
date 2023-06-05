@@ -20,7 +20,7 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = "__all__"
-        exclude = ["sku", "in_stock"]
+        exclude = ["sku", "in_stock", "image_url"]
 
         widgets = {
             "features": SummernoteWidget(),
