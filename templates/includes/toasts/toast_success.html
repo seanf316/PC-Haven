@@ -51,7 +51,7 @@
                 <div class="bg-green">
                     <p class="text-white mb-0 p-2 font-weight-bold">
                         {% if free_shipping_delta > 0 %}Total (Exc. delivery):{% else %}Grand Total:{% endif %}
-                        <span class="float-right">${{ total|floatformat:2 }}</span>
+                        <span class="float-right">€{{ total|floatformat:2 }}</span>
                     </p>
                 </div>
             </div>
