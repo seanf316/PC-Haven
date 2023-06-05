@@ -108,6 +108,15 @@
                 </div>
                 {% endif %}
 
+                <div class="row">
+                    <div class="col-5 col-lg-2">
+                        <p class="mb-0 text-black font-weight-bold">Town or City</p>
+                    </div>
+                    <div class="col-7 col-lg-10">
+                        <p class="mb-0">{{ order.town_or_city }}</p>
+                    </div>
+                </div>
+
                 {% if order.county %}
                 <div class="row">
                     <div class="col-5 col-lg-2">
@@ -118,15 +127,6 @@
                     </div>
                 </div>
                 {% endif %}
-
-                <div class="row">
-                    <div class="col-5 col-lg-2">
-                        <p class="mb-0 text-black font-weight-bold">Town or City</p>
-                    </div>
-                    <div class="col-7 col-lg-10">
-                        <p class="mb-0">{{ order.town_or_city }}</p>
-                    </div>
-                </div>
 
                 {% if order.postcode %}
                 <div class="row">
@@ -200,12 +200,21 @@
                 </span>
                 <span class="text-uppercase">Keep Shopping</span>
             </a>
+            {% if from_profile %}
+            <a href="{% url 'profile' %}" class="btn cta flex-grow-1 font-weight-bold">
+                <span class="icon">
+                    <i class="fas fa-angle-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Profile</span>
+            </a>
+            {% else %}
             <a href="{% url 'home' %}" class="btn cta flex-grow-1 font-weight-bold">
                 <span class="icon">
                     <i class="fa-solid fa-house"></i>
                 </span>
                 <span class="text-uppercase">Home</span>
             </a>
+            {% endif %}
         </div>
     </div>
 </div>
