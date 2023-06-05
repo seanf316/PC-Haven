@@ -1,6 +1,6 @@
 from django.db import models
 from django_resized import ResizedImageField
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.text import slugify
 import string
 import random
@@ -74,7 +74,7 @@ class Product(models.Model):
         null=True,
     )
     stock_level = models.IntegerField(
-        default=1, validators=[MinValueValidator(0)]
+        default=1, validators=[MinValueValidator(0), MaxValueValidator(1000)]
     )
     in_stock = models.BooleanField(default=True)
     created_on = models.DateTimeField(
