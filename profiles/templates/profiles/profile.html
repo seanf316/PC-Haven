@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Profile -->
+<section class="profile">
+    <div class="container mb-2">
+        <div class="row">
+            <div class="col-12">
+                <hr>
+                <h1 class="logo-font text-green text-center mb-4">My Profile</h1>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p class="text-green font-weight-bold">User Details</p>
+                <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{ userform|crispy }}
+                    <p class="text-green font-weight-bold">Delivery Information</p>
+                    {{ profileform|crispy }}
+                    <button class="btn cta text-uppercase">Update</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p class="text-green font-weight-bold">Order History</p>
+                {{ orders }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'profiles/js/country_field.js' %}"></script>
+{% endblock %}
