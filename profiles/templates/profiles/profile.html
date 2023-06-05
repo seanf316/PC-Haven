@@ -25,20 +25,93 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <p class="text-green font-weight-bold">User Details</p>
-                <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    {% csrf_token %}
-                    {{ userform|crispy }}
-                    <p class="text-green font-weight-bold">Delivery Information</p>
-                    {{ profileform|crispy }}
-                    <button class="btn cta text-uppercase">Update</button>
-                </form>
-            </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-green font-weight-bold">Order History</p>
-                {{ orders }}
+        <div class="row mt-2 mb-5 p-1 border-green mx-auto rounded-lg bg-white">
+            <div class="col-12 p-0">
+                <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item flex-grow-1" role="presentation">
+                        <button class="nav-link active w-100 text-uppercase font-weight-bold text-green text-lg m-0"
+                            id="pills-userdetails-tab" data-toggle="pill" data-target="#pills-userdetails" type="button"
+                            role="tab" aria-controls="pills-userdetails" aria-selected="true">
+                            User Details <i class="fa-solid fa-user"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item flex-grow-1" role="presentation">
+                        <button class="nav-link w-100 text-uppercase font-weight-bold text-green text-lg m-0"
+                            id="pills-orders-tab" data-toggle="pill" data-target="#pills-orders" type="button"
+                            role="tab" aria-controls="pills-orders" aria-selected="false">
+                            Order History <i class="fa-solid fa-receipt"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item flex-grow-1" role="presentation">
+                        <button class="nav-link w-100 text-uppercase font-weight-bold text-green text-lg m-0"
+                            id="pills-wishlist-tab" data-toggle="pill" data-target="#pills-wishlist" type="button"
+                            role="tab" aria-controls="pills-wishlist" aria-selected="false">
+                            Wishlist <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content px-2" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-userdetails" role="tabpanel"
+                        aria-labelledby="pills-userdetails-tab">
+                        <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <p class="text-green font-weight-bold text-uppercase">User Details</p>
+                                    {{ userform|crispy }}
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <p class="text-green font-weight-bold text-uppercase">Delivery Information</p>
+                                    {{ profileform|crispy }}
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col-12">
+                                    <button class="btn cta text-uppercase w-100">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="pills-orders" role="tabpanel" aria-labelledby="pills-orders-tab">
+                        <p class="text-center font-weight-bold font-italic text-green">Click Order number to access your
+                            Order
+                            Summary.</p>
+                        {% for order in orders %}
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-2 mb-md-0">
+                                <p class="text-green font-weight-bold mb-0">Order Number</p>
+                                <a class="order-number" href="{% url 'order_history' order.order_number %}"
+                                    title="{{ order.order_number }}">
+                                    {{ order.order_number }}
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="text-green font-weight-bold mb-0">Order Date</p>
+                                <p>{{ order.order_date }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <p class="text-green font-weight-bold mb-0">Order Items</p>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                    <li class="small">{{ item.product.name }} x{{ item.quantity }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="text-green font-weight-bold mb-0">Order Total</p>
+                                <p>€{{ order.grand_total }}</p>
+                            </div>
+                        </div>
+                        <hr class="mt-0">
+                        {% endfor %}
+                    </div>
+                    <div class="tab-pane fade" id="pills-wishlist" role="tabpanel" aria-labelledby="pills-wishlist-tab">
+                        Wishlist
+                    </div>
+                </div>
             </div>
         </div>
     </div>
