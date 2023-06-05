@@ -6,6 +6,11 @@
     --primary-text: #3e3d3d;
 }
 
+/* ------------------------------------ Profile Forms ------------------------------------ */
+
+.profile .form-group {
+    margin-bottom: .5rem;
+}
 
 .profile input {
     border-radius: 0;
@@ -17,6 +22,7 @@
 .profile label {
     color: var(--bg-green);
     font-style: italic;
+    margin-top: -1rem;
 }
 
 .profile input:focus,
@@ -32,7 +38,6 @@
     font-style: italic;
 }
 
-
 .profile select {
     border-radius: 0;
     background-color: var(--bg-offwhite);
@@ -47,4 +52,49 @@
     box-shadow: none;
     border: 2px solid var(--bg-green);
     background-color: var(--bg-offwhite);
+}
+
+.order-history {
+    max-height: 416px;
+    /* height of profile form + submit button */
+    overflow-y: auto;
+}
+
+/* ------------------------------------ Profile Tabs ------------------------------------ */
+
+.profile .nav-item {
+    background-color: var(--bg-white);
+    border: 2px solid var(--bg-green);
+    font-weight: 700;
+    margin: .1rem .1rem;
+    width: 100%;
+}
+
+.profile .nav-item .active {
+    background-color: var(--bg-green);
+    font-weight: 700;
+    margin: .1rem .1rem;
+    border-radius: 0;
+}
+
+.order-number {
+    word-break: break-all;
+    color: var(--primary-text);
+    text-decoration: underline;
+    text-underline-offset: .2rem;
+}
+
+.order-number:hover {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--bg-green);
+}
+
+/* ------------------------------------ Profile Media Queries ------------------------------------ */
+
+@media screen and (min-width: 768px) {
+
+    .profile .nav-item {
+        width: fit-content;
+    }
 }
