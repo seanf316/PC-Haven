@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import UserProfile
+from checkout.models import Order
 from .forms import UserForm, UserProfileForm
 
 
@@ -17,6 +18,7 @@ def profile(request):
             userform.save()
             profileform.save()
             messages.success(request, "Profile updated successfully")
+            return redirect(("profile"))
 
     userform = UserForm(instance=user)
     profileform = UserProfileForm(instance=profile)
@@ -28,6 +30,26 @@ def profile(request):
         "profileform": profileform,
         "orders": orders,
         "on_profile_page": True,
+    }
+
+    return render(request, template, context)
+
+
+def order_history(request, order_number):
+    order = get_object_or_404(Order, order_number=order_number)
+
+    messages.info(
+        request,
+        (
+            f"This is a past confirmation for order number {order_number}. "
+            "A confirmation email was sent on the order date."
+        ),
+    )
+
+    template = "checkout/checkout_success.html"
+    context = {
+        "order": order,
+        "from_profile": True,
     }
 
     return render(request, template, context)
