@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
     /**
-    * Check current value of quantity input
-    * sets min and max values
-    * disables buttons when exceeded
-    * sets value to stock limit if keyboard used to enter value greater than stock limit
-    */
-    function handleEnableDisable(itemId) {
-        let qtyInput = $(`#id_qty_${itemId}`);
+     * Check current value of quantity input
+     * sets min and max values
+     * disables buttons when exceeded
+     * sets value to stock limit if keyboard used to enter value greater than stock limit
+     */
+    function handleEnableDisable(productId) {
+        let qtyInput = $(`#id_qty_${productId}`);
         let qtyInputValue = parseInt(qtyInput.val());
         let qtyMax = parseInt(qtyInput.attr('max'));
         var minusDisabled = qtyInputValue < 2;
         var plusDisabled = qtyInputValue >= qtyMax;
-        $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
-        $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+        $(`#decrement-qty_${productId}`).prop('disabled', minusDisabled);
+        $(`#increment-qty_${productId}`).prop('disabled', plusDisabled);
         if (qtyInputValue > qtyMax) {
             qtyInput.val(qtyMax);
         } else if (qtyInputValue < 1) {
@@ -23,14 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ensure proper enabling/disabling of all inputs on page load
     var allQtyInputs = $('.qty_input');
     for (var i = 0; i < allQtyInputs.length; i++) {
-        var itemId = $(allQtyInputs[i]).data('item_id');
-        handleEnableDisable(itemId);
+        var productId = $(allQtyInputs[i]).data('product_id');
+        handleEnableDisable(productId);
     }
 
     // Check enable/disable every time the input is changed
     $('.qty_input').change(function () {
-        var itemId = $(this).data('item_id');
-        handleEnableDisable(itemId);
+        var productId = $(this).data('product_id');
+        handleEnableDisable(productId);
     });
 
     // Increment quantity
@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         var currentValue = parseInt($(closestInput).val());
         $(closestInput).val(currentValue + 1);
-        var itemId = $(this).data('item_id');
-        handleEnableDisable(itemId);
+        var productId = $(this).data('product_id');
+        handleEnableDisable(productId);
     });
 
     // Decrement quantity
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         var currentValue = parseInt($(closestInput).val());
         $(closestInput).val(currentValue - 1);
-        var itemId = $(this).data('item_id');
-        handleEnableDisable(itemId);
+        var productId = $(this).data('product_id');
+        handleEnableDisable(productId);
     });
 });
