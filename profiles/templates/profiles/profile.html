@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-12">
                 <hr>
-                <h1 class="logo-font text-green text-center mb-4">My Profile</h1>
+                <h1 class="logo-font text-green text-center mb-4">{{ user }}'s Profile</h1>
                 <hr>
             </div>
         </div>
@@ -29,7 +29,7 @@
             <div class="col-12 p-0">
                 <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
                     <li class="nav-item flex-grow-1" role="presentation">
-                        <button class="nav-link active w-100 text-uppercase font-weight-bold text-green text-lg m-0"
+                        <button class="nav-link w-100 text-uppercase font-weight-bold text-green text-lg m-0"
                             id="pills-userdetails-tab" data-toggle="pill" data-target="#pills-userdetails" type="button"
                             role="tab" aria-controls="pills-userdetails" aria-selected="true">
                             User Details <i class="fa-solid fa-user"></i>
@@ -73,7 +73,7 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="pills-orders" role="tabpanel" aria-labelledby="pills-orders-tab">
-                        <p class="text-center font-weight-bold font-italic text-green">Click Order number to access your
+                        <p class="text-center font-weight-bold text-green">Click Order number to access your
                             Order
                             Summary.</p>
                         {% for order in orders %}
@@ -109,7 +109,41 @@
                         {% endfor %}
                     </div>
                     <div class="tab-pane fade" id="pills-wishlist" role="tabpanel" aria-labelledby="pills-wishlist-tab">
-                        Wishlist
+                        <p class="text-center font-weight-bold text-green">Wishlist Products -
+                            {{ wishlist.products.count }}</p>
+                        <div class="row">
+                            {% for product in wishlist.products.all %}
+                            <div class="col-12 col-lg-3 col-md-4 d-flex flex-column mb-4">
+                                <div class="card border-green flex-fill">
+                                    <div class="card-img-top p-1 h-40 text-center">
+                                        {% if product.image %}
+                                        <a href="{% url 'product_detail' product.id %}"><img
+                                                src="{{ product.image.url }}" class="img-fluid h-100"
+                                                alt="{{ product.name }}"></a>
+                                        {% else %}
+                                        <a href="{% url 'product_detail' product.id %}"><img
+                                                src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+                                                class="img-fluid h-100" alt="{{ product.name }}"></a>
+                                        {% endif %}
+                                    </div>
+                                    <div
+                                        class="card-body d-flex flex-column justify-content-center align-items-center h-10 bg-green text-white">
+                                        <span class="text-center font-weight-bold">{{ product.name|safe }}</span>
+                                    </div>
+                                    <div
+                                        class="card-body px-1 d-flex flex-column justify-content-center h-20 flex-fill text-center">
+                                        <div>
+                                            <a href="{% url 'product_detail' product.id %}"
+                                                class="btn cta text-uppercase w-100 mb-2">View
+                                                Product</a>
+                                            <a href="#" class="btn cta bg-danger text-white text-uppercase w-100">
+                                                Wishlist Remove <i class="fa-solid fa-minus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
