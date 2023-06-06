@@ -2,16 +2,17 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import UserProfile
+from .models import UserProfile, Wishlist
 from checkout.models import Order
 from .forms import UserForm, UserProfileForm
 
 
 @login_required()
 def profile(request):
-    """Display the user's profile."""
+    """Display the User's profile"""
     user = get_object_or_404(User, username=request.user)
     profile = get_object_or_404(UserProfile, user=user)
+    wishlist = get_object_or_404(Wishlist, user=user)
 
     if request.method == "POST":
         userform = UserForm(request.POST, instance=user)
@@ -31,6 +32,7 @@ def profile(request):
         "userform": userform,
         "profileform": profileform,
         "orders": orders,
+        "wishlist": wishlist,
         "on_profile_page": True,
     }
 
@@ -39,6 +41,7 @@ def profile(request):
 
 @login_required()
 def order_history(request, order_number):
+    """Display the User's Order History"""
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(
