@@ -1,3 +1,13 @@
 from django.contrib import admin
+from .models import Wishlist
 
-# Register your models here.
+
+admin.site.register(Wishlist)
+
+
+class WishlistAdmin(admin.ModelAdmin):
+    search_fields = [
+        "user",
+    ]
+
+    ordering = ("user",)
