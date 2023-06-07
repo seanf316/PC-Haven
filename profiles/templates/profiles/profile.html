@@ -130,9 +130,12 @@
                         {% endif %}
                     </div>
                     <div class="tab-pane fade" id="pills-wishlist" role="tabpanel" aria-labelledby="pills-wishlist-tab">
-                        {% if wishlist.exists %}
+                        {% if wishlist.products.exists %}
                         <p class="text-center font-weight-bold text-green">Wishlist Products -
                             {{ wishlist.products.count }}</p>
+                        <p class="text-center"><a href="{% url 'clear_wishlist' %}"
+                                class="btn cta bg-danger text-white text-uppercase">Clear
+                                Wishlist</a></p>
                         <div class="row pb-4">
                             {% for product in wishlist.products.all %}
                             <div class="col-12 col-lg-3 col-md-4 d-flex flex-column">
@@ -181,16 +184,16 @@
                             </div>
                             {% endif %}
                             {% endfor %}
-                            {% else %}
-                            <p class="text-center font-weight-bold text-green">Wishlist is currently empty!</p>
-                            <p>Simply browse our website, find the products that catch your
-                                eye, and click on the <i class="fa-regular fa-heart text-green"></i> icon to start
-                                curating your
-                                personalized
-                                collection. Fill up your wishlist with exciting products and keep track of your
-                                favorites for future reference. Happy shopping and enjoy building your ultimate PC!</p>
-                            {% endif %}
                         </div>
+                        {% else %}
+                        <p class="text-center font-weight-bold text-green">Wishlist is currently empty!</p>
+                        <p>Simply browse our website, find the products that catch your
+                            eye, and click on the <i class="fa-regular fa-heart text-green"></i> icon to start
+                            curating your
+                            personalized
+                            collection. Fill up your wishlist with exciting products and keep track of your
+                            favorites for future reference. Happy shopping and enjoy building your ultimate PC!</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
