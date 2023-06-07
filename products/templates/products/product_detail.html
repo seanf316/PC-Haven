@@ -57,7 +57,8 @@
             <div class="col-12 col-lg-4 d-flex flex-column bg-white border-green rounded py-2">
                 <div class="ml-auto p-1">
                     {% if product in wishlist.products.all %}
-                    <a href="" class="text-right favourite"><i class="fa-solid fa-heart"></i></a>
+                    <a href="{% url 'remove_from_wishlist' product.id %}" class="text-right favourite"><i
+                            class="fa-solid fa-heart"></i></a>
                     {% else %}
                     <a href="{% url 'add_to_wishlist' product.id %}" class="text-right favourite"><i
                             class="fa-regular fa-heart"></i></a>
