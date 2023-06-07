@@ -19,7 +19,7 @@ def profile(request):
     """Display the User's profile"""
     user = get_object_or_404(User, username=request.user)
     profile = get_object_or_404(UserProfile, user=user)
-    wishlist = get_object_or_404(Wishlist, user=user)
+    wishlist, created = Wishlist.objects.get_or_create(user=user)
 
     if request.method == "POST":
         userform = UserForm(request.POST, instance=user)
@@ -86,6 +86,29 @@ def add_to_wishlist(request, product_id):
         messages.success(
             request, f"{product.name} has been added to your Wishlist!"
         )
+
+    redirect_url = request.META.get(
+        "HTTP_REFERER", (reverse("product_detail", args=[product_id]))
+    )
+
+    return HttpResponseRedirect(redirect_url)
+
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    """
+    Remove a Product from User Wishlist
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    wishlist = Wishlist.objects.get(user=request.user)
+
+    if product in wishlist.products.all():
+        wishlist.products.remove(product)
+        messages.success(
+            request, f"{product.name} has been removed from your Wishlist!"
+        )
+    else:
+        messages.error(request, f"{product.name} is not in your Wishlist!")
 
     redirect_url = request.META.get(
         "HTTP_REFERER", (reverse("product_detail", args=[product_id]))
