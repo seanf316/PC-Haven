@@ -111,9 +111,9 @@
                     <div class="tab-pane fade" id="pills-wishlist" role="tabpanel" aria-labelledby="pills-wishlist-tab">
                         <p class="text-center font-weight-bold text-green">Wishlist Products -
                             {{ wishlist.products.count }}</p>
-                        <div class="row">
+                        <div class="row pb-4">
                             {% for product in wishlist.products.all %}
-                            <div class="col-12 col-lg-3 col-md-4 d-flex flex-column mb-4">
+                            <div class="col-12 col-lg-3 col-md-4 d-flex flex-column">
                                 <div class="card border-green flex-fill">
                                     <div class="card-img-top p-1 h-40 text-center">
                                         {% if product.image %}
@@ -142,6 +142,21 @@
                                     </div>
                                 </div>
                             </div>
+                            {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none">
+                                <hr>
+                            </div>
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-md-block d-lg-none d-xl-none">
+                                <hr>
+                            </div>
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-lg-block">
+                                <hr>
+                            </div>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
