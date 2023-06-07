@@ -15,7 +15,7 @@ def allproducts(request):
 
     products = Product.objects.all()
     user = request.user
-    wishlist = get_object_or_404(Wishlist, user=user)
+    wishlist, created = Wishlist.objects.get_or_create(user=user)
     total_products = Product.objects.count()
     query = None
     categories = None
@@ -88,7 +88,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     user = request.user
-    wishlist = get_object_or_404(Wishlist, user=user)
+    wishlist, created = Wishlist.objects.get_or_create(user=user)
 
     context = {
         "product": product,
