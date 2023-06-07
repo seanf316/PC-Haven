@@ -7,12 +7,15 @@ from django.db.models.functions import Lower
 from .models import Product, CategoryGroup, SubCategory
 from django.contrib.auth.models import User
 from .forms import ProductForm, CategoryForm, SubcategoryForm
+from profiles.models import Wishlist
 
 
 def allproducts(request):
     """A view to show all products, including sorting and search queries"""
 
     products = Product.objects.all()
+    user = request.user
+    wishlist = get_object_or_404(Wishlist, user=user)
     total_products = Product.objects.count()
     query = None
     categories = None
@@ -74,6 +77,7 @@ def allproducts(request):
         "current_sorting": current_sorting,
         "selected_category": selected_category,
         "total_products": total_products,
+        "wishlist": wishlist,
     }
 
     return render(request, "products/products.html", context)
@@ -83,9 +87,12 @@ def product_detail(request, product_id):
     """A view to show product details of a selected product"""
 
     product = get_object_or_404(Product, pk=product_id)
+    user = request.user
+    wishlist = get_object_or_404(Wishlist, user=user)
 
     context = {
         "product": product,
+        "wishlist": wishlist,
     }
 
     return render(request, "products/product_detail.html", context)
