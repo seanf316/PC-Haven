@@ -136,7 +136,8 @@
                                             <a href="{% url 'product_detail' product.id %}"
                                                 class="btn cta text-uppercase w-100 mb-2">View
                                                 Product</a>
-                                            <a href="#" class="btn cta bg-danger text-white text-uppercase w-100">
+                                            <a href="{% url 'remove_from_wishlist' product.id %}"
+                                                class="btn cta bg-danger text-white text-uppercase w-100">
                                                 Wishlist Remove <i class="fa-solid fa-minus"></i></a>
                                         </div>
                                     </div>
