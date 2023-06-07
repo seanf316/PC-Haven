@@ -16,7 +16,9 @@ from .forms import UserForm, UserProfileForm
 
 @login_required()
 def profile(request):
-    """Display the User's profile"""
+    """
+    Display the User's profile
+    """
     user = get_object_or_404(User, username=request.user)
     profile = get_object_or_404(UserProfile, user=user)
     wishlist, created = Wishlist.objects.get_or_create(user=user)
@@ -113,5 +115,24 @@ def remove_from_wishlist(request, product_id):
     redirect_url = request.META.get(
         "HTTP_REFERER", (reverse("product_detail", args=[product_id]))
     )
+
+    return HttpResponseRedirect(redirect_url)
+
+
+@login_required()
+def clear_wishlist(request):
+    """
+    Remove all Products from User Wishlist
+    """
+    wishlist = Wishlist.objects.get(user=request.user)
+
+    products = wishlist.products.all()
+
+    for product in products:
+        wishlist.products.remove(product)
+
+    messages.success(request, "Your wishlist has been cleared!")
+
+    redirect_url = request.META.get("HTTP_REFERER", reverse("profile"))
 
     return HttpResponseRedirect(redirect_url)
