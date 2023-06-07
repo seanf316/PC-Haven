@@ -18,4 +18,9 @@ urlpatterns = [
         views.remove_from_wishlist,
         name="remove_from_wishlist",
     ),
+    path(
+        "clear_wishlist/",
+        views.clear_wishlist,
+        name="clear_wishlist",
+    ),
 ]
