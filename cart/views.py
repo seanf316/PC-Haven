@@ -4,6 +4,7 @@ from django.shortcuts import (
     reverse,
     HttpResponse,
     get_object_or_404,
+    HttpResponseRedirect,
 )
 from django.contrib import messages
 from products.models import Product
@@ -34,7 +35,11 @@ def add_to_cart(request, product_id):
             messages.success(request, f"Added {product.name} to cart.")
         request.session["cart"] = cart
 
-        return redirect(reverse("products"))
+        redirect_url = request.META.get(
+            "HTTP_REFERER", (reverse("product_detail", args=[product_id]))
+        )
+
+        return HttpResponseRedirect(redirect_url)
 
     else:
         return HttpResponse("Invalid request")
@@ -75,14 +80,15 @@ def delete_from_cart(request, product_id):
         if product_id in cart:
             del cart[product_id]
             request.session["cart"] = cart
-            
+
             if cart:
                 messages.success(
-                request, f"Removed all {product.name} from your cart"
+                    request, f"Removed all {product.name} from your cart"
                 )
             else:
                 messages.success(
-                request, f"Removed all {product.name} from your cart. Cart is now empty!"
+                    request,
+                    f"Removed all {product.name} from your cart. Cart is now empty!",
                 )
 
             return redirect(reverse("view_cart"))
