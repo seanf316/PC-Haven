@@ -1,9 +1,16 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import (
+    render,
+    get_object_or_404,
+    redirect,
+    reverse,
+    HttpResponseRedirect,
+)
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import UserProfile, Wishlist
 from checkout.models import Order
+from products.models import Product
+from .models import UserProfile, Wishlist
 from .forms import UserForm, UserProfileForm
 
 
@@ -59,3 +66,29 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    """
+    Add Product to User Wishlist
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    try:
+        wishlist = get_object_or_404(Wishlist, user=request.user.id)
+    except Http404:
+        wishlist = Wishlist.objects.create(user=request.user)
+
+    if product in wishlist.products.all():
+        messages.info(request, f"{product.name} is already on your Wishlist!")
+    else:
+        wishlist.products.add(product)
+        messages.success(
+            request, f"{product.name} has been added to your Wishlist!"
+        )
+
+    redirect_url = request.META.get(
+        "HTTP_REFERER", (reverse("product_detail", args=[product_id]))
+    )
+
+    return HttpResponseRedirect(redirect_url)
