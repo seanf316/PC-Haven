@@ -7,4 +7,9 @@ urlpatterns = [
         views.add_review,
         name="add_review",
     ),
+    path(
+        "edit_review/<int:product_id>/<int:review_id>/",
+        views.edit_review,
+        name="edit_review",
+    ),
 ]
