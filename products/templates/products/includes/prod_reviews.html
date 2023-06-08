@@ -1,0 +1,24 @@
+{% if reviews %}
+{% for review in reviews %}
+<div class="col-12 border-green p-2">
+    <p class="small mb-0"><span class="text-green font-weight-bold">Reviewed by: </span>
+        {{ review.user }}
+    </p>
+    <div>
+        <p>{{ review.review|safe }}</p>
+    </div>
+    <div class="d-flex justify-content-between">
+        <p class="small mb-0"><span class="text-green font-weight-bold">Rating: </span><i
+                class="fa-solid fa-star text-green"></i>
+            {{ review.rating }} / 5</p>
+        <p class="small mb-0"><span class="text-green font-weight-bold">{{ review.created_on }}
+        </p>
+    </div>
+</div>
+<hr>
+{% endfor %}
+{% else %}
+<div class="col-12">
+    <p><a href="{% url 'account_signup' %}" class="cta btn">Sign Up</a></p>
+</div>
+{% endif %}
