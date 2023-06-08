@@ -14,8 +14,41 @@
         <p class="small mb-0"><span class="text-green font-weight-bold">{{ review.created_on }}
         </p>
     </div>
+    {% if user == review.user or user.is_superuser %}
+    <div class="mt-2">
+        <a href="{% url 'edit_review' review.product.id review.id %}" class="cta btn">Edit <i
+                class="fa-regular fa-pen-to-square"></i></a>
+        <button class="btn cta-danger rounded-1" type="button" class="btn btn-primary" data-toggle="modal"
+            data-target="#exampleModal{{ review.id }}">Delete
+            <i class="fa-solid fa-trash"></i></button>
+    </div>
+    {% endif %}
 </div>
 <hr>
+<!-- Delete Review Modal -->
+<div class="modal fade" id="exampleModal{{ review.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h2 class="modal-title text-white mb-0 text-lg">Delete Review by {{ review.user }}</h2>
+            </div>
+            <div class="modal-body">
+                {% if user == review.user or user.is_superuser %}
+                <form method="post" action="{% url 'delete_review' review.product.id review.id %}" role="form">
+                    {% csrf_token %}
+                    <p class="text-green"><strong><i>Are you sure you want to Delete this review?</strong></i></p>
+                    <p>This review will be permanently removed and you will not be able to retrieve it.</p>
+                    <button type="button" class="btn cta" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    <button type="submit" name="action" value="delete" class="btn cta-danger">Delete</button>
+                </form>
+                {% else %}
+                <h3>You are not authorized to delete this review.</h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endfor %}
 {% else %}
 <div class="col-12">
