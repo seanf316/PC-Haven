@@ -1,0 +1,45 @@
+{% if orders.exists %}
+<p class="text-center font-weight-bold text-green">Click Order number to access your
+    Order
+    Summary.</p>
+{% for order in orders %}
+<div class="row">
+    <div class="col-12 col-md-6 mb-2 mb-md-0">
+        <p class="text-green font-weight-bold mb-0">Order Number</p>
+        <a class="order-number" href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+            {{ order.order_number }}
+        </a>
+    </div>
+    <div class="col-12 col-md-6">
+        <p class="text-green font-weight-bold mb-0">Order Date</p>
+        <p>{{ order.order_date }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <p class="text-green font-weight-bold mb-0">Order Items</p>
+        <ul class="list-unstyled">
+            {% for item in order.lineitems.all %}
+            <li class="small">{{ item.product.name }} x{{ item.quantity }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-12 col-md-6">
+        <p class="text-green font-weight-bold mb-0">Order Total</p>
+        <p>€{{ order.grand_total }}</p>
+    </div>
+</div>
+<hr class="mt-0">
+{% endfor %}
+{% else %}
+<p class="text-center font-weight-bold text-green">Order history empty!</p>
+<p>There's a whole world of PC components waiting for you at PC HAVEN! Explore our vast
+    selection of top-quality
+    hardware, including powerful graphics cards, high-performance processors, and sleek PC
+    cases. With our user-friendly platform, you can easily find the products that meet your
+    needs and add them to your cart. Once you complete your order it will appear in your order
+    history, allowing you to track your purchases.
+    Start shopping today and let PC HAVEN be your trusted destination for all your PC component
+    needs.</p>
+{% endif %}
