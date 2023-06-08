@@ -80,3 +80,21 @@ def edit_review(request, product_id, review_id):
     }
 
     return render(request, "reviews/edit_review.html", context)
+
+
+@login_required
+def delete_review(request, product_id, review_id):
+    """Delete a Product Review"""
+    user = request.user
+    product = get_object_or_404(Product, pk=product_id)
+    review = get_object_or_404(Review, pk=review_id)
+
+    if not user.is_superuser:
+        messages.error(
+            request, f"Sorry {user.username}, only store owners can do that."
+        )
+        return redirect(reverse("product_detail", args=[product_id]))
+
+    review.delete()
+    messages.success(request, f"Review by {review.user} has been deleted!")
+    return redirect(reverse("product_detail", args=[product_id]))
