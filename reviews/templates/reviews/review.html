@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="review">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 mx-auto">
+                <hr>
+                <h1 class="text-green">Add Review</h1>
+                <hr>
+            </div>
+            <div class="col-12 col-md-8 mx-auto mb-5">
+                <p class="font-weight-bold">Review for Product: <span class="text-green">{{ product.name }}</span></p>
+                <div class="prod-form">
+                    <form method="POST" action="{% url 'add_review' product.id %}" class="mb-2 prod-form"
+                        enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <div class="">
+                            <a class="btn cta cta-danger" href="{% url 'product_detail' product.id %}">Cancel</a>
+                            <button class="btn cta" type="submit">Add Review</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
