@@ -2,12 +2,13 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q, Count
+from django.db.models import Q, Count, Avg
 from django.db.models.functions import Lower
 from .models import Product, CategoryGroup, SubCategory
 from django.contrib.auth.models import User
 from .forms import ProductForm, CategoryForm, SubcategoryForm
 from profiles.models import Wishlist
+from reviews.models import Review
 
 
 def allproducts(request):
@@ -15,13 +16,17 @@ def allproducts(request):
 
     products = Product.objects.all()
     user = request.user
-    wishlist, created = Wishlist.objects.get_or_create(user=user)
     total_products = Product.objects.count()
     query = None
     categories = None
     subcategories = None
     sort = None
     direction = None
+
+    if user.is_authenticated:
+        wishlist, created = Wishlist.objects.get_or_create(user=user)
+    else:
+        wishlist = None
 
     if request.GET:
         if "sort" in request.GET:
@@ -88,11 +93,22 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     user = request.user
-    wishlist, created = Wishlist.objects.get_or_create(user=user)
+    reviews = Review.objects.filter(product=product)
+    rating_avg = reviews.aggregate(Avg("rating"))
+
+    if user.is_authenticated:
+        wishlist, created = Wishlist.objects.get_or_create(user=user)
+        user_review = Review.objects.filter(user=user, product=product)
+    else:
+        wishlist = None
+        user_review = None
 
     context = {
         "product": product,
         "wishlist": wishlist,
+        "reviews": reviews,
+        "user_review": user_review,
+        "rating_avg": rating_avg,
     }
 
     return render(request, "products/product_detail.html", context)
