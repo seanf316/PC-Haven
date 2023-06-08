@@ -11,6 +11,7 @@
     --bg-green: #0d8065;
     --bg-offwhite: rgba(252, 249, 248, 0.972);
     --bg-white: #ffffff;
+    --bg-dark: #000;
     --bg-grey: rgba(195, 184, 173, 0.2);
     --primary-text: #3e3d3d;
 }
@@ -82,16 +83,18 @@ body {
 
 .cta-danger {
     background: red;
+    border: 2px solid var(--bg-offwhite);
     color: var(--bg-offwhite);
 }
 
 .cta-danger:hover,
 .cta-danger:active,
 .cta-danger:focus {
-    background: black;
-    border: 2px solid red;
-    color: var(--bg-offwhite);
-    box-shadow: none;
+    background: var(--bg-offwhite) !important;
+    border: 2px solid red !important;
+    color: red !important;
+    box-shadow: none !important;
+    border-radius: .2rem !important;
 }
 
 .box {
