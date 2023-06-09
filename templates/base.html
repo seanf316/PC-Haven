@@ -91,9 +91,10 @@
     {% block page_header %}
     {% endblock %}
 
-    {% block content %}
-    <main></main>
-    {% endblock %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
     {% block postloadjs %}
     {% if messages %}
