@@ -3,7 +3,6 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Product, CategoryGroup, SubCategory
 
 
-@admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
     """
     Admin registration and configuration for the Product model
@@ -35,10 +34,9 @@ class ProductAdmin(SummernoteModelAdmin):
         "in_stock",
     )
 
-    summer_fields = ("description", "information")
+    summernote_fields = ("description", "information")
 
 
-@admin.register(CategoryGroup)
 class CategoryGroupAdmin(admin.ModelAdmin):
     """
     Admin registration and configuration
@@ -51,7 +49,6 @@ class CategoryGroupAdmin(admin.ModelAdmin):
     )
 
 
-@admin.register(SubCategory)
 class SubCategoryAdmin(admin.ModelAdmin):
     """
     Admin registration and configuration
@@ -62,3 +59,8 @@ class SubCategoryAdmin(admin.ModelAdmin):
         "friendly_name",
         "name",
     )
+
+
+admin.site.register(Product, ProductAdmin)
+admin.site.register(CategoryGroup, CategoryGroupAdmin)
+admin.site.register(SubCategory, SubCategoryAdmin)

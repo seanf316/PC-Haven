@@ -3,7 +3,6 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Review
 
 
-@admin.register(Review)
 class ReviewAdmin(SummernoteModelAdmin):
     """
     Admin registration and configuration for the Review model
@@ -29,3 +28,6 @@ class ReviewAdmin(SummernoteModelAdmin):
     )
 
     summer_fields = "review"
+
+
+admin.site.register(Review, ReviewAdmin)
