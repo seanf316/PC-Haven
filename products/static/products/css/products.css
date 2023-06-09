@@ -84,7 +84,7 @@
 }
 
 .features ul {
-    padding-left: .8rem!important;
+    padding-left: .8rem !important;
 }
 
 /* ------------------------------------ Decription/Review ------------------------------------ */
@@ -133,8 +133,8 @@
 }
 
 .page-item.active a {
-    color: var(--bg-white)!important;
-    background-color: var(--bg-green)!important;
+    color: var(--bg-white) !important;
+    background-color: var(--bg-green) !important;
     border: none;
 }
 
@@ -180,11 +180,18 @@
 }
 
 .prod-form input {
-    border: 1px solid var(--bg-green);
+    border: 1px solid var(--bg-green) !important;
+    box-shadow: none !important;
+    background: var(--bg-white) !important;
 }
 
-.prod-form select {
-    border: 1px solid var(--bg-green);
+.prod-form select,
+.prod-form select option {
+    color: var(--primary-text) !important;
+    padding: .3rem 0.6rem !important;
+    background: var(--bg-white) !important;
+    border: 1px solid var(--bg-green) !important;
+    box-shadow: none !important;
 }
 
 /* ------------------------------------ Product Management ------------------------------------ */
