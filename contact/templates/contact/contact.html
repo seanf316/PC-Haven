@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 mx-auto">
+                <hr>
+                <h1 class="text-green">Contact Us</h1>
+                <hr>
+            </div>
+            <div class="col-12 col-md-8 mx-auto mb-5">
+                <div class="prod-form">
+                    <form method="POST" action="{% url 'contact' %}" class="mb-2 prod-form"
+                        enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <div class="">
+                            <a class="btn cta" href="{% url 'home' %}">Cancel</a>
+                            <button class="btn cta" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'products/js/editprod.js' %}"></script>
+{% endblock %}
