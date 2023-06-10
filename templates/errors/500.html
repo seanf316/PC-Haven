@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- 500 -->
+<section class="errors">
+    <div class="container">
+        <div class="row justify-content-center text-center w-100 mx-auto">
+            <div class="col-12 col-lg-6 col-md-8 border-white bg-green p-3">
+                <div class="bg-white p-4">
+                    <h1><i class="text-green fa-solid fa-hand"></i></h1>
+                    <h2 class="text-green"><span class="font-weight-bold">Error 500</span> <br>Internal Server Error
+                    </h2>
+                    <p class="mb-2">Something went wrong!<br>Please return to the homepage.</p>
+                    <a href="{% url 'home' %}" class="btn cta text-uppercase">Home <span class="icon pt-1"><i
+                                class="fa-sm fa-solid fa-house"></i></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
