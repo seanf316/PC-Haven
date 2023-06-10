@@ -449,6 +449,21 @@ a.category-badge span:focus {
     object-fit: cover;
 }
 
+.blog_detail .card-img-top {
+    height: 15rem;
+}
+
+.blog_detail .card .card-body {
+    padding-bottom: none !important;
+}
+
+.blog_detail button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
 /* ------------------------------------ Media Queries ------------------------------------ */
 
 @media screen and (min-width: 768px) {
@@ -474,6 +489,10 @@ a.category-badge span:focus {
     #btn-back-to-top {
         height: 2.5rem;
         width: 2.5rem;
+    }
+
+    .blog_detail .card-img-top {
+        height: 20rem;
     }
 }
 

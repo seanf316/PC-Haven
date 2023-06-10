@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -50,9 +54,17 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-green font-weight-bold">{{ blog.title }}</h5>
                         <p class="card-text font-italic">{{ blog.content|striptags|slice:':150'}}.....</p>
-                        <div class="mt-auto d-flex">
-                            <a href="{% url 'blog_detail' blog.id %}" class="btn cta text-uppercase flex-grow-1">View
-                                Blog</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="pl-4 text-green">
+                                <p><i class="fa-solid fa-thumbs-up"></i> <span>{{ blog.number_of_likes }}</span></p>
+                            </div>
+                            <div class="mt-auto d-flex p-1">
+                                <a href="{% url 'blog_detail' blog.id %}"
+                                    class="btn cta text-uppercase flex-grow-1">View
+                                    Blog</a>
+                            </div>
                         </div>
                     </div>
                     {% if request.user.is_superuser %}
