@@ -15,13 +15,16 @@ class BlogForm(forms.ModelForm):
 
         model = Blog
         fields = "__all__"
-        exclude = ["sku", "in_stock", "image_url"]
+        exclude = [
+            "created_on",
+            "likes",
+        ]
         labels = {
             "review": "Review",
             "rating": "Rating (1-5)",
         }
 
-        widgets = {"review": SummernoteWidget()}
+        widgets = {"content": SummernoteWidget()}
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
