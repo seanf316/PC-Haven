@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col-12"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="blog_detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 mx-auto">
+                <hr>
+                <h1 class="text-green text-center">PC HAVEN Blog</h1>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-10 mx-auto mb-4 d-flex">
+                <div class="card border-green-light flex-fill">
+                    {% if blog.image %}
+                    <img src="{{ blog.image.url }}" class="card-img-top" alt="...">
+                    {% else %}
+                    <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/blog/blog.webp" class="card-img-top"
+                        alt="...">
+                    {% endif %}
+                    <div class="bg-green text-white font-weight-bold text-center mb-2">
+                        <p class="p-2 mb-0">Author: {{ blog.author }}</p>
+                    </div>
+                    <div class="px-4 d-flex flex-column">
+                        <p class="small font-italic">Posted: {{ blog.created_on }}</p>
+                        <h5 class="card-title text-green flex-fill font-weight-bold">{{ blog.title }}</h5>
+                        <p class="card-text font-italic">{{ blog.content|safe}}</p>
+                        <form method="post" action="{% url 'like_blog' blog.id %}" class="mb-4">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit" name="like_button" class="text-green favourite">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </button>
+                            <span>{{ blog.number_of_likes }}</span>
+                            {% else %}
+                            <button type="submit" name="like_button" class="text-green favourite">
+                                <i class="fa-regular fa-thumbs-up"></i>
+                            </button>
+                            <span>{{ blog.number_of_likes }}</span>
+                            {% endif %}
+                        </form>
+                        {% if request.user.is_superuser %}
+                        <div class="row">
+                            <div class="col-12">
+                                <hr class="my-0">
+                                <div class="text-center">
+                                    <a href="#" class="text-green btn text-sm">Manage
+                                        Blog
+                                        <i class="fa-solid fa-sm fa-pencil"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}
