@@ -14,6 +14,7 @@ class Blog(models.Model):
         blank=True,
         null=True,
     )
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
