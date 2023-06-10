@@ -1,4 +1,5 @@
 from django import forms
+from products.widgets import CustomClearableFileInput
 from django_summernote.widgets import SummernoteWidget
 from .models import Blog
 
@@ -18,13 +19,14 @@ class BlogForm(forms.ModelForm):
         exclude = [
             "created_on",
             "likes",
+            "author",
+            "image_url",
         ]
-        labels = {
-            "review": "Review",
-            "rating": "Rating (1-5)",
-        }
 
-        widgets = {"content": SummernoteWidget()}
+        widgets = {
+            "content": SummernoteWidget(),
+            "image": CustomClearableFileInput(),
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
