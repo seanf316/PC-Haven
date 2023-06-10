@@ -51,7 +51,16 @@
 </div>
 {% endfor %}
 {% else %}
-<div class="col-12">
-    <p><a href="{% url 'account_signup' %}" class="cta btn">Sign Up</a></p>
+<div class="col-12 text-center">
+    {% if request.user.is_authenticated %}
+    <p>There are no reviews for this Product maybe you could be the first.<br>Click the Add Review button below to get
+        started.</p>
+    <p class="mt-2"><a href="{% url 'add_review' product.id %}" class="btn cta text-uppercase">Add
+            Review</a></p>
+    {% else %}
+    <p>There are no reviews for this Product maybe you could be the first.<br>Click the Sign Up button below to get
+        started.</p>
+    <p><a href="{% url 'account_signup' %}" class="cta btn text-uppercase">Sign Up</a></p>
+    {% endif %}
 </div>
 {% endif %}
