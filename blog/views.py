@@ -59,3 +59,49 @@ def like_blog(request, blog_id):
         )
 
     return redirect(reverse("blog_detail", args=[blog.id]))
+
+
+@login_required()
+def add_blog(request):
+    """Add a blog to the site"""
+
+    user = request.user
+
+    if not user.is_superuser:
+        messages.error(
+            request, f"Sorry {user.username}, only store owners can do that."
+        )
+        return redirect(reverse("home"))
+
+    if user.is_superuser:
+        if request.method == "POST":
+            form = BlogForm(request.POST, request.FILES)
+            if form.is_valid():
+                blog = form.save(commit=False)
+                blog.author = user
+                blog.save()
+                title = form.cleaned_data["title"]
+                messages.success(
+                    request, f"Successfully added blog post - {title}."
+                )
+                return redirect(reverse("blogs"))
+            else:
+                messages.error(
+                    request,
+                    (
+                        "Failed to add blog post. "
+                        "Please ensure the form is valid."
+                    ),
+                )
+        else:
+            form = BlogForm()
+    else:
+        messages.error(request, "You are not authorized to add a Blog post.")
+        return redirect(reverse("blogs"))
+
+    template = "blog/add_blog.html"
+    context = {
+        "form": form,
+    }
+
+    return render(request, template, context)
