@@ -43,11 +43,11 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-green text-white">
-                <h2 class="modal-title" id="delete{{ blog.id }}">Delete {{ blog.title }}</h2>
+                <h2 class="modal-title" id="delete{{ blog.id }}">Delete Blog Post - {{ blog.title }}</h2>
             </div>
             <div class="modal-body">
                 {% if request.user.is_superuser %}
-                <form method="post" action="#" role="form">
+                <form method="post" action="{% url 'delete_blog' blog.id %}" role="form">
                     {% csrf_token %}
                     <p class="text-green"><strong><i>Are you sure you want to Delete this Blog post?</strong></i></p>
                     <p>This Blog post will be permanently removed and you will not be able
