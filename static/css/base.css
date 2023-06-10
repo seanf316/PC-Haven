@@ -464,6 +464,15 @@ a.category-badge span:focus {
     cursor: pointer;
 }
 
+/* ------------------------------------ Errors ------------------------------------ */
+
+.errors {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    background-color: var(--bg-green);
+}
+
 /* ------------------------------------ Media Queries ------------------------------------ */
 
 @media screen and (min-width: 768px) {
@@ -504,6 +513,10 @@ a.category-badge span:focus {
     }
 
     .hero {
+        min-height: calc(100vh - 140px);
+    }
+
+    .errors {
         min-height: calc(100vh - 140px);
     }
 
