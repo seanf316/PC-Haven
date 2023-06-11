@@ -73,14 +73,14 @@
         <div class="form-row">
             <div class="col-12">
                 <div class="row">
-                    <div class="col-12 col-md-5 d-flex mt-2">
+                    <div class="col-12 col-md-5 d-flex mt-2 justify-content-between">
                         <div class="pl-2">
                             <p>
                                 <span class="text-green font-weight-bold">Price: </span>
                                 €{{ product.price }}
                             </p>
                         </div>
-                        <div class="pl-5">
+                        <div>
                             {% if product.in_stock %}
                             <p>
                                 <i class="fa-regular fa-square-check text-green"></i>
@@ -92,6 +92,7 @@
                             {% endif %}
                         </div>
                     </div>
+                    {% if product.in_stock %}
                     <div class="col-12 col-md-7 px-4 d-flex flex-fill">
                         <div class="pr-3 mt-2">
                             <p class="text-green font-weight-bold">Qty:</p>
@@ -120,6 +121,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
                 <hr>
                 <div class="row mb-3">
@@ -130,9 +132,11 @@
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
+                        {% if product.in_stock %}
                         <button type="submit" name="action" value="Add To Cart"
                             class="btn cta flex-grow-1 font-weight-bold">ADD&nbsp;&nbsp;<i
                                 class="fa-solid fa-cart-shopping"></i></button>
+                        {% endif %}
                     </div>
                 </div>
                 {% if request.user.is_superuser %}
