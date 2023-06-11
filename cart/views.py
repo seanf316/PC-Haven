@@ -19,8 +19,8 @@ def view_cart(request):
 def add_to_cart(request, product_id):
     """Add a product and its quantity to the cart"""
 
+    product = get_object_or_404(Product, id=product_id)
     if request.method == "POST":
-        product = get_object_or_404(Product, id=product_id)
         quantity = int(request.POST.get("quantity"))
 
         cart = request.session.get("cart", {})
@@ -42,7 +42,11 @@ def add_to_cart(request, product_id):
         return HttpResponseRedirect(redirect_url)
 
     else:
-        return HttpResponse("Invalid request")
+        messages.error(
+            request,
+            f"Could not add {product.name} to cart. It may not be in stock.",
+        )
+        return redirect(reverse("products"))
 
 
 def edit_cart(request, product_id):
