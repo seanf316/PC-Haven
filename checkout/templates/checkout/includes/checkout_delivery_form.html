@@ -1,0 +1,58 @@
+<div class="row mb-2">
+    <div class="col-12">
+        <div class="accordion border-green rounded-0" id="accordionExample">
+            <div class="card rounded-0">
+                <div class="card-header bg-green text-white" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne" id="headingOne">
+                    <p class="mb-0 text-lg text-center text-uppercase">
+                        Delivery Information <i class="fa-solid fa-circle-chevron-down"></i>
+                    </p>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                            {% csrf_token %}
+                            <fieldset class="rounded px-3 mb-1 allauth-form">
+                                <legend class="fieldset-label small text-green font-weight-bold px-2 w-auto">
+                                    Customer
+                                    Details</legend>
+                                {{ order_form.full_name | as_crispy_field }}
+                                {{ order_form.email | as_crispy_field }}
+                                {{ order_form.phone_number | as_crispy_field }}
+                            </fieldset>
+                            <fieldset class="rounded px-3 mb-2 allauth-form">
+                                <legend class="fieldset-label small text-green font-weight-bold px-2 w-auto">
+                                    Delivery
+                                    Address:</legend>
+                                {{ order_form.street_address1 | as_crispy_field }}
+                                {{ order_form.street_address2 | as_crispy_field }}
+                                {{ order_form.town_or_city | as_crispy_field }}
+                                {{ order_form.county | as_crispy_field }}
+                                {{ order_form.postcode | as_crispy_field }}
+                                {{ order_form.country | as_crispy_field }}
+                            </fieldset>
+                            <div class="form-check text-center px-3 mb-3">
+                                {% if user.is_authenticated %}
+                                <label class="form-check-label" for="id-save-info">Save
+                                    this
+                                    delivery information to my
+                                    profile</label>
+                                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info"
+                                    name="save-info" checked>
+                                {% else %}
+                                <label class="form-check-label" for="id-save-info">
+                                    <a class="text-green font-weight-bold" href="{% url 'account_signup' %}">Create an
+                                        account</a> or
+                                    <a class="text-green font-weight-bold" href="{% url 'account_login' %}">login</a>
+                                    to save this information
+                                </label>
+                                {% endif %}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

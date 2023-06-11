@@ -1,0 +1,21 @@
+<div class="row mb-2">
+    <div class="col-12">
+        <div class="bg-green text-white text-lg text-center font-weight-bold">
+            <p class="m-0 py-2">ORDER SUMMARY</p>
+        </div>
+        <div class="border-green bg-white">
+            <p class="m-2"><span class="font-weight-bold text-green">Items:</span> {{ product_count }}</p>
+            <p class="m-2"><span class="font-weight-bold text-green">Subtotal:</span>
+                €{{ total | floatformat:2 }}</p>
+            {% if free_shipping_delta == 0 %}
+            <p class="m-2"><span class="font-weight-bold text-green">Delivery:</span>
+                Free</p>
+            {% else %}
+            <p class="m-2"><span class="font-weight-bold text-green">Delivery:</span>
+                €{{ shipping|floatformat:2 }}</p>
+            {% endif %}
+            <p class="m-2"><span class="font-weight-bold text-green">Grand Total:</span>
+                €{{ grand_total|floatformat:2 }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-12">
+        <div>
+            <p class="mb-0 font-weight-bold text-green">Enter your card details below:</p>
+        </div>
+        <!-- A Stripe card element will go here -->
+        <div class="mb-3 px-3" id="card-element"></div>
+        <!-- Used to display form errors -->
+        <div class="text-danger mb-3" id="card-errors" role="alert"></div>
+        <!-- Pass the client secret to the view so we can get the payment intent id -->
+        <input form="payment-form" type="hidden" value="{{ client_secret }}" name="client_secret">
+        <div class="submit-button mb-2 d-flex flex-wrap">
+            <a href="{% url 'view_cart' %}" class="btn text-lg cta flex-grow-1">
+                <span class="icon">
+                    <i class="fas fa-sm fa-chevron-left"></i>
+                </span>
+                <span class="font-weight-bold">Adjust Cart <i class="fa-solid fa-cart-shopping"></i></span>
+            </a>
+            <button id="submit-button" form="payment-form" class="btn cta flex-grow-1">
+                <span class="font-weight-bold text-lg">Complete Purchase <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span></span>
+            </button>
+        </div>
+        <p class="small text-green font-italic my-0">
+            <span class="icon">
+                <i class="fas fa-exclamation-circle"></i>
+            </span>
+            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+        </p>
+    </div>
+</div>
