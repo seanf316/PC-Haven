@@ -8,10 +8,12 @@ class CategoryForm(forms.ModelForm):
     """
     Form to add new Categories
     """
+
     class Meta:
         """
         Define model, form fields and widgets
         """
+
         model = CategoryGroup
         fields = "__all__"
 
@@ -20,10 +22,12 @@ class SubcategoryForm(forms.ModelForm):
     """
     Form to add new Sub-Categories
     """
+
     class Meta:
         """
         Define model, form fields and widgets
         """
+
         model = SubCategory
         fields = "__all__"
 
@@ -32,13 +36,19 @@ class ProductForm(forms.ModelForm):
     """
     Form to add new Products
     """
+
     class Meta:
         """
         Define model, form fields and widgets
         """
+
         model = Product
         fields = "__all__"
         exclude = ["sku", "in_stock", "image_url"]
+
+        labels = {
+            "featured_product": "Featured Product (Tick to confirm)",
+        }
 
         widgets = {
             "features": SummernoteWidget(),

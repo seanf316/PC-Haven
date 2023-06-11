@@ -93,6 +93,7 @@ class Product(models.Model):
         auto_now_add=True,
         null=True,
     )
+    featured_product = models.BooleanField(default=False)
 
     class Meta:
         """ "
