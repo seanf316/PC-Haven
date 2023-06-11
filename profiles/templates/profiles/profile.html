@@ -75,9 +75,15 @@
         </div>
     </div>
 </section>
+
+<!-- BTT Button -->
+<button type="button" class="shadow-sm rounded border border-black" id="btn-back-to-top">
+    <i class="fas fa-arrow-up text-green"></i>
+</button>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 <script src="{% static 'profiles/js/country_field.js' %}"></script>
+<script src="{% static 'js/base.js' %}"></script>
 {% endblock %}
