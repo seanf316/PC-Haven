@@ -24,6 +24,7 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """Stores the checkout data and stores it in the user's session"""
     try:
         pid = request.POST.get("client_secret").split("_secret")[0]
         stripe.api_key = STRIPE_SECRET_KEY
@@ -46,6 +47,10 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    A view that renders the checkout page and retrieves the
+    payment form data from the profile if one is present
+    """
     if request.method == "POST":
         user = request.user
         cart = request.session.get("cart", {})
@@ -146,22 +151,24 @@ def checkout(request):
         intent = stripe.PaymentIntent.create(
             amount=stripe_total, currency=STRIPE_CURRENCY
         )
-        
+
         # Attempt to prefill the form with any info the user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=user)
-                order_form = OrderForm(initial={
-                    'full_name': profile.user.get_full_name(),
-                    'email': profile.user.email,
-                    'phone_number': profile.default_phone_number,
-                    'street_address1': profile.default_street_address1,
-                    'street_address2': profile.default_street_address2,
-                    'town_or_city': profile.default_town_or_city,
-                    'county': profile.default_county,
-                    'postcode': profile.default_postcode,
-                    'country': profile.default_country,
-                })
+                order_form = OrderForm(
+                    initial={
+                        "full_name": profile.user.get_full_name(),
+                        "email": profile.user.email,
+                        "phone_number": profile.default_phone_number,
+                        "street_address1": profile.default_street_address1,
+                        "street_address2": profile.default_street_address2,
+                        "town_or_city": profile.default_town_or_city,
+                        "county": profile.default_county,
+                        "postcode": profile.default_postcode,
+                        "country": profile.default_country,
+                    }
+                )
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
         else:

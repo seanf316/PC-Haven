@@ -8,6 +8,8 @@ from django_countries.fields import CountryField
 
 
 class Order(models.Model):
+    """A model for Orders"""
+
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(
         UserProfile,
@@ -83,10 +85,15 @@ class Order(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
+        """
+        Returns the name of the Order as a string representation of the object.
+        """
         return self.order_number
 
 
 class OrderLineItem(models.Model):
+    """A model for Order Line Items"""
+
     order = models.ForeignKey(
         Order,
         null=False,
@@ -111,4 +118,7 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
+        """
+        Returns the name of the Order Item as a string representation of the object.
+        """
         return f"SKU {self.product.sku} on order {self.order.order_number}"

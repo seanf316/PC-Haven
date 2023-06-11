@@ -3,7 +3,15 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """
+    Form to add shipping details
+    """
+
     class Meta:
+        """
+        Define model, form fields and widgets
+        """
+
         model = Order
         fields = (
             "full_name",

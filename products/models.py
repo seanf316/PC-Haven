@@ -14,16 +14,22 @@ class CategoryGroup(models.Model):
     sub_categories = models.ManyToManyField("SubCategory")
 
     class Meta:
-        """ "
+        """
         Alters the name of the Category Group in the admin panel
         """
 
         verbose_name_plural = "Categories"
 
     def __str__(self):
+        """
+        Returns the name of the Category as a string representation of the object.
+        """
         return self.name
 
     def get_friendly_name(self):
+        """
+        Passes the friendly name to the template/admin panel
+        """
         return self.friendly_name
 
 
@@ -41,9 +47,15 @@ class SubCategory(models.Model):
         verbose_name_plural = "Sub Categories"
 
     def __str__(self):
+        """
+        Returns the name of the Sub-Category as a string representation of the object.
+        """
         return self.name
 
     def get_friendly_name(self):
+        """
+        Passes the friendly name to the template/admin panel
+        """
         return self.friendly_name
 
 
@@ -90,9 +102,15 @@ class Product(models.Model):
         ordering = ("name",)
 
     def __str__(self):
+        """
+        Returns the name of the Product as a string representation of the object.
+        """
         return self.name
 
     def generate_sku(self, length=8):
+        """
+        Generates a sku number for each Product
+        """
         prefix = "pp"
         chars = string.ascii_uppercase + string.digits
         unique_id = "".join(random.choice(chars) for _ in range(length))
@@ -100,6 +118,9 @@ class Product(models.Model):
         return sku
 
     def save(self, *args, **kwargs):
+        """
+        Override the original save method and updates the stock level
+        """
         if self.stock_level <= 0:
             self.in_stock = False
         else:

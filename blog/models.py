@@ -29,10 +29,20 @@ class Blog(models.Model):
     )
 
     class Meta:
+        """
+        Order set to the created_on attribute
+        """
+
         ordering = ["-created_on"]
 
     def __str__(self):
+        """
+        Returns the name of the Blog as a string representation of the object.
+        """
         return f"Blog Post - {self.title}"
 
     def number_of_likes(self):
+        """
+        Returns the Blog likes count
+        """
         return self.likes.count()

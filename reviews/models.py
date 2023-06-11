@@ -29,7 +29,7 @@ class Review(models.Model):
 
     def __str__(self):
         """
-        Returns the User username and the Movie name as a string
+        Returns the User username and the product name as a string
         representation of the object.
         """
         return f"{self.user.username} - {self.product.name}"

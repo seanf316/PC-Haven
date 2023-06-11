@@ -2,6 +2,7 @@ from .models import CategoryGroup, SubCategory
 
 
 def getlinks(request):
-    all_categories = CategoryGroup.objects.all().order_by('name')
+    """A view to retrieve all the Categories and order by name"""
+    all_categories = CategoryGroup.objects.all().order_by("name")
 
     return {"allcategories": all_categories}

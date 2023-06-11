@@ -21,8 +21,7 @@ class UserForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
+        Add placeholders
         """
         super().__init__(*args, **kwargs)
         placeholders = {
@@ -33,6 +32,9 @@ class UserForm(forms.ModelForm):
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
+        """
+        Define model, form fields
+        """
         model = UserProfile
         exclude = ("user",)
 

@@ -3,6 +3,9 @@ from .models import Contact
 
 
 class ContactAdmin(admin.ModelAdmin):
+    """
+    Class to display Contact queries in admin view
+    """
     list_display = (
         "date_received",
         "contact_reason",

@@ -32,4 +32,7 @@ class Contact(models.Model):
     marked_as_done = models.BooleanField(default=False)
 
     def __str__(self):
-        return f" Contact Message from {self.name}"
+        """
+        Returns 'Contact Message from and customer name' as a string representation of the object.
+        """
+        return f"Contact Message from {self.name}"

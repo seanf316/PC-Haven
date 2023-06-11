@@ -5,19 +5,37 @@ from .models import Product, CategoryGroup, SubCategory
 
 
 class CategoryForm(forms.ModelForm):
+    """
+    Form to add new Categories
+    """
     class Meta:
+        """
+        Define model, form fields and widgets
+        """
         model = CategoryGroup
         fields = "__all__"
 
 
 class SubcategoryForm(forms.ModelForm):
+    """
+    Form to add new Sub-Categories
+    """
     class Meta:
+        """
+        Define model, form fields and widgets
+        """
         model = SubCategory
         fields = "__all__"
 
 
 class ProductForm(forms.ModelForm):
+    """
+    Form to add new Products
+    """
     class Meta:
+        """
+        Define model, form fields and widgets
+        """
         model = Product
         fields = "__all__"
         exclude = ["sku", "in_stock", "image_url"]
@@ -29,6 +47,9 @@ class ProductForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
+        """
+        Retrieves the Category/Subcategory friendly names and sets them as the choices in select fields
+        """
         super().__init__(*args, **kwargs)
         categories = CategoryGroup.objects.all()
         category_friendly_names = [

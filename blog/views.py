@@ -67,7 +67,7 @@ def like_blog(request, blog_id):
 
 @login_required()
 def add_blog(request):
-    """Add a blog to the site"""
+    """Add a blog post to the site"""
 
     user = request.user
 
