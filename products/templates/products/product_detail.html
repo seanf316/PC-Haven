@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <!-- Breadcrumbs -->
+        <!-- Product Breadcrumbs -->
         <div class="row">
             <div class="col-12">
                 <nav aria-label="breadcrumb">
@@ -52,13 +52,13 @@
             </div>
         </div>
 
-        <!-- Features Start -->
+        <!-- Product Features -->
         <div class="row bg-green p-1 w-100 mx-auto rounded">
             {% include './includes/features.html' %}
         </div>
     </div>
 
-    <!-- Description/Reviews Start -->
+    <!-- Description/Reviews -->
     <div class="container">
         <div class="row mt-2 mb-5 w-100 p-1 border-green mx-auto rounded-lg bg-white">
             <div class="col-12 p-0">
@@ -91,13 +91,17 @@
                 </div>
             </div>
         </div>
-        <!-- Description/Reviews End -->
     </div>
 </section>
-<!-- Products End -->
+
+<!-- BTT Button -->
+<button type="button" class="shadow-sm rounded border border-black" id="btn-back-to-top">
+    <i class="fas fa-arrow-up text-green"></i>
+</button>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 <script src="{% static 'products/js/quantityprod.js' %}"></script>
+<script src="{% static 'js/base.js' %}"></script>
 {% endblock %}
