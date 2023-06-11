@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-12 col-md-6 mx-auto text-center text-lg">
+        <div>
+            {% if request.user.is_authenticated %}
+            <p class="mt-5"><span class="font-weight-bold text-green text-uppercase">
+                    {{ user.username }}</span> your cart is empty.<br>Take a look at some of the Products
+                we have to purchase.
+            </p>
+            {% else %}
+            <p class="mt-5">Your cart is empty.<br>Take a look at some of the Products we have to purchase.
+            </p>
+            {% endif %}
+            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <span class="text-uppercase cta btn-lg icon"><i class="fas fa-chevron-left"></i> Keep
+                    Shopping</span>
+            </a>
+        </div>
+        <div class="my-5">
+            <p>Alternatively if there is a specific product you are looking for that we do not stock please get
+                in
+                touch with us.</p>
+            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <span class="text-uppercase cta btn-lg icon">Contact
+                    Us &nbsp;<i class="fa-regular fa-paper-plane"></i></span>
+            </a>
+        </div>
+    </div>
+</div>

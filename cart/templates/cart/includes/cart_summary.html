@@ -1,0 +1,63 @@
+<div class="col-12 col-md-6 col-lg-4 p-0 pl-md-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="mb-1 w-100">
+                <a href="{% url 'products' %}"
+                    class="border-green text-green cart-shop btn rounded-0 font-weight-bold text-lg w-100 m-0">
+                    <span class="text-uppercase icon m-0"><i class="fas fa-chevron-left"></i> Keep
+                        Shopping</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-12">
+            <div class="bg-green text-white text-lg text-center font-weight-bold">
+                <p class="m-0 py-2">CART SUMMARY</p>
+            </div>
+            <div class="border-green p-2">
+                <p><span class="font-weight-bold text-green">Items:</span> {{ product_count }}</p>
+                <p><span class="font-weight-bold text-green">Subtotal:</span>
+                    €{{ total | floatformat:2 }}</p>
+                {% if free_shipping_delta == 0 %}
+                <p><span class="font-weight-bold text-green">Delivery:</span>
+                    Free</p>
+                {% else %}
+                <p><span class="font-weight-bold text-green">Delivery:</span>
+                    €{{ shipping|floatformat:2 }}</p>
+                {% endif %}
+                {% if free_shipping_delta > 0 %}
+                <p class="mb-1 text-center text-green font-italic">
+                    You could get free delivery by spending just <strong>
+                        €{{ free_shipping_delta}}</strong> more!
+                </p>
+                {% endif %}
+                <hr>
+                <p class="text-lg text-center"><span class="font-weight-bold text-green">Grand Total:</span>
+                    €{{ grand_total|floatformat:2 }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <a href="{% url 'checkout' %}"
+                    class="border-green text-green cart-shop btn rounded-0 font-weight-bold text-lg w-100 m-0">
+                    <span class="text-uppercase">Secure Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row credit-cards w-100 mt-2">
+        <div class="col-3">
+            <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/cards/Amex.png" alt="">
+        </div>
+        <div class="col-3"><img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/cards/Mastercard.png" alt="">
+        </div>
+        <div class="col-3"><img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/cards/Stripe.png" alt=""></div>
+        <div class="col-3"><img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/cards/Visa.png" alt=""></div>
+    </div>
+</div>

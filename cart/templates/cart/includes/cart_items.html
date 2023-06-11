@@ -1,0 +1,64 @@
+<div class="col-12 col-md-6 col-lg-8 rounded">
+    {% for item in cart_items %}
+    <div class="row border-green bg-white cart-item-row p-2 mb-3">
+        <div class="col-12 col-lg-4 mb-lg-0 mb-2">
+            {% if item.product.image %}
+            <div class="bg-white text-center img-container">
+                <a href="{% url 'product_detail' item.product.id %}"><img class="img-fluid rounded"
+                        src="{{ item.product.image.url }}"></a>
+            </div>
+            {% else %}
+            <div class="bg-white text-center img-container">
+                <a href="{% url 'product_detail' item.product.id %}"><img class="img-fluid rounded"
+                        src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"></a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-12 col-lg-5 mb-lg-0 mb-3">
+            <p class="my-0 text-lg text-green"><strong>{{ item.product.name }}</strong></p>
+            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+            <p class="my-1"><span class="font-weight-bold text-green">Price:</span>
+                €{{ item.product.price }}</p>
+            <p class="my-1"><span class="font-weight-bold text-green">Qty:</span>
+                {{ item.quantity }}</p>
+            <p class="my-1"><span class="font-weight-bold text-green">Stock Qty:</span>
+                {{ item.product.stock_level }}</p>
+        </div>
+        <div class="col-12 col-lg-3 pt-2">
+            <form id="qtyform" class="form mb-1" method="POST" action="{% url 'edit_cart' item.product.id %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                                data-product_id="{{ item.product.id }}" id="decrement-qty_{{ item.product.id }}">
+                                <span>
+                                    <i class="fas fa-minus fa-sm"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <input class="form-control text-center form-control-sm qty_input" type="number" name="quantity"
+                            value="{{ item.quantity }}" min="1" max="{{ item.product.stock_level}}"
+                            data-product_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                        <div class="input-group-append">
+                            <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                data-product_id="{{ item.product.id }}" id="increment-qty_{{ item.product.id }}">
+                                <span>
+                                    <i class="fas fa-plus fa-sm"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" name="action" class="btn cta text-uppercase w-100">Update
+                    +/-</button>
+            </form>
+            <form action="{% url 'delete_from_cart' item.product.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" name="action" class="cta btn text-uppercase w-100">Remove <i
+                        class="fa-solid fa-trash"></i></button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
