@@ -35,7 +35,7 @@
 </section>
 
 <!-- About -->
-<section id="about" class="sec-pad bg-white">
+<section id="about" class="sec-pad">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -147,7 +147,7 @@
             <div class="col-12 m-auto">
                 <div class="owl-carousel owl-theme">
                     {% for product in latest_products %}
-                    <div class="item">
+                    <div class="item ml-1">
                         <div class="card border-green flex-grow-1">
                             {% if product.image %}
                             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top px-1 py-2">

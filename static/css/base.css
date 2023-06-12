@@ -422,6 +422,7 @@ a.category-badge span:focus {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
+    z-index: 99999999;
 }
 
 /* ------------------------------------ Cart ------------------------------------ */
