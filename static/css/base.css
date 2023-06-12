@@ -27,6 +27,13 @@ body {
 }
 
 /* ------------------------------------ Helper Styles ------------------------------------ */
+.text-heading {
+    font-size: 1.4rem;
+}
+
+.sec-pad {
+    padding: 3rem 0;
+}
 
 .text-prime {
     color: var(--primary-text);
@@ -251,6 +258,64 @@ i.fa-solid.fa-bars {
     height: 80%;
 }
 
+/* ------------------------------------ About ------------------------------------ */
+
+.about-us {
+    padding: 3rem 0;
+    background-color: var(--bg-white);
+}
+
+/* ------------------------------------ Featured Products ------------------------------------ */
+
+.owl-nav {
+    margin-top: 0 !important;
+}
+
+.owl-nav button span {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--bg-white);
+    padding: 0;
+}
+
+.owl-nav button:hover {
+    background: var(--bg-green) !important;
+}
+
+.owl-carousel .owl-stage {
+    display: flex;
+}
+
+.owl-carousel .item {
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--bg-white) !important;
+}
+
+
+/* ------------------------------------ Latest Products ------------------------------------ */
+
+.latest-product .owl-nav button span {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--bg-green);
+    padding: 0;
+}
+
+.latest-product .owl-nav button:hover {
+    background: var(--bg-white) !important;
+}
+
+.latest-product .owl-theme .owl-dots .owl-dot.active span,
+.latest-product .owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--bg-green) !important;
+}
+
 /* ------------------------------------ All Auth ------------------------------------ */
 
 .allauth-form h2 {
@@ -368,6 +433,13 @@ a.category-badge span:focus {
 
 /* ------------------------------------ Cart ------------------------------------ */
 
+.cart-wrapper {
+    min-height: 7rem;
+    max-height: 12rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .cart a {
     cursor: pointer;
 }
@@ -436,16 +508,19 @@ a.category-badge span:focus {
     border-bottom-color: #17a2b8 !important;
 }
 
-.cart-wrapper {
-    min-height: 7rem;
-    max-height: 12rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
+/* ------------------------------------ Images ------------------------------------ */
 
 .card-img-top {
     width: 100%;
-    height: 12rem;
+    height: 25vh;
+    object-fit: contain;
+}
+
+/* ------------------------------------ Blog ------------------------------------ */
+
+.blogs .card-img-top {
+    width: 100%;
+    height: 14rem;
     object-fit: cover;
 }
 
@@ -490,9 +565,17 @@ a.category-badge span:focus {
         margin-top: 3rem;
     }
 
+    .text-heading {
+        font-size: 1.5rem;
+    }
+
     .hero img {
         width: 100%;
         height: 100%;
+    }
+
+    .sec-pad {
+        padding: 5rem 0;
     }
 
     #btn-back-to-top {
@@ -524,8 +607,16 @@ a.category-badge span:focus {
         font-size: 2rem;
     }
 
+    .text-heading {
+        font-size: 2rem;
+    }
+
     .hero p {
         padding: 0 2rem;
+    }
+
+    .sec-pad {
+        padding: 7rem 0;
     }
 
     .message-container {
@@ -540,6 +631,10 @@ a.category-badge span:focus {
     }
 
     .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-heading {
         font-size: 2.5rem;
     }
 
