@@ -29,10 +29,10 @@
             <div class="col-12 col-md-10 mx-auto mb-4 d-flex">
                 <div class="card border-green-light flex-fill">
                     {% if blog.image %}
-                    <img src="{{ blog.image.url }}" class="card-img-top" alt="...">
+                    <img src="{{ blog.image.url }}" class="card-img-top" alt="Blog Image">
                     {% else %}
                     <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/blog/blog.webp" class="card-img-top"
-                        alt="...">
+                        alt="Default blog image">
                     {% endif %}
                     <div class="bg-green text-white font-weight-bold text-center mb-2">
                         <p class="p-2 mb-0">Author: {{ blog.author }}</p>

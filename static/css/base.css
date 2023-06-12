@@ -519,6 +519,7 @@ a.category-badge span:focus {
 
 .blog_detail .card-img-top {
     height: 15rem;
+    object-fit: cover;
 }
 
 .blog_detail .card .card-body {
