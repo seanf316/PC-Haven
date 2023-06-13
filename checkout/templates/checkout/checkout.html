@@ -62,11 +62,6 @@
         <div class="loader text-lg">PROCESSING.....</div>
     </div>
 </section>
-
-<!-- BTT Button -->
-<button type="button" class="shadow-sm rounded border border-black" id="btn-back-to-top">
-    <i class="fas fa-arrow-up text-green"></i>
-</button>
 {% endblock %}
 
 {% block postloadjs %}
@@ -74,5 +69,4 @@
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}
 <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-<script src="{% static 'js/base.js' %}"></script>
 {% endblock %}
