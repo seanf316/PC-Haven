@@ -27,6 +27,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
+    <!-- Mailchimp -->
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
     {% endblock %}
 
     {% block extra_css %}
@@ -46,16 +48,13 @@
     <script src="https://js.stripe.com/v3/"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/e4bf4f6321.js" crossorigin="anonymous"></script>
-    <!-- OWL JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous"></script>
     {% endblock %}
 
     <title>PC Haven{% block extra_title %}{% endblock %}</title>
 </head>
 
 <body class="d-flex flex-column">
+    <!-- Header -->
     <header class="container-fluid box">
         <div id="banner" class="row text-center text-white font-weight-bold">
             <div class="col-12 bg-green py-2">
@@ -82,6 +81,7 @@
         </div>
     </header>
 
+    <!-- Messages -->
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -103,15 +103,25 @@
     {% block page_header %}
     {% endblock %}
 
+    <!-- Main  -->
     <main>
         {% block content %}
         {% endblock %}
     </main>
 
+    <!-- BTT Button -->
+    <button type="button" class="shadow-sm rounded border border-black" id="btn-back-to-top">
+        <i class="fas fa-arrow-up text-green"></i>
+    </button>
+
+    <!-- Footer  -->
+    {% include 'includes/footer.html' %}
+
     {% block postloadjs %}
     {% if messages %}
     <script src="{% static 'js/message.js' %}"></script>
     {% endif %}
+    <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
 </body>
 
