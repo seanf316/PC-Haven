@@ -6,9 +6,18 @@ def home(request):
     """A view to return the home page"""
     featured_products = Product.objects.filter(featured_product=True)
     latest_products = Product.objects.order_by("-created_on")[:10]
-    print(featured_products)
     context = {
         "featured_products": featured_products,
         "latest_products": latest_products,
     }
     return render(request, "home/index.html", context)
+
+
+def privacy(request):
+    """A view to return the privacy policy page"""
+    return render(request, "home/privacy_policy.html")
+
+
+def terms(request):
+    """A view to return the terms and conditions page"""
+    return render(request, "home/terms.html")
