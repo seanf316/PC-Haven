@@ -14,6 +14,7 @@
     --bg-dark: #000;
     --bg-grey: rgba(195, 184, 173, 0.2);
     --primary-text: #3e3d3d;
+    --footer-green: #5CCB76;
 }
 
 html {
@@ -24,6 +25,10 @@ body {
     font-family: 'Lato', sans-serif;
     background: var(--bg-offwhite);
     color: var(--primary-text);
+}
+
+main {
+    min-height: calc(100vh - 120px);
 }
 
 /* ------------------------------------ Helper Styles ------------------------------------ */
@@ -309,6 +314,19 @@ i.fa-solid.fa-bars {
     background: var(--bg-green) !important;
 }
 
+/* ------------------------------------ Testimonials ------------------------------------ */
+
+.testimonials img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.testimonials button i {
+    color: var(--bg-green);
+    font-size: 1rem;
+}
+
 /* ------------------------------------ All Auth ------------------------------------ */
 
 .allauth-form h2 {
@@ -553,6 +571,46 @@ a.category-badge span:focus {
     border-radius: .5rem;
 }
 
+/* ------------------------------------ Privacy Policy ------------------------------------ */
+
+.privacy a {
+    color: var(--bg-green);
+}
+
+.privacy a:hover {
+    font-style: italic;
+    text-decoration: none;
+}
+
+.privacy h2 {
+    color: var(--bg-green);
+}
+
+/* ------------------------------------ Footer ------------------------------------ */
+
+footer {
+    background-color: var(--bg-dark);
+}
+
+footer .text-green {
+    color: var(--footer-green);
+}
+
+.footer-logo {
+    font-size: 2rem;
+    border: 3px solid var(--footer-green);
+    max-width: fit-content;
+    padding: .1rem .3rem;
+    color: var(--footer-green);
+    text-transform: uppercase;
+}
+
+footer li:hover,
+footer li a:hover {
+    text-decoration: none !important;
+    color: var(--footer-green) !important;
+}
+
 /* ------------------------------------ Media Queries ------------------------------------ */
 
 @media screen and (min-width: 768px) {
@@ -591,6 +649,10 @@ a.category-badge span:focus {
     .blog_detail .card-img-top {
         height: 20rem;
     }
+
+    .testimonials button i {
+        font-size: 2.5rem;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -601,6 +663,10 @@ a.category-badge span:focus {
     }
 
     .hero {
+        min-height: calc(100vh - 140px);
+    }
+
+    main {
         min-height: calc(100vh - 140px);
     }
 
@@ -626,6 +692,10 @@ a.category-badge span:focus {
 
     .message-container {
         top: 141px;
+    }
+
+    .testimonials button i {
+        font-size: 4rem;
     }
 }
 
