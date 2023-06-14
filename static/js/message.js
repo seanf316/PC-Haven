@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     let toast = $('.toast');
+    let hideTimeout;
 
     toast.toast('show');
 
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearTimeout(hideTimeout);
     });
 
-    let hideTimeout = setTimeout(function () {
+    hideTimeout = setTimeout(function () {
         toast.toast('hide');
     }, 3000);
 
@@ -18,5 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
             toast.toast('hide');
         }, 3000);
     });
+
+    function hideToastOnScroll() {
+        toast.toast('hide');
+        clearTimeout(hideTimeout);
+    }
+
+    window.addEventListener('scroll', hideToastOnScroll);
 
 });
