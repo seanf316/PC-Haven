@@ -1,0 +1,52 @@
+<section class="latest-product bg-white sec-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <span class="text-heading text-green text-center text-uppercase">Latest Products</span>
+                <hr class="w-50 bg-white mx-auto mb-0">
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-12">
+                <p class="text-prime">Stay ahead of the curve with our latest collection of PC components. We
+                    constantly scour the market
+                    to bring you the newest and most innovative hardware available. Whether you're in search of the
+                    fastest processors, top-of-the-line graphics cards, or the latest storage solutions, our latest
+                    products are meticulously selected to provide exceptional performance, reliability, and style.
+                    Experience lightning-fast speeds, immersive visuals, and enhanced productivity with our cutting-edge
+                    offerings. Trust <strong class="text-green">PC HAVEN</strong> to keep you at the forefront of
+                    technology and elevate your computing
+                    experience with our latest products.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme">
+                    {% for product in latest_products %}
+                    <div class="item ml-1">
+                        <div class="card border-green flex-grow-1">
+                            {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top px-1 py-2">
+                            {% else %}
+                            <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+                                alt="{{ product.name }}" class="card-img-top">
+                            {% endif %}
+                            <div class="card-body p-2 text-center d-flex flex-column">
+                                <div
+                                    class="flex-grow-1 bg-green text-white d-flex flex-column p-2 align-items-center justify-content-center">
+                                    <span class="font-weight-bold">{{product.name}}</span>
+                                </div>
+                                <div class="mt-auto">
+                                    <p class="text-green pt-3 font-weight-bold text-lg">€{{ product.price }}</p>
+                                </div>
+                                <a href="{% url 'product_detail' product.id %}" class="text-green btn cta text-sm">View
+                                    Product</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

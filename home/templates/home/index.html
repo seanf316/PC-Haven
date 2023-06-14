@@ -11,242 +11,29 @@
 
 {% block content %}
 <!-- Hero -->
-<section class="hero">
-    <div class="container">
-        <div class="row flex-wrap-reverse align-items-center">
-            <div
-                class="col-12 col-md-6 mb-3 p-3 d-flex flex-column align-items-center justify-content-center text-white">
-                <h1 class="text-uppercase text-center font-weight-bold rounded">
-                    Build your dream PC
-                </h1>
-                <p>Welcome to <strong>PC HAVEN</strong>, your ultimate destination for top-quality PC components. We are
-                    passionate
-                    about providing you with the latest and most cutting-edge hardware to fuel your technological
-                    ambitions. Whether you're a hardcore gamer, a creative professional, or a tech enthusiast, we've
-                    got you covered.</p>
-                <a href="{% url 'products' %}" class="shop-now-button btn cta text-uppercase">Shop Now</a>
-            </div>
-            <div class="col-12 col-md-6 my-auto d-flex justify-content-center align-items-center">
-                <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/pchaven/hero.webp" class="img-fluid"
-                    alt="">
-            </div>
-        </div>
-    </div>
-</section>
+{% include './includes/landing.html' %}
 
 <!-- About -->
-<section id="about" class="sec-pad">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <span class="text-green text-heading text-center text-uppercase">About Us</span>
-                <hr class="w-50 mx-auto">
-            </div>
-        </div>
-        <div class="row mt-4 flex-wrap-reverse">
-            <div class="col-12 col-lg-7 my-auto d-flex flex-column justify-content-center align-items-center">
-                <p>At <span class="text-green font-weight-bold">PC HAVEN</span>, we are dedicated to being your go-to
-                    source for premium
-                    PC components. Our mission is to
-                    empower individuals with the latest and most innovative hardware to fuel their technological
-                    aspirations.
-                </p>
-                <p>With a team of passionate enthusiasts, we understand the needs of hardcore gamers, creative
-                    professionals, and tech enthusiasts alike. We curate a meticulously selected range of top-quality
-                    components that meet the highest standards of performance, reliability, and durability.</p>
-                <p>We believe that a truly exceptional PC experience starts with the right components. That's why we
-                    tirelessly search for the latest advancements in hardware, ensuring that our inventory is always
-                    up-to-date with cutting-edge technology. From powerful graphics cards to lightning-fast processors,
-                    from high-capacity storage solutions to sleek and stylish cases, we have everything you need to
-                    build your dream PC.</p>
-            </div>
-            <div class="col-12 col-lg-5 px-md-5 px-lg-0 my-auto d-flex justify-content-center align-items-center">
-                <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/pchaven/about.webp" class="img-fluid"
-                    alt="About Us Image">
-            </div>
-        </div>
-    </div>
-</section>
+{% include './includes/about.html' %}
 
 <!-- Featured Products -->
-<section class="featured-product bg-green text-white sec-pad">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <span class="text-heading text-center text-uppercase">Featured Products</span>
-                <hr class="w-50 bg-white mx-auto">
-            </div>
-        </div>
-        <div class="row my-4 flex-wrap-reverse">
-            <div class="col-12">
-                <p>Discover the best of the best in PC components with our handpicked selection of featured products.
-                    From cutting-edge processors to high-performance graphics cards and sleek PC cases, each featured
-                    product is a testament to innovation, quality, and visual appeal. Upgrade your system and unleash
-                    its full potential with our meticulously curated lineup, delivering exceptional performance,
-                    reliability, and style. Experience the pinnacle of technology and elevate your PC experience with
-                    <strong>PC
-                        HAVEN</strong>'s top-tier featured products.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 m-auto">
-                <div class="owl-carousel owl-theme">
-                    {% for product in featured_products %}
-                    <div class="item">
-                        <div class="card flex-grow-1">
-                            {% if product.image %}
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top px-1 py-2">
-                            {% else %}
-                            <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
-                                alt="{{ product.name }}" class="card-img-top">
-                            {% endif %}
-                            <div class="card-body p-2 text-center d-flex flex-column">
-                                <div
-                                    class="flex-grow-1 bg-green d-flex flex-column p-2 align-items-center justify-content-center">
-                                    <span class="font-weight-bold">{{product.name}}</span>
-                                </div>
-                                <div class="mt-auto">
-                                    <p class="text-green pt-3 font-weight-bold text-lg">€{{ product.price }}</p>
-                                </div>
-                                <a href="{% url 'product_detail' product.id %}" class="text-green btn cta text-sm">View
-                                    Product</a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% include './includes/featured_products.html' %}
 
 <!-- Latest Products -->
-<section class="latest-product bg-white sec-pad">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <span class="text-heading text-green text-center text-uppercase">Latest Products</span>
-                <hr class="w-50 bg-white mx-auto">
-            </div>
-        </div>
-        <div class="row my-4 flex-wrap-reverse">
-            <div class="col-12">
-                <p class="text-prime">Stay ahead of the curve with our latest collection of PC components. We
-                    constantly scour the market
-                    to bring you the newest and most innovative hardware available. Whether you're in search of the
-                    fastest processors, top-of-the-line graphics cards, or the latest storage solutions, our latest
-                    products are meticulously selected to provide exceptional performance, reliability, and style.
-                    Experience lightning-fast speeds, immersive visuals, and enhanced productivity with our cutting-edge
-                    offerings. Trust <strong class="text-green">PC HAVEN</strong> to keep you at the forefront of
-                    technology and elevate your computing
-                    experience with our latest products.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 m-auto">
-                <div class="owl-carousel owl-theme">
-                    {% for product in latest_products %}
-                    <div class="item ml-1">
-                        <div class="card border-green flex-grow-1">
-                            {% if product.image %}
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top px-1 py-2">
-                            {% else %}
-                            <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
-                                alt="{{ product.name }}" class="card-img-top">
-                            {% endif %}
-                            <div class="card-body p-2 text-center d-flex flex-column">
-                                <div
-                                    class="flex-grow-1 bg-green text-white d-flex flex-column p-2 align-items-center justify-content-center">
-                                    <span class="font-weight-bold">{{product.name}}</span>
-                                </div>
-                                <div class="mt-auto">
-                                    <p class="text-green pt-3 font-weight-bold text-lg">€{{ product.price }}</p>
-                                </div>
-                                <a href="{% url 'product_detail' product.id %}" class="text-green btn cta text-sm">View
-                                    Product</a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% include './includes/latest_products.html' %}
+
+<!-- Testimonials -->
+{% include './includes/testimonials.html' %}
 
 <!-- Newsletter -->
-<section class="newsletter bg-green py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <p class="text-center"><span class="text-heading text-white text-uppercase">Newsletter</span></p>
-                <hr class="w-50 bg-white mx-auto">
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-12 col-md-5">
-                <p class="text-white mb-0">
-                    Join our newsletter to stay up-to-date with the latest innovations and exclusive offers from
-                    <strong>PC
-                        HAVEN</strong>, the ultimate destination for top-quality PC components. As a subscriber, you
-                    will be the
-                    first to receive exclusive promo codes for discounts, special deals, and limited-time offers,
-                    allowing you to save big on your favorite hardware. Don't miss out on being part of our vibrant
-                    community of hardcore gamers, creative professionals, and tech enthusiasts. Sign up now and elevate
-                    your PC experience to new heights while unlocking incredible savings.
-                </p>
-            </div>
-            <div class="col-12 col-md-7">
-                <!-- Begin Mailchimp Signup Form -->
-                <div id="mc_embed_signup">
-                    <form
-                        action="https://herokuapp.us17.list-manage.com/subscribe/post?u=52a19a12d548c66ed86c613ed&amp;id=be118c9796&amp;f_id=001159e3f0"
-                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-                        target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll" class="py-3 font-weight-bold">
-                            <div class="text-center text-green font-weight-bold text-uppercase text-lg">
-                                <p>Subscribe to PC HAVEN</p>
-                                <a href="http://eepurl.com/itiCBk"
-                                    title="Mailchimp - email marketing made easy and fun"><img
-                                        src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a>
-                            </div>
-                            <div class="indicates-required mr-0 text-green mt-3"><span>*</span> indicates
-                                required
-                            </div>
-                            <div class="mc-field-group text-green w-100 pb-0">
-                                <label for="mce-EMAIL">Email Address <span class="text-green">*</span>
-                                </label>
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"
-                                    required>
-                                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                            </div>
-                            <div id="mce-responses" class="clear foot m-0 px-0 pt-0 w-100">
-                                <div class="response m-0 pt-0" id="mce-error-response" style="display:none"></div>
-                                <div class="response m-0 pt-0" id="mce-success-response" style="display:none"></div>
-                            </div>
-                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                    name="b_52a19a12d548c66ed86c613ed_be118c9796" tabindex="-1" value=""></div>
-                            <div class="optionalParent">
-                                <div class="clear foot d-flex flex-column justify-content-between align-items-center">
-                                    <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
-                                        class="btn cta m-0 text-uppercase w-50">Subscribe</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <!--End mc_embed_signup-->
-            </div>
-        </div>
-    </div>
-</section>
+{% include './includes/newsletter.html' %}
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-<script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<!-- Mailchimp -->
+<script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
 <!-- OWL JS -->
 <script src="{% static 'js/owl.js' %}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"

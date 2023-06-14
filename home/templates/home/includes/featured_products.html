@@ -1,0 +1,51 @@
+<section class="featured-product bg-green text-white sec-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <span class="text-heading text-center text-uppercase">Featured Products</span>
+                <hr class="w-50 bg-white mx-auto mb-0">
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-12">
+                <p>Discover the best of the best in PC components with our handpicked selection of featured products.
+                    From cutting-edge processors to high-performance graphics cards and sleek PC cases, each featured
+                    product is a testament to innovation, quality, and visual appeal. Upgrade your system and unleash
+                    its full potential with our meticulously curated lineup, delivering exceptional performance,
+                    reliability, and style. Experience the pinnacle of technology and elevate your PC experience with
+                    <strong>PC
+                        HAVEN</strong>'s top-tier featured products.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme">
+                    {% for product in featured_products %}
+                    <div class="item">
+                        <div class="card flex-grow-1">
+                            {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top px-1 py-2">
+                            {% else %}
+                            <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+                                alt="{{ product.name }}" class="card-img-top">
+                            {% endif %}
+                            <div class="card-body p-2 text-center d-flex flex-column">
+                                <div
+                                    class="flex-grow-1 bg-green d-flex flex-column p-2 align-items-center justify-content-center">
+                                    <span class="font-weight-bold">{{product.name}}</span>
+                                </div>
+                                <div class="mt-auto">
+                                    <p class="text-green pt-3 font-weight-bold text-lg">€{{ product.price }}</p>
+                                </div>
+                                <a href="{% url 'product_detail' product.id %}" class="text-green btn cta text-sm">View
+                                    Product</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
