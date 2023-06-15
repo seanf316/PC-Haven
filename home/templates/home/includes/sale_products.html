@@ -1,0 +1,57 @@
+<section id="sale-products" class="sale-product bg-dark text-white sec-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <span class="text-heading text-center text-uppercase">Products On Sale</span>
+                <hr class="w-50 mx-auto mb-0">
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-12">
+                <p>Experience the ultimate PC upgrade without compromising your budget with our handpicked selection of
+                    discounted products. Unleash the full potential of your system with our incredible deals on
+                    cutting-edge processors, lightning-fast storage solutions, and powerful graphics cards. Upgrade your
+                    PC without breaking the bank and witness a significant boost in speed, efficiency, and overall
+                    computing power. Don't miss out on these limited-time offers to elevate your PC experience to new
+                    heights. Discover the best deals at <strong>PC HAVEN</strong> and redefine what's possible for your
+                    system.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme">
+                    {% for product in sale_products %}
+                    <div class="item">
+                        <div class="card flex-grow-1">
+                            {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top px-1 py-2">
+                            {% else %}
+                            <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+                                alt="{{ product.name }}" class="card-img-top">
+                            {% endif %}
+                            <div class="card-body p-2 text-center d-flex flex-column">
+                                <div
+                                    class="flex-grow-1 bg-green d-flex flex-column p-2 align-items-center justify-content-center">
+                                    <span class="font-weight-bold">{{product.name}}</span>
+                                </div>
+                                <div class="mt-auto">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <p class="text-green pt-3 font-weight-bold text-lg price">
+                                            €{{ product.sale_price }}&nbsp;&nbsp;
+                                        </p>
+                                        <p class="pt-3"><span class="badge badge-pill badge-success">SALE</span></p>
+                                    </div>
+                                </div>
+                                <a href="{% url 'product_detail' product.slug %}"
+                                    class="text-green btn cta text-sm">View
+                                    Product</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
