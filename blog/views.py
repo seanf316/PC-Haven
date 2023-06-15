@@ -23,11 +23,11 @@ def blogs(request):
     return render(request, template, context)
 
 
-def blog_detail(request, blog_id):
+def blog_detail(request, slug):
     """A view to show blog details"""
 
     user = request.user
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = get_object_or_404(Blog, slug=slug)
     liked = False
     comments = Comment.objects.filter(blog=blog).order_by("-created_on")
 
@@ -44,11 +44,11 @@ def blog_detail(request, blog_id):
     return render(request, "blog/blog_detail.html", context)
 
 
-def like_blog(request, blog_id):
+def like_blog(request, slug):
     """A view to handle liking/unliking on a blog post"""
 
     user = request.user
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = get_object_or_404(Blog, slug=slug)
 
     if user.is_authenticated:
         if blog.likes.filter(id=user.id).exists():
@@ -64,7 +64,7 @@ def like_blog(request, blog_id):
             request, "Only registered users can like this Blog post."
         )
 
-    return redirect(reverse("blog_detail", args=[blog.id]))
+    return redirect(reverse("blog_detail", args=[blog.slug]))
 
 
 @login_required()
@@ -114,7 +114,7 @@ def add_blog(request):
 
 
 @login_required
-def edit_blog(request, blog_id):
+def edit_blog(request, slug):
     """Edit a blog post"""
     user = request.user
 
@@ -124,7 +124,7 @@ def edit_blog(request, blog_id):
         )
         return redirect(reverse("home"))
 
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = get_object_or_404(Blog, slug=slug)
     if request.method == "POST":
         form = BlogForm(request.POST, request.FILES, instance=blog)
         if form.is_valid():
@@ -135,7 +135,7 @@ def edit_blog(request, blog_id):
             messages.success(
                 request, f"Successfully updated blog post - {title}."
             )
-            return redirect(reverse("blog_detail", args=[blog.id]))
+            return redirect(reverse("blog_detail", args=[blog.slug]))
         else:
             messages.error(
                 request,
@@ -161,7 +161,7 @@ def edit_blog(request, blog_id):
 
 
 @login_required
-def delete_blog(request, blog_id):
+def delete_blog(request, slug):
     """Delete a blog post"""
     user = request.user
 
@@ -171,24 +171,24 @@ def delete_blog(request, blog_id):
         )
         return redirect(reverse("blogs"))
 
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = get_object_or_404(Blog, slug=slug)
     blog.delete()
     messages.success(request, f"Blog post {blog.title} has been deleted!")
     return redirect(reverse("blogs"))
 
 
-def add_comment(request, blog_id):
+def add_comment(request, slug):
     """
     Function to comment on existing blogs
     """
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = get_object_or_404(Blog, slug=slug)
 
     if not request.user.is_authenticated:
         messages.info(
             request,
             "You will need to Sign Up or Login to add comments to the Blog Post.",
         )
-        return redirect(reverse("blog_detail", args=[blog.id]))
+        return redirect(reverse("blog_detail", args=[blog.slug]))
 
     if request.method == "POST":
         form = CommentForm(request.POST)
@@ -200,7 +200,7 @@ def add_comment(request, blog_id):
             )  # Set the name field to the current user
             comment.save()
             messages.success(request, "Your comment has been added.")
-            return redirect(reverse("blog_detail", args=[blog.id]))
+            return redirect(reverse("blog_detail", args=[blog.slug]))
         else:
             messages.error(
                 request,
@@ -218,13 +218,13 @@ def add_comment(request, blog_id):
 
 
 @login_required()
-def edit_comment(request, blog_id, comment_id):
+def edit_comment(request, slug, comment_id):
     """
     Checks the database for the comment.id and then confirms if
     user matches the comment user before allowing user to edit their comment
     """
     user = request.user
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = get_object_or_404(Blog, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
     if user.is_superuser or user == comment.name:
@@ -237,7 +237,7 @@ def edit_comment(request, blog_id, comment_id):
                     request, f"{user.username} your comment has been updated"
                 )
 
-                return redirect(reverse("blog_detail", args=[blog.id]))
+                return redirect(reverse("blog_detail", args=[blog.slug]))
             else:
                 messages.error(
                     request,
@@ -248,7 +248,7 @@ def edit_comment(request, blog_id, comment_id):
 
     else:
         messages.error(request, "You are not authorized to edit this comment.")
-        return redirect(reverse("blog_detail", args=[blog.id]))
+        return redirect(reverse("blog_detail", args=[blog.slug]))
 
     context = {
         "form": form,
@@ -260,10 +260,10 @@ def edit_comment(request, blog_id, comment_id):
 
 
 @login_required
-def delete_comment(request, blog_id, comment_id):
+def delete_comment(request, slug, comment_id):
     """Delete a comment from the blog posts"""
     user = request.user
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = get_object_or_404(Blog, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
     if not user.is_superuser or user != comment.name:
@@ -271,8 +271,8 @@ def delete_comment(request, blog_id, comment_id):
             request,
             f"Sorry {user.username}, only the staff or owner of the comment can delete.",
         )
-        return redirect(reverse("blog_detail", args=[blog.id]))
+        return redirect(reverse("blog_detail", args=[blog.slug]))
 
     comment.delete()
     messages.success(request, f"Comment has been deleted!")
-    return redirect(reverse("blog_detail", args=[blog.id]))
+    return redirect(reverse("blog_detail", args=[blog.slug]))

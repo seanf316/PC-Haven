@@ -27,12 +27,12 @@
             </div>
             <div class="col-12 col-md-8 mx-auto mb-5">
                 <div class="prod-form">
-                    <form method="POST" action="{% url 'add_comment' blog.id %}" class="mb-2"
+                    <form method="POST" action="{% url 'add_comment' blog.slug %}" class="mb-2"
                         enctype="multipart/form-data">
                         {% csrf_token %}
                         {{form|crispy}}
                         <div class="">
-                            <a class="btn cta" href="{% url 'blog_detail' blog.id %}">Cancel</a>
+                            <a class="btn cta" href="{% url 'blog_detail' blog.slug %}">Cancel</a>
                             <button class="btn cta" type="submit">Add Comment</button>
                         </div>
                     </form>

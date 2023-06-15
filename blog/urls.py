@@ -4,20 +4,20 @@ from . import views
 
 urlpatterns = [
     path("", views.blogs, name="blogs"),
-    path("<int:blog_id>/", views.blog_detail, name="blog_detail"),
-    path("<int:blog_id>/like/", views.like_blog, name="like_blog"),
     path("add/", views.add_blog, name="add_blog"),
-    path("edit/<int:blog_id>/", views.edit_blog, name="edit_blog"),
-    path("delete/<int:blog_id>/", views.delete_blog, name="delete_blog"),
-    path("add/comment/<int:blog_id>/", views.add_comment, name="add_comment"),
+    path("edit/<slug:slug>/", views.edit_blog, name="edit_blog"),
+    path("delete/<slug:slug>/", views.delete_blog, name="delete_blog"),
+    path("add/comment/<slug:slug>/", views.add_comment, name="add_comment"),
     path(
-        "edit/comment/<int:blog_id>/<int:comment_id>/",
+        "edit/comment/<slug:slug>/<int:comment_id>/",
         views.edit_comment,
         name="edit_comment",
     ),
     path(
-        "delete/comment/<int:blog_id>/<int:comment_id>/",
+        "delete/comment/<slug:slug>/<int:comment_id>/",
         views.delete_comment,
         name="delete_comment",
     ),
+    path("<slug:slug>/like/", views.like_blog, name="like_blog"),
+    path("<slug:slug>/", views.blog_detail, name="blog_detail"),
 ]

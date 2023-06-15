@@ -4,15 +4,15 @@
     <div class="col-12 col-lg-6 mb-4 d-flex">
         <div class="card border-green-light flex-fill">
             {% if blog.image %}
-            <a href="{% url 'blog_detail' blog.id %}"><img src="{{ blog.image.url }}" class="card-img-top"
+            <a href="{% url 'blog_detail' blog.slug %}"><img src="{{ blog.image.url }}" class="card-img-top"
                     alt="..."></a>
             {% else %}
-            <a href="{% url 'blog_detail' blog.id %}"><img
+            <a href="{% url 'blog_detail' blog.slug %}"><img
                     src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/blog/blog.webp" class="card-img-top"
                     alt="..."></a>
             {% endif %}
             <div class="bg-green text-white font-weight-bold text-center">
-                <a href="{% url 'blog_detail' blog.id %}">
+                <a href="{% url 'blog_detail' blog.slug %}">
                     <p class="text-white p-2 mb-0">{{ blog.title }}</p>
                 </a>
             </div>
@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <hr class="my-0">
                     <div class="text-center">
-                        <a href="{% url 'edit_blog' blog.id %}" class="text-green btn text-sm">Manage
+                        <a href="{% url 'edit_blog' blog.slug %}" class="text-green btn text-sm">Manage
                             Blog
                             <i class="fa-solid fa-sm fa-pencil"></i></a>
                     </div>

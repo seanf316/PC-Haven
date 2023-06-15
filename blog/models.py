@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_resized import ResizedImageField
+from django.utils.text import slugify
 from django.core.validators import (
     MinLengthValidator,
     MaxLengthValidator,
@@ -23,6 +24,9 @@ class Blog(models.Model):
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
     title = models.CharField(null=False, blank=False, max_length=50)
+    slug = models.SlugField(
+        max_length=254, null=True, blank=True, unique=True, editable=False
+    )
     content = models.TextField(
         null=False,
         blank=False,
@@ -50,6 +54,13 @@ class Blog(models.Model):
         Returns the Blog likes count
         """
         return self.likes.count()
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method and updates the stock level
+        """
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
 
 class Comment(models.Model):

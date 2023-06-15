@@ -27,7 +27,7 @@
             </div>
             <div class="col-12 col-md-8 mx-auto mb-5">
                 <div class="prod-form">
-                    <form method="POST" action="{% url 'edit_blog' blog.id %}" class="mb-2"
+                    <form method="POST" action="{% url 'edit_blog' blog.slug %}" class="mb-2"
                         enctype="multipart/form-data">
                         {% csrf_token %}
                         {{form|crispy}}
@@ -48,11 +48,11 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-green text-white">
-                    <h2 class="modal-title" id="delete{{ blog.id }}">Delete Blog Post - {{ blog.title }}</h2>
+                    <h2 class="modal-title" id="delete{{ blog.slug }}">Delete Blog Post - {{ blog.title }}</h2>
                 </div>
                 <div class="modal-body">
                     {% if request.user.is_superuser %}
-                    <form method="post" action="{% url 'delete_blog' blog.id %}" role="form">
+                    <form method="post" action="{% url 'delete_blog' blog.slug %}" role="form">
                         {% csrf_token %}
                         <p class="text-green"><strong><i>Are you sure you want to Delete this Blog post?</strong></i>
                         </p>

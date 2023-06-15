@@ -27,12 +27,12 @@
             </div>
             <div class="col-12 col-md-8 mx-auto mb-5">
                 <div class="prod-form">
-                    <form method="POST" action="{% url 'edit_comment' blog.id comment.id %}" class="mb-2"
+                    <form method="POST" action="{% url 'edit_comment' blog.slug comment.id %}" class="mb-2"
                         enctype="multipart/form-data">
                         {% csrf_token %}
                         {{form|crispy}}
                         <div class="">
-                            <a class="btn cta" href="{% url 'blog_detail' blog.id %}">Cancel</a>
+                            <a class="btn cta" href="{% url 'blog_detail' blog.slug %}">Cancel</a>
                             <button class="btn cta" type="submit">Update</button>
                             <button class="btn cta-danger" type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#exampleModal">Delete</button>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="modal-body">
                     {% if request.user.is_superuser or request.user.is_authenticated %}
-                    <form method="post" action="{% url 'delete_comment' blog.id comment.id %}" role="form">
+                    <form method="post" action="{% url 'delete_comment' blog.slug comment.id %}" role="form">
                         {% csrf_token %}
                         <p class="text-green"><strong><i>Are you sure you want to Delete this comment?</strong></i>
                         </p>

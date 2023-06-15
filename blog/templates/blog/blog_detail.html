@@ -38,7 +38,7 @@
                         <div class="col-12">
                             <hr class="my-0">
                             <div class="text-center">
-                                <a href="{% url 'edit_blog' blog.id %}" class="text-green btn text-sm">Manage
+                                <a href="{% url 'edit_blog' blog.slug %}" class="text-green btn text-sm">Manage
                                     Blog Post
                                     <i class="fa-solid fa-sm fa-pencil"></i></a>
                             </div>
@@ -52,7 +52,7 @@
                         <p class="small font-italic mt-2"><span class="text-green font-weight-bold">Posted:</span>
                             {{ blog.created_on }}</p>
                         <p class="card-text font-italic">{{ blog.content|safe}}</p>
-                        <form method="post" action="{% url 'like_blog' blog.id %}" class="mb-4 ml-2">
+                        <form method="post" action="{% url 'like_blog' blog.slug %}" class="mb-4 ml-2">
                             {% csrf_token %}
                             {% if liked %}
                             <button type="submit" name="like_button" class="text-green favourite">
@@ -66,7 +66,7 @@
                             <span>{{ blog.number_of_likes }}</span>
                             {% endif %}
                         </form>
-                        <p><a href="{% url 'add_comment' blog.id %}" class="cta btn text-uppercase">Add
+                        <p><a href="{% url 'add_comment' blog.slug %}" class="cta btn text-uppercase">Add
                                 Comment</a></p>
                         {% if comments %}
                         <div class="row mt-3">
@@ -79,7 +79,7 @@
                                 <p>{{comment.comment|safe}}</p>
                                 {% if user == comment.name or user.is_superuser %}
                                 <div>
-                                    <a href="{% url 'edit_comment' blog.id comment.id %}"
+                                    <a href="{% url 'edit_comment' blog.slug comment.id %}"
                                         class="cta btn-sm text-decoration-none">Manage
                                         Comment
                                         <i class="fa-solid fa-sm fa-pencil"></i></a>
