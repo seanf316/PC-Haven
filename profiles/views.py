@@ -70,11 +70,11 @@ def order_history(request, order_number):
     return render(request, template, context)
 
 
-def add_to_wishlist(request, product_id):
+def add_to_wishlist(request, slug):
     """
     Add Product to User Wishlist
     """
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, slug=slug)
 
     if not request.user.is_authenticated:
         messages.info(
@@ -97,18 +97,18 @@ def add_to_wishlist(request, product_id):
         )
 
     redirect_url = request.META.get(
-        "HTTP_REFERER", (reverse("product_detail", args=[product_id]))
+        "HTTP_REFERER", (reverse("product_detail", args=[product.slug]))
     )
 
     return HttpResponseRedirect(redirect_url)
 
 
 @login_required
-def remove_from_wishlist(request, product_id):
+def remove_from_wishlist(request, slug):
     """
     Remove a Product from User Wishlist
     """
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, slug=slug)
     wishlist = Wishlist.objects.get(user=request.user)
 
     if product in wishlist.products.all():
@@ -120,7 +120,7 @@ def remove_from_wishlist(request, product_id):
         messages.error(request, f"{product.name} is not in your Wishlist!")
 
     redirect_url = request.META.get(
-        "HTTP_REFERER", (reverse("product_detail", args=[product_id]))
+        "HTTP_REFERER", (reverse("product_detail", args=[product.slug]))
     )
 
     return HttpResponseRedirect(redirect_url)

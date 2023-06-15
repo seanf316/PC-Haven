@@ -9,10 +9,10 @@
         <div class="card border-green flex-fill">
             <div class="card-img-top p-1 h-40 text-center">
                 {% if product.image %}
-                <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image.url }}"
+                <a href="{% url 'product_detail' product.slug %}"><img src="{{ product.image.url }}"
                         class="img-fluid h-100" alt="{{ product.name }}"></a>
                 {% else %}
-                <a href="{% url 'product_detail' product.id %}"><img
+                <a href="{% url 'product_detail' product.slug %}"><img
                         src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
                         class="img-fluid h-100" alt="{{ product.name }}"></a>
                 {% endif %}
@@ -23,9 +23,9 @@
             </div>
             <div class="card-body px-1 d-flex flex-column justify-content-center h-20 flex-fill text-center">
                 <div>
-                    <a href="{% url 'product_detail' product.id %}" class="btn cta text-uppercase w-100 mb-2">View
+                    <a href="{% url 'product_detail' product.slug %}" class="btn cta text-uppercase w-100 mb-2">View
                         Product</a>
-                    <a href="{% url 'remove_from_wishlist' product.id %}"
+                    <a href="{% url 'remove_from_wishlist' product.slug %}"
                         class="btn cta bg-danger text-white text-uppercase w-100">
                         Wishlist Remove <i class="fa-solid fa-minus"></i></a>
                 </div>

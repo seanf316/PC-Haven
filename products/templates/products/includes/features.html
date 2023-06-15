@@ -1,10 +1,10 @@
 <div class="col-12 col-lg-4 d-flex flex-column bg-white border-green rounded py-2">
     <div class="ml-auto p-1">
         {% if product in wishlist.products.all %}
-        <a href="{% url 'remove_from_wishlist' product.id %}" class="text-right favourite"><i
+        <a href="{% url 'remove_from_wishlist' product.slug %}" class="text-right favourite"><i
                 class="fa-solid fa-heart"></i></a>
         {% else %}
-        <a href="{% url 'add_to_wishlist' product.id %}" class="text-right favourite"><i
+        <a href="{% url 'add_to_wishlist' product.slug %}" class="text-right favourite"><i
                 class="fa-regular fa-heart"></i></a>
         {% endif %}
     </div>
@@ -54,7 +54,7 @@
             </div>
             <div class="pl-2">
                 {% if not user_review.exists %}
-                <p class="mt-2"><a href="{% url 'add_review' product.id %}" class="btn cta text-uppercase">Add
+                <p class="mt-2"><a href="{% url 'add_review' product.slug %}" class="btn cta text-uppercase">Add
                         Review</a></p>
                 {% endif %}
             </div>
@@ -137,7 +137,7 @@
                     <div class="col-12">
                         <hr class="my-0">
                         <div class="text-center">
-                            <a href="{% url 'edit_product' product.id %}" class="text-green btn text-sm">Manage Product
+                            <a href="{% url 'edit_product' product.slug %}" class="text-green btn text-sm">Manage Product
                                 <i class="fa-solid fa-sm fa-pencil"></i></a>
                         </div>
                     </div>

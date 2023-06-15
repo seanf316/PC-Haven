@@ -7,23 +7,23 @@
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex">
             <div class="card p-1 flex-fill">
                 {% if product in wishlist.products.all %}
-                <a href="{% url 'remove_from_wishlist' product.id %}" class="text-right favourite"><i
+                <a href="{% url 'remove_from_wishlist' product.slug %}" class="text-right favourite"><i
                         class="fa-solid fa-heart"></i></a>
                 {% else %}
-                <a href="{% url 'add_to_wishlist' product.id %}" class="text-right favourite"><i
+                <a href="{% url 'add_to_wishlist' product.slug %}" class="text-right favourite"><i
                         class="fa-regular fa-heart"></i></a>
                 {% endif %}
                 {% if product.image %}
-                <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image.url }}"
+                <a href="{% url 'product_detail' product.slug %}"><img src="{{ product.image.url }}"
                         alt="{{ product.name }}" class="card-img-top px-1 py-2"></a>
                 {% else %}
-                <a href="{% url 'product_detail' product.id %}"><img
+                <a href="{% url 'product_detail' product.slug %}"><img
                         src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
                         alt="{{ product.name }}" class="card-img-top px-1 py-2"></a>
                 {% endif %}
                 <div
                     class="card-body d-flex flex-column justify-content-center align-items-center h-10 bg-green text-white">
-                    <a href="{% url 'product_detail' product.id %}" class="text-decoration-none text-center"><span
+                    <a href="{% url 'product_detail' product.slug %}" class="text-decoration-none text-center"><span
                             class="text-center font-weight-bold text-white">
                             {{ product.name|safe }}</span></a>
                 </div>
@@ -55,7 +55,7 @@
                 {% if request.user.is_superuser %}
                 <hr class="mb-0">
                 <div class="text-center">
-                    <a href="{% url 'edit_product' product.id %}" class="text-green btn text-sm">Manage Product <i
+                    <a href="{% url 'edit_product' product.slug %}" class="text-green btn text-sm">Manage Product <i
                             class="fa-solid fa-sm fa-pencil"></i></a>
                 </div>
                 {% endif %}

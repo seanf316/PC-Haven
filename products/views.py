@@ -88,10 +88,10 @@ def allproducts(request):
     return render(request, "products/products.html", context)
 
 
-def product_detail(request, product_id):
+def product_detail(request, slug):
     """A view to show product details of a selected product"""
 
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, slug=slug)
     user = request.user
     reviews = Review.objects.filter(product=product)
     rating_avg = reviews.aggregate(Avg("rating"))
@@ -133,7 +133,7 @@ def add_product(request):
             messages.success(
                 request, f"Successfully added {product.name} to inventory!"
             )
-            return redirect(reverse("product_detail", args=[product.id]))
+            return redirect(reverse("product_detail", args=[product.slug]))
         else:
             messages.error(
                 request,
@@ -151,7 +151,7 @@ def add_product(request):
 
 
 @login_required
-def edit_product(request, product_id):
+def edit_product(request, slug):
     """Edit a product in the store"""
     user = request.user
 
@@ -161,13 +161,13 @@ def edit_product(request, product_id):
         )
         return redirect(reverse("home"))
 
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, slug=slug)
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
             messages.success(request, f"Successfully updated {product.name}!")
-            return redirect(reverse("product_detail", args=[product.id]))
+            return redirect(reverse("product_detail", args=[product.slug]))
         else:
             messages.error(
                 request,
@@ -192,7 +192,7 @@ def edit_product(request, product_id):
 
 
 @login_required
-def delete_product(request, product_id):
+def delete_product(request, slug):
     """Delete a product from the store"""
     user = request.user
 
@@ -202,7 +202,7 @@ def delete_product(request, product_id):
         )
         return redirect(reverse("home"))
 
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, slug=slug)
     product.delete()
     messages.success(request, f"Product {product.name} has been deleted!")
     return redirect(reverse("products"))

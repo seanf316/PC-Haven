@@ -29,15 +29,15 @@
                 <p class="font-weight-bold">Review for Product: <span class="text-green">{{ product.name }}</span></p>
                 <p class="font-weight-bold">Review by: <span class="text-green">{{ review.user }}</span></p>
                 <div class="prod-form">
-                    <form method="POST" action="{% url 'edit_review' product.id review.id %}" class="mb-2 prod-form"
+                    <form method="POST" action="{% url 'edit_review' product.slug review.id %}" class="mb-2 prod-form"
                         enctype="multipart/form-data">
                         {% csrf_token %}
                         {{form|crispy}}
                         <div class="">
-                            <a class="btn cta" href="{% url 'product_detail' product.id %}">Cancel</a>
+                            <a class="btn cta" href="{% url 'product_detail' product.slug %}">Cancel</a>
                             <button class="btn cta" type="submit">Update</button>
                             <button class="btn cta-danger" type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#exampleModal">Delete</button>
+                                data-target="#exampleModal{{ review.id }}">Delete</button>
                         </div>
                     </form>
                 </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="modal-body">
                     {% if user == review.user or user.is_superuser %}
-                    <form method="post" action="{% url 'delete_review' review.product.id review.id %}" role="form">
+                    <form method="post" action="{% url 'delete_review' review.product.slug review.id %}" role="form">
                         {% csrf_token %}
                         <p class="text-green"><strong><i>Are you sure you want to Delete this review?</strong></i></p>
                         <p>This review will be permanently removed and you will not be able to retrieve it.</p>

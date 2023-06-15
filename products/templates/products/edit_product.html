@@ -27,7 +27,7 @@
             </div>
             <div class="col-12 col-md-8 mx-auto mb-5">
                 <div class="prod-form">
-                    <form method="POST" action="{% url 'edit_product' product.id %}" class="mb-2"
+                    <form method="POST" action="{% url 'edit_product' product.slug %}" class="mb-2"
                         enctype="multipart/form-data">
                         {% csrf_token %}
                         {{form|crispy}}
@@ -48,11 +48,11 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-green text-white">
-                    <h2 class="modal-title" id="delete{{ product.id }}">Delete {{ product.name|safe }}</h2>
+                    <h2 class="modal-title" id="delete{{ product.slug }}">Delete {{ product.name|safe }}</h2>
                 </div>
                 <div class="modal-body">
                     {% if request.user.is_superuser %}
-                    <form method="post" action="{% url 'delete_product' product.id %}" role="form">
+                    <form method="post" action="{% url 'delete_product' product.slug %}" role="form">
                         {% csrf_token %}
                         <p class="text-green"><strong><i>Are you sure you want to Delete this product?</strong></i></p>
                         <p>This product will be permanently removed and you will not be able

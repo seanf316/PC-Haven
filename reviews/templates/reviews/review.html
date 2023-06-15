@@ -28,12 +28,12 @@
             <div class="col-12 col-md-8 mx-auto mb-5">
                 <p class="font-weight-bold">Review for Product: <span class="text-green">{{ product.name }}</span></p>
                 <div class="prod-form">
-                    <form method="POST" action="{% url 'add_review' product.id %}" class="mb-2 prod-form"
+                    <form method="POST" action="{% url 'add_review' product.slug %}" class="mb-2 prod-form"
                         enctype="multipart/form-data">
                         {% csrf_token %}
                         {{form|crispy}}
                         <div class="">
-                            <a class="btn cta cta-danger" href="{% url 'product_detail' product.id %}">Cancel</a>
+                            <a class="btn cta cta-danger" href="{% url 'product_detail' product.slug %}">Cancel</a>
                             <button class="btn cta" type="submit">Add Review</button>
                         </div>
                     </form>

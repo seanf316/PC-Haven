@@ -8,11 +8,11 @@ from .forms import ReviewForm
 
 
 @login_required()
-def add_review(request, product_id):
+def add_review(request, slug):
     """Add a review on a Product"""
 
     user = request.user
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, slug=slug)
 
     if request.method == "POST":
         form = ReviewForm(request.POST, request.FILES)
@@ -22,7 +22,7 @@ def add_review(request, product_id):
             review.user = user
             review = form.save()
             messages.success(request, f"Successfully added review.")
-            return redirect(reverse("product_detail", args=[product_id]))
+            return redirect(reverse("product_detail", args=[product.slug]))
         else:
             messages.error(
                 request,
@@ -41,13 +41,13 @@ def add_review(request, product_id):
 
 
 @login_required()
-def edit_review(request, product_id, review_id):
+def edit_review(request, slug, review_id):
     """
     Checks the database for the Review.id and then confirms if
     user matches the review user before allowing user to edit their review
     """
     user = request.user
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, slug=slug)
     review = get_object_or_404(Review, pk=review_id)
 
     if user.is_superuser or user == review.user:
@@ -60,7 +60,7 @@ def edit_review(request, product_id, review_id):
                     request, f"{user.username} your review has been updated"
                 )
 
-                return redirect(reverse("product_detail", args=[product_id]))
+                return redirect(reverse("product_detail", args=[product.slug]))
             else:
                 messages.error(
                     request,
@@ -71,7 +71,7 @@ def edit_review(request, product_id, review_id):
 
     else:
         messages.error(request, "You are not authorized to edit this review.")
-        return redirect(reverse("product_detail", args=[product_id]))
+        return redirect(reverse("product_detail", args=[product.slug]))
 
     context = {
         "form": form,
@@ -83,18 +83,18 @@ def edit_review(request, product_id, review_id):
 
 
 @login_required
-def delete_review(request, product_id, review_id):
+def delete_review(request, slug, review_id):
     """Delete a Product Review"""
     user = request.user
-    product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, slug=slug)
     review = get_object_or_404(Review, pk=review_id)
 
     if not user.is_superuser:
         messages.error(
             request, f"Sorry {user.username}, only store owners can do that."
         )
-        return redirect(reverse("product_detail", args=[product_id]))
+        return redirect(reverse("product_detail", args=[product.slug]))
 
     review.delete()
     messages.success(request, f"Review by {review.user} has been deleted!")
-    return redirect(reverse("product_detail", args=[product_id]))
+    return redirect(reverse("product_detail", args=[product.slug]))
