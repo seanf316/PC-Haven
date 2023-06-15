@@ -267,6 +267,16 @@ i.fa-solid.fa-bars {
     height: 80%;
 }
 
+/* ------------------------------------ Sale Products ------------------------------------ */
+
+.sale-product .text-heading {
+    color: var(--footer-green);
+}
+
+.sale-product hr {
+    background: var(--footer-green);
+}
+
 /* ------------------------------------ Featured Products ------------------------------------ */
 
 .owl-nav {
