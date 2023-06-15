@@ -29,7 +29,7 @@ def blog_detail(request, blog_id):
     user = request.user
     blog = get_object_or_404(Blog, pk=blog_id)
     liked = False
-    comments = Comment.objects.filter(blog=blog).order_by("created_on")
+    comments = Comment.objects.filter(blog=blog).order_by("-created_on")
 
     if user.is_authenticated:
         if blog.likes.filter(id=user.id).exists():
@@ -177,12 +177,18 @@ def delete_blog(request, blog_id):
     return redirect(reverse("blogs"))
 
 
-@login_required
 def add_comment(request, blog_id):
     """
     Function to comment on existing blogs
     """
     blog = get_object_or_404(Blog, pk=blog_id)
+
+    if not request.user.is_authenticated:
+        messages.info(
+            request,
+            "You will need to Sign Up or Login to add comments to the Blog Post.",
+        )
+        return redirect(reverse("blog_detail", args=[blog.id]))
 
     if request.method == "POST":
         form = CommentForm(request.POST)
@@ -209,3 +215,64 @@ def add_comment(request, blog_id):
     }
 
     return render(request, "blog/add_comment.html", context)
+
+
+@login_required()
+def edit_comment(request, blog_id, comment_id):
+    """
+    Checks the database for the comment.id and then confirms if
+    user matches the comment user before allowing user to edit their comment
+    """
+    user = request.user
+    blog = get_object_or_404(Blog, pk=blog_id)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if user.is_superuser or user == comment.name:
+        if request.method == "POST":
+            form = CommentForm(request.POST, request.FILES, instance=comment)
+            if form.is_valid():
+                comment = form.save(commit=False)
+                comment.save()
+                messages.success(
+                    request, f"{user.username} your comment has been updated"
+                )
+
+                return redirect(reverse("blog_detail", args=[blog.id]))
+            else:
+                messages.error(
+                    request,
+                    "Comment updated failed, please review the form.",
+                )
+        else:
+            form = CommentForm(instance=comment)
+
+    else:
+        messages.error(request, "You are not authorized to edit this comment.")
+        return redirect(reverse("blog_detail", args=[blog.id]))
+
+    context = {
+        "form": form,
+        "blog": blog,
+        "comment": comment,
+    }
+
+    return render(request, "blog/edit_comment.html", context)
+
+
+@login_required
+def delete_comment(request, blog_id, comment_id):
+    """Delete a comment from the blog posts"""
+    user = request.user
+    blog = get_object_or_404(Blog, pk=blog_id)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if not user.is_superuser or user != comment.name:
+        messages.error(
+            request,
+            f"Sorry {user.username}, only the staff or owner of the comment can delete.",
+        )
+        return redirect(reverse("blog_detail", args=[blog.id]))
+
+    comment.delete()
+    messages.success(request, f"Comment has been deleted!")
+    return redirect(reverse("blog_detail", args=[blog.id]))
