@@ -39,9 +39,7 @@
                 {% if user.is_authenticated %}
                 {% if user_review.exists %}
                 <span class="font-italic text-prime small"><span class="text-green font-weight-bold">{{ user }}</span>
-                    you have
-                    reviewed this
-                    Product.</span>
+                    you have reviewed this Product.</span>
                 {% else %}
                 <span class="font-italic text-prime small">Review/rate this product below.</span>
                 {% endif %}
@@ -55,14 +53,9 @@
                 {% endif %}
             </div>
             <div class="pl-2">
-                {% if request.user.is_authenticated %}
                 {% if not user_review.exists %}
                 <p class="mt-2"><a href="{% url 'add_review' product.id %}" class="btn cta text-uppercase">Add
                         Review</a></p>
-                {% endif %}
-                {% else %}
-                <p class="mt-2"><a href="{% url 'account_signup' %}" class="cta btn text-uppercase">Sign
-                        Up</a></p>
                 {% endif %}
             </div>
         </div>

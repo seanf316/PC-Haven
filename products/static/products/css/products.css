@@ -16,6 +16,16 @@
 
 .card {
     border: 2px solid var(--bg-green);
+    transition: all 300ms;
+}
+
+.all-products .card {
+    transition: all 300ms;
+}
+
+.all-products .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .fa-regular.fa-heart,
