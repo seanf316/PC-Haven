@@ -48,6 +48,7 @@ class ProductForm(forms.ModelForm):
 
         labels = {
             "featured_product": "Featured Product (Tick to confirm)",
+            "has_sale": "Place Product on Sale (Tick to confirm)",
         }
 
         widgets = {
