@@ -94,6 +94,15 @@ class Product(models.Model):
         null=True,
     )
     featured_product = models.BooleanField(default=False)
+    has_sale = models.BooleanField(default=False)
+    discount = models.IntegerField(
+        default=10,
+        help_text="Discount in Percentage",
+        verbose_name="Discount If Product On Sale",
+    )
+    sale_price = models.DecimalField(
+        max_digits=6, decimal_places=2, default=0.00
+    )
 
     class Meta:
         """ "
@@ -126,6 +135,10 @@ class Product(models.Model):
             self.in_stock = False
         else:
             self.in_stock = True
+        if self.has_sale:
+            self.sale_price = self.price - (self.price * (self.discount) / 100)
+        else:
+            self.sale_price = self.price
         if not self.sku:
             self.sku = self.generate_sku()
         self.slug = slugify(self.name)

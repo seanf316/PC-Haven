@@ -66,12 +66,21 @@
         <div class="form-row">
             <div class="col-12">
                 <div class="row">
-                    <div class="col-12 col-md-5 d-flex mt-2 justify-content-between">
-                        <div class="pl-2">
+                    <div
+                        class="col-12 {% if product.has_sale %}col-md-6{% else %}col-md-5{% endif%} d-flex mt-2 justify-content-between">
+                        <div class="pl-2 d-flex align-items-center justify-content-center">
+                            {% if product.has_sale %}
+                            <p>
+                                <span class="text-green font-weight-bold">Price: </span>
+                                €{{ product.sale_price }}&nbsp;&nbsp;
+                            </p>
+                            <p><span class="badge badge-pill badge-success">SALE</span></p>
+                            {% else %}
                             <p>
                                 <span class="text-green font-weight-bold">Price: </span>
                                 €{{ product.price }}
                             </p>
+                            {% endif %}
                         </div>
                         <div>
                             {% if product.in_stock %}
@@ -86,7 +95,8 @@
                         </div>
                     </div>
                     {% if product.in_stock %}
-                    <div class="col-12 col-md-7 px-4 d-flex flex-fill">
+                    <div
+                        class="col-12 {% if product.has_sale %}col-md-6{% else %}col-md-7{% endif%} px-4 d-flex flex-fill">
                         <div class="pr-3 mt-2">
                             <p class="text-green font-weight-bold">Qty:</p>
                         </div>
@@ -137,7 +147,8 @@
                     <div class="col-12">
                         <hr class="my-0">
                         <div class="text-center">
-                            <a href="{% url 'edit_product' product.slug %}" class="text-green btn text-sm">Manage Product
+                            <a href="{% url 'edit_product' product.slug %}" class="text-green btn text-sm">Manage
+                                Product
                                 <i class="fa-solid fa-sm fa-pencil"></i></a>
                         </div>
                     </div>

@@ -36,7 +36,15 @@
                 </p>
                 {% endif %}
                 <div class="card-body h-20 flex-fill text-center">
+                    {% if product.has_sale %}
+                    <div class="d-flex align-items-center justify-content-center">
+                        <p class="text-green font-weight-bold text-lg price">€{{ product.sale_price }}&nbsp;&nbsp;</p>
+                        <p><span class="badge badge-pill badge-success">SALE</span></p>
+                    </div>
+
+                    {% else %}
                     <p class="text-green font-weight-bold text-lg">€{{ product.price }}</p>
+                    {% endif %}
                     {% if product.in_stock %}
                     <form action="{% url 'add_to_cart' product.id %}" method="POST">
                         {% csrf_token %}
