@@ -22,19 +22,19 @@ class ProductAdmin(SummernoteModelAdmin):
     search_fields = (
         "name",
         "description",
-        "information",
+        "features",
         "sku",
         "category__name",
         "sub_category__name",
     )
-
+    
     list_filter = (
         "category",
         "sub_category",
         "in_stock",
     )
 
-    summernote_fields = ("description", "information")
+    summernote_fields = ("description", "features")
 
 
 class CategoryGroupAdmin(admin.ModelAdmin):
