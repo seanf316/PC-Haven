@@ -3,8 +3,8 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import Blog
-from .forms import BlogForm
+from .models import Blog, Comment
+from .forms import BlogForm, CommentForm
 
 
 def blogs(request):
@@ -29,6 +29,7 @@ def blog_detail(request, blog_id):
     user = request.user
     blog = get_object_or_404(Blog, pk=blog_id)
     liked = False
+    comments = Comment.objects.filter(blog=blog).order_by("created_on")
 
     if user.is_authenticated:
         if blog.likes.filter(id=user.id).exists():
@@ -37,6 +38,7 @@ def blog_detail(request, blog_id):
     context = {
         "blog": blog,
         "liked": liked,
+        "comments": comments,
     }
 
     return render(request, "blog/blog_detail.html", context)
@@ -173,3 +175,37 @@ def delete_blog(request, blog_id):
     blog.delete()
     messages.success(request, f"Blog post {blog.title} has been deleted!")
     return redirect(reverse("blogs"))
+
+
+@login_required
+def add_comment(request, blog_id):
+    """
+    Function to comment on existing blogs
+    """
+    blog = get_object_or_404(Blog, pk=blog_id)
+
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.blog = blog  # Set the blog field
+            comment.name = (
+                request.user
+            )  # Set the name field to the current user
+            comment.save()
+            messages.success(request, "Your comment has been added.")
+            return redirect(reverse("blog_detail", args=[blog.id]))
+        else:
+            messages.error(
+                request,
+                "Failed to add blog comment. Please ensure the form is valid.",
+            )
+    else:
+        form = CommentForm()
+
+    context = {
+        "form": form,
+        "blog": blog,
+    }
+
+    return render(request, "blog/add_comment.html", context)
