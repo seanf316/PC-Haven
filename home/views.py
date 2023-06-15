@@ -21,3 +21,8 @@ def privacy(request):
 def terms(request):
     """A view to return the terms and conditions page"""
     return render(request, "home/terms.html")
+
+
+def faq(request):
+    """A view to return the faq page"""
+    return render(request, "home/faq.html")
