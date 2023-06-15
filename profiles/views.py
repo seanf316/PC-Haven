@@ -70,12 +70,19 @@ def order_history(request, order_number):
     return render(request, template, context)
 
 
-@login_required
 def add_to_wishlist(request, product_id):
     """
     Add Product to User Wishlist
     """
     product = get_object_or_404(Product, pk=product_id)
+
+    if not request.user.is_authenticated:
+        messages.info(
+            request,
+            "You will need to Sign Up or Login to add Products to Wislist.",
+        )
+        return redirect("products")
+
     try:
         wishlist = get_object_or_404(Wishlist, user=request.user.id)
     except Http404:
