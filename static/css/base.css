@@ -605,6 +605,17 @@ a.category-badge span:focus {
     color: var(--bg-green);
 }
 
+/* ------------------------------------ faq ------------------------------------ */
+
+.faq .card {
+    margin-bottom: 2rem;
+}
+
+.faq .card-body {
+    border: 1px solid var(--bg-green);
+}
+
+
 /* ------------------------------------ Footer ------------------------------------ */
 
 footer {
@@ -628,6 +639,11 @@ footer li:hover,
 footer li a:hover {
     text-decoration: none !important;
     color: var(--footer-green) !important;
+}
+
+.social a:hover,
+.social a i:hover {
+    color: var(--bg-white) !important;
 }
 
 /* ------------------------------------ Media Queries ------------------------------------ */

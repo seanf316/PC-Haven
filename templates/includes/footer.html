@@ -4,21 +4,15 @@
         <div class="container">
             <div class="row py-5">
                 <div class="col-12 text-center">
-                    <a href="{% url 'home' %}">
+                    <a href="{% url 'home' %}" class="text-decoration-none">
                         <span class="footer-logo text-green"><strong>PC
                                 Haven</strong></span>
                     </a>
                 </div>
             </div>
-            <div class="row pb-5 pl-lg-5">
-                <div class="col-12 col-lg-3">
-                    <p class="font-weight-bold text-green text-uppercase">About</p>
-                    <p class="text-sm">PC HAVEN is an e-commerce site that was built as a project for the Code
-                        Institute Full Stack
-                        Development course.</p>
-                </div>
+            <div class="row">
                 <div class="col-12 col-lg-3 pl-lg-5">
-                    <p class="font-weight-bold text-green text-uppercase">Categories</p>
+                    <p class="font-weight-bold text-green text-uppercase">Products</p>
                     <div class="d-flex flex-column">
                         <ul>
                             {% for category in allcategories %}
@@ -33,30 +27,41 @@
                     <p class="font-weight-bold text-green text-uppercase">Information</p>
                     <div class="d-flex flex-column">
                         <ul>
-                            <li class="ml-3"><a href="#about" class="text-white">
+                            <li class="ml-3"><a href="{% url 'home' %}#about" class="text-white">
                                     About Us</a></li>
-                            <li class="ml-3"><a href="#testimonials" class="text-white">
+                            <li class="ml-3"><a href="{% url 'home' %}#testimonials" class="text-white">
                                     Testimonials</a></li>
                             <li class="ml-3"><a href="{% url 'privacy' %}" class="text-white">
                                     Privacy Policy</a></li>
                             <li class="ml-3"><a href="{% url 'terms' %}" class="text-white">
                                     Terms & Conditions</a></li>
+                            <li class="ml-3"><a href="{% url 'faq' %}" class="text-white">
+                                    FAQ</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-12 col-lg-3">
-                    <p class="font-weight-bold text-green text-uppercase">Categories</p>
-                    <div class="d-flex flex-column">
-                        <ul>
-                            <li class="ml-3"><a href="#about" class="text-white">
-                                    About Us</a></li>
-                            <li class="ml-3"><a href="#testimonials" class="text-white">
-                                    Testimonials</a></li>
-                            <li class="ml-3"><a href="{% url 'privacy' %}" class="text-white">
-                                    Privacy Policy</a></li>
-                        </ul>
-                    </div>
+                <div class="col-12 col-lg-3 social">
+                    <p class="font-weight-bold text-green text-uppercase">Follow Us</p>
+                    <p>Keep up to date with all our latest offers</p>
+                    <a href="https://www.facebook.com/profile.php?id=100093384593778" target="_blank"
+                        class="text-green text-decoration-none"><i class="fab fa-facebook-square"></i>
+                        &nbsp;&nbsp;Follow us on
+                        Facebook!</a>
+                </div>
+                <div class="col-12 col-lg-3 social">
+                    <p class="font-weight-bold text-green text-uppercase">Subscribe</p>
+                    <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+                    <a href="{% url 'home' %}#newsletter" class="text-green text-decoration-none"><i
+                            class="fa-regular fa-newspaper"></i>
+                        &nbsp;&nbsp;Subscribe to Newsletter.</a>
                 </div>
             </div>
-        </div>
+            <div class="row py-2">
+                <div class="col-12 text-center social">
+                    <p><i class="text-green fa-regular fa-copyright"></i>&nbsp;&nbsp;Sean Finn&nbsp;&nbsp;<a
+                            href="https://github.com/seanf316/PC-Haven" target="_blank" rel="noopener"
+                            aria-label="Visit my Github Repo (opens in a new tab)"><i
+                                class="text-green fa-brands fa-github"></i></a></p>
+                </div>
+            </div>
 </footer>
