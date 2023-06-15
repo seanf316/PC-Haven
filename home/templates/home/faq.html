@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="faq">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <hr>
+                <h1 class="logo-font text-green text-center mb-4">Frequently Asked Questions</h1>
+                <hr>
+                <p>Welcome to the PC Haven FAQ section! We understand that you may have some questions about our
+                    services and products. Below, you'll find answers to the most commonly asked questions. If you have
+                    any further inquiries, please don't hesitate to contact our customer support team.</p>
+            </div>
+            <div class="col-12">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingOne">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    1. What is PC Haven? <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body border-green-light">
+                                PC Haven is an online store specializing in selling high-quality PC components,
+                                including processors, graphics cards, motherboards, RAM, storage devices, power
+                                supplies, and more.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                                    aria-controls="collapseTwo">
+                                    2. What types of PC components do you sell? <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                We offer a wide range of PC components, including CPUs (processors), GPUs (graphics
+                                cards), motherboards, RAM (memory), storage devices (SSDs, HDDs), power supplies,
+                                cooling solutions (fans, liquid coolers), and cases, and peripherals.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingThree">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseThree"
+                                    aria-expanded="true" aria-controls="collapseThree">
+                                    3. Are the components you sell new or used? <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                We only sell brand new PC components sourced directly from authorized distributors and
+                                manufacturers. You can be assured that you are purchasing products in their original
+                                packaging and with full manufacturer warranties.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingFour">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseFour"
+                                    aria-expanded="true" aria-controls="collapseFour">
+                                    4. Can I trust the quality of the PC components you sell? <i
+                                        class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Absolutely! We are committed to providing our customers with high-quality components
+                                from reputable brands and manufacturers. All products go through a rigorous quality
+                                control process before being shipped to our customers.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingFive">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseFive"
+                                    aria-expanded="true" aria-controls="collapseFive">
+                                    5. Do you offer warranties on the PC components? <i
+                                        class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Yes, all PC components sold at PC Haven come with a 1 year warranty.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingSix">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true"
+                                    aria-controls="collapseSix">
+                                    6. What payment methods do you accept? <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                We accept VISA, Mastercard and Amex. We use Stripe ensure that
+                                all payment transactions are secure and encrypted.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingSeven">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseSeven"
+                                    aria-expanded="true" aria-controls="collapseSeven">
+                                    7. Do you offer international shipping? <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Yes, we offer international shipping. Shipping is free for orders over €100.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingEight">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseEight"
+                                    aria-expanded="true" aria-controls="collapseEight">
+                                    8. How long does shipping take? <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                The shipping time depends on your location and the shipping method selected. We strive
+                                to process and ship orders as quickly as possible.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingNine">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseNine"
+                                    aria-expanded="true" aria-controls="collapseNine">
+                                    9. What is your return policy <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>We have a hassle-free return policy. If you receive a defective or incorrect item,
+                                    please contact our customer support within 14 days of receiving your order. We will
+                                    guide you through the return process and either provide a replacement or issue a
+                                    refund.</p>
+                                <a href="{% url 'contact' %}" class="btn cta">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingTen">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="true"
+                                    aria-controls="collapseTen">
+                                    10. Do you offer technical support for the PC components? <i
+                                        class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseTen" class="collapse" aria-labelledby="headingTen"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>While we don't provide direct technical support, we are always ready to assist you
+                                    with any questions or concerns you may have regarding the products you purchased
+                                    from us. Feel free to reach out to our customer support, and we'll do our best to
+                                    help you find a solution.</p>
+                                <a href="{% url 'contact' %}" class="btn cta">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingEleven">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseEleven"
+                                    aria-expanded="true" aria-controls="collapseEleven">
+                                    11. What if a Product is out of stock? <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>If a Product is out of stock you can get in touch with our support team and we will
+                                    let
+                                    you know when its back in stock.</p>
+                                <a href="{% url 'contact' %}" class="btn cta">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-green" id="headingTwelve">
+                            <h2 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block collasped text-left text-decoration-none font-weight-bold text-white"
+                                    type="button" data-toggle="collapse" data-target="#collapseTwelve"
+                                    aria-expanded="true" aria-controls="collapseTwelve">
+                                    12. How can I contact PC Haven if I have further questions?? <i
+                                        class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                You can reach our customer support team by visiting the "Contact Us" page on our
+                                website. We are available to assist you with any additional questions or concerns you
+                                may have.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
