@@ -6,9 +6,11 @@ def home(request):
     """A view to return the home page"""
     featured_products = Product.objects.filter(featured_product=True)
     latest_products = Product.objects.order_by("-created_on")[:10]
+    sale_products = Product.objects.filter(has_sale=True)
     context = {
         "featured_products": featured_products,
         "latest_products": latest_products,
+        "sale_products": sale_products,
     }
     return render(request, "home/index.html", context)
 
