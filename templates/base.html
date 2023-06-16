@@ -27,6 +27,8 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Base CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- Glowcookies -->
+    <link rel="stylesheet" href="{% static 'css/glowCookies.css' %}">
     <!-- Owl CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
@@ -129,6 +131,7 @@
     {% if messages %}
     <script src="{% static 'js/message.js' %}"></script>
     {% endif %}
+    <script src="{% static 'js/glowCookies.js' %}"></script>
     <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
 </body>
