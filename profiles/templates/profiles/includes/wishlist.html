@@ -1,7 +1,7 @@
 {% if wishlist.products.exists %}
 <p class="text-center font-weight-bold text-green">Wishlist Products -
     {{ wishlist.products.count }}</p>
-<p class="text-center"><a href="{% url 'clear_wishlist' %}" class="btn cta bg-danger text-white text-uppercase">Clear
+<p class="text-center"><a href="{% url 'clear_wishlist' %}" class="btn cta-danger text-uppercase">Clear
         Wishlist</a></p>
 <div class="row pb-4">
     {% for product in wishlist.products.all %}
@@ -25,8 +25,7 @@
                 <div>
                     <a href="{% url 'product_detail' product.slug %}" class="btn cta text-uppercase w-100 mb-2">View
                         Product</a>
-                    <a href="{% url 'remove_from_wishlist' product.slug %}"
-                        class="btn cta bg-danger text-white text-uppercase w-100">
+                    <a href="{% url 'remove_from_wishlist' product.slug %}" class="btn cta-danger text-uppercase w-100">
                         Wishlist Remove <i class="fa-solid fa-minus"></i></a>
                 </div>
             </div>
@@ -51,10 +50,8 @@
 </div>
 {% else %}
 <p class="text-center font-weight-bold text-green">Wishlist is currently empty!</p>
-<p>Simply browse our website, find the products that catch your
-    eye, and click on the <i class="fa-regular fa-heart text-green"></i> icon to start
-    curating your
-    personalized
-    collection. Fill up your wishlist with exciting products and keep track of your
-    favorites for future reference. Happy shopping and enjoy building your ultimate PC!</p>
+<p>Simply browse our website, find the products that catch your eye, and click on the <i
+        class="fa-regular fa-heart text-green"></i> icon to start curating your personalized collection. Fill up your
+    wishlist with exciting products and keep track of your favorites for future reference.
+    Happy shopping and enjoy building your ultimate PC!</p>
 {% endif %}
