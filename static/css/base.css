@@ -36,6 +36,10 @@ main {
     font-size: 1.4rem;
 }
 
+.text-sm {
+    font-size: .9rem;
+}
+
 .sec-pad {
     padding: 3rem 0;
 }
@@ -127,6 +131,10 @@ main {
 
 .price {
     padding-top: .1rem;
+}
+
+.sale {
+    font-size: 1.1rem;
 }
 
 /* ------------------------------------ Navbar ------------------------------------ */

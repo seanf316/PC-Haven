@@ -74,7 +74,10 @@
                                 <span class="text-green font-weight-bold">Price: </span>
                                 €{{ product.sale_price }}&nbsp;&nbsp;
                             </p>
-                            <p><span class="badge badge-pill badge-success">SALE</span></p>
+                            <p class="text-sm">
+                                <s>€{{ product.price }}</s>&nbsp;&nbsp;
+                            </p>
+                            <p><span class="badge badge-pill badge-success sale">SALE</span></p>
                             {% else %}
                             <p>
                                 <span class="text-green font-weight-bold">Price: </span>

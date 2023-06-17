@@ -38,8 +38,12 @@
                 <div class="card-body h-20 flex-fill text-center">
                     {% if product.has_sale %}
                     <div class="d-flex align-items-center justify-content-center">
-                        <p class="text-green font-weight-bold text-lg price">€{{ product.sale_price }}&nbsp;&nbsp;</p>
-                        <p><span class="badge badge-pill badge-success">SALE</span></p>
+                        <p class="text-sm text-green">
+                            <s>€{{ product.price }}</s>&nbsp;&nbsp;
+                        </p>
+                        <p class="text-green font-weight-bold text-lg price">
+                            €{{ product.sale_price }}&nbsp;&nbsp;</p>
+                        <p><span class="badge badge-pill badge-success sale">SALE</span></p>
                     </div>
 
                     {% else %}
