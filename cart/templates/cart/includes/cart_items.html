@@ -17,8 +17,13 @@
         <div class="col-12 col-lg-5 mb-lg-0 mb-3">
             <p class="my-0 text-lg text-green"><strong>{{ item.product.name }}</strong></p>
             <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+            {% if item.product.has_sale %}
+            <p class="my-1"><span class="font-weight-bold text-green">Price:</span>
+                €{{ item.product.sale_price }}</p>
+            {% else %}
             <p class="my-1"><span class="font-weight-bold text-green">Price:</span>
                 €{{ item.product.price }}</p>
+            {% endif %}
             <p class="my-1"><span class="font-weight-bold text-green">Qty:</span>
                 {{ item.quantity }}</p>
             <p class="my-1"><span class="font-weight-bold text-green">Stock Qty:</span>
