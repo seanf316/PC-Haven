@@ -13,6 +13,35 @@
     <div class="row my-3">
         <div class="col-12">
             <button class="btn cta text-uppercase w-100">Update</button>
+            <button class="btn cta-danger w-100 text-uppercase" type="button" data-toggle="modal"
+                data-target="#exampleModal">Delete
+                Profile</button>
         </div>
     </div>
 </form>
+
+<!-- Delete Profile Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-green text-white">
+                <h2 class="modal-title" id="delete{{ profile.user.username }}">Delete {{ profile.user.username|safe }}
+                </h2>
+            </div>
+            <div class="modal-body">
+                {% if profile.user.is_authenticated and user == profile.user %}
+                <form method="post" action="{% url 'delete_profile' profile.user.username %}" role="form">
+                    {% csrf_token %}
+                    <p class="text-green"><strong><i>Are you sure you want to Delete this profile?</strong></i></p>
+                    <p>This profile will be permanently removed and you will not be able
+                        to retrieve it. All user information/order history & wishlist data will be removed.</p>
+                    <button type="button" class="btn cta" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    <button type="submit" name="action" value="delete" class="btn cta-danger">Delete</button>
+                </form>
+                {% else %}
+                <h3>You are not authorized to delete this product.</h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

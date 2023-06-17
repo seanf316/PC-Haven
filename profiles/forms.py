@@ -35,6 +35,7 @@ class UserProfileForm(forms.ModelForm):
         """
         Define model, form fields
         """
+
         model = UserProfile
         exclude = ("user",)
 
@@ -52,8 +53,6 @@ class UserProfileForm(forms.ModelForm):
             "default_town_or_city": "Town or City",
             "default_county": "County, State or Locality",
         }
-
-        self.fields["default_phone_number"].widget.attrs["autofocus"] = True
         for field in self.fields:
             if field != "default_country":
                 if self.fields[field].required:

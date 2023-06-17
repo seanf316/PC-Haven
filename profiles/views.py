@@ -7,6 +7,7 @@ from django.shortcuts import (
 )
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from checkout.models import Order
 from products.models import Product
@@ -38,6 +39,7 @@ def profile(request):
 
     template = "profiles/profile.html"
     context = {
+        "profile": profile,
         "userform": userform,
         "profileform": profileform,
         "orders": orders,
@@ -46,6 +48,33 @@ def profile(request):
     }
 
     return render(request, template, context)
+
+
+@login_required()
+def delete_profile(request, username):
+    """
+    Querys the database for the User that matches profile user
+    and deletes user & profile
+    """
+    user = get_object_or_404(User, username=request.user)
+    profile = get_object_or_404(UserProfile, user=user)
+
+    if user != profile:
+        messages.success(
+            request, "You are not authorised to delete this Profile."
+        )
+        return redirect(("profile"))
+
+    if request.method == "POST":
+        logout(request)
+        user.delete()
+        messages.success(
+            request, "Sorry to see you go, your Account has been deleted."
+        )
+        return redirect(reverse("home"))
+
+    context = {"username": username}
+    return render(request, "profiles/edit_profile.html", context)
 
 
 @login_required()
