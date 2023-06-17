@@ -11,7 +11,11 @@
     {% endif %}
     <div class="col-9 col-lg-10">
         <p class="my-0 text-green"><strong>{{ item.product.name }}</strong></p>
+        {% if item.product.has_sale %}
+        <p class="my-0 small">Qty: {{ item.quantity }} @ €{{ item.product.sale_price }} each</p>
+        {% else %}
         <p class="my-0 small">Qty: {{ item.quantity }} @ €{{ item.product.price }} each</p>
+        {% endif %}
     </div>
 </div>
 <hr>
