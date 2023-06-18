@@ -6,13 +6,14 @@
         {% for product in products%}
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex">
             <div class="card p-1 flex-fill">
-                {% if product in wishlist.products.all %}
-                <a href="{% url 'remove_from_wishlist' product.slug %}" class="text-right favourite"><i
-                        class="fa-solid fa-heart"></i></a>
-                {% else %}
-                <a href="{% url 'add_to_wishlist' product.slug %}" class="text-right favourite"><i
-                        class="fa-regular fa-heart"></i></a>
-                {% endif %}
+                <div class="pr-1 pt-1 text-right">{% if product in wishlist.products.all %}
+                    <a href="{% url 'remove_from_wishlist' product.slug %}" class="text-right favourite"
+                        aria-label="Remove from Wishlist"><i class="fa-solid fa-heart"></i></a>
+                    {% else %}
+                    <a href="{% url 'add_to_wishlist' product.slug %}" class="text-right favourite"
+                        aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></a>
+                    {% endif %}
+                </div>
                 {% if product.image %}
                 <a href="{% url 'product_detail' product.slug %}"><img src="{{ product.image.url }}"
                         alt="{{ product.name }}" class="card-img-top px-1 py-2"></a>
@@ -43,7 +44,7 @@
                         </p>
                         <p class="text-green font-weight-bold text-lg price">
                             €{{ product.sale_price }}&nbsp;&nbsp;</p>
-                        <p><span class="badge badge-pill badge-success sale">SALE</span></p>
+                        <p><span class="badge badge-pill bg-green text-white sale">SALE</span></p>
                     </div>
 
                     {% else %}
@@ -58,8 +59,6 @@
                     </form>
                     <p class="small pt-2"><i class="fa-regular fa-square-check fa-sm"></i> In Stock</p>
                     {% else %}
-                    <p class="btn text-green cart-add oostock">ADD&nbsp;&nbsp;<i class="fa-solid fa-cart-shopping"></i>
-                    </p>
                     <p class="small pt-2"><i class="fa-regular fa-rectangle-xmark fa-sm text-danger"></i> Out of Stock
                     </p>
                     {% endif %}

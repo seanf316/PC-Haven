@@ -59,15 +59,6 @@
     width: 50%;
 }
 
-.oostock {
-    background-color: var(--primary-text);
-}
-
-.oostock:hover {
-    background: var(--primary-text);
-    color: var(--bg-green);
-}
-
 .products hr {
     border-bottom: 2px solid var(--bg-green);
     border-style: dotted;

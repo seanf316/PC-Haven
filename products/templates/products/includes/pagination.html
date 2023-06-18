@@ -1,20 +1,19 @@
 {% if products.paginator.num_pages > 1 %}
-<div class="row mb-3">
-    <div class="col-lg-12 d-flex justify-content-center">
+<div class="row mb-3 mt-3">
+    <div class="col-lg-12 d-flex justify-content-center align-items-center">
         <nav>
-            <ul class="pagination rounded">
+            <ul class="pagination rounded align-items-center">
                 {% if products.has_previous %}
-                <li class="page-item"><a class="page-link bg-green text-white"
+                <li class="page-item"><a class="page-link bg-green text-white" aria-label="Previous Products Page"
                         href="?page={{ products.previous_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if 'category' in request.GET %}&category={{ request.GET.category|stringformat:'s' }}{% endif %}{% if 'sub_category' in request.GET %}&sub_category={{ request.GET.sub_category|stringformat:'s' }}{% endif %}">Prev</a>
                 </li>
                 {% endif %}
 
-                <span class="d-flex justify-content-center align-items-center px-2 text-green font-weight-bold">
-                    Page {{ products.number }} of {{ products.paginator.num_pages }}
-                </span>
+                <li class="px-2 font-weight-bold text-green">
+                    Page {{ products.number }} of {{ products.paginator.num_pages }}</li>
 
                 {% if products.has_next %}
-                <li class="page-item"><a class="page-link bg-green text-white"
+                <li class="page-item"><a class="page-link bg-green text-white" aria-label="Next Products Page"
                         href="?page={{ products.next_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if 'category' in request.GET %}&category={{ request.GET.category|stringformat:'s' }}{% endif %}{% if 'sub_category' in request.GET %}&sub_category={{ request.GET.sub_category|stringformat:'s' }}{% endif %}">Next</a>
                 </li>
                 {% endif %}

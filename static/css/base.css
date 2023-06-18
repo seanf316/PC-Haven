@@ -285,6 +285,10 @@ i.fa-solid.fa-bars {
     background: var(--footer-green);
 }
 
+.sale-product .owl-nav button:hover {
+    background: #343a40 !important;
+}
+
 /* ------------------------------------ Featured Products ------------------------------------ */
 
 .owl-nav {
@@ -312,11 +316,6 @@ i.fa-solid.fa-bars {
     height: 100%;
 }
 
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-    background: var(--bg-white) !important;
-}
-
 
 /* ------------------------------------ Latest Products ------------------------------------ */
 
@@ -329,11 +328,6 @@ i.fa-solid.fa-bars {
 
 .latest-product .owl-nav button:hover {
     background: var(--bg-white) !important;
-}
-
-.latest-product .owl-theme .owl-dots .owl-dot.active span,
-.latest-product .owl-theme .owl-dots .owl-dot:hover span {
-    background: var(--bg-green) !important;
 }
 
 /* ------------------------------------ Testimonials ------------------------------------ */
@@ -463,6 +457,10 @@ a.category-badge span:focus {
     color: var(--primary-text);
 }
 
+li.breadcrumb-item.active.current-item-crumb {
+    color: var(--primary-text);
+}
+
 /* ------------------------------------ Back To Top ------------------------------------ */
 
 #btn-back-to-top {
@@ -560,6 +558,11 @@ a.category-badge span:focus {
     object-fit: contain;
 }
 
+.product .card-img-top {
+    width: 100%;
+    height: 35vh;
+}
+
 /* ------------------------------------ Blog ------------------------------------ */
 
 .blogs .card {
@@ -591,6 +594,10 @@ a.category-badge span:focus {
     border: none;
     padding: 0;
     cursor: pointer;
+}
+
+.blog_detail p img {
+    width: 100% !important;
 }
 
 /* ------------------------------------ Errors ------------------------------------ */

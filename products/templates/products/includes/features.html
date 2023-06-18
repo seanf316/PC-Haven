@@ -1,19 +1,18 @@
-<div class="col-12 col-lg-4 d-flex flex-column bg-white border-green rounded py-2">
+<div class="col-12 col-lg-4 d-flex flex-column bg-white border-green rounded py-2 px-1">
     <div class="ml-auto p-1">
         {% if product in wishlist.products.all %}
-        <a href="{% url 'remove_from_wishlist' product.slug %}" class="text-right favourite"><i
-                class="fa-solid fa-heart"></i></a>
+        <a href="{% url 'remove_from_wishlist' product.slug %}" class="text-right favourite"
+            aria-label="Remove from Wishlist"><i class="fa-solid fa-heart"></i></a>
         {% else %}
-        <a href="{% url 'add_to_wishlist' product.slug %}" class="text-right favourite"><i
+        <a href="{% url 'add_to_wishlist' product.slug %}" class="text-right favourite" aria-label="Add to Wishlist"><i
                 class="fa-regular fa-heart"></i></a>
         {% endif %}
     </div>
-    <div class="text-center d-flex flex-fill">
+    <div>
         {% if product.image %}
-        <img src="{{ product.image.url }}" width="500" height="400" class="img-fluid flex-fill"
-            alt="{{ product.name }}" />
+        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" />
         {% else %}
-        <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp" class="img-fluid flex-fill"
+        <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp" class="card-img-top"
             alt="{{ product.name }}" />
         {% endif %}
     </div>
@@ -60,15 +59,14 @@
             </div>
         </div>
     </div>
-    <hr>
+    <hr class="mt-0">
     <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
         {% csrf_token %}
         <div class="form-row">
-            <div class="col-12">
+            <div class="col-12 align-items-center justify-content-center">
                 <div class="row">
-                    <div
-                        class="col-12 {% if product.has_sale %}col-md-6{% else %}col-md-5{% endif%} d-flex mt-2 justify-content-between">
-                        <div class="pl-2 d-flex align-items-center justify-content-center">
+                    <div class="col-12 col-md-6">
+                        <div class="pl-2 d-flex align-items-center">
                             {% if product.has_sale %}
                             <p>
                                 <span class="text-green font-weight-bold">Price: </span>
@@ -77,7 +75,7 @@
                             <p class="text-sm">
                                 <s>€{{ product.price }}</s>&nbsp;&nbsp;
                             </p>
-                            <p><span class="badge badge-pill badge-success sale">SALE</span></p>
+                            <p><span class="badge badge-pill bg-green text-white sale">SALE</span></p>
                             {% else %}
                             <p>
                                 <span class="text-green font-weight-bold">Price: </span>
@@ -85,21 +83,20 @@
                             </p>
                             {% endif %}
                         </div>
-                        <div>
-                            {% if product.in_stock %}
-                            <p>
-                                <i class="fa-regular fa-square-check text-green"></i>
-                                {{ product.stock_level}} In Stock
-                            </p>
-                            {% else %}
-                            <p><i class="fa-regular fa-rectangle-xmark text-danger"></i> Out of
-                                Stock</p>
-                            {% endif %}
-                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        {% if product.in_stock %}
+                        <p class="pl-2">
+                            <i class="fa-regular fa-square-check text-green"></i>
+                            {{ product.stock_level}} In Stock
+                        </p>
+                        {% else %}
+                        <p class="pl-2"><i class="fa-regular fa-rectangle-xmark text-danger"></i> Out of
+                            Stock</p>
+                        {% endif %}
                     </div>
                     {% if product.in_stock %}
-                    <div
-                        class="col-12 {% if product.has_sale %}col-md-6{% else %}col-md-7{% endif%} px-4 d-flex flex-fill">
+                    <div class="col-12 px-4 d-flex flex-fill">
                         <div class="pr-3 mt-2">
                             <p class="text-green font-weight-bold">Qty:</p>
                         </div>
@@ -107,19 +104,22 @@
                             <div class="input-group pt-1">
                                 <div class="input-group-prepend">
                                     <button class="decrement-qty btn btn-sm btn-black rounded-0"
-                                        data-product_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                        <span class="icon">
+                                        aria-label="Decrement Quantity" data-product_id="{{ product.id }}"
+                                        id="decrement-qty_{{ product.id }}">
+                                        <span class="icon p-1">
                                             <i class="fas fa-minus"></i>
                                         </span>
                                     </button>
                                 </div>
                                 <input class="form-control form-control-sm text-center qty_input" type="number"
                                     name="quantity" value="1" min="1" max="{{product.stock_level}}"
-                                    data-product_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                    data-product_id="{{ product.id }}" id="id_qty_{{ product.id }}"
+                                    aria-label="Quantity">
                                 <div class="input-group-append">
                                     <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                        data-product_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                        <span class="icon">
+                                        aria-label="Increase Quantity" data-product_id="{{ product.id }}"
+                                        id="increment-qty_{{ product.id }}">
+                                        <span class="icon p-1">
                                             <i class="fas fa-plus"></i>
                                         </span>
                                     </button>
@@ -129,7 +129,7 @@
                     </div>
                     {% endif %}
                 </div>
-                <hr>
+                <hr class="mt-0">
                 <div class="row mb-3">
                     <div class="col-12 col-md-8 mx-auto d-flex flex-wrap">
                         <a href="{% url 'products' %}" class="btn cta flex-grow-1 font-weight-bold">
