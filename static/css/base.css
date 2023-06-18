@@ -596,6 +596,7 @@ li.breadcrumb-item.active.current-item-crumb {
     cursor: pointer;
 }
 
+.blog_detail p,
 .blog_detail p img {
     width: 100% !important;
 }

@@ -20,8 +20,8 @@
     <div class="container">
         <!-- Blog Post Detail -->
         <div class="row my-5">
-            <div class="col-12 text-center d-flex">
-                <a href="{% url 'blogs' %}" class="cta btn text-uppercase w-50 mx-auto mb-3"><i
+            <div class="col-12 col-md-10 mx-auto text-center d-flex">
+                <a href="{% url 'blogs' %}" class="cta btn text-uppercase w-100 mx-auto mb-3"><i
                         class="fa-solid fa-hand-point-left"></i>
                     &nbsp;&nbsp;Blog Posts</a>
             </div>
@@ -46,7 +46,7 @@
                     </div>
                     {% endif %}
                     <div class="bg-green text-white font-weight-bold text-center mb-2">
-                        <h1 class="p-3 mb-0">{{ blog.title }}</h1>
+                        <h1 class="p-3 mb-0 text-heading">{{ blog.title }}</h1>
                     </div>
                     <div class="px-4 d-flex flex-column">
                         <p class="small font-italic mt-2 mb-0"><span class="text-green font-weight-bold">Posted:</span>
@@ -57,12 +57,14 @@
                         <form method="post" action="{% url 'like_blog' blog.slug %}" class="mb-4 ml-2">
                             {% csrf_token %}
                             {% if liked %}
-                            <button type="submit" name="like_button" class="text-green favourite">
+                            <button type="submit" name="like_button" class="text-green favourite"
+                                aria-label="Dislike Blog Post">
                                 <i class="fa-solid fa-thumbs-up"></i>
                             </button>
                             <span>{{ blog.number_of_likes }}</span>
                             {% else %}
-                            <button type="submit" name="like_button" class="text-green favourite">
+                            <button type="submit" name="like_button" class="text-green favourite"
+                                aria-label="Like Blog Post">
                                 <i class="fa-regular fa-thumbs-up"></i>
                             </button>
                             <span>{{ blog.number_of_likes }}</span>
