@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $('.owl-carousel').owlCarousel({
         loop: false,
         margin: 15,
-        dots: true,
+        dots: false,
         nav: true,
         responsive: {
             0: {

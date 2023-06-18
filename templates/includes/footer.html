@@ -16,7 +16,7 @@
                     <div class="d-flex flex-column">
                         <ul>
                             {% for category in allcategories %}
-                            <li class="ml-3"><a href="{% url 'products' %}?category={{ category.name }}"
+                            <li class="ml-3 mb-2"><a href="{% url 'products' %}?category={{ category.name }}"
                                     class="text-white">
                                     {{ category.friendly_name }}</a></li>
                             {% endfor %}
@@ -27,15 +27,15 @@
                     <p class="font-weight-bold text-green text-uppercase">Information</p>
                     <div class="d-flex flex-column">
                         <ul>
-                            <li class="ml-3"><a href="{% url 'contact' %}" class="text-white">
+                            <li class="ml-3 mb-2"><a href="{% url 'contact' %}" class="text-white">
                                     Contact Us</a></li>
-                            <li class="ml-3"><a href="{% url 'home' %}#testimonials" class="text-white">
+                            <li class="ml-3 mb-2"><a href="{% url 'home' %}#testimonials" class="text-white">
                                     Testimonials</a></li>
-                            <li class="ml-3"><a href="{% url 'privacy' %}" class="text-white">
+                            <li class="ml-3 mb-2"><a href="{% url 'privacy' %}" class="text-white">
                                     Privacy Policy</a></li>
-                            <li class="ml-3"><a href="{% url 'terms' %}" class="text-white">
+                            <li class="ml-3 mb-2"><a href="{% url 'terms' %}" class="text-white">
                                     Terms & Conditions</a></li>
-                            <li class="ml-3"><a href="{% url 'faq' %}" class="text-white">
+                            <li class="ml-3 mb-2"><a href="{% url 'faq' %}" class="text-white">
                                     FAQ</a></li>
                         </ul>
                     </div>

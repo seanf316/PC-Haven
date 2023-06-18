@@ -295,7 +295,7 @@ i.fa-solid.fa-bars {
     font-size: 3rem;
     font-weight: bold;
     color: var(--bg-white);
-    padding: 0;
+    padding: 0 2rem;
 }
 
 .owl-nav button:hover {
@@ -324,7 +324,7 @@ i.fa-solid.fa-bars {
     font-size: 3rem;
     font-weight: bold;
     color: var(--bg-green);
-    padding: 0;
+    padding: 0 2rem;
 }
 
 .latest-product .owl-nav button:hover {

@@ -26,10 +26,10 @@
                     <div class="item ml-1">
                         <div class="card border-green flex-grow-1">
                             {% if product.image %}
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top px-1 py-2">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top px-1 py-2" loading="lazy">
                             {% else %}
                             <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
-                                alt="{{ product.name }}" class="card-img-top">
+                                alt="{{ product.name }}" class="card-img-top" loading="lazy">
                             {% endif %}
                             <div class="card-body p-2 text-center d-flex flex-column">
                                 <div
@@ -39,10 +39,15 @@
                                 <div class="mt-auto">
                                     {% if product.has_sale %}
                                     <div class="d-flex align-items-center justify-content-center">
+                                        <p class="text-sm text-green pt-3">
+                                            <s>€{{ product.price }}</s>&nbsp;&nbsp;
+                                        </p>
                                         <p class="text-green pt-3 font-weight-bold text-lg price">
                                             €{{ product.sale_price }}&nbsp;&nbsp;
                                         </p>
-                                        <p class="pt-3"><span class="badge badge-pill badge-success">SALE</span></p>
+                                        <p class="pt-3"><span
+                                                class="badge badge-pill bg-green text-white sale">SALE</span>
+                                        </p>
                                     </div>
                                     {% else %}
                                     <p class="text-green pt-3 font-weight-bold text-lg">€{{ product.price }}</p>

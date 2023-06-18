@@ -132,14 +132,13 @@
     </div>
     <ul class="d-flex mb-0">
         <li class="list-inline-item d-lg-block d-none">
-            <a class="nav-link" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+            <a class="nav-link" href="#" id="search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                     <div><i class="fas fa-search fa-lg"></i></div>
                     <p class="my-0">Search</p>
                 </div>
             </a>
-            <div class="dropdown-menu border-0 bg-offwhite w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+            <div class="dropdown-menu border-0 bg-offwhite w-100 p-3 rounded-0 my-0" aria-labelledby="search">
                 <form class="form" method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control bg-offwhite rounded-0" type="text" name="q"
@@ -156,14 +155,14 @@
             </div>
         </li>
         <li class="list-inline-item dropdown d-lg-block d-none">
-            <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+            <a class="nav-link" href="#" id="account-options" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <div class="text-center">
                     <div><i class="fas fa-user fa-lg"></i></div>
                     <p class="my-0">My Account</p>
                 </div>
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+            <div class="dropdown-menu border-0" aria-labelledby="account-options">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
