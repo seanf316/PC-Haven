@@ -97,8 +97,7 @@ class Product(models.Model):
     has_sale = models.BooleanField(default=False)
     discount = models.IntegerField(
         default=10,
-        help_text="Discount in Percentage",
-        verbose_name="Discount If Product On Sale",
+        verbose_name="Discount (%) If Product On Sale",
     )
     sale_price = models.DecimalField(
         max_digits=6, decimal_places=2, default=0.00
