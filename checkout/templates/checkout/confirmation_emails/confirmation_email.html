@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+        body {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Lato', sans-serif;
+            width: 100%;
+        }
+
+        h1,
+        h2 {
+            color: #0d8065
+        }
+
+
+
+        hr {
+            border-bottom: 2px solid var(--bg-green);
+            margin: 1rem auto;
+            color: #0d8065;
+        }
+
+        a {
+            font-size: 2rem;
+            border: 3px solid #0d8065;
+            max-width: fit-content;
+            padding: .1rem .3rem;
+            color: #0d8065;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 2rem;
+        }
+
+        p a {
+            font-size: 1rem;
+            border: none;
+            padding: .5rem 1rem;
+            background-color: #0d8065;
+            color: #fff !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 2rem;
+        }
+
+        img {
+            width: 20%;
+            height: 10rem;
+        }
+
+        div {
+            width: 96%;
+            margin-bottom: 3rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            div {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://pc-haven.herokuapp.com/" target="_blank"><strong>PC
+            Haven</strong>
+    </a>
+    <h1 style="margin-bottom: 0;">Order Confirmation</h1>
+    <p>Thank you for your order!</p>
+
+    <div>
+        <h2>Order Details</h2>
+        <p><strong>Order Number: </strong> {{ order.order_number }}</p>
+        <p><strong>Order Date: </strong>{{ order.order_date }}</p>
+
+        {% for item in order.lineitems.all %}
+        <hr>
+        <p style="margin-bottom: 0;"><strong>{{ item.product.name }}</strong></p>
+        {% if item.product.image %}
+        <img src="{{ item.product.image.url }}">
+        {% else %}
+        <img src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp">
+        {% endif %}
+        {% if item.product.has_sale %}
+        <p style="margin: 0 auto; font-size: small;">Qty: {{ item.quantity }} @ €{{ item.product.sale_price }}
+            each
+        </p>
+        {% else %}
+        <p style="margin: 0 auto; font-size: small;">Qty: {{ item.quantity }} @ €{{ item.product.price }} each
+        </p>
+        {% endif %}
+        <hr>
+        {% endfor %}
+        <p><strong>Order Total: </strong>€{{ order.order_total }}</p>
+        <p><strong>Delivery: </strong>€{{ order.delivery_cost }}</p>
+        <p><strong>Grand Total: </strong>€{{ order.grand_total }}</p>
+        <p style="margin-bottom: 1rem;">Please feel free to contact us if you have any questions.</p>
+        <p><a href="https://pc-haven.herokuapp.com/" target="_blank"><strong>Contact Us</strong>
+            </a></p>
+    </div>
+</body>
+
+</html>
