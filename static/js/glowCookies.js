@@ -319,7 +319,7 @@ class LanguagesGC {
         'manageText': 'Cookies verwalten'
       },
       en: {
-        'bannerHeading': 'PC Haven cookies',
+        'bannerHeading': 'PC HAVEN - COOKIES&nbsp;&nbsp;<i class="fa-solid fa-cookie"></i>',
         'bannerDescription': 'We use our own and third-party cookies to personalize content and to analyze web traffic.',
         'bannerLinkText': 'Read more about cookies in our Privacy Policy.',
         'acceptBtnText': 'Accept cookies',
@@ -499,6 +499,7 @@ glowCookies.start('en', {
   style: 2, // 1, 2, 3
   position: 'right',
   acceptBtnBackground: '#0d8065',
-  bannerHeading: '<h5>PC HAVEN - COOKIES&nbsp;&nbsp;<i class="fa-solid fa-cookie"></i></h5>',
-  rejectBtnColor: '#0d8065',
+  bannerColor: '#0d8065',
+  rejectBtnColor: 'white',
+  rejectBtnBackground: 'black',
 });

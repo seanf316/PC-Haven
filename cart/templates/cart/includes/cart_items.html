@@ -5,12 +5,13 @@
             {% if item.product.image %}
             <div class="bg-white text-center img-container">
                 <a href="{% url 'product_detail' item.product.slug %}"><img class="img-fluid rounded"
-                        src="{{ item.product.image.url }}"></a>
+                        src="{{ item.product.image.url }}" alt="{{ item.product.name}}"></a>
             </div>
             {% else %}
             <div class="bg-white text-center img-container">
                 <a href="{% url 'product_detail' item.product.slug %}"><img class="img-fluid rounded"
-                        src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"></a>
+                        src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+                        alt="{{ item.product.name}}"></a>
             </div>
             {% endif %}
         </div>
@@ -35,7 +36,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                            <button class="decrement-qty btn btn-sm btn-black rounded-0" aria-label="Decrement Quantity"
                                 data-product_id="{{ item.product.id }}" id="decrement-qty_{{ item.product.id }}">
                                 <span>
                                     <i class="fas fa-minus fa-sm"></i>
@@ -44,9 +45,10 @@
                         </div>
                         <input class="form-control text-center form-control-sm qty_input" type="number" name="quantity"
                             value="{{ item.quantity }}" min="1" max="{{ item.product.stock_level}}"
-                            data-product_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                            data-product_id="{{ item.product.id }}" aria-label="Quantity"
+                            id="id_qty_{{ item.product.id }}">
                         <div class="input-group-append">
-                            <button class="increment-qty btn btn-sm btn-black rounded-0"
+                            <button class="increment-qty btn btn-sm btn-black rounded-0" aria-label="Increase Quantity"
                                 data-product_id="{{ item.product.id }}" id="increment-qty_{{ item.product.id }}">
                                 <span>
                                     <i class="fas fa-plus fa-sm"></i>

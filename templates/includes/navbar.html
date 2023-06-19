@@ -19,8 +19,8 @@
             <div class="dropdown-menu border-0 bg-offwhite w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
                 <form class="form" method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control bg-offwhite rounded-0" type="text" name="q"
-                            placeholder="Search Product">
+                        <input class="form-control bg-offwhite rounded-0" aria-label="mobile-search" type="text"
+                            name="q" placeholder="Search Product">
                         <div class="input-group-append">
                             <button class="form-control rounded-0" type="submit" aria-label="Search Product">
                                 <span class="icon">
@@ -141,7 +141,7 @@
             <div class="dropdown-menu border-0 bg-offwhite w-100 p-3 rounded-0 my-0" aria-labelledby="search">
                 <form class="form" method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control bg-offwhite rounded-0" type="text" name="q"
+                        <input class="form-control bg-offwhite rounded-0" aria-label="search" type="text" name="q"
                             placeholder="Search Product">
                         <div class="input-group-append">
                             <button class="form-control rounded-0" type="submit" aria-label="Search Product">

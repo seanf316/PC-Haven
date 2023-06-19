@@ -5,7 +5,7 @@
 
 <a href="{{ widget.value.url }}">
 
-    <img width="130" height="100" class="rounded shadow-sm" src="{{ widget.value.url }}">
+    <img width="130" height="100" class="rounded shadow-sm" src="{{ widget.value.url }}" alt="Current Image">
 
 </a>
 
@@ -15,7 +15,8 @@
 
     <input class="custom-control-input" type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"
         {% if widget.attrs.disabled %} disabled{% endif %}>
-    <label class="custom-control-label text-danger" for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
+    <label class="custom-control-label text-danger" for="{{ widget.checkbox_id }}">
+        {{ widget.clear_checkbox_label}}</label>
 
 </div>
 
@@ -26,9 +27,10 @@
 
 {% endif %}
 
-<span class="btn btn-secondary rounded-0 btn-file">
+<span class="btn btn-dark rounded-0 btn-file">
     Select Image
-    <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}" {% include "django/forms/widgets/attrs.html" %}>
+    <input id="new-image" aria-label="Select Image" type="{{ widget.type }}" name="{{ widget.name }}" {%
+        include "django/forms/widgets/attrs.html" %}>
 </span>
 
 <strong>

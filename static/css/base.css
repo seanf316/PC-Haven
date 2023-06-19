@@ -106,7 +106,7 @@ main {
 .cta-danger:hover,
 .cta-danger:active,
 .cta-danger:focus {
-    background: var(--bg-offwhite) !important;
+    background: var(--bg-white) !important;
     border: 2px solid red !important;
     color: red !important;
     box-shadow: none !important;

@@ -39,6 +39,16 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         exclude = ("user",)
 
+        labels = {
+            "default_phone_number": "Phone Number",
+            "default_postcode": "Eircode/Postcode",
+            "default_street_address1": "Street Address 1",
+            "default_street_address2": "Street Address 2",
+            "default_town_or_city": "Town or City",
+            "default_county": "County, State or Locality",
+            "default_country": "Country",
+        }
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
@@ -60,4 +70,4 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs["placeholder"] = placeholder
-            self.fields[field].label = False
+            # self.fields[field].label = False

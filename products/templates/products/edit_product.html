@@ -44,11 +44,12 @@
     </div>
 
     <!-- Delete Product Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="deleteProductModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-green text-white">
-                    <h2 class="modal-title" id="delete{{ product.slug }}">Delete {{ product.name|safe }}</h2>
+                    <h2 class="modal-title" id="deleteProductModalLabel">Delete {{ product.name|safe }}</h2>
                 </div>
                 <div class="modal-body">
                     {% if request.user.is_superuser %}
