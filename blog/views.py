@@ -39,6 +39,7 @@ def blog_detail(request, slug):
         "blog": blog,
         "liked": liked,
         "comments": comments,
+        "on_blog_detail_page": True,
     }
 
     return render(request, "blog/blog_detail.html", context)

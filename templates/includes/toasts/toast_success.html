@@ -16,7 +16,7 @@
                 {% endif %}
             </div>
         </div>
-        {% if grand_total and not on_profile_page %}
+        {% if grand_total and not on_profile_page and not on_blog_detail_page %}
         <div class="row">
             <div class="col-12">
                 {% if request.user.is_authenticated %}
