@@ -9,7 +9,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
         body {
-            background-color: #fff;
+            background-color: white;
+            color: black;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -53,7 +54,7 @@
         }
 
         img {
-            width: 20%;
+            width: 10rem;
             height: 10rem;
         }
 
@@ -71,7 +72,7 @@
 </head>
 
 <body>
-    <a href="https://pc-haven.herokuapp.com/" target="_blank"><strong>PC
+    <a href="https://pc-haven.herokuapp.com/" target="_blank" style="color: #0d8065;"><strong>PC
             Haven</strong>
     </a>
     <h1 style="margin-bottom: 0;">Order Confirmation</h1>
@@ -81,10 +82,9 @@
         <h2>Order Details</h2>
         <p><strong>Order Number: </strong> {{ order.order_number }}</p>
         <p><strong>Order Date: </strong>{{ order.order_date }}</p>
-
-        {% for item in order.lineitems.all %}
         <hr>
-        <p style="margin-bottom: 0;"><strong>{{ item.product.name }}</strong></p>
+        {% for item in order.lineitems.all %}
+        <p style="margin-bottom: 1rem; color: #0d8065;"><strong>{{ item.product.name }}</strong></p>
         {% if item.product.image %}
         <img src="{{ item.product.image.url }}">
         {% else %}
