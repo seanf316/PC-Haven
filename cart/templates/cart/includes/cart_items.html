@@ -1,15 +1,15 @@
-<div class="col-12 col-md-6 col-lg-8 rounded">
+<div class="col-12 col-md-6 col-lg-8 rounded mb-3 mb-md-5">
     {% for item in cart_items %}
     <div class="row border-green bg-white cart-item-row p-2 mb-3">
         <div class="col-12 col-lg-4 mb-lg-0 mb-2">
             {% if item.product.image %}
             <div class="bg-white text-center img-container">
-                <a href="{% url 'product_detail' item.product.slug %}"><img class="img-fluid rounded"
+                <a href="{% url 'product_detail' item.product.slug %}"><img class="card-img-top"
                         src="{{ item.product.image.url }}" alt="{{ item.product.name}}"></a>
             </div>
             {% else %}
             <div class="bg-white text-center img-container">
-                <a href="{% url 'product_detail' item.product.slug %}"><img class="img-fluid rounded"
+                <a href="{% url 'product_detail' item.product.slug %}"><img class="card-img-top"
                         src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
                         alt="{{ item.product.name}}"></a>
             </div>
@@ -38,7 +38,7 @@
                         <div class="input-group-prepend">
                             <button class="decrement-qty btn btn-sm btn-black rounded-0" aria-label="Decrement Quantity"
                                 data-product_id="{{ item.product.id }}" id="decrement-qty_{{ item.product.id }}">
-                                <span>
+                                <span class="p-1">
                                     <i class="fas fa-minus fa-sm"></i>
                                 </span>
                             </button>
@@ -50,7 +50,7 @@
                         <div class="input-group-append">
                             <button class="increment-qty btn btn-sm btn-black rounded-0" aria-label="Increase Quantity"
                                 data-product_id="{{ item.product.id }}" id="increment-qty_{{ item.product.id }}">
-                                <span>
+                                <span class="p-1">
                                     <i class="fas fa-plus fa-sm"></i>
                                 </span>
                             </button>
