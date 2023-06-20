@@ -4,6 +4,7 @@ from django.shortcuts import (
     redirect,
     reverse,
     HttpResponseRedirect,
+    Http404,
 )
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required

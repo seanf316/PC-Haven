@@ -9,8 +9,6 @@ from .forms import ContactForm
 def contact(request):
     """A view to show the contact page"""
 
-    user = request.user
-
     subject = "Thank you for contacting PC HAVEN"
     from_email = "pchaven.com"
 

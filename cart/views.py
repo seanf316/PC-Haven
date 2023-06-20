@@ -92,7 +92,8 @@ def delete_from_cart(request, product_id):
             else:
                 messages.success(
                     request,
-                    f"Removed all {product.name} from your cart. Cart is now empty!",
+                    f"Removed all {product.name} from your cart. "
+                    "Cart is now empty!",
                 )
 
             return redirect(reverse("view_cart"))
@@ -101,26 +102,4 @@ def delete_from_cart(request, product_id):
     except Exception as e:
         messages.error(request, f"Error removing item: {e}")
 
-        return HttpResponse(status=500)
-
-
-def delete_all_cart(request):
-    """Remove all products from cart"""
-
-    try:
-        cart = request.session.get("cart", {})
-
-        if cart:
-            products = Product.objects.filter(id__in=cart.keys())
-
-            request.session["cart"] = {}
-            messages.success(request, "All items removed from your cart")
-
-        else:
-            messages.info(request, "Your cart is already empty")
-
-        return redirect(reverse("view_cart"))
-
-    except Exception as e:
-        messages.error(request, f"Error removing items: {e}")
         return HttpResponse(status=500)

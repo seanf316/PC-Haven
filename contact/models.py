@@ -33,6 +33,7 @@ class Contact(models.Model):
 
     def __str__(self):
         """
-        Returns 'Contact Message from and customer name' as a string representation of the object.
+        Returns 'Contact Message from and customer name'
+        as a string representation of the object.
         """
         return f"Contact Message from {self.name}"

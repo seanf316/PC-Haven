@@ -32,6 +32,6 @@ urlpatterns = [
     path("blog/", include("blog.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'pchaven.views.error_403'
-handler404 = 'pchaven.views.error_404'
-handler500 = 'pchaven.views.error_500'
+handler403 = "pchaven.views.error_403"
+handler404 = "pchaven.views.error_404"
+handler500 = "pchaven.views.error_500"

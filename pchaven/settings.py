@@ -33,7 +33,7 @@ DEBUG = "DEVELOPMENT" in os.environ
 ALLOWED_HOSTS = [
     "pc-haven.herokuapp.com",
     "localhost",
-    "8000-seanf316-pchaven-lppnru9p4ne.ws-eu99.gitpod.io",
+    "8000-seanf316-pchaven-lppnru9p4ne.ws-eu100.gitpod.io",
 ]
 
 
@@ -138,16 +138,20 @@ AUTHENTICATION_BACKENDS = [
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation."
+        "UserAttributeSimilarityValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation."
+        "MinimumLengthValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation."
+        "CommonPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation."
+        "NumericPasswordValidator",
     },
 ]
 

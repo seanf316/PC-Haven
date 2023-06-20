@@ -27,7 +27,7 @@ class ProductAdmin(SummernoteModelAdmin):
         "category__name",
         "sub_category__name",
     )
-    
+
     list_filter = (
         "category",
         "sub_category",

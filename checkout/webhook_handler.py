@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
-from django.conf import settings
 from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import UserProfile
@@ -112,7 +111,10 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                content=(
+                    f'Webhook received: {event["type"]} |'
+                    " SUCCESS: Verified order already in database"
+                ),
                 status=200,
             )
         else:
@@ -152,7 +154,10 @@ class StripeWH_Handler:
                 )
         self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=(
+                f'Webhook received: {event["type"]}'
+                " | SUCCESS: Created order in webhook"
+            ),
             status=200,
         )
 

@@ -36,6 +36,10 @@ class BlogForm(forms.ModelForm):
         placeholders = {
             "title": "Enter Blog Title",
         }
+        for field_name, field in self.fields.items():
+            field.widget.attrs["placeholder"] = placeholders.get(
+                field_name, ""
+            )
         self.fields["title"].widget.attrs["autofocus"] = True
 
 

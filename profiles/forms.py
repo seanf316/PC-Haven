@@ -27,7 +27,13 @@ class UserForm(forms.ModelForm):
         placeholders = {
             "username": "Username",
             "email": "Email",
+            "first_name": "First name",
+            "last_name": "Surname",
         }
+        for field_name, field in self.fields.items():
+            field.widget.attrs["placeholder"] = placeholders.get(
+                field_name, ""
+            )
 
 
 class UserProfileForm(forms.ModelForm):
@@ -70,4 +76,3 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs["placeholder"] = placeholder
-            # self.fields[field].label = False

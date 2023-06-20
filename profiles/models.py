@@ -33,7 +33,8 @@ class UserProfile(models.Model):
 
     def __str__(self):
         """
-        Returns the name of the Profile username as a string representation of the object.
+        Returns the name of the Profile username as a string
+        representation of the object.
         """
         return self.user.username
 
@@ -64,6 +65,7 @@ class Wishlist(models.Model):
 
     def __str__(self):
         """
-        Returns the name of the Wishlist username as a string representation of the object.
+        Returns the name of the Wishlist username as a string
+        representation of the object.
         """
         return f"{self.user.username}'s Wishlist"

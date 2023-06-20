@@ -122,6 +122,7 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         """
-        Returns the name of the Order Item as a string representation of the object.
+        Returns the name of the Order Item as a string
+        representation of the object.
         """
         return f"SKU {self.product.sku} on order {self.order.order_number}"

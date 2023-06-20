@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from .models import Blog, Comment
 from .forms import BlogForm, CommentForm
 
@@ -187,7 +186,8 @@ def add_comment(request, slug):
     if not request.user.is_authenticated:
         messages.info(
             request,
-            "You will need to Sign Up or Login to add comments to the Blog Post.",
+            "You will need to Sign Up or Login to"
+            "add comments to the Blog Post.",
         )
         return redirect(reverse("blog_detail", args=[blog.slug]))
 
@@ -270,10 +270,11 @@ def delete_comment(request, slug, comment_id):
     if not user.is_superuser or user != comment.name:
         messages.error(
             request,
-            f"Sorry {user.username}, only the staff or owner of the comment can delete.",
+            f"Sorry {user.username}, only the staff or owner of the"
+            "comment can delete.",
         )
         return redirect(reverse("blog_detail", args=[blog.slug]))
 
     comment.delete()
-    messages.success(request, f"Comment has been deleted!")
+    messages.success(request, "Comment has been deleted!")
     return redirect(reverse("blog_detail", args=[blog.slug]))

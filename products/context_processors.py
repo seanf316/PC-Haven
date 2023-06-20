@@ -1,4 +1,4 @@
-from .models import CategoryGroup, SubCategory
+from .models import CategoryGroup
 
 
 def getlinks(request):

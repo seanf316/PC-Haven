@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from products.models import Product
-from django.contrib.auth.models import User
 from .models import Review
 from .forms import ReviewForm
 
@@ -21,7 +20,7 @@ def add_review(request, slug):
             review.product = product
             review.user = user
             review = form.save()
-            messages.success(request, f"Successfully added review.")
+            messages.success(request, "Successfully added review.")
             return redirect(reverse("product_detail", args=[product.slug]))
         else:
             messages.error(

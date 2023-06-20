@@ -22,7 +22,8 @@ class CategoryGroup(models.Model):
 
     def __str__(self):
         """
-        Returns the name of the Category as a string representation of the object.
+        Returns the name of the Category as a string representation
+        of the object.
         """
         return self.name
 
@@ -48,7 +49,8 @@ class SubCategory(models.Model):
 
     def __str__(self):
         """
-        Returns the name of the Sub-Category as a string representation of the object.
+        Returns the name of the Sub-Category as a string
+        representation of the object.
         """
         return self.name
 
@@ -112,7 +114,8 @@ class Product(models.Model):
 
     def __str__(self):
         """
-        Returns the name of the Product as a string representation of the object.
+        Returns the name of the Product as a string representation
+        of the object.
         """
         return self.name
 

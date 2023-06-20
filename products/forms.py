@@ -59,7 +59,8 @@ class ProductForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Retrieves the Category/Subcategory friendly names and sets them as the choices in select fields
+        Retrieves the Category/Subcategory friendly names and
+        sets them as the choices in select fields
         """
         super().__init__(*args, **kwargs)
         categories = CategoryGroup.objects.all()

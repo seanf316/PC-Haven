@@ -36,6 +36,10 @@ class ContactForm(forms.ModelForm):
         placeholders = {
             "name": "Enter Full Name",
             "email": "Enter Email Address",
-            "sunject": "Enter Message Subject",
+            "subject": "Enter Message Subject",
         }
-        self.fields["subject"].widget.attrs["autofocus"] = True
+        for field_name, field in self.fields.items():
+            field.widget.attrs["placeholder"] = placeholders.get(
+                field_name, ""
+            )
+        self.fields["name"].widget.attrs["autofocus"] = True

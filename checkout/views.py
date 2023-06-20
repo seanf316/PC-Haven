@@ -84,16 +84,19 @@ def checkout(request):
                             messages.error(
                                 request,
                                 (
-                                    f"Sorry {user.username}, we are currently out of stock of {product.name}."
-                                    "Please remove this item from your cart and try again later.",
+                                    f"Sorry {user.username}, we are currently"
+                                    f" out of stock of {product.name}. Please"
+                                    " remove this item from your cart and try"
+                                    " again later.",
                                 ),
                             )
                         else:
                             messages.error(
                                 request,
                                 (
-                                    f"Sorry, we are currently out of stock of {product.name}."
-                                    "Please remove this item from your cart and try again later."
+                                    "Sorry, we are currently out of stock of"
+                                    f" {product.name}. Please remove this item"
+                                    " from your cart and try again later."
                                 ),
                             )
                         order.delete()
@@ -110,15 +113,18 @@ def checkout(request):
                         messages.error(
                             request,
                             (
-                                f"Sorry {user.username} one of the products - {product.name} in your cart was not found in our database. "
-                                "Please contact us for assistance!"
+                                f"Sorry {user.username} one of the products -"
+                                f" {product.name} in your cart was not found "
+                                "in our database. Please contact us for "
+                                "assistance!"
                             ),
                         )
                     else:
                         messages.error(
                             request,
                             (
-                                f"Sorry one of the products - {product.name} in your cart was not found in our database. "
+                                f"Sorry one of the products - {product.name} "
+                                "in your cart was not found in our database. "
                                 "Please contact us for assistance!"
                             ),
                         )
@@ -152,7 +158,6 @@ def checkout(request):
             amount=stripe_total, currency=STRIPE_CURRENCY
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=user)
@@ -175,7 +180,7 @@ def checkout(request):
             order_form = OrderForm()
 
     if not STRIPE_PUBLIC_KEY:
-        messages.warning(self.request, "Stripe Public Key Missing!!")
+        messages.warning(request, "Stripe Public Key Missing!!")
 
     template = "checkout/checkout.html"
     context = {
