@@ -23,62 +23,21 @@
             color: #0d8065
         }
 
-
-
-        hr {
-            border-bottom: 2px solid var(--bg-green);
-            margin: 1rem auto;
-            color: #0d8065;
-        }
-
-        a {
-            font-size: 2rem;
-            border: 3px solid #0d8065;
-            max-width: fit-content;
-            padding: .1rem .3rem;
-            color: #0d8065;
-            text-transform: uppercase;
-            text-decoration: none;
-            margin-top: 2rem;
-        }
-
-        p a {
-            font-size: 1rem;
-            border: none;
-            padding: .5rem 1rem;
-            background-color: #0d8065;
-            color: #fff !important;
-            text-transform: uppercase;
-            text-decoration: none;
-            margin-top: 2rem;
-        }
-
         img {
             width: 10rem;
             height: 10rem;
-        }
-
-        div {
-            width: 96%;
-            margin-bottom: 3rem;
-        }
-
-        @media screen and (min-width: 768px) {
-            div {
-                width: 60%;
-            }
         }
     </style>
 </head>
 
 <body>
-    <a href="https://pc-haven.herokuapp.com/" target="_blank" style="color: #0d8065;"><strong>PC
-            Haven</strong>
-    </a>
-    <h1 style="margin-bottom: 0;">Order Confirmation</h1>
-    <p>Thank you for your order!</p>
-
-    <div>
+    <div style="margin: 3rem 0;">
+        <a href="https://pc-haven.herokuapp.com/" target="_blank"
+            style="color: #0d8065; font-size: 2rem; border: 3px solid #0d8065; max-width: fit-content; padding: .1rem .3rem; text-transform: uppercase; text-decoration: none; text-align: center;"><strong>PC
+                Haven</strong>
+        </a>
+        <h1 style="margin-bottom: 0;">Order Confirmation</h1>
+        <p>Thank you for your order!</p>
         <h2>Order Details</h2>
         <p><strong>Order Number: </strong> {{ order.order_number }}</p>
         <p><strong>Order Date: </strong>{{ order.order_date }}</p>
@@ -100,11 +59,16 @@
         {% endif %}
         <hr>
         {% endfor %}
+        <p>Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+        </p>
+        <p>We've got your phone number on file as {{ order.phone_number }}.</p>
         <p><strong>Order Total: </strong>€{{ order.order_total }}</p>
         <p><strong>Delivery: </strong>€{{ order.delivery_cost }}</p>
         <p><strong>Grand Total: </strong>€{{ order.grand_total }}</p>
-        <p style="margin-bottom: 1rem;">Please feel free to contact us if you have any questions.</p>
-        <p><a href="https://pc-haven.herokuapp.com/contact/" target="_blank"><strong>Contact Us</strong>
+        <p style="margin-bottom: 2rem;">Please feel free to contact us if you have any questions.</p>
+        <p><a href="https://pc-haven.herokuapp.com/contact/" target="_blank"
+                style=" font-size: 1.2rem; background-color: #0d8065; color: white; text-transform: uppercase; text-decoration: none; padding: .3rem 1rem;"><strong>Contact
+                    Us</strong>
             </a></p>
     </div>
 </body>
