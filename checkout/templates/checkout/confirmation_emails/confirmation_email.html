@@ -41,6 +41,7 @@
         <h2>Order Details</h2>
         <p><strong>Order Number: </strong> {{ order.order_number }}</p>
         <p><strong>Order Date: </strong>{{ order.order_date }}</p>
+        <p><strong>Order Items: </strong></p>
         <hr>
         {% for item in order.lineitems.all %}
         <p style="margin-bottom: 1rem; color: #0d8065;"><strong>{{ item.product.name }}</strong></p>
