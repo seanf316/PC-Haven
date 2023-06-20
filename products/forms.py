@@ -4,34 +4,6 @@ from django_summernote.widgets import SummernoteWidget
 from .models import Product, CategoryGroup, SubCategory
 
 
-class CategoryForm(forms.ModelForm):
-    """
-    Form to add new Categories
-    """
-
-    class Meta:
-        """
-        Define model, form fields and widgets
-        """
-
-        model = CategoryGroup
-        fields = "__all__"
-
-
-class SubcategoryForm(forms.ModelForm):
-    """
-    Form to add new Sub-Categories
-    """
-
-    class Meta:
-        """
-        Define model, form fields and widgets
-        """
-
-        model = SubCategory
-        fields = "__all__"
-
-
 class ProductForm(forms.ModelForm):
     """
     Form to add new Products
