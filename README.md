@@ -79,7 +79,7 @@ The graphical elements and overall design of the site provide the user with an e
 
 This project was developed using agile methodologies by delivering small features across the duration of the project. All User Stories were assigned to Epics, prioritized under the labels, Must Have, Should Have and Could Have. They were assigned story points according to complexity. Fibonacci sequence is employed for the Story points. "Must Have" stories were completed first, "Should Have's" and then finally "Could Have's".
 
-It was done this way to ensure that all core requirements were completed first to give the project a complete feel. In some scenarios, certain "Should Have's" were implemented before schedule due to the nature of the implementation i.e. some Product related "Could Have's" were done during Product development with some "Must Have's" - Error templates developed later on. The rest were applied based on capacity and timing.
+It was done this way to ensure that all core requirements were completed first to give the project a complete feel. In some scenarios, certain "Should Have's" were implemented before schedule due to the nature of the implementation i.e. some Product related "Should Have's" were done during Product development with some "Must Have's" - Error templates developed later on. The rest were applied based on capacity and timing.
 
 The Kanban board was created using Github projects and can be located [here](https://github.com/users/seanf316/projects/8) and can be viewed to see more information on the project cards. All stories have a full set of acceptance criteria to define the functionality that marks that story as complete.
 
@@ -205,74 +205,103 @@ The following user stories (by epic) were completed throughout development.
 
 #### **EPIC: Initial Django Setup [#1](https://github.com/seanf316/PC-Haven/issues/2)**
 
-- As a Developer I can set up Django and install the supporting libraries predicted to be needed so that I am ready to start development [#11](https://github.com/seanf316/PC-Haven/issues/11)
-- As a Developer I need to create the env.py and add to .gitignore so that I can securely deploy the site without exposing developer keys/information [#12](https://github.com/seanf316/PC-Haven/issues/12)
+- As a Developer I can set up Django and install the supporting libraries predicted to be needed so that I am ready to start development [#19](https://github.com/seanf316/PC-Haven/issues/18)
+- As a Developer I need to create the env.py and add to .gitignore so that I can securely deploy the site without exposing developer keys/information [#20](https://github.com/seanf316/PC-Haven/issues/19)
 
-#### **EPIC: Initial Deployment [#2](https://github.com/seanf316/PC-Haven/issues/2)**
+#### **EPIC: AWS Setup [#2](https://github.com/seanf316/PC-Haven/issues/3)**
 
-- As a Developer I can deploy site to Heroku early so that I can confirm everything works before development of the site and to enable continuous testing within the production environment [#13](https://github.com/seanf316/PC-Haven/issues/13)
+- As a Developer I can setup the AWS Groups/Policies and Users so that so that the hosted static and media files are available to site when deployed. [#21](https://github.com/seanf316/PC-Haven/issues/20)
 
-#### **EPIC: Base Html/Homepage [#9](https://github.com/seanf316/PC-Haven/issues/9)**
+#### **EPIC: Heroku Deployment [#3](https://github.com/seanf316/PC-Haven/issues/4)**
 
-- As a User I would like to view the site on my different devices so that I can view the site on the go [#14](https://github.com/seanf316/PC-Haven/issues/14)
-- As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs [#15](https://github.com/seanf316/PC-Haven/issues/15)
-- As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have [#16](https://github.com/seanf316/PC-Haven/issues/16)
+- As a Developer I can deploy site to Heroku early so that I can confirm everything works before development of the site and to enable continuous testing within the production environment [#22](https://github.com/seanf316/PC-Haven/issues/21)
 
-#### **EPIC: User Account/Profile [#3](https://github.com/seanf316/PC-Haven/issues/3)**
+#### **EPIC: Base Html/Homepage [#4](https://github.com/seanf316/PC-Haven/issues/5)**
 
-- As a User I would like access to my Profile so that I can upload an image or alter my details where needed [#18](https://github.com/seanf316/PC-Haven/issues/18)
-- As a Developer I can create an aesthetically pleasing display of the User's Profile so that the experience of viewing their Profile is a pleasant one [#23](https://github.com/seanf316/PC-Haven/issues/23)
-- As a Developer I can create an edit Profile template so that the User has a nice display for when they want to update their Profile [#40](https://github.com/seanf316/PC-Haven/issues/40)
-- As a Developer I can create a Delete Profile view so that the User has access to delete their account. [#41](https://github.com/seanf316/PC-Haven/issues/41)
-- As a User I would like the ability to add Movies to a watchlist so that so that I can have a list of movies that I can refer to when looking for something to watch [#42](https://github.com/seanf316/PC-Haven/issues/42)
+- As a Developer I can build a base template so that it can be extended to any templates that may require it [#23](https://github.com/seanf316/PC-Haven/issues/22)
+- As a Developer I can design an aesthetically pleasing Homepage so that users have a positive experience when visiting the site [#24](https://github.com/seanf316/PC-Haven/issues/23)
+- As a Developer I can implement message toasts so that the user/customer is alerted when they carry out and action or encounter and error. [#45](https://github.com/seanf316/PC-Haven/issues/45)
 
-#### **EPIC: User Signup/Login/Logout [#4](https://github.com/seanf316/PC-Haven/issues/4)**
+#### **EPIC: Setup AllAuth [#5](https://github.com/seanf316/PC-Haven/issues/6)**
 
-- As a User I want to Sign Up/Login and Logout so that I can see what features are available to registered users like reviewing/commenting [#17](https://github.com/seanf316/PC-Haven/issues/17)
-- As a Developer I can add functionality to verify email and reset password so that the user has better security over their email being used and can reset password if they forget it [#47](https://github.com/seanf316/PC-Haven/issues/47)
+- As a User I want to Sign Up/Login and Logout so that I can see what features are available to registered users [#25](https://github.com/seanf316/PC-Haven/issues/24)
 
-#### **EPIC: Movie Search [#5](https://github.com/seanf316/PC-Haven/issues/5)**
+#### **EPIC: Products Setup (CRUD) [#6](https://github.com/seanf316/PC-Haven/issues/7)**
 
-- As a User I want to have a section where I can search for a Movie so that I can easily find the Movie I want to review [#19](https://github.com/seanf316/PC-Haven/issues/19)
-- As a Developer I can create the Movie Search Template so that the User has an nice experience on the site [#20](https://github.com/seanf316/PC-Haven/issues/20)
-- As a Developer I need to setup an account with TMDB so that I can use the sites API and implement into my site [#21](https://github.com/seanf316/PC-Haven/issues/21)
+- As a Developer I can create functional code to apply Products to my site so that the customer has Products to purchase [#27](https://github.com/seanf316/PC-Haven/issues/26)
+- As a User I would like the ability to search for a product so that to see if the site sells it [#28](https://github.com/seanf316/PC-Haven/issues/27)
+- As a User I would like to view a page containing the search results from my Product search so that so that I can find my prefered Product or see similar Products [#29](https://github.com/seanf316/PC-Haven/issues/28)
+- As a User I would like a page that displays All Products the site offers so that I can browse and find products that I may want to purchase [#30](https://github.com/seanf316/PC-Haven/issues/29)
+- As a User I would like the ability to sort products so that I can identity the best priced/rated Products the site offers [#31](https://github.com/seanf316/PC-Haven/issues/30)
+- As a Developer I can allow the functionality to edit Products by staff members so that they can reduce/increase prices, change product descriptions/images etc [#32](https://github.com/seanf316/PC-Haven/issues/31)
+- As a Developer I can add functionality for staff members to delete Products so that if they do not sell or there is problems with the Product it can be removed from the storefront [#33](https://github.com/seanf316/PC-Haven/issues/32)
+- As a User I would like to view the details of any Product so that I can see if the Product has the required specifications that I need/want [#34](https://github.com/seanf316/PC-Haven/issues/33)
 
-#### **EPIC: View Search Results [#6](https://github.com/seanf316/PC-Haven/issues/6)**
+#### **EPIC: Purchasing/Checkout [#7](https://github.com/seanf316/PC-Haven/issues/8)**
 
-- As a Developer I can create the Movie Search Results template so that the User has a clear display of the results from their search [#37](https://github.com/seanf316/PC-Haven/issues/37)
+- As a Customer I would like to add items that to a cart so that I can view all items and purchase or remove items at will. [#35](https://github.com/seanf316/PC-Haven/issues/34)
+- As a Customer I would like to view all items in my cart so that I can manage the items I want to buy. [#36](https://github.com/seanf316/PC-Haven/issues/36)
+- As a Developer I can add in functionality to advise customer of free delivery at a certain threshold so that customer is aware of delivery costs and can add more items if price is suitable. [#37](https://github.com/seanf316/PC-Haven/issues/37)
+- As a Customer I would like to adjust/remove the amount of a certain item so that I can manage my items for purchase. [#38](https://github.com/seanf316/PC-Haven/issues/38)
+- As a Customer I would like to receive a confirmation of my order so that I know the purchase has went through and I can see what I ordered [#39](https://github.com/seanf316/PC-Haven/issues/39)
+- As a Developer I can add the code to update the stock levels when a purchase has occurred so that shop owner can manage the stock levels and order where required [#40](https://github.com/seanf316/PC-Haven/issues/40)
+- As a Customer, I would like to save my billing/shipping information, so that I don't need to enter these details on every purchase [#41](https://github.com/seanf316/PC-Haven/issues/41)
+- As a Developer I can create a checkout page so that the customer can enter their billing/shipping/payment information to complete purchase. [#42](https://github.com/seanf316/PC-Haven/issues/42)
+- As a Customer I would like the ability to edit the quantity of an item in my cart so that I can update the amount I want to buy of a specific item [#43](https://github.com/seanf316/PC-Haven/issues/43)
+- As a Customer I would like to remove an item from my cart so that if i decide its not what I want i can easily remove that item and continue purchase with the rest of my cart items [#44](https://github.com/seanf316/PC-Haven/issues/44)
 
-#### **EPIC: View Movie Details [#7](https://github.com/seanf316/PC-Haven/issues/7)**
+#### **EPIC: Stripe Setup [#8](https://github.com/seanf316/PC-Haven/issues/9)**
 
-- As a User I want to view the Movie details from my search so that I can read the synopsis and check reviews [#22](https://github.com/seanf316/PC-Haven/issues/22)
-- As a Developer I can build a page to display the Movie Details for the users selected Movie so that they have a clear overview of the Movie [#24](https://github.com/seanf316/PC-Haven/issues/24)
-- As a Developer I will create a Movie model so that the movie details that the user references can be saved to the database for use with Reviews/Profile etc [#38](https://github.com/seanf316/PC-Haven/issues/38)
+- As a Developer I can implement Stripe so that it can manage payments for the site products at checkout [#46](https://github.com/seanf316/PC-Haven/issues/46)
 
-#### **EPIC: Movie Reviews/Comments [#8](https://github.com/seanf316/PC-Haven/issues/8)**
+#### **EPIC: User Profile (CRUD) [#9](https://github.com/seanf316/PC-Haven/issues/10)**
 
-- As a User I want the ability to review Movies so that I can share my thoughts of the Movie with family and friends [#25](https://github.com/seanf316/PC-Haven/issues/25)
-- As a Developer I can create a nice display for the User to review so that they have an enjoyable experience reviewing Movies on the site [#26](https://github.com/seanf316/PC-Haven/issues/26)
-- As a User I would like the ability to edit my review so that I can fix any spelling or format issues [#43](https://github.com/seanf316/PC-Haven/issues/43)
-- As a User I would like the ability to delete my review so that I can manage my reviews and in the case of accidentally selecting the wrong Movie and reviewing it [#44](https://github.com/seanf316/PC-Haven/issues/44)
-- As a User I would like the ability to view all movie reviews so that I can see what my fellow reviewers think of other movies [#45](https://github.com/seanf316/PC-Haven/issues/45)
-- As a Developer I can create an All Reviews page so that the User can have a nice display containing all reviews [#46](https://github.com/seanf316/PC-Haven/issues/46)
-- As a User I would like the ability to comment on Reviews so that so that I can participate in conversations with fellow reviewer's [#27](https://github.com/seanf316/PC-Haven/issues/27)
-- As a Developer I can create a section on the Review page for comments so that User's can comment on reviews [#28](https://github.com/seanf316/PC-Haven/issues/28)
+- As a customer I would like the ability to create my own Profile page so that I can save my shipping address for future purchases and track my orders [#47](https://github.com/seanf316/PC-Haven/issues/47)
+- As a Developer I can implement functionality to allow a customer to save information to a personal Profile so that they can save information i.e. shipping address/orders for future review [#48](https://github.com/seanf316/PC-Haven/issues/48)
 
-#### **EPIC: Status Error Templates [#29](https://github.com/seanf316/PC-Haven/issues/29)**
+#### **EPIC: User Wishlist [#10](https://github.com/seanf316/PC-Haven/issues/11)**
 
-- As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views [#30](https://github.com/seanf316/PC-Haven/issues/30)
-- As a Developer I can implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist [#31](https://github.com/seanf316/PC-Haven/issues/31)
-- As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs [#32](https://github.com/seanf316/PC-Haven/issues/32)
+- As a Customer I would like the ability to add products to a Wishlist so that I can keep a list of my products to purchase in the future [#49](https://github.com/seanf316/PC-Haven/issues/49)
+
+#### **EPIC: Setup Email [#11](https://github.com/seanf316/PC-Haven/issues/12)**
+
+- As a Developer I can add functionality to verify email and reset password so that the user has better security over their email being used and can reset password if they forget it [#26](https://github.com/seanf316/PC-Haven/issues/25)
+
+#### **EPIC: Review Products (CRUD) [#12](https://github.com/seanf316/PC-Haven/issues/13)**
+
+- As a Customer I would like to leave a review on a Product so that my fellow shoppers can benefit from my feedback and make informed purchasing decisions. [#50](https://github.com/seanf316/PC-Haven/issues/50)
+- As a Developer I can build a page to display the Review form so that customer has the ability to write their review and submit it. [#51](https://github.com/seanf316/PC-Haven/issues/51)
+
+#### **EPIC: Web Marketing [#13](https://github.com/seanf316/PC-Haven/issues/14)**
+
+- As a Developer I can create a Facebook business page for my site so that I can market my website on the social platform [#60](https://github.com/seanf316/PC-Haven/issues/61)
+- As a Developer I can implement a newsletter on my site so that customers can subscribe for future updates and deals which should bring them back to the site for future purchases. [#61](https://github.com/seanf316/PC-Haven/issues/62)
+
+#### **EPIC: SEO [#14](https://github.com/seanf316/PC-Haven/issues/15)**
+
+- As a Developer I can add helpful description and keywords so that my site can reach a wider audience [#59](https://github.com/seanf316/PC-Haven/issues/60)
+#### **EPIC: Contact Us [#15](https://github.com/seanf316/PC-Haven/issues/16)**
+
+- As a Developer I can add functionality to allow the customer to contact the site owner so that any issue they encounter can be logged and resolved [#57](https://github.com/seanf316/PC-Haven/issues/58)
+- As a Developer I can build a Contact template so that customer can submit their issues [#58](https://github.com/seanf316/PC-Haven/issues/59)
+
+#### **EPIC: Status Error Templates [#16](https://github.com/seanf316/PC-Haven/issues/17)**
+
+- As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views [#54](https://github.com/seanf316/PC-Haven/issues/55)
+- As a Developer I can implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist [#55](https://github.com/seanf316/PC-Haven/issues/56)
+- As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs [#56](https://github.com/seanf316/PC-Haven/issues/57)
+
+#### **EPIC: Blog [#17](https://github.com/seanf316/PC-Haven/issues/52)**
+
+- As a Developer I can create the functionality for site admin to add Blog Posts so that customer may spend more time on the site which may lead to more purchases. [#52](https://github.com/seanf316/PC-Haven/issues/53)
+- As a Developer I can build some Blog related templates so that the site admin can display blog posts on their site for a good customer experience [#53](https://github.com/seanf316/PC-Haven/issues/54)
+
+#### **EPIC: Documentation [#18](https://github.com/seanf316/PC-Haven/issues/63)**
 
 #### **EPIC: Complete Documentation [#10](https://github.com/seanf316/PC-Haven/issues/10)**
 
-- Create/Write README.md [#33](https://github.com/seanf316/PC-Haven/issues/33)
-- Create/Write TESTING.md [#34](https://github.com/seanf316/PC-Haven/issues/34)
-
-#### **Others**
-
-- As a Developer I can build a page to display Trending Movies so that the User can see the latest Trending Movies [#35](https://github.com/seanf316/PC-Haven/issues/35)
-- As a Developer I can build a page to display the Top Rated Movies so that the User can easily get access to the Top Rated Movies of all time [#36](https://github.com/seanf316/PC-Haven/issues/36)
+- Create/Write README.md [#62](https://github.com/seanf316/PC-Haven/issues/64)
+- Create/Write TESTING.md [#63](https://github.com/seanf316/PC-Haven/issues/65)
 
 [Back to top &uarr;](#contents)
 
