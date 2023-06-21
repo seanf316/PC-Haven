@@ -280,6 +280,7 @@ The following user stories (by epic) were completed throughout development.
 #### **EPIC: SEO [#14](https://github.com/seanf316/PC-Haven/issues/15)**
 
 - As a Developer I can add helpful description and keywords so that my site can reach a wider audience [#59](https://github.com/seanf316/PC-Haven/issues/60)
+
 #### **EPIC: Contact Us [#15](https://github.com/seanf316/PC-Haven/issues/16)**
 
 - As a Developer I can add functionality to allow the customer to contact the site owner so that any issue they encounter can be logged and resolved [#57](https://github.com/seanf316/PC-Haven/issues/58)
@@ -313,37 +314,39 @@ This is the prototype of the project that may change during its development. Fur
 
 <details><summary>Desktop</summary>
 
-![Desktop Part 1](/docs/wireframes/desktop/home.webp)
-![Desktop Part 2](/docs/wireframes/desktop/search.webp)
-![Desktop Part 3](/docs/wireframes/desktop/searchresults.webp)
-![Desktop Part 4](/docs/wireframes/desktop/category.webp)
-![Desktop Part 5](/docs/wireframes/desktop/movie.webp)
-![Desktop Part 6](/docs/wireframes/desktop/review.webp)
-![Desktop Part 7](/docs/wireframes/desktop/signup.webp)
-![Desktop Part 8](/docs/wireframes/desktop/login.webp)
-![Desktop Part 9](/docs/wireframes/desktop/signout.webp)
+![Desktop Part 1](/docs/wireframes/desktop/homepage.webp)
+![Desktop Part 2](/docs/wireframes/desktop/products.webp)
+![Desktop Part 3](/docs/wireframes/desktop/product_detail.webp)
+![Desktop Part 4](/docs/wireframes/desktop/cart.webp)
+![Desktop Part 5](/docs/wireframes/desktop/checkout.webp)
+![Desktop Part 6](/docs/wireframes/desktop/order_complete.webp)
+![Desktop Part 7](/docs/wireframes/desktop/blog.webp)
+![Desktop Part 8](/docs/wireframes/desktop/contact.webp)
+![Desktop Part 9](/docs/wireframes/desktop/sign_up.webp)
+![Desktop Part 10](/docs/wireframes/desktop/sign_in.webp)
+![Desktop Part 11](/docs/wireframes/desktop/sign_out.webp)
 
 </details>
 
 <details><summary>Tablet</summary>
 
-![Tablet Part 1](/docs/wireframes/tablet/home.webp)
-![Tablet Part 2](/docs/wireframes/tablet/search.webp)
-![Tablet Part 3](/docs/wireframes/tablet/searchresults.webp)
-![Tablet Part 4](/docs/wireframes/tablet/category.webp)
-![Tablet Part 5](/docs/wireframes/tablet/movie.webp)
-![Tablet Part 6](/docs/wireframes/tablet/review.webp)
-![Tablet Part 7](/docs/wireframes/tablet/signup.webp)
-![Tablet Part 8](/docs/wireframes/tablet/login.webp)
-![Tablet Part 9](/docs/wireframes/tablet/signout.webp)
+![Tablet Part 1](/docs/wireframes/tablet/tablet1.webp)
+![Tablet Part 2](/docs/wireframes/tablet/tablet2.webp)
+![Tablet Part 3](/docs/wireframes/tablet/tablet3.webp)
+![Tablet Part 4](/docs/wireframes/tablet/tablet4.webp)
+![Tablet Part 5](/docs/wireframes/tablet/tablet5.webp)
+![Tablet Part 6](/docs/wireframes/tablet/tablet6.webp)
 
 </details>
 
 <details><summary>Mobile</summary>
 
-![Mobile Part 1](/docs/wireframes/mobile/first.webp)
-![Mobile Part 2](/docs/wireframes/mobile/second.webp)
-![Mobile Part 3](/docs/wireframes/mobile/third.webp)
+![Mobile Part 1](/docs/wireframes/mobile/mobile1.webp)
+![Mobile Part 2](/docs/wireframes/mobile/mobile2.webp)
+![Mobile Part 3](/docs/wireframes/mobile/mobile3.webp)
+![Mobile Part 4](/docs/wireframes/mobile/mobile4.webp)
+![Mobile Part 5](/docs/wireframes/mobile/mobile5.webp)
+![Mobile Part 6](/docs/wireframes/mobile/mobile6.webp)
 
 </details>
 
