@@ -77,6 +77,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+X_FRAME_OPTIONS = "SAMEORIGIN"
+
 ROOT_URLCONF = "pchaven.urls"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
