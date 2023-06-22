@@ -353,13 +353,9 @@ This is the prototype of the project that may change during its development. Fur
 
 #### **Database Schema**
 
-The Profile model is linked directly to the built in UserModel in conjunction with Djano Allauth with the user Profile setup to be created upon user registration. The Review model has a relationship with the User/Movie models linked by a Foreign key, this allows for reviewed movies to be linked back to the specific user and their Profile. The Comment model is linked by Foreign key to the Review Model to store comments for the specific Review.
-
-The Movie model is also linked to the Profile model through a Many to Many relationship allowing the user to store Movies on their watchlist.
-
 Entity relationship diagram was created using [DBeaver](https://dbeaver.io/) and shows the schemas for each of the models and how they are related.
 
-![DB Diagram](docs/readme_screenshots/db-diagram.webp)
+![DB Diagram](docs/readme_screenshots/pchaven_erd.webp)
 
 #### **Security**
 
@@ -373,9 +369,9 @@ Environment variables were stored in an env.py for local development for securit
 
 - Responsive Design - The site should be fully functional on all devices from 320px up
 - Hamburger menu for mobile devices
-- Ability to perform CRUD functionality on Profiles, Reviews, and Comments
-- Restricted role-based features such as Reviewing/Commenting, viewing Movie Details, and editing Profile
-- Home page describing the site and links to features for registered users
+- Ability to perform CRUD functionality on Products, Profiles, Reviews, Blog Posts and Comments
+- Restricted features for registered users such as Product reviewing, adding Products to Wishlist, editing Profile and Commenting/Liking Blog posts.
+- Newsletter Subscribing
 
 [Back to top &uarr;](#contents)
 
@@ -383,26 +379,30 @@ Environment variables were stored in an env.py for local development for securit
 
 ### **Features**
 
-`As a User I would like to view the site on my different devices so that I can view the site on the go`
+`As a Developer I can design an aesthetically pleasing Homepage so that users have a positive experience when visiting the site`
 
 **Navbar**
 
-`As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs`
-
-The Navbar contains links for Home, a Movies dropdown containing Search/Trending/TopRated, Reviews, Profile, and allauth options.
+The Navbar contains links for Home, an All Products mega dropdown menu, About Us, Blog and Contact Us. There is also a Search link, My Account link with Account related dropdown and a link to the customer Cart.
 
 The following navigation items are available on all pages:
 
 - Home -> index.html - Visible to all
-- Movies (Drop Down):
-  - Search -> search.html - Visible to logged in users
-  - Trending -> trending.html - Visible to logged in users
-  - Top Rated -> toprated.html - Visible to logged in users
-- Reviews -> allreviews.html - Visible to logged in users
-- Profile -> profile.html - Visible to logged in users
-- Signup -> signup.html - Visible to logged out users
-- Login -> login.html - Visible to logged out users
-- Logout -> logout.html - Visible to logged in users
+- All Products (Mega Drop Down):
+  - Categories (e.g Cases) -> products.html - Visible to all
+  - Sub-Categories (e.g Full Tower) -> products.html - Visible to all
+- About Us -> index.html(#about) - Visible to all
+- Blog -> blogs.html - Visible to all
+- Contact Us -> contact.html - Visible to all
+- Search -> base.html(Navbar/Search Input) - Visible to all
+- My Account -> (Drop Down)- Visible to all
+   - Register -> accounts/signup.html - Visible to logged out users
+   - Login -> accounts/login.html - Visible to logged out users
+   - My Profile -> profile.html - Visible to logged in users
+   - Logout -> logout.html - Visible to logged in users
+   - Product Management -> add_product.html - Visible to logged in super users
+   - Blog Management -> add_blog.html - Visible to logged in super users
+- Cart -> cart.html - Visible to all
 
 The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices. It is easily noticeable, intuitive, and easy to use.
 
@@ -413,9 +413,7 @@ The navigation menu is displayed on all pages and drops down into a hamburger me
 
 **Footer**
 
-`As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have`
-
-The footer is placed at the bottom of the page. The social media links are displayed with icons provided by Font Awesome. There is also a small portion of text for the Copyright/Disclaimer. This is where the user can click on a social media link and reach out to the developer for news and updates. A link to the developer's Github repository is provided and displayed using the Font Awesome Github icon. These icons have aria labels added to ensure users with assistive screen reading technology know the purpose of the links. They also open new tabs as they lead users away from the site.
+The footer is placed at the bottom of the page. There are 4 sections in the Footer - Products, Information, Follow Us and Subcribe. The Products section contains links to the various Product Categories, the Information section contains links to useful information for customers like the sites Privacy Policy/Terms And Conditions. The Follow Us setcion contains a link to the sites Facebook page. The Facebook link is displayed with the Facebook icon provided by Font Awesome. The Subscribe section contains a link to the sites Newsletter signup. There is also a small portion of text for the Copyright/Disclaimer. A link to the developer's Github repository is provided and displayed using the Font Awesome Github icon. These icons have aria labels added to ensure users with assistive screen reading technology know the purpose of the links. They also open new tabs as they lead users away from the site.
 
 ![Footer Desktop](/docs/readme_screenshots/desktop_footer.webp)
 
