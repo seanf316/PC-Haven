@@ -321,10 +321,11 @@ This is the prototype of the project that may change during its development. Fur
 ![Desktop Part 5](/docs/wireframes/desktop/checkout.webp)
 ![Desktop Part 6](/docs/wireframes/desktop/order_complete.webp)
 ![Desktop Part 7](/docs/wireframes/desktop/blog.webp)
-![Desktop Part 8](/docs/wireframes/desktop/contact.webp)
-![Desktop Part 9](/docs/wireframes/desktop/sign_up.webp)
-![Desktop Part 10](/docs/wireframes/desktop/sign_in.webp)
-![Desktop Part 11](/docs/wireframes/desktop/sign_out.webp)
+![Desktop Part 8](/docs/wireframes/desktop/blog_post.webp)
+![Desktop Part 9](/docs/wireframes/desktop/contact.webp)
+![Desktop Part 10](/docs/wireframes/desktop/sign_up.webp)
+![Desktop Part 11](/docs/wireframes/desktop/sign_in.webp)
+![Desktop Part 12](/docs/wireframes/desktop/sign_out.webp)
 
 </details>
 
