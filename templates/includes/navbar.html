@@ -77,12 +77,13 @@
     <div class="collapse navbar-collapse" id="main-nav">
         <ul class="navbar-nav w-auto mx-auto pt-2">
             <li class="nav-item">
-                <a class="logo-font font-weight-bold nav-link mr-3" href="{% url 'home' %}">
+                <a class="logo-font font-weight-bold nav-link mr-3 {% if request.path == '/' %}active{% endif %}"
+                    href="{% url 'home' %}">
                     Home
                 </a>
             </li>
             <li class="nav-item dropdown mega-menu">
-                <a class="logo-font font-weight-bold nav-link mr-3" href="#" id="all-products-link"
+                <a class="logo-font font-weight-bold nav-link mr-3 {% if 'products' in request.path %}active{% endif %}" href="#" id="all-products-link"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     All Products
                 </a>
@@ -119,12 +120,14 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="logo-font font-weight-bold nav-link mr-3" href="{% url 'blogs' %}">
+                <a class="logo-font font-weight-bold nav-link mr-3 {% if 'blog' in request.path %}active{% endif %}"
+                    href="{% url 'blogs' %}">
                     Blog
                 </a>
             </li>
             <li class="nav-item">
-                <a class="logo-font font-weight-bold nav-link mr-3" href="{% url 'contact' %}">
+                <a class="logo-font font-weight-bold nav-link mr-3 {% if 'contact' in request.path %}active{% endif %}"
+                    href="{% url 'contact' %}">
                     Contact Us
                 </a>
             </li>

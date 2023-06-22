@@ -190,8 +190,14 @@ main {
     color: var(--bg-green) !important;
 }
 
+.navbar a.nav-link.active {
+    color: var(--bg-green);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: var(--bg-green);
+}
+
 .navbar a.nav-link:hover,
-.navbar a.nav-link:active,
 .navbar a.nav-link:focus {
     color: var(--bg-green);
 }
