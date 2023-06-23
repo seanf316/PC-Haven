@@ -287,6 +287,10 @@ i.fa-solid.fa-bars {
     color: var(--footer-green);
 }
 
+.sale-product strong {
+    color: var(--footer-green) !important;
+}
+
 .sale-product hr {
     background: var(--footer-green);
 }

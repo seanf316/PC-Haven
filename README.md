@@ -396,35 +396,68 @@ The following navigation items are available on all pages:
 - Contact Us -> contact.html - Visible to all
 - Search -> base.html(Navbar/Search Input) - Visible to all
 - My Account -> (Drop Down)- Visible to all
-   - Register -> accounts/signup.html - Visible to logged out users
-   - Login -> accounts/login.html - Visible to logged out users
-   - My Profile -> profile.html - Visible to logged in users
-   - Logout -> logout.html - Visible to logged in users
-   - Product Management -> add_product.html - Visible to logged in super users
-   - Blog Management -> add_blog.html - Visible to logged in super users
+  - Register -> accounts/signup.html - Visible to logged out users
+  - Login -> accounts/login.html - Visible to logged out users
+  - My Profile -> profile.html - Visible to logged in users
+  - Logout -> logout.html - Visible to logged in users
+  - Product Management -> add_product.html - Visible to logged in super users
+  - Blog Management -> add_blog.html - Visible to logged in super users
 - Cart -> cart.html - Visible to all
 
 The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices. It is easily noticeable, intuitive, and easy to use.
 
-![Navbar Desktop 1](/docs/readme_screenshots/desktop_navbar1.webp)
-![Navbar Desktop 2](/docs/readme_screenshots/desktop_navbar2.webp)
-![Navbar Mobile 1](/docs/readme_screenshots/mobile_navbar1.webp)
-![Navbar Mobile 2](/docs/readme_screenshots/mobile_navbar2.webp)
+![Navbar Desktop 1](/docs/readme_screenshots/desktop_navbar.webp)
+![Navbar Mobile 1](/docs/readme_screenshots/mobile_navbar.webp)
 
 **Footer**
 
 The footer is placed at the bottom of the page. There are 4 sections in the Footer - Products, Information, Follow Us and Subcribe. The Products section contains links to the various Product Categories, the Information section contains links to useful information for customers like the sites Privacy Policy/Terms And Conditions. The Follow Us setcion contains a link to the sites Facebook page. The Facebook link is displayed with the Facebook icon provided by Font Awesome. The Subscribe section contains a link to the sites Newsletter signup. There is also a small portion of text for the Copyright/Disclaimer. A link to the developer's Github repository is provided and displayed using the Font Awesome Github icon. These icons have aria labels added to ensure users with assistive screen reading technology know the purpose of the links. They also open new tabs as they lead users away from the site.
 
 ![Footer Desktop](/docs/readme_screenshots/desktop_footer.webp)
+![Footer Tablet](/docs/readme_screenshots/tablet_footer.webp)
+![Footer Mobile](/docs/readme_screenshots/mobile_footer.webp)
 
 **Homepage**
 
-There are two variations of the Home page that change based on User login/registration. Users that have not signed up will be met with a welcome message and some information about the site. Details of features available to registered Users are shown and a Sign-Up button is provided. The site Hero image (Lego Movie) is also provided.
+The Homepage was originally planned to be a single landing page but was expanded throughout development. The Homepage is now a scrollable page containing various sections including About Us, Latest/Featured/On Sale Products and a Newsletter section for the user to view.
 
-Users that have registered and logged in will be met with a similar layout but this time there will be buttons linking the user to various Movie features to get started.
+**Landing Page**
 
-![Homepage Desktop 1](/docs/readme_screenshots/desktop_homepage1.webp)
-![Homepage Desktop 2](/docs/readme_screenshots/desktop_homepage2.webp)
+The Landing page contains a small welcome message/mission statement and a hero image containing various Computer components. A wave background svg image was created with Share Divider app.
+
+![Landing Page](/docs/readme_screenshots/landing.webp)
+
+**About Us**
+
+The About Us section advises the User about the site and provides the overall mission statement.
+
+![About Us](/docs/readme_screenshots/about.webp)
+
+**Products On Sale**
+
+The Products On Sale section provides an asthectically pleasing carousel containing Product cards that consists of all the Products on sale. This will benefit the customer who is looking for the latest deals on the site.
+
+![Products On Sale](/docs/readme_screenshots/sale.webp)
+
+**Featured Products**
+
+The Featured Products section provides an asthectically pleasing carousel containing Product cards that consists of all the Faetured Products from the site stock. This will benefit the customer who is looking for the more cutting edge Products the site offers.
+
+![Featured Products](/docs/readme_screenshots/featured.webp)
+
+**Latest Products**
+
+The Latest Products section provides an asthectically pleasing carousel containing Product cards that consists of all the Latest Products from the site stock. This will benefit the customer who is looking for the latest Products that were added to the sites stock.
+
+![Latest Products](/docs/readme_screenshots/latest.webp)
+
+**Newsletter**
+
+`As a Developer I can implement a newsletter on my site so that customers can subscribe for future updates and deals which should bring them back to the site for future purchases.`
+
+The Newsletter section provides an asthectically pleasing embedded form provided by Mailchimp. This allows the user to subscribe to the sites Newsletter and receive updates/latest offerings for the site. The Newsletter will be expanding upon further in the Web Marketing section.
+
+![Newsletter](/docs/readme_screenshots/newsletter.webp)
 
 **Movie Search**
 
