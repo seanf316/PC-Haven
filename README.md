@@ -459,134 +459,206 @@ The Newsletter section provides an asthectically pleasing embedded form provided
 
 ![Newsletter](/docs/readme_screenshots/newsletter.webp)
 
-**Movie Search**
+**Product Search**
 
-`As a User I want to have a section where I can search for a Movie so that I can easily find the Movie I want to review`
+`As a User I would like the ability to search for a product so that I can see if the site sells it`
 
-The Movie Search page has a similar layout to the Home page as it includes the hero image but this time a search input is provided and a search button to execute the users' Movie search. The search feature works in tandem with the TMDB and makes an API based on the query the user enters.
+At anytime the user can click the Search icon on the Navbar to reveal the Search input, here the user can enter their search query and then they will be brought to the Products Page where their search results will appear. If there are no results for the user's query text will display advising User and buttons Home and Contact Us are displayed.
 
-![Search Desktop](/docs/readme_screenshots/desktop_search.webp)
+![Search](/docs/readme_screenshots/search.webp)
+![Search Results](/docs/readme_screenshots/search_results.webp)
+![No Search Results](/docs/readme_screenshots/no_results.webp)
 
-**Movie Search Results**
+**Products**
 
-`As a Developer I can create the Movie Search Results template so that the User has a clear display of the results from their search`
+`As a User I would like a page that displays All Products the site offers so that I can browse and find products that I may want to purchase`
 
-The Search Results page is displayed with the users' Movie search query at the top of the page and for each Movie received in the results of the API call a card is generated containing the Movie backdrop image, the title of the movie, and a "View Movie" button. If a backdrop image is not available for Movies in the results a default image has been provided as backup. I have set the results to display 12 movies per page, this was a design choice to have an even layout across devices. Prev/Next buttons are displayed at the bottom of the page for pagination with the views.
+`As a User I would like the ability to sort products so that I can identity the best priced/rated Products the site offers`
 
-In the occurrence where no results for the query are available a message will be displayed to the user along with a button linking the user back to the Movie Search page.
+The Products page displays all the Products available for purchase. The Products are displayed in card format and contain various details of Product including a Product image. Users can see straight away if the Product is in stock/on sale and add to cart directly from the Product card.
 
-![Search Results Desktop 1](/docs/readme_screenshots/desktop_searchresults1.webp)
-![Search Results Desktop 2](/docs/readme_screenshots/desktop_searchresults2.webp)
+There are breadcrumbs employed at the top of the Products page for easy navigation and Category buttons are available for quick access to certain Product categories. When the user clicks a Category button new Sub-Category buttons are displayed to allow acces to certain Sub-Categories. Sorting Products is also available to the user like sorting by Price, Name, Sub-Category etc. Pagination is in place when there are more then 12 Products.
 
-**Trending/Top Rated Movies**
+Registered users will be able to click the Heart icon to add Products to their Wishlist. Staff will have access to the Manage Product link where the Product can be edited/deleted. User can click the Product image or name to access the Product Details page.
 
-`As a Developer I can build a page to display Trending Movies so that the User can see the latest Trending Movies`
+![Products](/docs/readme_screenshots/products.webp)
 
-`As a Developer I can build a page to display the Top Rated Movies so that the User can easily get access to the Top Rated Movies of all time`
+**Product Detail**
 
-There are two Movie category pages provided for the user - Trending & Top Rated. They were not in the original scope of the project but during development, I decided to implement them as an extra feature for the user. Each page makes a call to the TMDB API and displays the most up-to-date results on the page to the user in the form of Movie posters. Each Movie poster is an anchor that can be clicked and will bring the user to the Movie Details page for that selected Movie. If a poster image is not available for Movies in the results a default image has been provided as a backup. I have set the results to display 18 movies per page, this was a design choice to have an even layout across devices. Prev/Next buttons are displayed at the bottom of the page for pagination with the views.
+`As a User I would like to view the details of any Product so that I can see if the Product has the required specifications that I need/want`
 
-![Trending Movies Desktop](/docs/readme_screenshots/desktop_trending.webp)
-![Top Rated Movies Desktop](/docs/readme_screenshots/desktop_toprated.webp)
+The Product Details page contains all the information related to the Product including a small Features section along with a larger Description tab area. From here the user can also add Product to cart and also update the quantity. The stock level is displayed to the user also.
 
-**Movie Details**
+Registered users can click the ADD REVIEW button to add Product reviews and all current reviews will be be displayed in the Reviews tab area. If Product has not been reviewed the Customer Rating for the Product is set to 0. This will update with the average rating across all reviews.
 
-`As a User I want to view the Movie details from my search so that I can read the synopsis and check reviews`
+![Product Detail](/docs/readme_screenshots/product_detail.webp)
 
-`As a User I would like the ability to add Movies to a watchlist so that I can have a list of movies that I can refer to when looking for something to watch`
+**Product Reviews**
 
-Registered users can access the Movie Details page.
+`As a Customer I would like to leave a review on a Product so that my fellow shoppers can benefit from my feedback and make informed purchasing decisions.`
 
-The Movie Details page contains all the details of the Movie selected by the user from the pages mentioned above. A horizontal card layout is used to display the following details from the API - Movie poster/backdrop, title, overview, director, runtime, and release year. A rating is provided too if the Movie has been reviewed, it retrieves all the ratings from all user reviews for this specific movie and shows the average rating. Buttons for Trailer and IMDb are displayed if they are contained in the movie results from the API call. If a trailer does exist users can click the trailer button and a modal will appear containing that movie trailer. If there is an IMDb id provided the button will bring the user to the movies' IMDb page in a new tab.
+When the an unregistered user clicks the ADD REVIEW button an Alert toast will advise that this functionality is only for registered users. When a registered/staff user clicks the ADD REVIEW button they are redirected to the Add Review page where they can add the review details. Once the user has filled out the review form correctly they will be redirected back to the Product Detail page and the Customer Rating will be updated. The Reviews tab will now contain the users review.
 
-2 more buttons are displayed to the user "Add to Watchlist +" and "Review". Clicking the "Add to Watchlist +" will add the movie to the user's watchlist which can be viewed on the user's Profile page. Clicking the "Review" button will open the Review form page and allow the user to submit a review which again will be linked back to their Profile page where they can view all reviewed Movies. If a user has added the movie to their watchlist the button will change to "Remove from Watchlist -" and this can be toggled again to remove the Movie from the user's watchlist. User can manage their watchlist from their Profile page. If the movie has been reviewed by the user the "Review" button will now display "Reviewed", users can manage (Edit/Delete) their reviews from the All Reviews page or can manage reviews directly from their Profile page.
+`As a Developer I can build a page to display the Review form so that customer has the ability to write their review and submit it.`
 
-![Movie Details](/docs/readme_screenshots/desktop_movie.webp)
-![Movie Details Trailer](/docs/readme_screenshots/desktop_movietrailer.webp)
+If the current user is staff or is the review author a Manage Review button will be displayed, once clicked the user will be directed to the Edit Review page where the user can edit or delete the review.
 
-**Reviews**
+![Add Review](/docs/readme_screenshots/add_review.webp)
+![Reviews](/docs/readme_screenshots/review.webp)
+![Edit Review](/docs/readme_screenshots/edit_review.webp)
+![Delete Review](/docs/readme_screenshots/delete_review.webp)
 
-`As a User I want the ability to review Movies so that I can share my thoughts of the Movie with family and friends`
+**Product Administration**
 
-`As a User I would like the ability to edit my review so that I can fix any spelling or format issues`
+The Adding/Editing/Deleting of Products is only available to staff(super_users). When logged in as admin the Product Management link is displayed in the My Account dropdown, when clicked this will bring the staff member to the Add Product page. Here the staff member can add Product details, set the Product as a Featured Product or place the Product on sale (default discount 10%). When logged in as staff, on the Products page and Product Detail page a link is displayed on each Product card to Manage Product. When staff members click the button they will be redirected to the Edit Product page where they can update the Product information or choose to Delete if they want.
 
-`As a User I would like the ability to delete my review so that I can manage my reviews and in the case of accidentally selecting the wrong Movie and reviewing it`
+![Add Product 1](/docs/readme_screenshots/add_product1.webp)
+![Add Product 2](/docs/readme_screenshots/add_product2.webp)
+![Add Product 3](/docs/readme_screenshots/add_product3.webp)
+![Edit Product 1](/docs/readme_screenshots/edit_product1.webp)
+![Edit Product 2](/docs/readme_screenshots/edit_product2.webp)
+![Edit Product 3](/docs/readme_screenshots/edit_product3.webp)
+![Delete Product](/docs/readme_screenshots/delete_product.webp)
 
-Creating and viewing reviews are features only available to registered users.
+**Cart**
 
-When the user clicks the Review button on the Movie Details page they will brought to the Review page that contains the Review form for the user to fill out. The page contains the backdrop image for that movie, the movie title, the reviewer's username, and the form itself. There are 2 inputs on the form "Review (Max 2500 Characters)" and "Rating (1-10)" with 2 buttons "Update" and "Delete". When the form is filled out correctly the user can submit their review, by submitting the review will be added to the user's review list and the review will be rendered on the Reviews page.
+`As a Customer I would like to add items that to a cart so that I can view all items and purchase or remove items at will.`
 
-The user can manage their review from the Reviews page or on their Profile page. They can edit their review from either location, if the user decides to delete their review a modal will pop up asking for the user to confirm the deletion. Once deleted the Review will be removed from the Profile reviews list and the button on the Movie Details page will be returned to the "Review" state. Each review will also show a "Comment" button on the Review page to allow users to comment on reviews.
+Users can add Products to their cart from the All Products page or the Product Detail page. When the user clicks Add to Cart a toast message will appear containing details of the item and the Navbar Cart amount will update too. The user can click either the Cart icon or the Go to Secure Checkout link in the toast message.
 
-![Review 1](/docs/readme_screenshots/desktop_review.webp)
-![Review 2](/docs/readme_screenshots/desktop_reviews.webp)
-![Review 3](/docs/readme_screenshots/desktop_reviewdelete.webp)
+![Add to Cart](/docs/readme_screenshots/cart_add.webp)
 
-**Comment**
+`As a Customer I would like to view all items in my cart so that I can manage the items I want to buy.`
 
-`As a User I would like the ability to comment on Reviews so that I can participate in conversations with fellow reviewer's`
+On the Cart page the user will have a clear view of the Products added to their cart. The number of Products in cart is displayed at the top of the Page and the Cart Summary is also displayed.
 
-Creating and viewing comments are features only available to registered users.
+`As a Customer I would like to adjust/remove the amount of a certain item so that I can manage my items for purchase.`
 
-On the Reviews page, users can comment on any review by clicking the "Comment" button. When the button is clicked users will be brought to the comment page that renders the comment form. The page contains the backdrop image for that movie, the movie title, the reviewer's username, and the form itself. There is 1 input on the comment form "Comment (Max 500 Characters)" and 1 button "Update". When the user has submitted their comment it will be applied to the Review card on the Reviews page. Here the user will see their comment, Edit & Delete icons, the date of the comment, and the commenter's username. The user can edit or delete their comment by clicking either icon.
+The Cart items are displayed as cards with details of the Product present, there is functionality in place to update item quantity or remove the item from cart. The Cart Summary and Cart section in Navbar will update dynamically based off changes made in the cart. There are 2 large buttons present above/below the Cart Summary - Keep Shopping and Secure Checkout. Keep Shopping returns user to the All Products page and the Secure Checkout button redirects user to the Checkout page.
 
-![Comment 1](/docs/readme_screenshots/desktop_comment.webp)
-![Comment 2](/docs/readme_screenshots/desktop_commentreview.webp)
+`As a Developer I can add in functionality to advise customer of free delivery at a certain threshold so that customer is aware of delivery costs and can add more items if price is suitable.`
+
+Also displayed to the user is a Free Delivery Threshold, PC HAVEN offers free delivery over €100 spent. The user is advised in this in the Cart Summary and also in the Banner above the Navbar.
+
+If the cart is empty the user is met with text advising them of that and 2 buttons are displayed Keep Shopping and Contact Us. There is some text advising user if they are looking for a Product we dont stock to get in touch through the Contact Us page.
+
+![Cart](/docs/readme_screenshots/cart_page.webp)
+![Empty Cart](/docs/readme_screenshots/empty_cart.webp)
+
+**Checkout**
+
+`As a Developer I can create a checkout page so that the customer can enter their billing/shipping/payment information to complete purchase.`
+`As a Customer, I would like to save my billing/shipping information, so that I don't need to enter these details on every purchase`
+
+The Checkout page contains the Order Summary which contains the number of items and the various costs applied. Order cart items are displayed via cards with details like quantity and price. There is a Delivery Information accordian in place that when clicked will display the Order form, at the bottom there is the option to save information as the users default information if they are registered or if guest there is an option advising the user to Create account or sign in to save information.
+
+`As a Developer I can implement Stripe so that it can manage payments for the site products at checkout`
+
+Underneath the Order form is the Stripe Card element provided by Stripe, once the user has filled out their Delivery Information they can securely checkout using the Stripe element and by clicking Complete Purchase. There is an Adjust Cart button that will redirect the user back to their Cart to review.
+
+`As a Developer I can add the code to update the stock levels when a purchase has occurred so that shop owner can manage the stock levels and order where required`
+
+When the checkout has been completed the Product stock level is updated to reflect the stock bought in the recent order.
+
+![Checkout](/docs/readme_screenshots/checkout.webp)
+![Order Form](/docs/readme_screenshots/address.webp)
+
+**Order Completion**
+
+`As a Customer I would like to receive a confirmation of my order so that I know the purchase has went through and I can see what I ordered`
+
+When the user has securely checked out an Order Complete page will be displayed and all details of the order will be present. If the User is registered the Order will be updated in the users Profile Order History (See Profile below for screenshots). A custom email has been created so when the user has checked out they will also recieve an email containing their order details, this was created so Guest users will also have a history of exactly what they ordered.
+
+![Order1](/docs/readme_screenshots/order1.webp)
+![Order2](/docs/readme_screenshots/order2.webp)
+![Order Email](/docs/readme_screenshots/order_email.webp)
 
 **Profile**
 
-`As a User I would like access to my Profile so that I can upload an image or alter my details where needed`
+`As a customer I would like the ability to create my own Profile page so that I can save my shipping address for future purchases and track my orders`
 
-Profile features are only available to registered users.
+When a user registers on the site a Profile page is automatically created for them. It can be accessed from the My Account dropdown in the Navbar - My Profile.
 
-When a user signs up to the site a Profile will automatically be created for them. They can access their Profile page from the Profile Navbar link. On the Profile page, the user can add/change information like their username, first name, surname, about, and more. Users can also upload their own Profile image and if they do not want to a default image is provided. Users will also be able to manage their Movie Watchlist and Reviews list.
+The Profile contains 3 tab sections User Details, Order History and Wishlist. The User Details section contains all the Users information like username, full name, phone number and address. There is an Update button available which allows the user to directly update their information from this page. The Delete button opens the Delete Profile modal where the user can choose to delete their Profile. Deleting Profile removes all Order History and Wishlist items also.
 
-![Profile 1](/docs/readme_screenshots/desktop_profile.webp)
-![Profile 2](/docs/readme_screenshots/desktop_profileedit1.webp)
-![Profile 3](/docs/readme_screenshots/desktop_profileedit2.webp)
+The Order History section provides the user with a history of all their Orders. Each Order is displayed with the contents of the Order and a link to the Order Complete page containing all the informtion of order including Billing/Shipping.
+
+`As a Customer I would like the ability to add products to a Wishlist so that I can keep a list of my products to purchase in the future`
+
+The Wishlist section contains all the Products that the User has added to their Wishlist. Users can add/remove Products to their Wishist by clicking the Heart icon on a Product from either the All Products page or the Product Detail page. If the Heart icon is solid it means it is in the users Wishlist, if they click the icon again it will remove the Product from their Wishlist. Toasts will be displayed anytime a Product is added/removed from Wishlist. In the Wishlist section on the Profile page the user can manage their entire Wishlist with the option to Clear the entire Wishlist or remove individual Wishlist items as they see fit.
+
+![Profile](/docs/readme_screenshots/profile.webp)
+![Delete Profile](/docs/readme_screenshots/delete_profile.webp)
+![Order History](/docs/readme_screenshots/order_history.webp)
+![Add to Wishlist](/docs/readme_screenshots/add_wishlist.webp)
+![Wishlist](/docs/readme_screenshots/wishlist.webp)
+![Remove from Wishlist](/docs/readme_screenshots/remove_wishlist.webp)
+
+**Blog**
+
+`As a Developer I can build some Blog related templates so that the site admin can display blog posts on their site for a good customer experience`
+
+The PC HAVEN Blog can be accessed from the Navbar and is available to all users. When Blog link clicked the user will be redirected to the Blog page where all Blog Posts will be displayed. Each Blog post is displayed with the post image and title, if logged in as staff a Manage Blog Post link is displayed. When the user clicks the Blog post card they are directed to the Blog Post page where the post detail is displayed along with a button at the top linking back to Blog page.
+
+Each Blog post contains an image, title, author and date created. At the bottom of each post the like button is displayed along with the number of likes and an Add Comment button. Only registered users can like Blog posts or add comments. When a user likes a post a toast will display confirming and like count will update, the same process occurs when the user unlikes a post.
+
+When a registered user clicks the Add Comment button they will be redirected to the Add Comment page where they will be able to add a comment for the Blog Post. Once a comment has been added a Manage Comment link will be displayed to the comment author and staff. When the user clicks the Manage Comment button they will be brought to the Edit Comment page where they can choose to update or delete the comment.
+
+![Blog](/docs/readme_screenshots/blog.webp)
+![Blog Post 1](/docs/readme_screenshots/blog_post1.webp)
+![Blog Post 2](/docs/readme_screenshots/blog_post2.webp)
+![Like Blog Post](/docs/readme_screenshots/likepost.webp)
+![Unlike Blog Post](/docs/readme_screenshots/unlikepost.webp)
+![Add Comment](/docs/readme_screenshots/add_comment.webp)
+![Edit Comment](/docs/readme_screenshots/edit_comment.webp)
+![Delete Comment](/docs/readme_screenshots/delete_comment.webp)
+
+**Blog Administration**
+
+`As a Developer I can create the functionality for site admin to add Blog Posts so that customer may spend more time on the site which may lead to more purchases.`
+
+When a staff member(super_user) is logged in the Blog Management link is displayed in the My Account dropdown. When link is clicked the staff member will be redirected to the Add Blog page where they can create a Blog post. On both the Blog page and the Blog Post page a link to Manage Blog/Blog Post is displayed if a staff member is logged in, when clicked the user is redirected to the Edit Blog Post page where they can choose to update or delete the blog.
+
+![Add Blog](/docs/readme_screenshots/add_blog.webp)
+![Edit Blog](/docs/readme_screenshots/edit_blog.webp)
+![Delete Blog](/docs/readme_screenshots/delete_blog.webp)
+
+**Contact Us**
+
+`As a Developer I can add functionality to allow the customer to contact the site owner so that any issue they encounter can be logged and resolved`
+
+`As a Developer I can build a Contact template so that customer can submit their issues`
+
+The Contact Us page is available to all users and can be accessed from the Contact Us link in the Navbar. Once clicked the user will be redirected to the Contact Us page where they can select their type of query and add their message. Once Contact form is valid and submitted an email will be sent to the email address recorded in the form confirming receipt of message. The contact email contains a link to the site and also a link to the sites Facebook page.
+
+![Contact](/docs/readme_screenshots/contact.webp)
+![Contact Email](/docs/readme_screenshots/contact_email.webp)
 
 **Toasts**
 
-Custom toasts were implemented throughout the site. This will provide feedback to the user when they carry out an action on the site. Below are are few toast references:
+`As a Developer I can implement message toasts so that the user/customer is alerted when they carry out and action or encounter and error.`
 
-![Toast 1](/docs/readme_screenshots/desktop_toast.webp)
-![Toast 2](/docs/readme_screenshots/desktop_toast1.webp)
-![Toast 3](/docs/readme_screenshots/desktop_toast2.webp)
-![Toast 4](/docs/readme_screenshots/desktop_toast3.webp)
-![Toast 5](/docs/readme_screenshots/desktop_toast4.webp)
-![Toast 6](/docs/readme_screenshots/desktop_toast5.webp)
-![Toast 7](/docs/readme_screenshots/desktop_toast6.webp)
-![Toast 8](/docs/readme_screenshots/desktop_toast7.webp)
+Custom toasts were implemented throughout the site. This will provide feedback to the user when they carry out an action on the site. Below are are few toast references.
 
-**Error Pages**
+![Toasts](/docs/readme_screenshots/toasts.webp)
 
-**404 Page**
+**Status Error Templates**
+
+`As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views`
 
 `As a Developer I can implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist`
+
+`As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs`
+
+A 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content. Users will be directed to this page if they alter the URLs and attempt to edit, delete, or access pages that are restricted.
 
 A 404 page has been implemented and will display if a user navigates to a broken link.
 
 The 404 page will allow the user to easily navigate back to the main website if they direct to a broken link / missing page, without the need for the browser's back button.
 
-![Error 404](/docs/readme_screenshots/desktop_404.webp)
-
-**403 & 403_csrf Pages**
-
-`As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views`
-
-A 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content. Users will be directed to this page if they alter the URLs and attempt to edit, delete, or access pages that are restricted.
-A 403_csrf error page has been implemented to provide feedback to the user when there is an issue with csrf verification.
-
-![Error 403](/docs/readme_screenshots/desktop_403.webp)
-![Error 403_csrf](/docs/readme_screenshots/desktop_403_csrf.webp)
-
-**500 Page**
-
-`As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs`
-
 A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
 
-![Error 500](/docs/readme_screenshots/desktop_500.webp)
+![Errors](/docs/readme_screenshots/errors.webp)
 
 **Favicon**
 
@@ -594,37 +666,30 @@ A favicon has been added the website to enable users to easily locate the websit
 
 **Mobile**
 
-`As a User I would like to view the site on my different devices so that I can view the site on the go`
-
 The site was created Mobile first and scaled up to larger devices using Bootstrap and media queries.
 
-![Mobile 1](/docs/readme_screenshots/mobile1.webp)
-![Mobile 2](/docs/readme_screenshots/mobile2.webp)
-![Mobile 3](/docs/readme_screenshots/mobile3.webp)
-![Mobile 4](/docs/readme_screenshots/mobile4.webp)
-![Mobile 5](/docs/readme_screenshots/mobile5.webp)
-![Mobile 6](/docs/readme_screenshots/mobile6.webp)
+![Mobile 1](/docs/gifs/homepage.gif)
+![Mobile 2](/docs/gifs/pchaven.gif)
+
+**Django Admin Menu**
+
+Staff (super_users) can access the Djnago admin by adding "/admin" to the end of the site url. From the admin they will be able to add new Categories/Sub-Categories if required and do all of the features available to staff.
 
 [Back to top &uarr;](#contents)
 
 ### **Future Features**
 
-**More Movie Categories**
+**Component Compatibilty**
 
-In the future I would like to spend more time working with the TMDB API to add further Movie categories for the user like Upcoming movies, Now Playing, etc
+A site I am a big fan of is PC Part Picker where you can check the compatibilty of components, this kind of functionality would go well with the site and would be something I am interested in added in the future.
 
-**Movie Details Enhancements**
+**Admin Dashboard**
 
-I would like to enhance the Movie Details information in the future to branch off into a Cast/Crew page that would display all the actors involved in the Movie. Within the Cast information, a user could click on an Actor's image and be shown other movies that they have appeared in.
+If I had some more time I would like to implement an Admin Dashboard right on the site that would allow the staff all the functionality of the Django admin page.
 
-**Latest Trailers**
+**Tutorials Page**
 
-A page dedicated to just Trailers for new and upcoming movies that the user can view. The thinking would be that it would update weekly and show the latest trailers at the top of the page.
-
-**Genre Page**
-
-A page where a user would have a dropdown containing all the different Movie genres i.e. Action, Thriller, Comedy, etc
-The user would select one and a call would be made to the API to retrieve the latest Movies in the genre chosen.
+This would be a nice addition to the site and would allow the user to view videos of site products being built together into a custom PC.
 
 [Back to top &uarr;](#contents)
 
@@ -634,17 +699,17 @@ The user would select one and a call would be made to the API to retrieve the la
 
 #### **Colour Scheme**
 
-I opted for a very minimalistic aesthetic and the below 4 colours were chosen. I went for a darker theme with an aqua blue to add some contrast and vibrance to the site. The colours have been implemented across the site and are included in the buttons/links and their hover effects.
+I opted for a very minimalistic aesthetic and the below 5 colours were chosen. I went for a green/white theme with dark accents to add some contrast and vibrance to the site. The colours have been implemented across the site and are included in the buttons/links and their hover effects.
 
-![Coolors](/docs/readme_screenshots/coolors.webp)
+![Coolors](/docs/readme_screenshots/coolors.png)
 
 #### **Typography**
 
-The Poppins font was used throughout the website. This font is from google fonts and was imported into the style sheet.
+The Lato font was used throughout the website. This font is from google fonts and was imported into the style sheet.
 
 #### **Imagery**
 
-The hero image was taken from TopPng and was free for personal use. The image used as the Profile background was taken from wallpaperflare.com
+The hero image was taken from the NZXT website(credited below), the About Us image used was retrieved from Google but originating from https://www.alliedgamingpc.com.au/gaming-desktop/(credited below)
 
 [Back to top &uarr;](#contents)
 
@@ -665,10 +730,10 @@ The hero image was taken from TopPng and was free for personal use. The image us
    - Bootstrap was used for general layout and spacing requirements for the site.
 1. [ElephantSQL](https://www.elephantsql.com/)
    - ElephantSQL was used for the Production database.
-1. [Cloudinary](https://cloudinary.com/)
-   - Cloudinary was used to store all static files and images
-1. [TMDB](https://www.themoviedb.org/)
-   - TMDB API functionality was used throughout the project.
+1. [AWS](https://aws.amazon.com/)
+   - AWS was used to store all static files and images
+1. [Share Divider App](https://www.shapedivider.app/)
+   - Share Divider App was used to create the landing page wave background.
 1. [Git](https://git-scm.com/)
    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 1. [GitHub:](https://github.com/)
@@ -685,37 +750,41 @@ The hero image was taken from TopPng and was free for personal use. The image us
    - I used CI Python Linter for the validation of the site's Python code.
 1. [Grammarly](https://www.grammarly.com/)
    - Grammarly was used to check typography.
-1. [Quicktime Player](https://support.apple.com/downloads/quicktime)
-   - Quicktime Player was used to take recordings of the screen.
 1. [ezgif.com](https://ezgif.com/)
    - ezgif.com was used to convert screen recordings to gif.
 1. [Xnip](https://www.xnipapp.com/)
-   - Xnip was used to capture all the game screenshots.
+   - Xnip was used to capture all the screenshots.
 1. [DBeaver](https://dbeaver.io/)
    - DBeaver was used to generate the Database Schema diagram.
 
 ### **Libraries Used**
 
 - asgiref - A standard Python library to allow for asynchronous web apps and servers to communicate with each other.
-- cloudinary - A Python package allowing integration between the application and Cloudinary.
+- boto3 - Boto3 is the name of the Python SDK for AWS. It allows you to directly create, update, and delete AWS resources from your Python scripts.
+- botocore - AWS Botocore provides a low-level interface to AWS services and is the foundation for the Boto3 library as well as the AWS CLI. The low level interfaces are driven from JSON service descriptions that are generated automatically from the canonical descriptions of the services.
+- certifi - Certifi is a Python package that provides a curated collection of Root Certificates for enabling SSL/TLS connections.
+- cryptography - cryptography is an actively developed library that provides cryptographic recipes and primitives. 
 - coverage - is a third-party package that helps developers measure code coverage in their Python codebase.
 - dj-database-url - A Django utility to utilise the DATABASE_URL environment variable to configure the Django application. Used with PostgreSQL.
 - dj3-cloudinary-storage - A Django package that facilitates integration with Cloudinary storage.
 - Django - A python package for the Django framework.
-- django-active-link - A Django package used to highlight an active link in the site navigation bars.
 - django-allauth - An integrated set of Django applications addressing user authentication, registration and account management.
-- django-ckeditor - is a third-party package that provides a rich text editor widget for Django web applications.
+- django-countries - Django Countries is a Django package that provides a comprehensive list of countries and their associated data, such as country codes, names, and various utility functions.
 - django-crispy-forms - A Django package that provides tags and filters to control the rendering behaviour of Django forms.
-- django-js-asset - is a third-party package for Django that simplifies the process of including JavaScript assets in Django templates.
-- django-richtextfield - is a third-party package for Django that provides a model field for rich text editing.
+- django-resized - Django Resized is a Django package that simplifies image resizing and processing.
+- django-storages -Django Storages is a Django package that abstracts the file storage backends for handling media and static files in Django projects.
+- django-summernote - Django Summernote is a Django package that integrates the Summernote WYSIWYG editor into Django forms and models.
 - gunicorn - A Python WSGI HTTP Server for UNIX.
+- jmespath - JMESPath is a query language for JSON-like data structures.
 - oauthlib - A generic, spec-compliant, thorough implementation of the OAuth request-signing logic for Python 3.6+.
 - psycopg2 - A PostgreSQL database adapter for Python.
 - PyJWT - A Python library that allows for encoding and decoding of JSON Web Tokens (JWT).
 - python3-openid - A set of Python packages to support use of the OpenID decentralized identity system.
 - pytz - A Python package for world timezone definitions, modern and historical.
 - requests-oauthlib - A Python package for OAuthlib authentication support for Requests.
+- s3transfer - S3Transfer is a Python library that provides a high-level interface for managing file uploads and downloads to/from Amazon S3 (Simple Storage Service).
 - sqlparse - A non-validating SQL parser for Python.
+- stripe - The Stripe Python library provides an interface to interact with Stripe's API, enabling developers to integrate payment processing functionalities into their Python applications. 
 
 [Back to top &uarr;](#contents)
 
