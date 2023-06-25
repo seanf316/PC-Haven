@@ -642,6 +642,20 @@ Custom toasts were implemented throughout the site. This will provide feedback t
 
 ![Toasts](/docs/readme_screenshots/toasts.webp)
 
+**AllAuth**
+
+The AllAuth pages have been styled inline with the site theme, included is Sign Up, Login, Logout and email/password related pages.
+
+![All Auth 1](/docs/readme_screenshots/signup.webp)
+![All Auth 2](/docs/readme_screenshots/login.webp)
+![All Auth 3](/docs/readme_screenshots/logout.webp)
+![All Auth 4](/docs/readme_screenshots/verify.webp)
+![All Auth 5](/docs/readme_screenshots/confirm.webp)
+![All Auth 8](/docs/readme_screenshots/password_reset.webp)
+![All Auth 9](/docs/readme_screenshots/password_reset1.webp)
+![All Auth 6](/docs/readme_screenshots/change_password.webp)
+![All Auth 7](/docs/readme_screenshots/change_password1.webp)
+
 **Status Error Templates**
 
 `As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views`
@@ -660,9 +674,31 @@ A 500 error page has been displayed to alert users when an internal server error
 
 ![Errors](/docs/readme_screenshots/errors.webp)
 
+**Cookies**
+
+A Cookie Banner as been implemented to advise vistor of our cookie policy. It was created by following a tutorial on www.cssscript.com.
+
+![Cookie Banner](/docs/readme_screenshots/cookies.jpg)
+
+**Privacy Policy/T&Cs/FAQ**
+
+In the Information section in the footer there are links to the sites Privacy Policy, Terms & Conditions and Frequently Asked Questions.
+
+As the site collects some user data it made sense to add a Privacy Policy, this is also linked in the Cookie Banner. This was created using the [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
+
+The Terms and Conditions page was built using [WebsitePolicies](https://www.websitepolicies.com/) and was added to provide further information to the user.
+
+The FAQ page was created to answer questions that a user might be thinking of contacting the site owner to get answered and should save some time for the user if the answer to their question is already shown.
+
+![Privacy Policy](/docs/readme_screenshots/privacy.webp)
+![Terms And Conditions](/docs/readme_screenshots/terms.webp)
+![FAQ](/docs/readme_screenshots/faq.webp)
+
 **Favicon**
 
 A favicon has been added the website to enable users to easily locate the website in the browser when multiple tabs are open.
+
+![Favicon](/docs/readme_screenshots/favicon-img.jpg)
 
 **Mobile**
 
@@ -709,9 +745,58 @@ The Lato font was used throughout the website. This font is from google fonts an
 
 #### **Imagery**
 
-The hero image was taken from the NZXT website(credited below), the About Us image used was retrieved from Google but originating from https://www.alliedgamingpc.com.au/gaming-desktop/(credited below)
+The hero image was taken from the NZXT website(credited below), the About Us image used was retrieved from Google but originating from alliedgamingpc.com (credited below).
 
 [Back to top &uarr;](#contents)
+
+## **Ecommerce Business Model**
+
+This site sells Computer Components to customers, and therefore follows a Business to Customer model. With this in mind the sight has been built to make purchasing of Products simple and fast to complete, there are also features like reviewing and Blogs that may keep customers returning to the site which in turn may lead to future purposes. A Newsletter subscription is in place which will allow the customer to stay up to date with site updates, I will touch upon this further in the Marketing Strategy below.
+
+## **Marketing Stratergy**
+
+### **Social Media Marketing**
+
+A Facebook Business page has been created and deployed. Creating a strong social media campaign and linking back to the site can help drive sales and build a community. I have included links to the site on the Facebook page and have added a post including information about the site/free delivery threshold.
+
+![Facebook 1](/docs/readme_screenshots/facebook1.webp)
+![Facebook 2](/docs/readme_screenshots/facebook2.webp)
+
+### **Newsletter Marketing**
+
+I used [Mailchimp](https://mailchimp.com/?currency=EUR) to set up a newsletter sign-up embedded form on my site, to allow users to supply their email address if they are interested in learning more about the site and to drive repeat business.
+
+An automated Welcome email campaign was created so when a user subscribes the will recieve an email sent from Mailchimp thanking them for subscribing. Following on from this I have created a Newsletter campaign which will be manually initiated by the site owner and each subscriber will recieve the Newsletter. The hope is to build a community which in turn might lead to returning/new customers and lead to more business.
+
+![Newsletter 1](/docs/readme_screenshots/welcome.webp)
+![Newsletter 2](/docs/readme_screenshots/newsletter_email.webp)
+
+## **Search Engine Optimization (SEO)**
+
+### **Keywords**
+
+I utilised [Wordtracker](https://www.wordtracker.com/search) to identify keywords that align with my site. The keywords chosen have high enough volume and low enough competion, the KEI (Keyword Effectiveness Index) metric on Wordtracker was used to help decide on best keywords.
+
+![Keywords](/docs/readme_screenshots/wordtracker.jpg)
+
+### **Page Titles**
+
+Each page shows an extra title after the store name to assist help with SEO.
+
+### Sitemap
+
+I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml file.
+This was generated using my deployed site URL: https://pc-haven.herokuapp.com/
+
+After it finished crawling the entire site, it created a
+[sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
+
+### Robots
+
+At first, I found that lighthouse was showing a fault with my robots.txt. The issue was that it was being read as an HTML file, not a text file. I fixed the issue following this tutorial [Robots.txt-Fix](https://adamj.eu/tech/2020/02/10/robots-txt/)
+
+![Robots.txt Error](/docs/readme_screenshots/robots_error.jpg)
+![Robots](/docs/readme_screenshots/robots.jpg)
 
 ## **Technologies Used**
 
@@ -720,6 +805,7 @@ The hero image was taken from the NZXT website(credited below), the About Us ima
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+- [jQuery](https://jquery.com/)
 - [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>)
 
 ### **Frameworks and Tools Used**
@@ -740,6 +826,8 @@ The hero image was taken from the NZXT website(credited below), the About Us ima
    - GitHub is used to store the project's code after being pushed from Git.
 1. [Heroku](https://www.heroku.com/)
    - Heroku was used to deploy the app.
+1. [Muzli](https://medium.muz.li/)
+   - Muzli was used to add the code for a custom loader after payment was made.
 1. [Balsamiq](https://balsamiq.com/)
    - Balsamiq was used to produce the sites wireframes
 1. [XConvert](https://www.xconvert.com/)
@@ -763,7 +851,7 @@ The hero image was taken from the NZXT website(credited below), the About Us ima
 - boto3 - Boto3 is the name of the Python SDK for AWS. It allows you to directly create, update, and delete AWS resources from your Python scripts.
 - botocore - AWS Botocore provides a low-level interface to AWS services and is the foundation for the Boto3 library as well as the AWS CLI. The low level interfaces are driven from JSON service descriptions that are generated automatically from the canonical descriptions of the services.
 - certifi - Certifi is a Python package that provides a curated collection of Root Certificates for enabling SSL/TLS connections.
-- cryptography - cryptography is an actively developed library that provides cryptographic recipes and primitives. 
+- cryptography - cryptography is an actively developed library that provides cryptographic recipes and primitives.
 - coverage - is a third-party package that helps developers measure code coverage in their Python codebase.
 - dj-database-url - A Django utility to utilise the DATABASE_URL environment variable to configure the Django application. Used with PostgreSQL.
 - dj3-cloudinary-storage - A Django package that facilitates integration with Cloudinary storage.
@@ -784,7 +872,7 @@ The hero image was taken from the NZXT website(credited below), the About Us ima
 - requests-oauthlib - A Python package for OAuthlib authentication support for Requests.
 - s3transfer - S3Transfer is a Python library that provides a high-level interface for managing file uploads and downloads to/from Amazon S3 (Simple Storage Service).
 - sqlparse - A non-validating SQL parser for Python.
-- stripe - The Stripe Python library provides an interface to interact with Stripe's API, enabling developers to integrate payment processing functionalities into their Python applications. 
+- stripe - The Stripe Python library provides an interface to interact with Stripe's API, enabling developers to integrate payment processing functionalities into their Python applications.
 
 [Back to top &uarr;](#contents)
 
@@ -796,63 +884,8 @@ I have included details of testing both during development and post-development 
 
 ## **Deployment**
 
-### **GitHub**
-
-This project was developed by forking a specialized [Code Institute template](https://github.com/Code-Institute-Org/python-essentials-template) which simulates a terminal in the web browser.
-
-1. Click Use this template
-2. Name the repository
-3. Launch using the Gitpod web extension
-4. Pin project in Gitpod workspaces
-
-### **Version Control**
-
-For version control the following steps were made:
-
-For version control the following steps were made:
-
-1. Changes made to files in Gitpod
-2. Files made ready for commit with command - git add "filename", or git add . to add all files
-3. For the commits the following command was run along with commit description - git commit -m "This is my commit etc"
-4. To move the changes to Github the following command was run - git push
-5. Alternatively files can be made ready for commit using the Source Control staging area in Gitpod
-6. Files were staged and a message describing the commit was made before committing and pushing it to GitHub
-
-### **Clone Repo**
-
-Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally: This can be done by:
-
-1. Navigating to https://github.com/seanf316/P4-Cinema-Go
-2. Clicking on the arrow on the green code button at the top of the list of files
-3. Select Local then HTTPS copy the URL it provides to the clipboard
-4. Navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
-5. Type 'git clone' and paste the HTTPS link you copied from GitHub
-6. Press enter and git will clone the repository to your local machine
-
-### **Forking the GitHub Repository**
-
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
-
-1. Log in to GitHub and locate the repository [P4-Cinema-Go](https://github.com/seanf316/P4-Cinema-Go)
-2. At the top of the Repository (not the top of the page) just above the "Settings" Button on the menu, locate the "Fork" Button.
-3. You should now have a copy of the original repository in your GitHub account.
-
-### **Final Deployment with Heroku**
-
-The below steps were followed to deploy this project to Heroku:
-
-1. Go to [Heroku](https://dashboard.heroku.com/apps) and click "New" to create a new app.
-2. After choosing the app name and setting the region, press "Create app".
-3. Go to "Settings" and navigate to Config Vars, enter the below:
-   - SECRET_KEY: (Enter your secret key)
-   - DATABASE_URL: (Enter the database URL from ElephantSQL)
-   - CLOUNDINARY_URL: (Enter Cloudinary API URL)
-   - PORT: 8000
-   - API_KEY: (An API key will need to be retrieved from the [TMDB](https://www.themoviedb.org/))
-4. Leave "Settings" and go to "Deploy". Scroll down and set Deployment Method to GitHub.
-   Once GitHub is chosen, find your repository and connect it to Heroku.
-5. Scroll down to Manual Deploy, make sure the "main" branch is selected, and click "Deploy Branch".
-6. The deployed app can be found [here](https://cinema-go-p4.herokuapp.com/).
+The final Deployed site can be found [here](https://pc-haven.herokuapp.com/).
+I have included details of the deployment process in a separate document called [DEPLOYMENT.md](DEPLOYMENT.md).
 
 [Back to top &uarr;](#contents)
 
@@ -860,28 +893,36 @@ The below steps were followed to deploy this project to Heroku:
 
 1. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
    - This repository was created using the template provided by Code Institute. Also, without the knowledge gained through the coursework, I would not be able to create this site so thank you Code Institute.
-1. [Django Documentation](https://docs.djangoproject.com/en/4.0/)
+1. [Django Documentation](https://docs.djangoproject.com/en/4.6/)
    - Thanks to the Django docs which were also used as a step-by-step while going through the project to ensure everything was set up correctly.
 1. [Allauth Documentation](https://django-allauth.readthedocs.io/en/latest/faq.html)
    - Thanks to the Alluath documentation which was referenced during development.
-1. [Daisy McGirr - Gamer Reviews](https://github.com/Daisy-McG/Gamer-Reviews)
-   - The above was created in a study group for students with CI, I have used the Debug method in my project.
-1. [Corey Schafer](https://www.youtube.com/watch?v=FdVuKt_iuSI)
-   - Corey Schafer for the tutorial to get automatic profile creation and updating working as intended for my project.
 1. [Stackoverflow](https://stackoverflow.com/)
    - I found myself on Stackoverflow so many times researching issues. This a fantastic place to learn and troubleshoot code.
+   - https://stackoverflow.com/questions/524992/how-to-implement-a-back-link-on-django-templates
+   - https://stackoverflow.com/questions/48870170/error-return-truncatechars-safe-by-using-built-in-template-tags-and-filters (Not needed in the end)
+   - https://stackoverflow.com/questions/58077394/set-all-owl-carousel-items-with-equal-height
 1. [Slack](https://slack.com/intl/en-ie/)
    - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
-1. [Youtube](https://www.youtube.com/)
-   - Various videos were watched for further learning and Django project ideas. Some playlists I have reviewed are [Django Project: Movie App](https://www.youtube.com/watch?v=tm9Yps3IkmQ&list=PLBQzvdjNG8c-g_mVYUNiVDwwO5YgcbNwT), [Django IMDB clone](https://www.youtube.com/watch?v=FawGmAas4h0&list=PL9tgJISrBWc6ktmvTSLGrn055XzVb0OwZ&index=1)
-1. Matt Boden, Gareth McGirr & Fernanda Brito
-   - I reviewed the above Project 4 repos for inspiration on README layouts and testing.
+1. [Web dev](https://www.youtube.com/@webdev07)
+   - I referenced Web dev's video for more information on the implementation of the Owl carousel functionality on the site
+1. [Paradigit.ie](https://www.paradigit.ie/)
+   - Alot of the Product images and descriptions were soucred from Paradigit
+1. [NZXT.com](https://nzxt.com/)
+   - My landing page hero image was sourced from NZXT.com
+1. [alliedgamingpc.com](https://alliedgamingpc.com/)
+   - My About Us image was sourced from alliedgamingpc.com
+1. Matt Boden, davidindub, dnlbowers
+  - I reviewed the above Project 5 repos for inspiration on README layouts and testing.
+1. Victoria Traynor
+ - My class mate Victoria Traynor who sent me a link from Stackoverflow on implementing discounts on Products - https://stackoverflow.com/questions/73813646/django-models-to-calculate-discount
 
 ## **Acknowledgements**
 
-- To my amazing wife Denise who has supported me every day and kept me motivated. P4 has been by far the most time-consuming to date, Denise consistently encouraged me to work on the project while keeping our 6-year-old son entertained. I couldn't do this without her.
-- My son Alex for always making me laugh and never getting mad when Dad had to study.
+- To my amazing wife Denise who has supported me every day and kept me motivated. This has been a very challenging year for me working full time and using most of my spare time working on the various projects for the course. Denise has been unbelievable throughout the process taking care of our 6 year old son Alex and providing help where ever she could, I wouldnt have been able to do any of this without her.
+- My son Alex for always making me laugh and never getting mad when Dad couldnt play because he had to study.
+- My class mates Victoria Traynor & Sean Johnston who throughout the entire course have been great companions to brain storm ideas, help with testing or just a general chat.
+- To my mentor Daisy Mc Girr, Daisy always goes above and beyond. Even outside of project planning she is great for advice and is a great help to the Slack community too. Daisy became my Mentor midway through P2 and has been amazing to deal with, she is a great credit to CI and the whole community.
 - To my family and friends who tested the site and provided information on bugs/errors and general feedback
-- To my mentor Daisy Mc Girr, Daisy always goes above and beyond. Even outside of project planning she is great for advice and is a great help to the Slack community too.
 
 [Back to top &uarr;](#contents)
