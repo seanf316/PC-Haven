@@ -3,12 +3,12 @@
     <div class="col-12 col-lg-4 mb-lg-0 mb-2">
         {% if item.product.image %}
         <div class="bg-white text-center img-container">
-            <a href="{% url 'product_detail' item.product.id %}"><img class="img-fluid rounded"
+            <a href="{% url 'product_detail' item.product.slug %}"><img class="img-fluid rounded"
                     src="{{ item.product.image.url }}" alt="item.product.name"></a>
         </div>
         {% else %}
         <div class="bg-white text-center img-container">
-            <a href="{% url 'product_detail' item.product.id %}"><img class="img-fluid rounded"
+            <a href="{% url 'product_detail' item.product.slug %}"><img class="img-fluid rounded"
                     src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
                     alt="item.product.name"></a>
         </div>
