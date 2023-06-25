@@ -40,6 +40,15 @@ This is my fifth portfolio project for [Code Institute](https://codeinstitute.ne
        - [Colour Scheme](#colour-scheme)
        - [Typography](#typography)
        - [Imagery](#Imagery)
+1. [Ecommerce Business Model](#ecommerce-business-model)
+1. [Marketing Strategy](#marketing-strategy)
+   - [Social Media Marketing](#social-media-marketing)
+   - [Newsletter Marketing](#newsletter-marketing)
+1. [Search Engine Optimization (SEO)](#search-engine-optimization-seo)
+   - [Keywords](#keywords)
+   - [Page Titles](#page-titles)
+   - [Sitemap.xml](#sitemapxml)
+   - [Robots.txt](#robotstxt)
 1. [Technologies Used](#technologies-used)
    - [Languages Used](#languages-used)
    - [Frameworks and Tools Used](#frameworks-and-tools-used)
@@ -753,6 +762,8 @@ The hero image was taken from the NZXT website(credited below), the About Us ima
 
 This site sells Computer Components to customers, and therefore follows a Business to Customer model. With this in mind the sight has been built to make purchasing of Products simple and fast to complete, there are also features like reviewing and Blogs that may keep customers returning to the site which in turn may lead to future purposes. A Newsletter subscription is in place which will allow the customer to stay up to date with site updates, I will touch upon this further in the Marketing Strategy below.
 
+[Back to top &uarr;](#contents)
+
 ## **Marketing Stratergy**
 
 ### **Social Media Marketing**
@@ -771,6 +782,8 @@ An automated Welcome email campaign was created so when a user subscribes the wi
 ![Newsletter 1](/docs/readme_screenshots/welcome.webp)
 ![Newsletter 2](/docs/readme_screenshots/newsletter_email.webp)
 
+[Back to top &uarr;](#contents)
+
 ## **Search Engine Optimization (SEO)**
 
 ### **Keywords**
@@ -783,7 +796,7 @@ I utilised [Wordtracker](https://www.wordtracker.com/search) to identify keyword
 
 Each page shows an extra title after the store name to assist help with SEO.
 
-### Sitemap
+### **Sitemap.xml**
 
 I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml file.
 This was generated using my deployed site URL: https://pc-haven.herokuapp.com/
@@ -791,12 +804,14 @@ This was generated using my deployed site URL: https://pc-haven.herokuapp.com/
 After it finished crawling the entire site, it created a
 [sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
 
-### Robots
+### **Robots.txt**
 
 At first, I found that lighthouse was showing a fault with my robots.txt. The issue was that it was being read as an HTML file, not a text file. I fixed the issue following this tutorial [Robots.txt-Fix](https://adamj.eu/tech/2020/02/10/robots-txt/)
 
 ![Robots.txt Error](/docs/readme_screenshots/robots_error.jpg)
 ![Robots](/docs/readme_screenshots/robots.jpg)
+
+[Back to top &uarr;](#contents)
 
 ## **Technologies Used**
 
@@ -913,9 +928,9 @@ I have included details of the deployment process in a separate document called 
 1. [alliedgamingpc.com](https://alliedgamingpc.com/)
    - My About Us image was sourced from alliedgamingpc.com
 1. Matt Boden, davidindub, dnlbowers
-  - I reviewed the above Project 5 repos for inspiration on README layouts and testing.
+   - I reviewed the above Project 5 repos for inspiration on README layouts and testing.
 1. Victoria Traynor
- - My class mate Victoria Traynor who sent me a link from Stackoverflow on implementing discounts on Products - https://stackoverflow.com/questions/73813646/django-models-to-calculate-discount
+   - My class mate Victoria Traynor who sent me a link from Stackoverflow on implementing discounts on Products - https://stackoverflow.com/questions/73813646/django-models-to-calculate-discount
 
 ## **Acknowledgements**
 
