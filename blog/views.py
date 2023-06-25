@@ -176,7 +176,7 @@ def delete_blog(request, slug):
     messages.success(request, f"Blog post {blog.title} has been deleted!")
     return redirect(reverse("blogs"))
 
-
+@login_required
 def add_comment(request, slug):
     """
     Function to comment on existing blogs
