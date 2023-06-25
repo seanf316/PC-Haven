@@ -764,7 +764,7 @@ This site sells Computer Components to customers, and therefore follows a Busine
 
 [Back to top &uarr;](#contents)
 
-## **Marketing Stratergy**
+## **Marketing Strategy**
 
 ### **Social Media Marketing**
 
