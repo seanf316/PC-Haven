@@ -241,7 +241,7 @@ The following user stories (by epic) were completed throughout development.
 - As a User I would like the ability to search for a product so that to see if the site sells it [#28](https://github.com/seanf316/PC-Haven/issues/27)
 - As a User I would like to view a page containing the search results from my Product search so that so that I can find my prefered Product or see similar Products [#29](https://github.com/seanf316/PC-Haven/issues/28)
 - As a User I would like a page that displays All Products the site offers so that I can browse and find products that I may want to purchase [#30](https://github.com/seanf316/PC-Haven/issues/29)
-- As a User I would like the ability to sort products so that I can identity the best priced/rated Products the site offers [#31](https://github.com/seanf316/PC-Haven/issues/30)
+- As a User I would like the ability to sort products so that I can identity the best priced Products the site offers [#31](https://github.com/seanf316/PC-Haven/issues/30)
 - As a Developer I can allow the functionality to edit Products by staff members so that they can reduce/increase prices, change product descriptions/images etc [#32](https://github.com/seanf316/PC-Haven/issues/31)
 - As a Developer I can add functionality for staff members to delete Products so that if they do not sell or there is problems with the Product it can be removed from the storefront [#33](https://github.com/seanf316/PC-Haven/issues/32)
 - As a User I would like to view the details of any Product so that I can see if the Product has the required specifications that I need/want [#34](https://github.com/seanf316/PC-Haven/issues/33)
@@ -482,7 +482,7 @@ At anytime the user can click the Search icon on the Navbar to reveal the Search
 
 `As a User I would like a page that displays All Products the site offers so that I can browse and find products that I may want to purchase`
 
-`As a User I would like the ability to sort products so that I can identity the best priced/rated Products the site offers`
+`As a User I would like the ability to sort products so that I can identity the best priced Products the site offers`
 
 The Products page displays all the Products available for purchase. The Products are displayed in card format and contain various details of Product including a Product image. Users can see straight away if the Product is in stock/on sale and add to cart directly from the Product card.
 
@@ -918,7 +918,7 @@ I have included details of the deployment process in a separate document called 
    - https://stackoverflow.com/questions/48870170/error-return-truncatechars-safe-by-using-built-in-template-tags-and-filters (Not needed in the end)
    - https://stackoverflow.com/questions/58077394/set-all-owl-carousel-items-with-equal-height
 1. [Slack](https://slack.com/intl/en-ie/)
-   - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
+   - The slack community is great and I reached out to fellow students who had already completed their P5 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
 1. [Web dev](https://www.youtube.com/@webdev07)
    - I referenced Web dev's video for more information on the implementation of the Owl carousel functionality on the site
 1. [Paradigit.ie](https://www.paradigit.ie/)
