@@ -14,10 +14,7 @@ class UserForm(forms.ModelForm):
         """
 
         model = User
-        fields = ["username", "email", "first_name", "last_name"]
-        help_texts = {
-            "username": None,
-        }
+        fields = ["email", "first_name", "last_name"]
 
     def __init__(self, *args, **kwargs):
         """
@@ -25,7 +22,6 @@ class UserForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            "username": "Username",
             "email": "Email",
             "first_name": "First name",
             "last_name": "Surname",
