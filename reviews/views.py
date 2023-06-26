@@ -88,9 +88,11 @@ def delete_review(request, slug, review_id):
     product = get_object_or_404(Product, slug=slug)
     review = get_object_or_404(Review, pk=review_id)
 
-    if not user.is_superuser:
+    if not (user == review.user or user.is_superuser):
         messages.error(
-            request, f"Sorry {user.username}, only store owners can do that."
+            request,
+            f"Sorry {user.username}, only the site owner or the author"
+            " of the review can delete.",
         )
         return redirect(reverse("product_detail", args=[product.slug]))
 

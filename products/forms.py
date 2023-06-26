@@ -16,7 +16,7 @@ class ProductForm(forms.ModelForm):
 
         model = Product
         fields = "__all__"
-        exclude = ["sku", "in_stock", "image_url"]
+        exclude = ["sku", "in_stock", "image_url", "sale_price"]
 
         labels = {
             "featured_product": "Featured Product (Tick to confirm)",

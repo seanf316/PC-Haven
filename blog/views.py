@@ -176,6 +176,7 @@ def delete_blog(request, slug):
     messages.success(request, f"Blog post {blog.title} has been deleted!")
     return redirect(reverse("blogs"))
 
+
 @login_required
 def add_comment(request, slug):
     """
@@ -267,11 +268,11 @@ def delete_comment(request, slug, comment_id):
     blog = get_object_or_404(Blog, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
-    if not user.is_superuser or user != comment.name:
+    if not (user == comment.name or user.is_superuser):
         messages.error(
             request,
-            f"Sorry {user.username}, only the staff or owner of the"
-            "comment can delete.",
+            f"Sorry {user.username}, only the site owner or the author"
+            " of the comment can delete.",
         )
         return redirect(reverse("blog_detail", args=[blog.slug]))
 
