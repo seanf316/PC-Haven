@@ -7,14 +7,24 @@ A wide range of testing was carried out during development by myself and also by
 ## **Contents**
 
 1. [Testing Overview](#testing-overview)
-2. [Automated Testing](#automated-testing)
+1. [Automated Testing](#automated-testing)
    - [Unit Testing](#unit-testing)
    - [Site Coverage Report](#site-coverage-report)
-3. [Manual Testing](#manual-testing)
-   - [User Story Testing](#user-story-testing)
-   - [Negative Testing](#negative-testing)
-   - [Javascript Testing](#javascript-testing)
-4. [Validators](#validators)
+1. [Manual Testing/User Story Testing](#manual-testinguser-story-testing)
+   - [Navbar](#navbar)
+   - [Homepage](#homepgae)
+   - [Footer](#footer)
+   - [Products](#products)
+   - [Cart](#cart)
+   - [Checkout](#checkout)
+   - [Order Complete](#order-complete)
+   - [Profile](#profile)
+   - [Blog/Blog Posts](#blogblog-posts)
+   - [Contact Us](#contact-us)
+   - [Authentication](#authentication)
+1. [Negative Testing](#negative-testing)
+1. [Javascript Testing](#javascript-testing)
+1. [Validators](#validators)
    - [CI Python Linter](#ci-python-linter)
    - [JSHint](#jshint)
    - [W3C CSS Validator](#w3c-css-validator)
@@ -22,9 +32,9 @@ A wide range of testing was carried out during development by myself and also by
    - [Lighthouse](#lighthouse)
    - [Lighthouse Errors](#lighthouse-errors)
    - [Wave Accessibility Tests](#wave-accessibility-tests)
-5. [Responsiveness](#responsiveness)
-6. [Bugs & Fixes](#bugs--fixes)
-7. [Unresolved Bugs/Issues](#unresolved-bugsissues)
+1. [Responsiveness](#responsiveness)
+1. [Bugs & Fixes](#bugs--fixes)
+1. [Unresolved Bugs/Issues](#unresolved-bugsissues)
 
 ## **Automated Testing**
 
@@ -130,6 +140,8 @@ All users can enter a Search query in the Search input from the Search dropdown.
 ![Category Select](/docs/testing_screenshots/category.jpg)
 ![Category Results](/docs/testing_screenshots/category_results.jpg)
 
+[Back to top &uarr;](#contents)
+
 ### **Homepage**
 
 `As a Developer I can design an aesthetically pleasing Homepage so that users have a positive experience when visiting the site`
@@ -150,6 +162,8 @@ The landing page contains text Welcoming the user and providing information abou
 ![Homepage](/docs/testing_screenshots/homepage.jpg)
 ![Homepage](/docs/testing_screenshots/homepage.gif)
 
+[Back to top &uarr;](#contents)
+
 #### **Newsletter**
 
 `As a Developer I can implement a newsletter on my site so that customers can subscribe for future updates and deals which should bring them back to the site for future purchases.`
@@ -161,6 +175,8 @@ The landing page contains text Welcoming the user and providing information abou
 ![Newsletter1](/docs/testing_screenshots/newsletter2.jpg)
 ![Newsletter1](/docs/testing_screenshots/newsletter.jpg)
 ![Newsletter2](/docs/testing_screenshots/newsletter1.jpg)
+
+[Back to top &uarr;](#contents)
 
 ### **Footer**
 
@@ -211,6 +227,8 @@ Functional testing was carried out on the All Products page, the All Products pa
 ![Products Page3](/docs/testing_screenshots/products2.jpg)
 ![Products Gif3](/docs/testing_screenshots/products2.gif)
 
+[Back to top &uarr;](#contents)
+
 #### **Products Detail Page**
 
 Functional testing was carried out on the Products Detail page, the Products Detail page is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
@@ -230,6 +248,8 @@ Functional testing was carried out on the Products Detail page, the Products Det
 
 ![Products Detail Page3](/docs/testing_screenshots/prod_details3.jpg)
 ![Products Detail Gif4](/docs/testing_screenshots/prod_details4.gif)
+
+[Back to top &uarr;](#contents)
 
 #### **Products Reviews**
 
@@ -254,6 +274,8 @@ Product reviews is a restricted feature available to registered users only.
 
 ![Edit Product Review](/docs/testing_screenshots/edit_review.jpg)
 ![Edit Product Gif](/docs/testing_screenshots/edit_review.gif)
+
+[Back to top &uarr;](#contents)
 
 #### **Product Management**
 
@@ -323,6 +345,8 @@ Functional testing was carried out on the Cart page, the Cart page is fully resp
 ![Cart Gif2](/docs/testing_screenshots/cart1.gif)
 ![Cart Gif3](/docs/testing_screenshots/cart2.gif)
 
+[Back to top &uarr;](#contents)
+
 ### **Checkout**
 
 Functional testing was carried out on the Checkout page, the Checkout page is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
@@ -350,6 +374,8 @@ Functional testing was carried out on the Checkout page, the Checkout page is fu
 ![Checkout 2](/docs/testing_screenshots/checkout2.jpg)
 ![Checkout Gif 3](/docs/testing_screenshots/checkout3.gif)
 
+[Back to top &uarr;](#contents)
+
 ### **Order Complete**
 
 Functional testing was carried out on the Order Complete page, the Order Complete page is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
@@ -367,6 +393,8 @@ A custom Order confirmation email has been created and is sent automatically to 
 ![Order Complete](/docs/testing_screenshots/order_complete.jpg)
 ![Order Complete Gif 1](/docs/testing_screenshots/order_complete.gif)
 ![Order Complete Gif 2](/docs/testing_screenshots/order_complete1.gif)
+
+[Back to top &uarr;](#contents)
 
 ### **Profile**
 
@@ -389,41 +417,73 @@ A custom Order confirmation email has been created and is sent automatically to 
 ![Profile Gif 2](/docs/testing_screenshots/profile1.gif)
 ![Profile Gif 3](/docs/testing_screenshots/profile2.gif)
 
+[Back to top &uarr;](#contents)
 
+### **Blog/Blog Posts**
 
+Functional testing was carried out on the Blog/Blog Post page, the pages are fully responsive see Feature images and Mobile gifs in [README.md](README.md)
 
+I have 2 blogs fully written and styled so I wont be previewing an empty Blog page but this has been tested in the past and passed.
 
+`As a Developer I can create the functionality for site admin to add Blog Posts so that customer may spend more time on the site which may lead to more purchases.`
 
+**Acceptance Criteria**
 
+- Site admin can add Blog Posts
 
+`As a Developer I can build some Blog related templates so that the site admin can display blog posts on their site for a good customer experience`
 
+**Acceptance Criteria**
 
+- When customer clicks Blog link site Blog Posts are displayed
 
+**Unregistered Users**
 
+![Blog](/docs/testing_screenshots/blog.jpg)
+![Blog Gif](/docs/testing_screenshots/blog.gif)
+![Blog Post](/docs/testing_screenshots/blogpost.jpg)
+![Blog Post Gif](/docs/testing_screenshots/blogpost.gif)
 
+**Registered Users**
 
+![Blog Post 1](/docs/testing_screenshots/blogpost1.jpg)
+![Blog Post Gif 1](/docs/testing_screenshots/blogpost1.gif)
 
+**Staff(super_users)**
 
+![Blog 1](/docs/testing_screenshots/blog1.jpg)
+![Blog Gif 1](/docs/testing_screenshots/blog1.gif)
+![Add Blog](/docs/testing_screenshots/add_blog.jpg)
+![Add Blog Gif](/docs/testing_screenshots/addblog.gif)
+![Edit Blog](/docs/testing_screenshots/edit_blog.jpg)
+![Edit Blog Gif](/docs/testing_screenshots/editblog.gif)
 
+[Back to top &uarr;](#contents)
 
+### **Contact Us**
 
+Functional testing was carried out on the Contact Us page, the Contact Us page is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
 
+A custom Contact messaged received email has been created and is sent automatically to the Contact email address, you can see more in the Feature imgs in [README.md](README.md)
 
+`As a Developer I can add functionality to allow the customer to contact the site owner so that any issue they encounter can be logged and resolved`
 
+**Acceptance Criteria**
 
+- Customer can click contact link and submit a contact form
 
+`As a Developer I can build a Contact template so that customer can submit their issues`
 
+**Acceptance Criteria**
 
+- Customer clicks Contact link and a Contact Us Form is displayed
 
+**All Users**
 
+![Contact](/docs/testing_screenshots/contact.jpg)
+![Contact Gif](/docs/testing_screenshots/contact.gif)
 
-
-
-
-
-
-
-
+[Back to top &uarr;](#contents)
 
 #### **Authentication**
 
