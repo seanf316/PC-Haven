@@ -60,7 +60,7 @@ def delete_profile(request, username):
     user = get_object_or_404(User, username=request.user)
     profile = get_object_or_404(UserProfile, user=user)
 
-    if user != profile:
+    if user != profile.user:
         messages.success(
             request, "You are not authorised to delete this Profile."
         )
