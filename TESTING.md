@@ -12,7 +12,7 @@ A wide range of testing was carried out during development by myself and also by
    - [Site Coverage Report](#site-coverage-report)
 1. [Manual Testing/User Story Testing](#manual-testinguser-story-testing)
    - [Navbar](#navbar)
-   - [Homepage](#homepgae)
+   - [Homepage](#homepage)
    - [Footer](#footer)
    - [Products](#products)
    - [Cart](#cart)
@@ -22,7 +22,6 @@ A wide range of testing was carried out during development by myself and also by
    - [Blog/Blog Posts](#blogblog-posts)
    - [Contact Us](#contact-us)
    - [Authentication](#authentication)
-1. [Negative Testing](#negative-testing)
 1. [Javascript Testing](#javascript-testing)
 1. [Validators](#validators)
    - [CI Python Linter](#ci-python-linter)
@@ -485,9 +484,9 @@ A custom Contact messaged received email has been created and is sent automatica
 
 [Back to top &uarr;](#contents)
 
-#### **Authentication**
+### **Authentication**
 
-`As a User I want to Sign Up/Login and Logout so that I can see what features are available to registered users like reviewing/commenting`
+`As a User I want to Sign Up/Login and Logout so that I can see what features are available to registered users`
 
 **Acceptance Criteria**
 
@@ -498,36 +497,26 @@ A custom Contact messaged received email has been created and is sent automatica
 
 **Acceptance Criteria**
 
-- Users are able verify their email when signing up
-- Registered Users are able to reset password if they forgot it
+- Users receive emails from the site email address for emails like Verification, Password Reset
 
 Allauth is used to manage the authentication of the site, Users can Sign up, Login and Logout. Email verification and Password rest functionality were also added.
 
-The Sign Up page can be accessed via the link in Navbar, the Sign Up link on the Login page, or lastly via the Sign Up button on the Homepage for unregistered Users. All links have been tested and work as expected.
-
-For Sign Up the user will fill out the required fields on the Sign Up form page and once valid they click the "Sign Up" button. They will be redirected to the Verify Email Address page where the User will be advised that an email is sent to them. Once the User receives the email they can click the confirmation link. This will bring the User to the Confirm E-mail Address page on the site, the User will click the "Confirm" button and be redirected to the Login page.
+The Sign Up page can be accessed via the link in Navbar in the My Account dropdown or the Sign Up link on the Login page. All links have been tested and work as expected.
 
 The Sign Up page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
-![Sign Up](/docs/testing_screenshots/signup.webp)
-![Email Verify](/docs/testing_screenshots/emailverify.webp)
-![Email](/docs/testing_screenshots/email.webp)
-![Confirm Email](/docs/testing_screenshots/confirmemail.webp)
-![Sign Up Testing](/docs/testing_screenshots/signuptest.webp)
+![Sign Up](/docs/testing_screenshots/signup.jpg)
+![Sign Up Gif](/docs/testing_screenshots/signup.gif)
+![Confirm Gif](/docs/testing_screenshots/confirm.gif)
 
-The Login page can be accessed via the link in the Navbar, the link has been tested and works as expected.
-
-For Login, the User will enter either their Username or Email Address and their password in the required fields, once the fields are valid they can click the "Login" button to gain access to site features restricted to registered Users. If User has forgotten their password they can click the "Forgot Password" button. They will then be redirected to the Password Reset page where they will need to enter the email address they registered with before clicking the "Reset My Password" button. They will now be redirected to the Password Reset email sent page where a message will display advising an email has been sent to the User. When the email is received the User can click on the link to reset the password which will then direct them to the Change Password page on the site. Once the User enters a new password in the fields required they will be redirected to the Change Password confirmed page, here they will be able to click the "Home" button to be redirected to the site Homepage for unregistered Users. They can proceed to log in again with new details.
+The Login page can be accessed via the link in the Navbar in the My Account dropdown, the link has been tested and works as expected.
 
 The Login page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
-![Login](/docs/testing_screenshots/loginpage.webp)
-![Password Reset](/docs/testing_screenshots/passwordreset.webp)
-![Password Email Sent](/docs/testing_screenshots/passwordemailsent.webp)
-![Password Email](/docs/testing_screenshots/passwordemail.webp)
-![Change Password](/docs/testing_screenshots/changepassword.webp)
-![Password Change Confirmed](/docs/testing_screenshots/passwordconfirmed.webp)
-![Login Test](/docs/testing_screenshots/logintest.webp)
+![Login](/docs/testing_screenshots/login.jpg)
+![Login Gif](/docs/testing_screenshots/login.gif)
+![Forgot Password](/docs/testing_screenshots/forgot.gif)
+![Change Password](/docs/testing_screenshots/change.gif)
 
 The Logout page can be accessed via the link in the Navbar, the link has been tested and works as expected.
 
@@ -535,52 +524,14 @@ For Logout the User can click the "Sign Out" button on the Logout page, they wil
 
 The Logout page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
-![Logout](/docs/testing_screenshots/logout.webp)
-![Logout Test](/docs/testing_screenshots/logouttest.webp)
+![Logout](/docs/testing_screenshots/logout.jpg)
+![Logout Gif](/docs/testing_screenshots/logout.gif)
 
 [Back to top &uarr;](#contents)
 
-#### **Error Pages**
+### **Javascript/jQuery Testing**
 
-`As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views`
-
-**Acceptance Criteria**
-
-- 403 page created and Error message explained to User
-
-A custom 403 error page & 403_csrf error page were created to handle 403 status errors. Pages were tested by changing URLs to access other Users' information and delete their Profiles, 403 status page displayed as expected. I also removed the csrf token from a form to test the 403_csrf page and 403_csrf status page displayed as expected.
-
-`As a Developer I can implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist`
-
-**Acceptance Criteria**
-
-- 404 page created and Error message explained to User
-
-A custom 404 error page was created to handle 404 status errors. To test I tried to access a page that does not exist, and this worked, 404 status page displayed as expected.
-
-`As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs`
-
-**Acceptance Criteria**
-
-- 500 page created and Error message explained to User
-
-A custom 500 error page was created to handle 500 status errors. To test I would repeatedly and quickly hit the delete icon for a comment by doing this too fast and not allowing the time for the comment to be deleted the error 500 page was rendered.
-
-All error pages are fully responsive, I do not have any current screenshots of the errors on Mobile/Tablet but you can view the Desktop screenshots in the Features section of the [README.md](README.md)
-
-[Back to top &uarr;](#contents)
-
-### **Negative Testing**
-
-Negative testing was done on the Edit/Delete functionality for Reviews, Comments & Profile. Sign Up username field min length was tested also.
-
-![Testing 7](/docs/testing/test7.webp)
-
-[Back to top &uarr;](#contents)
-
-### **Javascript Testing**
-
-**base.html Javascript**
+**base.js**
 
 The JS script in the base.html handles the alert messages for the site. There is a timeout of 2 seconds set for the alert messages to close. This has been manually tested and works as expected. See below example:
 
