@@ -507,14 +507,13 @@ The Sign Up page is fully responsive see Feature images and Mobile screenshots i
 
 ![Sign Up](/docs/testing_screenshots/signup.jpg)
 ![Sign Up Gif](/docs/testing_screenshots/signup.gif)
-![Confirm Gif](/docs/testing_screenshots/confirm.gif)
 
 The Login page can be accessed via the link in the Navbar in the My Account dropdown, the link has been tested and works as expected.
 
 The Login page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
 ![Login](/docs/testing_screenshots/login.jpg)
-![Login Gif](/docs/testing_screenshots/login.gif)
+![Confirm Gif](/docs/testing_screenshots/confirm.gif)
 ![Forgot Password](/docs/testing_screenshots/forgot.gif)
 ![Change Password](/docs/testing_screenshots/change.gif)
 
@@ -533,21 +532,23 @@ The Logout page is fully responsive see Feature images and Mobile screenshots in
 
 **base.js**
 
-The JS script in the base.html handles the alert messages for the site. There is a timeout of 2 seconds set for the alert messages to close. This has been manually tested and works as expected. See below example:
+The base.js script handles the Back To Top button, this has been added in the base.html so that it can be utilised by all pages. This has been manually tested and works as expected. See below example:
 
-![Alert Gif](/docs/gifs/alert.gif)
+![BTT Gif](/docs/testing_screenshots/btt.gif)
 
-**Review.js**
+**message.js**
 
-The review.js is setup with a mouse leave event on the review cards, when user has moved the mouse outside the review card the text will smoothly scroll back to the top. There is a timeout of 3 seconds applied for this to happen. This has been manually tested and works as expected. See below example:
+The message.js is handles the site toasts behaviour, it is setup to close after 3 seconds or if the mouse enters the toast it will stay open until the mouse leaves the toast area. A hide on scroll has been added also to also the user to continue viewing the site without having to wait or manually close the toast. This has been manually tested and works as expected. See below example:
 
-![Review Gif](/docs/gifs/review.gif)
+![Toast Gif](/docs/testing_screenshots/toast.gif)
 
-**Modal.js**
+**owl.js**
 
-The modal.js was taken from Bootstrap but has been altered slightly to to remove the iframe scource for the trailer once the modal is hidden as well as managing the closing/hiding of the modal. This was done to avoid the trailer continuing to play in the background once modal was closed. This has been manually tested and works as expected. See below example, please note I could not show the sound playing in the gif but you will be able to see the sound icon in the tab:
+The owl.js handles the styling/behaviour of the Product Carousels on the home page. This has been manually tested and works as expected. See below example:
 
-![Trailer Gif](/docs/gifs/trailer.gif)
+![Owl Gif](/docs/testing_screenshots/owl.gif)
+
+Any other scripts used for the site where taken from Boutique Ado or handled by plugins/libraries.
 
 [Back to top &uarr;](#contents)
 
@@ -563,9 +564,9 @@ The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the p
 
 ### **JSHint**
 
-[JSHint](https://jshint.com/) was used to validate the Javascript code used in the project. Only one undefined variable is showing "bootstrap" - this was taken from the walkthrough and altered to fix a console error. No other issues to report.
+[JSHint](https://jshint.com/) was used to validate the Javascript/jQuery code used in the project. Only one undefined variable is showing "Stripe" - this is a part of the Stripe js implementation so I have not changed this.
 
-![JSHint Results](/docs/validation/jshint.webp)
+![JSHint Results](/docs/validation/jshint.jpg)
 
 [Back to top &uarr;](#contents)
 
