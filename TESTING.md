@@ -298,6 +298,24 @@ Functional testing was carried out on the Cart page, the Cart page is fully resp
 
 - Customer both Guest/Registered can add items from the Products page to the cart.
 
+`As a Customer I would like to view all items in my cart so that I can manage the items I want to buy.`
+
+**Acceptance Criteria**
+
+- Customer can click on the Cart icon in nav and view items in the cart.
+
+`As a Customer I would like the ability to edit the quantity of an item in my cart so that I can update the amount I want to buy of a specific item`
+
+**Acceptance Criteria**
+
+- Customer can update the quantity of an item in their cart
+
+`As a Customer I would like to remove an item from my cart so that if i decide its not what I want i can easily remove that item and continue purchase with the rest of my cart items`
+
+**Acceptance Criteria**
+
+- Customer can delete and item from their cart
+
 **All Users**
 
 ![Cart](/docs/testing_screenshots/cart.jpg)
@@ -305,21 +323,71 @@ Functional testing was carried out on the Cart page, the Cart page is fully resp
 ![Cart Gif2](/docs/testing_screenshots/cart1.gif)
 ![Cart Gif3](/docs/testing_screenshots/cart2.gif)
 
+### **Checkout**
 
+Functional testing was carried out on the Checkout page, the Checkout page is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
 
+`As a Developer I can create a checkout page so that the customer can enter their billing/shipping/payment information to complete purchase.`
 
+**Acceptance Criteria**
 
+- User clicks checkout in cart view and checkout page is displayed
 
+`As a Customer, I would like to save my billing/shipping information, so that I don't need to enter these details on every purchase`
 
+**Acceptance Criteria**
 
+- Customer can save their billing/shipping information on purchase
 
+**User Not Registered**
 
+![Checkout 1](/docs/testing_screenshots/checkout1.jpg)
+![Checkout Gif 1](/docs/testing_screenshots/checkout1.gif)
+![Checkout Gif 2](/docs/testing_screenshots/checkout2.gif)
 
+**User Registered**
 
+![Checkout 2](/docs/testing_screenshots/checkout2.jpg)
+![Checkout Gif 3](/docs/testing_screenshots/checkout3.gif)
 
+### **Order Complete**
 
+Functional testing was carried out on the Order Complete page, the Order Complete page is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
 
+A custom Order confirmation email has been created and is sent automatically to the Order email address, you can see more in the Feature imgs in [README.md](README.md)
 
+`As a Customer I would like to receive a confirmation of my order so that I know the purchase has went through and I can see what I ordered`
+
+**Acceptance Criteria**
+
+- When customer completes their purchase they will receive a confirmation email of their order.
+
+**All Users**
+
+![Order Complete](/docs/testing_screenshots/order_complete.jpg)
+![Order Complete Gif 1](/docs/testing_screenshots/order_complete.gif)
+![Order Complete Gif 2](/docs/testing_screenshots/order_complete1.gif)
+
+### **Profile**
+
+`As a customer I would like the ability to create my own Profile page so that I can save my shipping address for future purchases and track my orders`
+
+**Acceptance Criteria**
+
+- When customer registers on site they will have access to their own Profile page where they can add/edit/delete their information
+
+`As a Developer I can implement functionality to allow a customer to save information to a personal Profile so that they can save information i.e. shipping address/orders for future review`
+
+**Acceptance Criteria**
+
+- Customer can click Profile link and be brought to a page containing their information
+
+**User Registered**
+
+![Profile](/docs/testing_screenshots/profile.jpg)
+![Profile Gif 1](/docs/testing_screenshots/profile.gif)
+![Profile Gif 2](/docs/testing_screenshots/profile1.gif)
+![Profile Gif 3](/docs/testing_screenshots/profile2.gif)
 
 
 
