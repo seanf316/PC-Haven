@@ -18,16 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             window.location.replace(currentUrl);
         } else if (sortChoice == "sub_category_asc") {
-            let sort = 'sub_category'
-            let direction = 'asc'
+            let sort = 'sub_category';
+            let direction = 'asc';
 
             currentUrl.searchParams.set("sort", sort);
             currentUrl.searchParams.set("direction", direction);
 
             window.location.replace(currentUrl);
         } else if (sortChoice == "sub_category_desc") {
-            let sort = 'sub_category'
-            let direction = 'desc'
+            let sort = 'sub_category';
+            let direction = 'desc';
 
             currentUrl.searchParams.set("sort", sort);
             currentUrl.searchParams.set("direction", direction);
