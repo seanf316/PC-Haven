@@ -87,26 +87,27 @@ select option[value=""] {
     font-weight: 900;
     color: var(--bg-white);
     letter-spacing: 0.2em;
-
-    &::before,
-    &::after {
-        content: "";
-        display: block;
-        width: 15px;
-        height: 15px;
-        background: var(--bg-white);
-        position: absolute;
-        animation: load .7s infinite alternate ease-in-out;
-    }
-
-    &::before {
-        top: 0;
-    }
-
-    &::after {
-        bottom: 0;
-    }
 }
+
+.loader::before,
+.loader::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: var(--bg-white);
+    position: absolute;
+    animation: load 0.7s infinite alternate ease-in-out;
+}
+
+.loader::before {
+    top: 0;
+}
+
+.loader::after {
+    bottom: 0;
+}
+
 
 @keyframes load {
     0% {

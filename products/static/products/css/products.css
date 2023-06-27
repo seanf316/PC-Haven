@@ -137,8 +137,7 @@
 
 .custom-select:focus,
 .custom-select:active {
-    box-shadow: var(--bg-green) !important;
-    outline: var(--bg-green) !important;
+    box-shadow: none !important;
 }
 
 /* ------------------------------------ Edit Product ------------------------------------ */
