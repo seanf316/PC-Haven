@@ -2,11 +2,12 @@
 <div class="row">
     {% if item.product.image %}
     <div class="col-3 col-lg-2 my-1 text-center">
-        <img class="w-100" src="{{ item.product.image.url }}">
+        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name}}">
     </div>
     {% else %}
     <div class="col-3 col-lg-2 my-1 text-center">
-        <img class="w-100" src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp">
+        <img class="w-100" src="https://pc-haven.s3.eu-north-1.amazonaws.com/media/products/noimage.webp"
+            alt="{{ item.product.name}}">
     </div>
     {% endif %}
     <div class="col-9 col-lg-10">

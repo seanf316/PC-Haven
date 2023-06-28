@@ -38,8 +38,11 @@ class ContactForm(forms.ModelForm):
             "email": "Enter Email Address",
             "subject": "Enter Message Subject",
         }
+        excluded_fields = ["contact_reason", "message"]
+
         for field_name, field in self.fields.items():
-            field.widget.attrs["placeholder"] = placeholders.get(
-                field_name, ""
-            )
+            if field_name not in excluded_fields:
+                field.widget.attrs["placeholder"] = placeholders.get(
+                    field_name, ""
+                )
         self.fields["name"].widget.attrs["autofocus"] = True

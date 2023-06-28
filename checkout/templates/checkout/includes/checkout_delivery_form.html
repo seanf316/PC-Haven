@@ -2,14 +2,11 @@
     <div class="col-12">
         <div class="accordion border-green rounded-0" id="accordionExample">
             <div class="card rounded-0">
-                <button class="btn btn-link cta text-decoration-none" type="button" data-toggle="collapse"
-                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    <p class="mb-0 text-lg text-center text-uppercase">
-                        Delivery Information <i class="fa-solid fa-circle-chevron-down"></i>
-                    </p>
+                <button class="btn btn-link cta text-decoration-none text-lg text-uppercase rounded-0" type="button"
+                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Delivery Information <i class="fa-solid fa-circle-chevron-down"></i>
                 </button>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
+                <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                     <div class="card-body">
                         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                             {% csrf_token %}

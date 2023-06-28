@@ -44,17 +44,18 @@
     </div>
 
     <!-- Delete Comment Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-green text-white">
-                    <h2 class="modal-title" id="delete{{ comment.id }}">Delete Comment - on {{ blog.title }} post</h2>
+                    <h2 class="modal-title" id="deleteCommentModalLabel">Delete Comment - on {{ blog.title }} post</h2>
                 </div>
                 <div class="modal-body">
                     {% if request.user.is_superuser or request.user.is_authenticated %}
                     <form method="post" action="{% url 'delete_comment' blog.slug comment.id %}" role="form">
                         {% csrf_token %}
-                        <p class="text-green"><strong><i>Are you sure you want to Delete this comment?</strong></i>
+                        <p class="text-green font-italic"><strong>Are you sure you want to Delete this comment?</strong>
                         </p>
                         <p>This comment will be permanently removed and you will not be able
                             to retrieve it.</p>

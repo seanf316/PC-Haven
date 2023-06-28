@@ -32,7 +32,7 @@
                 {% if profile.user.is_authenticated and user == profile.user %}
                 <form method="post" action="{% url 'delete_profile' profile.user.username %}" role="form">
                     {% csrf_token %}
-                    <p class="text-green"><strong><i>Are you sure you want to Delete this profile?</strong></i></p>
+                    <p class="text-green font-italic"><strong>Are you sure you want to Delete this profile?</strong></p>
                     <p>This profile will be permanently removed and you will not be able
                         to retrieve it. All user information/order history & wishlist data will be removed.</p>
                     <button type="button" class="btn cta" data-dismiss="modal" aria-label="Close">Cancel</button>
