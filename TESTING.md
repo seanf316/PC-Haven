@@ -574,17 +574,21 @@ The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the p
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the site's CSS code.
 
-![W3C CSS Validator](/docs/validation/css_results.webp)
+All css files were validated and any errors were corrected.
+
+![W3C CSS Validator](/docs/validation/css.jpg)
 
 [Back to top &uarr;](#contents)
 
 ### **W3C Markup Validator**
 
-All pages were run through the [W3C Markup Validator](https://validator.w3.org/nu/). Initially, there were some errors due to missing closing tags, image height values, and Richtextfield inputs. All of these issues were corrected and all pages passed validation.
+All pages were run through the [W3C Markup Validator](https://validator.w3.org/nu/). Initially, there were some errors due to missing closing tags, elements nested within elements all of these issues were corrected and all pages passed validation. There were some errors that were related to the Summernote widgets and 1 error related to the custom_clearable_file_input.html, see error details below. I have not altered anything for these errors as I cannot access the setup of the Summernote widget and the custom_clearable_file_input.html was taken from the Boutique Ado walkthrough and any erros that could be fixed were fixed.
 
 Due to the Django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw HTML code into the validator as this will be only the HTML-rendered code.
 
-![W3C Markup Validator](/docs/validation/html_check.webp)
+![W3C Markup Validator](/docs/validation/html.jpg)
+![Summernote Errors](/docs/validation/html.jpg)
+![Custom Widget Errors](/docs/validation/widget.jpg)
 
 [Back to top &uarr;](#contents)
 
