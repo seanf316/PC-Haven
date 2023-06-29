@@ -98,17 +98,17 @@ main {
 }
 
 .cta-danger {
-    background: red;
+    background: #DC3545 !important;
     border: 2px solid var(--bg-offwhite);
-    color: var(--bg-offwhite);
+    color: var(--bg-white);
 }
 
 .cta-danger:hover,
 .cta-danger:active,
 .cta-danger:focus {
     background: var(--bg-white) !important;
-    border: 2px solid red !important;
-    color: red !important;
+    border: 2px solid #DC3545 !important;
+    color: #DC3545 !important;
     box-shadow: none !important;
     border-radius: .2rem !important;
 }

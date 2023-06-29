@@ -158,6 +158,11 @@
     cursor: pointer;
 }
 
+.custom-control-label {
+    font-weight: bolder;
+    color: #be2434 !important;
+}
+
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
     border-color: #dc3545;

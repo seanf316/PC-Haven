@@ -34,7 +34,7 @@
                         <div class="">
                             <a class="btn cta" href="{% url 'products' %}">Cancel</a>
                             <button class="btn cta" type="submit">Update</button>
-                            <button class="btn cta-danger" type="button" class="btn btn-primary" data-toggle="modal"
+                            <button class="btn cta-danger" type="button" data-toggle="modal"
                                 data-target="#exampleModal">Delete</button>
                         </div>
                     </form>
@@ -55,7 +55,8 @@
                     {% if request.user.is_superuser %}
                     <form method="post" action="{% url 'delete_product' product.slug %}" role="form">
                         {% csrf_token %}
-                        <p class="text-green font-italic"><strong>Are you sure you want to Delete this product?</strong></p>
+                        <p class="text-green font-italic"><strong>Are you sure you want to Delete this product?</strong>
+                        </p>
                         <p>This product will be permanently removed and you will not be able
                             to retrieve it.</p>
                         <button type="button" class="btn cta" data-dismiss="modal" aria-label="Close">Cancel</button>

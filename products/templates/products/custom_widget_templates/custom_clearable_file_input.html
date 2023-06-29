@@ -3,9 +3,9 @@
 
 <p>{{ widget.initial_text }}:</p>
 
-<a href="{{ widget.value.url }}">
+<a href="{{ widget.value.url }}" class="text-start">
 
-    <img width="130" height="100" class="rounded shadow-sm" src="{{ widget.value.url }}" alt="Current Image">
+    <img class="card-img-top" src="{{ widget.value.url }}" alt="Current Image">
 
 </a>
 
@@ -15,7 +15,7 @@
 
     <input class="custom-control-input" type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"
         {% if widget.attrs.disabled %} disabled{% endif %}>
-    <label class="custom-control-label text-danger" for="{{ widget.checkbox_id }}">
+    <label class="custom-control-label" for="{{ widget.checkbox_id }}">
         {{ widget.clear_checkbox_label}}</label>
 
 </div>
