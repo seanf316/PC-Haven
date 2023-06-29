@@ -25,7 +25,8 @@
 .fa-regular.fa-heart,
 .fa-solid.fa-heart {
     color: var(--bg-green);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    padding: .3rem;
 }
 
 .favourite i.fa-regular:hover {
