@@ -596,121 +596,169 @@ Due to the Django templating language code used in the HTML files, these could n
 
 <details><summary>Desktop Results</summary>
 
-Home(User not signed in)
+Homepage
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/nosignin_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-homepage.jpg)
 
-Home(User signed in)
+Products Page
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/signedin_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-allproducts.jpg)
 
-Trending Movies
+Products Detail Page
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/trending_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-product-detail.jpg)
 
-Top Rated Movies
+Add Product
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/toprated_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-addproduct.jpg)
 
-Movie Search
+Edit Product
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/search_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-editproduct.jpg)
 
-Movie Search Results
+Add Review
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/searchresults_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-addreview.jpg)
 
-Movie Details
+Edit Review
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/moviedetails_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-editreview.jpg)
 
-All Reviews
+Cart
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/allreviews_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-cart.jpg)
 
-Review
+Checkout
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/review_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-checkout.jpg)
 
-Comment
+Order
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/comment_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-order.jpg)
+
+Blog
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-blog.jpg)
+
+Blog Post
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-blog-post.jpg)
+
+Add Blog
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-addblog.jpg)
+
+Edit Blog Post
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-editblog.jpg)
+
+Add Comment
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-addcomment.jpg)
+
+Edit Comment
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-editcomment.jpg)
 
 Profile
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/profile_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-profile.jpg)
 
 Sign Up
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/signup_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-signup.jpg)
 
 Login
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/login_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-login.jpg)
 
 Logout
 
-![Lighthouse Desktop Score](/docs/validation/lighthouse/logout_desktop.webp)
+![Lighthouse Desktop Score](/docs/validation/lighthouse/desktop-logout.jpg)
 
 </details>
 
 <details><summary>Mobile Results</summary>
 
-Home(User not signed in)
+Homepage
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/nosignin_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-homepage.jpg)
 
-Home(User signed in)
+Products Page
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/signedin_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-allproducts.jpg)
 
-Trending Movies
+Products Detail Page
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/trending_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-product-detail.jpg)
 
-Top Rated Movies
+Add Product
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/toprated_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-addproduct.jpg)
 
-Movie Search
+Edit Product
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/search_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-editproduct.jpg)
 
-Movie Search Results
+Add Review
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/searchresults_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-addreview.jpg)
 
-Movie Details
+Edit Review
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/moviedetails_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-editreview.jpg)
 
-All Reviews
+Cart
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/allreviews_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-cart.jpg)
 
-Review
+Checkout
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/review_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-checkout.jpg)
 
-Comment
+Order
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/comment_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-order.jpg)
+
+Blog
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-blog.jpg)
+
+Blog Post
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-blog-post.jpg)
+
+Add Blog
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-addblog.jpg)
+
+Edit Blog Post
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-editblog.jpg)
+
+Add Comment
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-addcomment.jpg)
+
+Edit Comment
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-editcomment.jpg)
 
 Profile
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/profile_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-profile.jpg)
 
 Sign Up
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/signup_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-signup.jpg)
 
 Login
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/login_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-login.jpg)
 
 Logout
 
-![Lighthouse Mobile Score](/docs/validation/lighthouse/logout_mobile.webp)
+![Lighthouse Mobile Score](/docs/validation/lighthouse/mobile-logout.jpg)
 
 </details>
 
@@ -721,21 +769,26 @@ Logout
 The errors encountered in the various reports are outlined below:
 
 - "Eliminate render-blocking resources" - this was pointing towards bootstrap.min.css throughout, I am unaware of how to fix it at this time
-- "Displays images with incorrect aspect ratio", "Properly size images", "Serve images in next-gen formats" - I have tried resizing how the images are displayed but due to the fact they are being retrieved from the API, there is not much I can do here.
+
+I tried to get Accessibility to 100% on all pages, in some places this could not be acheived due to the use of Summernote. The error related is pictured below.
+
+![Summernote Error](/docs/validation/lighthouse/summernote-error.jpg)
 
 I have tested the site on various devices and networks (3g, 4g & WIFI) and the above is not affecting the site, load times are good and no issues/delays reported by test users.
 
-There is one console error due to the embedded Youtube video that cannot be fixed at this time, it refers to "Ensure CORS response header values are valid". The error only occurs when the user clicks play on the video. I have researched this previously and the issue appears to be between Google and Youtube so I am unable to fix this error. Please note this error does not seem to affect the performance of the site.
+There was also one error related to the Stripe payment element, see below.
 
-![Lighthouse Console Error](/docs/validation/lighthouse/trailer_console.webp)
+![Stripe Error](/docs/validation/lighthouse/stripe-error.jpg)
+
+Any page/path disallowed in the robots.txt had its SEO score suffer with the robots.txt being specified as a cause.
 
 [Back to top &uarr;](#contents)
 
 ### **Wave Accessibility Tests**
 
-Every page of the site was passed through the [Wave Evaluation Tool](https://wave.webaim.org/) via the Chrome extension. Only 1 page returned errors which was the Reviews Page. It showed 91 contrast errors due to no fallback contrast being in place if the image does not populate, to resolve I added a background colour to the Review cards and all contrast errors were cleared.
+Every page of the site was passed through the [Wave Evaluation Tool](https://wave.webaim.org/) via the Chrome extension. All errors that did show were resolved.
 
-![Wave](/docs/validation/wave.webp)
+![Wave](/docs/validation/wave.jpg)
 
 [Back to top &uarr;](#contents)
 
@@ -769,21 +822,22 @@ All pages were tested to ensure responsiveness on screen sizes from 320px and up
 
 ## **Bugs & Fixes**
 
-| **Bug**                                                     | **Issue**                                                                                                                                                                                           | **Resolution**                                                                                                                                                                                                                                                                                                                      |
-| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Current Profile image URL not showing in Edit Profile form  | When a user wants to change their Profile picture the current profile link would not display in the crispy form                                                                                     | Upon researching this issue I found that there was an issue between the Bootstrap version I was running and Crispy Bootstrap 5. To resolve the issue I changed the Crispy Template pack to bootstrap 4 and removed Crispy Bootstrap 5. Users can now view the image URL in the Edit Profile form.                                   |
-| Summernote not displaying toolbar items                     | Summernote was installed and settings were applied in settings.py, unfortunately, the buttons were not displaying or working correctly when used with Crispy forms.                                 | After much testing, I changed the editor to Richtextfield editor, and the fields/toolbars are displaying and working as expected.                                                                                                                                                                                                   |
-| Richtextfield max length issue                              | Richtextfield was not reading the max length applied in the model field                                                                                                                             | To resolve I added the MaxLength Validator to the model field                                                                                                                                                                                                                                                                       |
-| Richtextfield counts the background HTML tags as characters | I noticed while doing negative testing that I had set the max characters of the Review field to 2500 characters but the max I could enter was only 2493 - This was due to the background p tags ( ) | To resolve I raised the max length in the review model field to 2507 characters. Now users can enter 2500 characters although if styling is used this will cause more issues. This is a Richtextfield limitation at this time. Impact on the user would be very rare considering the max length allowed should be more than enough. |
-| Search Result cards of different sizes                      | I noticed while building the Search Results page that the cards being displayed were different sizes when API results did not contain a background image.                                           | To resolve I created a fallback background image and scaled it to match the image size received from the TMDB API.                                                                                                                                                                                                                  |
-| Heroku builds failing                                       | I was receiving emails from time to time saying the app build failed from Heroku - after researching it seemed to be related to a version of Cloudinary                                             | To resolve this I just manually deployed the app when required.                                                                                                                                                                                                                                                                     |
+| **Bug**                                                        | **Issue**                                                                                                                                                                                                                                                         | **Resolution**                                                                                                                                                                                                                                        |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| I found that lighthouse was showing a fault with my robots.txt | The issue was that it was being read as an HTML file, not a text file.                                                                                                                                                                                            | Upon researching this issue I found a tutorial that advised me to move the Robots.txt file into my main templates directory and add a url in the main Urls.py to point to it and set the file as plain text.                                          |
+| Profile shipping details not updating on Save                  | I noticed that when I testing the update form for my profile that when you change the username and try to update the address details afterwards this would not update as the username had been changed and any address details were tied to the previous username | To resolve this I just removed the username field from displaying to the user, by doing this the user wont run into issues updated their Profile address details                                                                                      |
+| Add to Wishlist too many redirects                             | I noticed while testing my Add to Wishlist view that when I clicked the heart icon while logged out I would be redirected to sign-in due to the login required decorator. After signing in I would receive a too many redirections error                          | To resolve this I removed the login required decorator and updated the code instead to alert the user that they are required to be logged in to add to wishlist, this works now as intended.                                                          |
+| Add like on Blog too many redirects                            | I noticed while testing Liking a Blog post that when I clicked the thumbs up icon while logged out I would be redirected to sign-in due to the login required decorator. After signing in I would receive a too many redirections error                           | To resolve this I removed the login required decorator and updated the code instead to alert the user that they are required to be logged in to like a Blog post, this works now as intended.                                                         |
 
 [Back to top &uarr;](#contents)
 
 ## **Unresolved Bugs/Issues**
 
-The console error related to the Youtube embedded video is the main unresolved bug for the site, I have mentioned the error to CI staff on calls and the consensus was it was out of my control and to make sure it was documented in README.md
+| **Bug**                                              | **Issue**                                                                                                                                                                           |
+|------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Blank spaces - Error 500 on form Checkout submission | I noticed while doing some negative testing that when you use white space on some of they fields required for the Stripe intent when submitting payment the error 500 would appear. |
 
-The other bug that I have encountered is that a User can enter just white spaces in the Richtextfield inputs and submit. This issue only occurs with Richtextfields, I have tried adding clean functions but nothing works. To resolve this issue you could remove all the Richtextfields and Richtext widgets and place a standard Textfield. After speaking with my Mentor and the Users that tested the site the consensus was to keep the editor that they would miss the functionality and that 99.9% of people reviewing a Movie would not enter blank spaces. I have decided to leave the editors in place based on the feedback received.
+
+I discussed this issue with my mentor and advised that the same issue occurs with the Boutique Ado project walkthrough so I would log it as a bug but the likly hood of a user entering blank information on a payment checkout would be virtually 0.
 
 [Return to README.md](README.md)
