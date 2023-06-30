@@ -46,12 +46,13 @@
     </div>
 
     <!-- Delete Review Modal -->
-    <div class="modal fade" id="exampleModal{{ review.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="exampleModal{{ review.id }}" tabindex="-1" aria-labelledby="deleteReviewModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-green">
-                    <h2 class="modal-title text-white mb-0 text-lg">Delete Review by {{ review.user }}</h2>
+                    <h2 class="modal-title text-white mb-0 text-lg" id="deleteReviewModalLabel">Delete Review by {{
+                        review.user }}</h2>
                 </div>
                 <div class="modal-body">
                     {% if user == review.user or user.is_superuser %}
