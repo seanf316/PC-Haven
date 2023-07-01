@@ -3,6 +3,8 @@ from .forms import ContactForm
 
 
 class TestContactForm(TestCase):
+    """Testing Contact Form"""
+    
     def test_contactform_valid(self):
         """Test Contact form is valid"""
         form = ContactForm(

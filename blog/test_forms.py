@@ -3,6 +3,8 @@ from .forms import BlogForm, CommentForm
 
 
 class TestBlogForm(TestCase):
+    """Testing Blog Form"""
+
     def test_blogform_valid(self):
         """Test Blog form is valid"""
         form = BlogForm(
@@ -40,7 +42,10 @@ class TestBlogForm(TestCase):
         )
         self.assertFalse(form.is_valid())
 
+
 class TestCommentForm(TestCase):
+    """Testing Comment Form"""
+
     def test_commentform_valid(self):
         """Test comment form is valid"""
         form = CommentForm({"comment": "This is a good blog ppost"})
