@@ -67,7 +67,6 @@ def like_blog(request, slug):
     return redirect(reverse("blog_detail", args=[blog.slug]))
 
 
-@login_required()
 def add_blog(request):
     """Add a blog post to the site"""
 
@@ -101,9 +100,6 @@ def add_blog(request):
                 )
         else:
             form = BlogForm()
-    else:
-        messages.error(request, "You are not authorized to add a Blog post.")
-        return redirect(reverse("blogs"))
 
     template = "blog/add_blog.html"
     context = {
@@ -177,7 +173,6 @@ def delete_blog(request, slug):
     return redirect(reverse("blogs"))
 
 
-@login_required
 def add_comment(request, slug):
     """
     Function to comment on existing blogs
