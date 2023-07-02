@@ -75,7 +75,7 @@ def delete_profile(request, username):
         return redirect(reverse("home"))
 
     context = {"username": username}
-    return render(request, "profiles/edit_profile.html", context)
+    return render(request, "profiles/profile.html", context)
 
 
 @login_required()

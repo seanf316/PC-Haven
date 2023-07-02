@@ -29,7 +29,7 @@ class TestProductForm(TestCase):
                 "discount": 0,
             }
         )
-        self.assertTrue(form.is_valid(), form.errors)
+        self.assertTrue(form.is_valid())
 
     def test_productform_not_valid(self):
         """Test Product form is not valid"""

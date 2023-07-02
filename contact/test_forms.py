@@ -4,7 +4,7 @@ from .forms import ContactForm
 
 class TestContactForm(TestCase):
     """Testing Contact Form"""
-    
+
     def test_contactform_valid(self):
         """Test Contact form is valid"""
         form = ContactForm(
@@ -16,7 +16,7 @@ class TestContactForm(TestCase):
                 "message": "Cant find Product",
             }
         )
-        self.assertTrue(form.is_valid(), form.errors)
+        self.assertTrue(form.is_valid())
 
     def test_contactform_not_valid(self):
         """Test Contact form is not valid"""
@@ -50,7 +50,7 @@ class TestContactForm(TestCase):
             "Ensure this value has at most 50 characters (it has 51).",
         )
         self.assertFalse(form.is_valid())
-        
+
     def test_contactform_subject_above_max_characters(self):
         """Contact subject field exceeds 50 characters"""
         form = ContactForm(
