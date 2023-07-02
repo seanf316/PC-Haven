@@ -22,7 +22,7 @@ A wide range of testing was carried out during development by myself and also by
    - [Blog/Blog Posts](#blogblog-posts)
    - [Contact Us](#contact-us)
    - [Authentication](#authentication)
-1. [Javascript/jQuert Testing](#javascriptjquery-testing)
+1. [Javascript/jQuery Testing](#javascriptjquery-testing)
 1. [Validators](#validators)
    - [CI Python Linter](#ci-python-linter)
    - [JSHint](#jshint)
@@ -823,7 +823,7 @@ All pages were tested to ensure responsiveness on screen sizes from 320px and up
 
 | **Bug**                                              | **Issue**                                                                                                                                                                           |
 |------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Blank spaces - Error 500 on form Checkout submission | I noticed while doing some negative testing that when you use white space on some of they fields required for the Stripe intent when submitting payment the error 500 would appear. |
+| Blank spaces - Error 500 on form Checkout submission | I noticed while doing some negative testing that when you use white space on some of the fields required for the Stripe intent when submitting payment the error 500 would appear. |
 
 
 I discussed this issue with my mentor and advised that the same issue occurs with the Boutique Ado project walkthrough so I would log it as a bug but the likly hood of a user entering blank information on a payment checkout would be virtually 0.
