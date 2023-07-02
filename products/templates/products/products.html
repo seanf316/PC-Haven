@@ -56,7 +56,7 @@
                 <h2>No Products Available</h2>
                 {% if request.user.is_superuser %}
                 <p>There are no Products available for the customer to purchase, you can add Products below.</p>
-                <a href="{% url 'products' %}" class="shop-now-button btn cta text-uppercase">Add Product</a>
+                <a href="{% url 'add_product' %}" class="shop-now-button btn cta text-uppercase">Add Product</a>
                 {% else %}
                 <p>Im sorry there are no Products to view at this time, please get in contact if there is a specific
                     item you are looking for.</p>
