@@ -30,7 +30,7 @@ class TestHomeViews(TestCase):
         response = self.client.get(reverse("terms"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "home/terms.html")
-    
+
     def test_faq_page_renders(self):
         """
         Test that FAQ view renders correct page

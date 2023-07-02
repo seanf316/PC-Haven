@@ -27,10 +27,10 @@ class TestContactViews(TestCase):
             "subject": "No Product",
             "message": "Cant find Product",
         }
-        response = self.client.post(reverse('contact'), data=contact_data)
+        response = self.client.post(reverse("contact"), data=contact_data)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse('home'))
-    
+        self.assertRedirects(response, reverse("home"))
+
     def test_contact_message_invalid_data(self):
         """
         Test that contact message wont work with invalid data
@@ -42,6 +42,6 @@ class TestContactViews(TestCase):
             "subject": "No Product",
             "message": "Cant find Product",
         }
-        response = self.client.post(reverse('contact'), data=contact_data)
+        response = self.client.post(reverse("contact"), data=contact_data)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "contact/contact.html")

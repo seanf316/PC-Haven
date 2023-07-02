@@ -33,6 +33,7 @@ class TestUserForm(TestCase):
         )
         self.assertFalse(form.is_valid())
 
+
 class TestUserProfileForm(TestCase):
     """Testing UserProfile Form"""
 

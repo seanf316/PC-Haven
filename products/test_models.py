@@ -113,7 +113,7 @@ class TestProductModel(TestCase):
         self.product.in_stock = True
         self.product.save()
         self.assertFalse(self.product.in_stock)
-        
+
         self.product.stock_level = 1
         self.product.has_sale = True
         self.product.save()

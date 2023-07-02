@@ -105,7 +105,7 @@ class TestCartViews(TestCase):
         self.assertRedirects(response, reverse("view_cart"))
         updated_cart = self.client.session.get("cart", {})
         self.assertEqual(updated_cart.get(str(self.product.id)), None)
-    
+
     def test_delete_product_from_cart_view(self):
         """
         Test for editing the cart

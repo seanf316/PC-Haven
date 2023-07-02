@@ -9,6 +9,7 @@ class TestOrderModel(TestCase):
     """
     Unit Tests For Order model
     """
+
     def setUp(self):
         """
         setup method
@@ -36,14 +37,14 @@ class TestOrderModel(TestCase):
         )
         self.order = Order.objects.create(
             user_profile=self.profile,
-            full_name = 'sean finn',
-            phone_number = "123456789",
-            street_address1 = "1 test house",
-            street_address2 = "1 test street",
-            town_or_city = "test city",
-            county = "test county",
-            postcode = "v12 y934",
-            country = "IE",
+            full_name="sean finn",
+            phone_number="123456789",
+            street_address1="1 test house",
+            street_address2="1 test street",
+            town_or_city="test city",
+            county="test county",
+            postcode="v12 y934",
+            country="IE",
         )
         self.order_line_item = OrderLineItem.objects.create(
             order=self.order,
@@ -51,7 +52,7 @@ class TestOrderModel(TestCase):
             quantity=2,
             lineitem_total=200,
         )
-    
+
     def test_order_number_generated(self):
         """
         Test that the order number is generated when saving an Order instance
@@ -59,7 +60,7 @@ class TestOrderModel(TestCase):
         """
         order = self.order
         self.assertIsNotNone(order.order_number)
-    
+
     def test_order_str_representation(self):
         """
         Test the Order model's attributes
@@ -70,5 +71,7 @@ class TestOrderModel(TestCase):
         """
         Test the OrderLineItem model's attributes
         """
-        expected_str = f"SKU {self.product.sku} on order {self.order.order_number}"
+        expected_str = (
+            f"SKU {self.product.sku} on order {self.order.order_number}"
+        )
         self.assertEqual(str(self.order_line_item), expected_str)

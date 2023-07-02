@@ -33,7 +33,10 @@ urlpatterns = [
     path("blog/", include("blog.urls")),
     path(
         "robots.txt",
-        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),),
+        TemplateView.as_view(
+            template_name="robots.txt", content_type="text/plain"
+        ),
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler403 = "pchaven.views.error_403"

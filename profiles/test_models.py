@@ -26,6 +26,7 @@ class TestUserProfileModel(TestCase):
         self.assertEqual(self.profile.user.username, "sean")
         self.assertEqual(str(self.profile), self.expected_str)
 
+
 class TestWishlistModel(TestCase):
     """
     Testing Wishlist Model

@@ -6,7 +6,7 @@ from .forms import OrderForm
 
 class TestOrderForm(TestCase):
     """Testing Order Form"""
-        
+
     def test_orderform_valid(self):
         """Test Order form is valid"""
         form = OrderForm(
@@ -40,14 +40,16 @@ class TestOrderForm(TestCase):
             }
         )
         self.assertIn("full_name", form.errors.keys())
-        self.assertEqual(form.errors["full_name"][0], "This field is required.")
+        self.assertEqual(
+            form.errors["full_name"][0], "This field is required."
+        )
         self.assertFalse(form.is_valid())
 
     def test_orderform_name_above_max_characters(self):
         """Oder form full_name field exceeds 50 characters"""
         form = OrderForm(
             {
-                "full_name": str("a"*51),
+                "full_name": str("a" * 51),
                 "email": "finn@test.com",
                 "phone_number": "123456789",
                 "street_address1": "1 test house",
@@ -64,4 +66,3 @@ class TestOrderForm(TestCase):
             "Ensure this value has at most 50 characters (it has 51).",
         )
         self.assertFalse(form.is_valid())
-

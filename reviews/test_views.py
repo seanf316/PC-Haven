@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from .models import Review
 from products.models import Product, CategoryGroup, SubCategory
 
+
 class TestReviewViews(TestCase):
     """
     Testing Review Views
@@ -38,7 +39,7 @@ class TestReviewViews(TestCase):
             stock_level=1,
             discount=10,
         )
-        
+
         self.review = Review.objects.create(
             user=self.user,
             product=self.product,
@@ -54,7 +55,9 @@ class TestReviewViews(TestCase):
         self.assertEqual(review_count, 1)
 
         self.client.login(username="sean", password="password")
-        response = self.client.get(reverse("add_review", args=[self.product.slug]))
+        response = self.client.get(
+            reverse("add_review", args=[self.product.slug])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "reviews/review.html")
 
@@ -74,7 +77,7 @@ class TestReviewViews(TestCase):
 
         review_count = Review.objects.all().count()
         self.assertEqual(review_count, 2)
-        
+
     def test_add_review_invalid(self):
         """
         Test adding a review for a product
@@ -104,7 +107,9 @@ class TestReviewViews(TestCase):
         Test edit a review
         """
         self.client.login(username="sean", password="password")
-        response = self.client.get(reverse("edit_review", args=[self.product.slug, self.review.id]))
+        response = self.client.get(
+            reverse("edit_review", args=[self.product.slug, self.review.id])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "reviews/edit_review.html")
         self.assertEqual(self.review.review, "Good product")
@@ -125,16 +130,20 @@ class TestReviewViews(TestCase):
             response, reverse("product_detail", args=[self.product.slug])
         )
 
-        updated_review = get_object_or_404(Review, review=review_data["review"])
+        updated_review = get_object_or_404(
+            Review, review=review_data["review"]
+        )
         self.assertEqual(updated_review.review, review_data["review"])
         self.assertEqual(updated_review.rating, review_data["rating"])
-        
+
     def test_edit_review_invalid(self):
         """
         Test editing a review with invalid data
         """
         self.client.login(username="sean", password="password")
-        response = self.client.get(reverse("edit_review", args=[self.product.slug, self.review.id]))
+        response = self.client.get(
+            reverse("edit_review", args=[self.product.slug, self.review.id])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "reviews/edit_review.html")
         self.assertEqual(self.review.review, "Good product")
@@ -152,7 +161,7 @@ class TestReviewViews(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "reviews/edit_review.html")
-    
+
     def test_edit_review_not_review_owner(self):
         """
         Test edit a review not as the review owner
@@ -161,7 +170,9 @@ class TestReviewViews(TestCase):
         self.assertEqual(review_count, 1)
 
         self.client.login(username="sean", password="password")
-        response = self.client.get(reverse("add_review", args=[self.product.slug]))
+        response = self.client.get(
+            reverse("add_review", args=[self.product.slug])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "reviews/review.html")
 
@@ -190,12 +201,14 @@ class TestReviewViews(TestCase):
         self.client.login(username="john", password="password")
 
         review = Review.objects.latest("id")
-        response = self.client.get(reverse("edit_review", args=[self.product.slug, self.review.id]))
+        response = self.client.get(
+            reverse("edit_review", args=[self.product.slug, self.review.id])
+        )
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(
             response, reverse("product_detail", args=[self.product.slug])
         )
-    
+
     def test_delete_review(self):
         """
         Test delete a review
@@ -214,7 +227,7 @@ class TestReviewViews(TestCase):
 
         review_count = Review.objects.all().count()
         self.assertEqual(review_count, 0)
-        
+
     def test_delete_review_not_review_owner(self):
         """
         Test delete a review when not review owner
@@ -223,7 +236,9 @@ class TestReviewViews(TestCase):
         self.assertEqual(review_count, 1)
 
         self.client.login(username="sean", password="password")
-        response = self.client.get(reverse("add_review", args=[self.product.slug]))
+        response = self.client.get(
+            reverse("add_review", args=[self.product.slug])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "reviews/review.html")
 
@@ -252,7 +267,9 @@ class TestReviewViews(TestCase):
         self.client.login(username="john", password="password")
 
         review = Review.objects.latest("id")
-        response = self.client.get(reverse("delete_review", args=[self.product.slug, self.review.id]))
+        response = self.client.get(
+            reverse("delete_review", args=[self.product.slug, self.review.id])
+        )
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(
             response, reverse("product_detail", args=[self.product.slug])

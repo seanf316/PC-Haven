@@ -1,5 +1,4 @@
 from django.test import TestCase, Client
-from django.utils.text import slugify
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
@@ -446,7 +445,7 @@ class TestBlogsViews(TestCase):
 
         comment_count = Comment.objects.all().count()
         self.assertEqual(comment_count, 0)
-        
+
     def test_delete_comment_not_comment_owner(self):
         """
         Test delete a blog post comment when not comment owner
@@ -470,7 +469,7 @@ class TestBlogsViews(TestCase):
 
         comment_count = Comment.objects.all().count()
         self.assertEqual(comment_count, 2)
-        
+
         self.client.logout()
 
         self.client.login(username="john", password="password")
@@ -481,4 +480,5 @@ class TestBlogsViews(TestCase):
         )
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(
-            response, reverse("blog_detail", args=[self.blog.slug]))
+            response, reverse("blog_detail", args=[self.blog.slug])
+        )
