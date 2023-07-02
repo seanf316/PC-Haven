@@ -22,7 +22,7 @@ A wide range of testing was carried out during development by myself and also by
    - [Blog/Blog Posts](#blogblog-posts)
    - [Contact Us](#contact-us)
    - [Authentication](#authentication)
-1. [Javascript Testing](#javascript-testing)
+1. [Javascript/jQuert Testing](#javascriptjquery-testing)
 1. [Validators](#validators)
    - [CI Python Linter](#ci-python-linter)
    - [JSHint](#jshint)
@@ -41,35 +41,35 @@ A wide range of testing was carried out during development by myself and also by
 
 Unit tests were created to test the functionality of the apps. These can be found in the tests.py files in the respective apps.
 
-#### **Home**
+#### **Home Tests**
 
 ![Home](/docs/unitests/home.jpg)
 
-#### **Blog**
+#### **Blog Tests**
 
 ![Blog](/docs/unitests/blog.jpg)
 
-#### **Cart**
+#### **Cart Tests**
 
 ![Cart](/docs/unitests/cart.jpg)
 
-#### **Checkout**
+#### **Checkout Tests**
 
 ![Checkout](/docs/unitests/checkout.jpg)
 
-#### **Contact**
+#### **Contact Tests**
 
 ![Contact](/docs/unitests/contact.jpg)
 
-#### **Products**
+#### **Products Tests**
 
 ![Products](/docs/unitests/products.jpg)
 
-#### **Profiles**
+#### **Profiles Tests**
 
 ![Contact](/docs/unitests/profiles.jpg)
 
-#### **Reviews**
+#### **Reviews Tests**
 
 ![Contact](/docs/unitests/reviews.jpg)
 

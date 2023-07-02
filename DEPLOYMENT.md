@@ -2,20 +2,20 @@
 
 ## **Contents**
 
-- [**Github/Gitpod**](#githubgitpod)
-  - [**Create repository**](#create-repository)
-  - [**Setting up the Workspace**](#setting-up-the-workspace)
-- [**ElephantSQL Database**](#elephantsql-database)
-- [**AWS Setup**](#aws-setup)
-  - [**S3 Bucket**](#s3-bucket)
-  - [**IAM**](#iam)
-  - [**Final AWS Setup**](#final-aws-setup)
-  - [**Connecting to Django**](#connecting-to-django)
-- [**Settings.py Setup**](#settingspy-setup)
-- [**Heroku Deployment**](#heroku-deployment)
-- [**Version Control**](#version-control)
-- [**Clone the Github Repository**](#clone-the-github-repository)
-- [**Forking the Github Repository**](#forking-the-github-repository)
+- [Github/Gitpod](#githubgitpod)
+  - [Create repository](#create-repository)
+  - [Setting up the Workspace](#setting-up-the-workspace)
+- [ElephantSQL Database](#elephantsql-database)
+- [AWS Setup](#aws-setup)
+  - [S3 Bucket](#s3-bucket)
+  - [IAM](#iam)
+  - [Final AWS Setup](#final-aws-setup)
+  - [Connecting to Django](#connecting-to-django)
+- [Settings.py Setup](#settingspy-setup)
+- [Heroku Deployment](#heroku-deployment)
+- [Version Control](#version-control)
+- [Clone the Github Repository](#clone-the-github-repository)
+- [Forking the Github Repository](#forking-the-github-repository)
 
 
 Below are the steps I took to deploy the site to Heroku.
