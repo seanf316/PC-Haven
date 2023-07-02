@@ -257,7 +257,9 @@ i.fa-solid.fa-bars {
     display: flex;
     align-items: center;
     min-height: calc(100vh - 120px);
+    width: 100%;
     background: url('https://pc-haven.s3.eu-north-1.amazonaws.com/media/pchaven/landing_page_background_image.svg') no-repeat center center;
+    background-size: cover;
 }
 
 .hero h1 {

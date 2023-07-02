@@ -44,7 +44,10 @@ def contact(request):
             )
 
     else:
-        form = ContactForm()
+        if request.user.is_authenticated:
+            form = ContactForm(initial={"email": request.user.email})
+        else:
+            form = ContactForm()
 
     context = {
         "form": form,

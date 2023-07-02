@@ -182,7 +182,7 @@ def add_comment(request, slug):
     if not request.user.is_authenticated:
         messages.info(
             request,
-            "You will need to Sign Up or Login to"
+            "You will need to Sign Up or Login to "
             "add comments to the Blog Post.",
         )
         return redirect(reverse("blog_detail", args=[blog.slug]))
