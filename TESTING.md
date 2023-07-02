@@ -43,55 +43,43 @@ Unit tests were created to test the functionality of the apps. These can be foun
 
 #### **Home**
 
-![Home](/docs/unit_testing/test_home.webp)
+![Home](/docs/unitests/home.jpg)
 
-#### **Movie**
+#### **Blog**
 
-**Views**
+![Blog](/docs/unitests/blog.jpg)
 
-![Movie Views](/docs/unit_testing/test_movie_views.webp)
+#### **Cart**
 
-**Models**
+![Cart](/docs/unitests/cart.jpg)
 
-![Movie Models](/docs/unit_testing/test_movie_models.webp)
+#### **Checkout**
+
+![Checkout](/docs/unitests/checkout.jpg)
+
+#### **Contact**
+
+![Contact](/docs/unitests/contact.jpg)
+
+#### **Products**
+
+![Products](/docs/unitests/products.jpg)
 
 #### **Profiles**
 
-**Views**
+![Contact](/docs/unitests/profiles.jpg)
 
-![Profiles Views](/docs/unit_testing/test_profiles_views.webp)
+#### **Reviews**
 
-**Models**
-
-![Profiles Models](/docs/unit_testing/test_profiles_models.webp)
-
-**Forms**
-
-![Profiles Forms](/docs/unit_testing/test_profiles_forms.webp)
-
-#### **Review**
-
-**Views**
-
-![Review Views](/docs/unit_testing/test_review_views.webp)
-
-**Models**
-
-![Review Models](/docs/unit_testing/test_review_models.webp)
-
-**Forms**
-
-![Review Forms](/docs/unit_testing/test_review_forms.webp)
+![Contact](/docs/unitests/reviews.jpg)
 
 [Back to top &uarr;](#contents)
 
 ### **Site Coverage Report**
 
-Through my testing, I was able to get a total of 95% coverage across the site. The remaining 5% will be covered through manual testing.
+Through my testing, I was able to get a total of 91% coverage across the site. The remaining 9% should be covered through the manual testing below.
 
-![Coverage 1](/docs/unit_testing/coverage1.webp)
-![Coverage 2](/docs/unit_testing/coverage2.webp)
-![Coverage 3](/docs/unit_testing/coverage3.webp)
+![Coverage](/docs/unitests/coverage.jpg)
 
 [Back to top &uarr;](#contents)
 
