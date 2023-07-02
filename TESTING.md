@@ -85,7 +85,7 @@ Through my testing, I was able to get a total of 91% coverage across the site. T
 
 ## **Manual Testing/User Story Testing**
 
-Some features of the site are restricted to registered users such as adding Product reviews, adding Products to wishlist, Commenting/Liking on blog posts, and editing a Profile. There are also features retricted to Staff, the functional tests take this into account.
+Some features of the site are restricted to registered users such as adding Product reviews, adding Products to a wishlist, Commenting/Liking blog posts, and editing a Profile. There are also features restricted to Staff, the functional tests take this into account.
 
 ### **Navbar**
 
@@ -93,7 +93,7 @@ Some features of the site are restricted to registered users such as adding Prod
 
 **Acceptance Criteria**
 
-- When the template is extended to another template all html code is applied i.e. Navbar/Footer
+- When the template is extended to another template all HTML code is applied i.e. Navbar/Footer
 
 `As a User I would like the ability to search for a product so that I can see if the site sells it`
 
@@ -103,7 +103,7 @@ Some features of the site are restricted to registered users such as adding Prod
 
 Functional testing was carried out on the Navbar and all links go to their relevant pages as expected. Navbar is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
 
-All users can enter a Search query in the Search input from the Search dropdown.
+All users can enter a search query in the Search input from the Search dropdown.
 
 **User Not Registered**
 
@@ -136,7 +136,7 @@ All users can enter a Search query in the Search input from the Search dropdown.
 **Acceptance Criteria**
 
 - Homepage is created and is responsive on all devices
-- User can easily identify what the site is about based off the landing page
+- Users can easily identify what the site is about based on the landing page
 
 Functional testing was carried out on the Homepage, this included all links/buttons on the Homepage. The Homepage is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
 
@@ -240,7 +240,7 @@ Functional testing was carried out on the Products Detail page, the Products Det
 
 #### **Products Reviews**
 
-Product reviews is a restricted feature available to registered users only.
+Product reviews are a restricted feature available to registered users only.
 
 `As a Customer I would like to leave a review on a Product so that my fellow shoppers can benefit from my feedback and make informed purchasing decisions.`
 
@@ -367,7 +367,7 @@ Functional testing was carried out on the Checkout page, the Checkout page is fu
 
 Functional testing was carried out on the Order Complete page, the Order Complete page is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
 
-A custom Order confirmation email has been created and is sent automatically to the Order email address, you can see more in the Feature imgs in [README.md](README.md)
+A custom order confirmation email has been created and is sent automatically to the Order email address, you can see more in the Feature images in [README.md](README.md)
 
 `As a Customer I would like to receive a confirmation of my order so that I know the purchase has went through and I can see what I ordered`
 
@@ -410,7 +410,7 @@ A custom Order confirmation email has been created and is sent automatically to 
 
 Functional testing was carried out on the Blog/Blog Post page, the pages are fully responsive see Feature images and Mobile gifs in [README.md](README.md)
 
-I have 2 blogs fully written and styled so I wont be previewing an empty Blog page but this has been tested in the past and passed.
+I have 2 blogs fully written and styled so I won't be previewing an empty Blog page but this has been tested in the past and passed.
 
 `As a Developer I can create the functionality for site admin to add Blog Posts so that customer may spend more time on the site which may lead to more purchases.`
 
@@ -451,7 +451,7 @@ I have 2 blogs fully written and styled so I wont be previewing an empty Blog pa
 
 Functional testing was carried out on the Contact Us page, the Contact Us page is fully responsive see Feature images and Mobile gifs in [README.md](README.md)
 
-A custom Contact messaged received email has been created and is sent automatically to the Contact email address, you can see more in the Feature imgs in [README.md](README.md)
+A custom Contact message received email has been created and is sent automatically to the Contact email address, you can see more in the Feature images in [README.md](README.md)
 
 `As a Developer I can add functionality to allow the customer to contact the site owner so that any issue they encounter can be logged and resolved`
 
@@ -520,23 +520,23 @@ The Logout page is fully responsive see Feature images and Mobile screenshots in
 
 **base.js**
 
-The base.js script handles the Back To Top button, this has been added in the base.html so that it can be utilised by all pages. This has been manually tested and works as expected. See below example:
+The base.js script handles the Back To Top button, this has been added in the base.html so that it can be utilized by all pages. This has been manually tested and works as expected. See the below example:
 
 ![BTT Gif](/docs/testing_screenshots/btt.gif)
 
 **message.js**
 
-The message.js is handles the site toasts behaviour, it is setup to close after 3 seconds or if the mouse enters the toast it will stay open until the mouse leaves the toast area. A hide on scroll has been added also to also the user to continue viewing the site without having to wait or manually close the toast. This has been manually tested and works as expected. See below example:
+The message.js handles the site toasts behavior, it is set up to close after 3 seconds or if the mouse enters the toast it will stay open until the mouse leaves the toast area. A hide-on scroll function has been added also so the user can continue viewing the site without having to wait or manually close the toast. This has been manually tested and works as expected. See the below example:
 
 ![Toast Gif](/docs/testing_screenshots/toast.gif)
 
 **owl.js**
 
-The owl.js handles the styling/behaviour of the Product Carousels on the home page. This has been manually tested and works as expected. See below example:
+The owl.js handles the styling/behavior of the Product Carousels on the home page. This has been manually tested and works as expected. See the below example:
 
 ![Owl Gif](/docs/testing_screenshots/owl.gif)
 
-Any other scripts used for the site where taken from Boutique Ado or handled by plugins/libraries.
+Any other scripts used for the site were taken from Boutique Ado or handled by plugins/libraries.
 
 [Back to top &uarr;](#contents)
 
@@ -544,7 +544,7 @@ Any other scripts used for the site where taken from Boutique Ado or handled by 
 
 ### **CI Python Linter**
 
-The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project. The results are outlined in below:
+The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project. The results are outlined below:
 
 ![PEP8 Results](/docs/validation/linter.jpg)
 
@@ -562,7 +562,7 @@ The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the p
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the site's CSS code.
 
-All css files were validated and any errors were corrected.
+All CSS files were validated and any errors were corrected.
 
 ![W3C CSS Validator](/docs/validation/css.jpg)
 
@@ -570,7 +570,7 @@ All css files were validated and any errors were corrected.
 
 ### **W3C Markup Validator**
 
-All pages were run through the [W3C Markup Validator](https://validator.w3.org/nu/). Initially, there were some errors due to missing closing tags, elements nested within elements all of these issues were corrected and all pages passed validation. There were some errors that were related to the Summernote widgets and 1 error related to the custom_clearable_file_input.html, see error details below. I have not altered anything for these errors as I cannot access the setup of the Summernote widget and the custom_clearable_file_input.html was taken from the Boutique Ado walkthrough and any erros that could be fixed were fixed.
+All pages were run through the [W3C Markup Validator](https://validator.w3.org/nu/). Initially, there were some errors due to missing closing tags, and elements nested within elements all of these issues were corrected and all pages passed validation. Some errors were related to the Summernote widgets and 1 error was related to the custom_clearable_file_input.html, see error details below. I have not altered anything for these errors as I cannot access the setup of the Summernote widget and the custom_clearable_file_input.html was taken from the Boutique Ado walkthrough and any errors that could be fixed were fixed.
 
 Due to the Django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw HTML code into the validator as this will be only the HTML-rendered code.
 
@@ -812,10 +812,10 @@ All pages were tested to ensure responsiveness on screen sizes from 320px and up
 
 | **Bug**                                                        | **Issue**                                                                                                                                                                                                                                                         | **Resolution**                                                                                                                                                                                                                                        |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| I found that lighthouse was showing a fault with my robots.txt | The issue was that it was being read as an HTML file, not a text file.                                                                                                                                                                                            | Upon researching this issue I found a tutorial that advised me to move the Robots.txt file into my main templates directory and add a url in the main Urls.py to point to it and set the file as plain text.                                          |
-| Profile shipping details not updating on Save                  | I noticed that when I testing the update form for my profile that when you change the username and try to update the address details afterwards this would not update as the username had been changed and any address details were tied to the previous username | To resolve this I just removed the username field from displaying to the user, by doing this the user wont run into issues updated their Profile address details                                                                                      |
-| Add to Wishlist too many redirects                             | I noticed while testing my Add to Wishlist view that when I clicked the heart icon while logged out I would be redirected to sign-in due to the login required decorator. After signing in I would receive a too many redirections error                          | To resolve this I removed the login required decorator and updated the code instead to alert the user that they are required to be logged in to add to wishlist, this works now as intended.                                                          |
-| Add like on Blog too many redirects                            | I noticed while testing Liking a Blog post that when I clicked the thumbs up icon while logged out I would be redirected to sign-in due to the login required decorator. After signing in I would receive a too many redirections error                           | To resolve this I removed the login required decorator and updated the code instead to alert the user that they are required to be logged in to like a Blog post, this works now as intended.                                                         |
+| I found that lighthouse was showing a fault with my robots.txt | The issue was that it was being read as an HTML file, not a text file.                                                                                                                                                                                            | Upon researching this issue I found a tutorial that advised me to move the Robots.txt file into my main templates directory and add a URL in the main Urls.py to point to it and set the file as plain text.                                          |
+| Profile shipping details not updating on Save                  | I noticed that when I testing the update form for my profile that when you change the username and try to update the address details afterward this would not update as the username had been changed and any address details were tied to the previous username | To resolve this I just removed the username field from displaying to the user, by doing this the user won't run into issues updated their Profile address details                                                                                      |
+| Add to Wishlist too many redirects                             | I noticed while testing my Add to Wishlist view that when I clicked the heart icon while logged out I would be redirected to sign-in due to the login required decorator. After signing in I would receive a too many redirections error                          | To resolve this I removed the login required decorator and updated the code instead to alert the user that they are required to be logged in to add to the wishlist, this works now as intended.                                                          |
+| Add like on Blog too many redirects                            | I noticed while testing Liking a Blog post that when I clicked the thumbs-up icon while logged out I would be redirected to sign-in due to the login required decorator. After signing in I would receive a too many redirections error                           | To resolve this I removed the login required decorator and updated the code instead to alert the user that they are required to be logged in to like a Blog post, this works now as intended.                                                         |
 
 [Back to top &uarr;](#contents)
 

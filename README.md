@@ -2,9 +2,8 @@
 
 ## **Overview**
 
-PC HAVEN is a B2C e-commerce site that sells Computer components. The site allows both registered and guest users to add Products to cart and checkout. Users of the site can search for products via search bar, filter Products or browse through all products available.
-
-There are features available to Registered users including a personal Profile, Wishlist, the ability to review their Order history, add Product reviews and like Blog posts. The site also allows the user to subscribe to the PC HAVEN Newsletter and there is a Contact Us page in place if user needs to Contact the site owner to report issues.
+PC HAVEN is a B2C e-commerce site that sells Computer components. The site allows both registered and guest users to add products to their cart and checkout. Users of the site can search for products via the search bar, filter Products, or browse through all products available.
+There are features available to Registered users including a personal Profile, Wishlist, the ability to review their Order history, add Product reviews, and like Blog posts. The site also allows the user to subscribe to the PC HAVEN Newsletter and there is a Contact Us page in place if a user needs to Contact the site owner to report issues.
 
 Developed by Sean Finn.
 
@@ -62,10 +61,8 @@ This is my fifth portfolio project for [Code Institute](https://codeinstitute.ne
 
 ## **The Strategy Plane**
 
-PC HAVEN is intended to be a one stop shop for users looking to purchase Computer components. It is a business to consumer e-commerce site supplying various Computer components. All users will be able to browse/sort Products, add to cart and checkout. Registered users will be able to add Products to their Wishlist, view their Order history and update/save their delivery information for quicker checkouts. Registered users will also be able to review Products and like/comment on Blog posts.
-
-Staff will be able to add/edit/delete Products and add/edit/delete Blog Posts without entering admin. Any user reviews can be edited/deleted by Staff if required. When dealing with Products Staff will be able to make a Product a featured Product to be displayed on Homepage or put a Product on sale.
-
+PC HAVEN is intended to be a one-stop shop for users looking to purchase Computer components. It is a business-to-consumer e-commerce site supplying various Computer components. All users will be able to browse/sort Products, add to a cart, and checkout. Registered users will be able to add products to their Wishlist, view their Order history, and update/save their delivery information for quicker checkouts. Registered users will also be able to review products and like/comment on Blog posts.
+Staff will be able to add/edit/delete Products and add/edit/delete Blog Posts without entering admin. Any user reviews can be edited/deleted by Staff if required. When dealing with Products Staff will be able to make a Product a featured Product to be displayed on the Homepage or put a Product on sale.
 The graphical elements and overall design of the site provide the user with an enjoyable experience with an aesthetically pleasing display.
 
 ### **The Ideal User**
@@ -86,10 +83,8 @@ The graphical elements and overall design of the site provide the user with an e
 
 ## **Agile Planning**
 
-This project was developed using agile methodologies by delivering small features across the duration of the project. All User Stories were assigned to Epics, prioritized under the labels, Must Have, Should Have and Could Have. They were assigned story points according to complexity. Fibonacci sequence is employed for the Story points. "Must Have" stories were completed first, "Should Have's" and then finally "Could Have's".
-
+This project was developed using agile methodologies by delivering small features across the duration of the project. All User Stories were assigned to Epics, prioritized under the labels, Must Have, Should Have, and Could Have. They were assigned story points according to complexity. The Fibonacci sequence is employed for the Story points. "Must Have" stories were completed first, "Should Have's" and then finally "Could Have's".
 It was done this way to ensure that all core requirements were completed first to give the project a complete feel. In some scenarios, certain "Should Have's" were implemented before schedule due to the nature of the implementation i.e. some Product related "Should Have's" were done during Product development with some "Must Have's" - Error templates developed later on. The rest were applied based on capacity and timing.
-
 The Kanban board was created using Github projects and can be located [here](https://github.com/users/seanf316/projects/8) and can be viewed to see more information on the project cards. All stories have a full set of acceptance criteria to define the functionality that marks that story as complete.
 
 ![Project Kanban](docs/readme_screenshots/project.webp)
@@ -102,55 +97,55 @@ The Kanban board was created using Github projects and can be located [here](htt
 
 `As a Developer, I can setup Django and start project, so that I can develop the site`
 
-The Initial Django Setup epic was required to setup the project and confirm libraries, frameworks etc were installed correctly. Only then could further development progress.
+The Initial Django Setup epic was required to set up the project and confirm libraries, frameworks, etc were installed correctly. Only then could further development progress.
 
 #### **EPIC: AWS Setup [#2](https://github.com/seanf316/PC-Haven/issues/3)**
 
 `As a Developer, I can setup AWS, so that I can store my static and media files for the site.`
 
-AWS was setup to store all static and media files, this was done early in project development to help with early deployment.
+AWS was set up to store all static and media files, this was done early in project development to help with early deployment.
 
 #### **EPIC: Heroku Deployment [#3](https://github.com/seanf316/PC-Haven/issues/4)**
 
 `As a Developer, I can deploy my site with Heroku, so that user's can view and interact with the site`
 
-The Heroku Deployment epic was completed early on as we were advised during the course material that early deployment is critical to avoid any issues down the line with the production app. Heroku app was created and config vars were updated, app was linked to my projects Github repo for automatic deployments.
+The Heroku Deployment epic was completed early on as we were advised during the course material that early deployment is critical to avoid any issues down the line with the production app. The Heroku app was created and config vars were updated, app was linked to my project's Github repo for automatic deployments.
 
 #### **EPIC: Base Html/Homepage [#4](https://github.com/seanf316/PC-Haven/issues/5)**
 
 `As a Developer, I can design a nice aesthetically pleasing Homepage, so that the user has an enjoyable experience when entering the site`
 
-The Base Html/Homepage epic was used to link various User Stories based around the design and responsiveness of the site. The Base template was created first so I could extend within further templates and then the homepage(index.html) was built using bootstrap and styled.
+The Base Html/Homepage epic was used to link various User Stories based on the design and responsiveness of the site. The Base template was created first so I could extend it within further templates and then the homepage(index.html) was built using Bootstrap and styled.
 
 #### **EPIC: Setup AllAuth [#5](https://github.com/seanf316/PC-Haven/issues/6)**
 
 `As a Developer, I can install AllAuth, so that it handles all the sites Authentication including Sign Up/Login/Logout/Email Verification and Password Reset`
 
-AllAuth was installed to manage all of the sites authentication. Various User Stories were assigned to this Epic.
+AllAuth was installed to manage all of the site's authentication. Various User Stories were assigned to this Epic.
 
 #### **EPIC: Products Setup (CRUD) [#6](https://github.com/seanf316/PC-Haven/issues/7)**
 
 `As a Developer, I can setup Products to be displayed to the User, so that they can browse Products they may want to purchase`
 
-The Products Setup Epic was used to link various User Stories based around the design and implementation of all the Product functionality.
+The Products Setup Epic was used to link various User Stories based on the design and implementation of all the Product functionality.
 
 #### **EPIC: Purchasing/Checkout [#7](https://github.com/seanf316/PC-Haven/issues/8)**
 
 `As a Developer, I can create the Checkout functionality, so that customers can purchase Products on the site`
 
-The Purchasing/Checkout was used to link various User Stories based around the design and implementation of all the Checkout functionality.
+The Purchasing/Checkout was used to link various User Stories based on the design and implementation of all the Checkout functionality.
 
 #### **EPIC: Stripe Setup [#8](https://github.com/seanf316/PC-Haven/issues/9)**
 
 `As a Developer, I can setup Stripe, so that customers can successfully pay for their chosen Products`
 
-The Stripe Epic covered any of the Stripe related User Stories. Stripe was installed to allow users to pay for their chosen Products.
+The Stripe Epic covered any of the Stripe-related User Stories. Stripe was installed to allow users to pay for their chosen Products.
 
 #### **EPIC: User Profile (CRUD) [#9](https://github.com/seanf316/PC-Haven/issues/10)**
 
 `As a Developer, I can add a Profile page for the user, so that they can store information about themselves i.e. Name, Shipping/Billing Address etc`
 
-The User Profile epic is for all User Stories related to the setup of the profile, the CRUD functionality and templates design.
+The User Profile epic is for all User Stories related to the setup of the profile, the CRUD functionality, and the template design.
 
 #### **EPIC: User Wishlist [#10](https://github.com/seanf316/PC-Haven/issues/11)**
 
@@ -174,13 +169,13 @@ The Review Products epic is for all User Stories related to the Review Product f
 
 `As a Developer, I can create a Facebook page and Newsletter for the site, so that customers can follow the site via their Facebook account or subscribe to our sites Newsletter to keep up to date with new sales or products that may be launching`
 
-The Web Marketing epic is for all User Stories related to Web Marketing like the setup of Newsletter and site Facebook page.
+The Web Marketing epic is for all User Stories related to Web Marketing like the setup of the Newsletter and the site Facebook page.
 
 #### **EPIC: SEO [#14](https://github.com/seanf316/PC-Haven/issues/15)**
 
 `As a Developer, I can research Google to find a list of short and long tail keyword, so that they can be applied to the sites code for SEO consideration`
 
-The SEO epic is for all User Stories related to the site SEO implementation.
+The SEO epic is for all User Stories related to the site's SEO implementation.
 
 #### **EPIC: Contact Us [#15](https://github.com/seanf316/PC-Haven/issues/16)**
 
@@ -192,7 +187,7 @@ The Contact Us epic is for all User Stories related to the Contact functionality
 
 `As a Developer, I can create Status Error templates, so that I can secure my views and advise User when there is an issue`
 
-The Status Error Templates epic is for all User Stories related to providing status error feedback to the User like 403, 404 and 500 status errors. Any templates created or styled were linked also.
+The Status Error Templates epic is for all User Stories related to providing status error feedback to the User like 403, 404, and 500 status errors. Any templates created or styled were linked also.
 
 #### **EPIC: Blog [#17](https://github.com/seanf316/PC-Haven/issues/52)**
 
@@ -204,7 +199,7 @@ The Blog epic is for all User Stories related to the Blog functionality. Any tem
 
 `As a Developer, I can create documentation, so that fellow developers can understand what the site is and how it was built`
 
-This epic is for all document related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
+This epic is for all document-related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying, and using the application.
 
 [Back to top &uarr;](#contents)
 
@@ -362,7 +357,7 @@ This is the prototype of the project that may change during its development. Fur
 
 #### **Database Schema**
 
-Entity relationship diagram was created using [DBeaver](https://dbeaver.io/) and shows the schemas for each of the models and how they are related.
+An entity relationship diagram was created using [DBeaver](https://dbeaver.io/) and shows the schemas for each of the models and how they are related.
 
 ![DB Diagram](docs/readme_screenshots/pchaven_erd.webp)
 
@@ -378,8 +373,8 @@ Environment variables were stored in an env.py for local development for securit
 
 - Responsive Design - The site should be fully functional on all devices from 320px up
 - Hamburger menu for mobile devices
-- Ability to perform CRUD functionality on Products, Profiles, Reviews, Blog Posts and Comments
-- Restricted features for registered users such as Product reviewing, adding Products to Wishlist, editing Profile and Commenting/Liking Blog posts.
+- Ability to perform CRUD functionality on Products, Profiles, Reviews, Blog Posts, and Comments
+- Restricted features for registered users such as Product reviewing, adding Products to Wishlist, editing Profiles, and Commenting/Liking Blog posts.
 - Newsletter Subscribing
 
 [Back to top &uarr;](#contents)
@@ -392,7 +387,7 @@ Environment variables were stored in an env.py for local development for securit
 
 **Navbar**
 
-The Navbar contains links for Home, an All Products mega dropdown menu, About Us, Blog and Contact Us. There is also a Search link, My Account link with Account related dropdown and a link to the customer Cart.
+The Navbar contains links for Home, an All Products mega dropdown menu, About Us, Blog, and Contact Us. There is also a Search link, a My Account link with Account related dropdown, and a link to the customer Cart.
 
 The following navigation items are available on all pages:
 
@@ -405,12 +400,12 @@ The following navigation items are available on all pages:
 - Contact Us -> contact.html - Visible to all
 - Search -> base.html(Navbar/Search Input) - Visible to all
 - My Account -> (Drop Down)- Visible to all
-  - Register -> accounts/signup.html - Visible to logged out users
-  - Login -> accounts/login.html - Visible to logged out users
-  - My Profile -> profile.html - Visible to logged in users
-  - Logout -> logout.html - Visible to logged in users
-  - Product Management -> add_product.html - Visible to logged in super users
-  - Blog Management -> add_blog.html - Visible to logged in super users
+  - Register -> accounts/signup.html - Visible to logged-out users
+  - Login -> accounts/login.html - Visible to logged-out users
+  - My Profile -> profile.html - Visible to logged-in users
+  - Logout -> logout.html - Visible to logged-in users
+  - Product Management -> add_product.html - Visible to logged-in super users
+  - Blog Management -> add_blog.html - Visible to logged-in super users
 - Cart -> cart.html - Visible to all
 
 The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices. It is easily noticeable, intuitive, and easy to use.
@@ -444,19 +439,19 @@ The About Us section advises the User about the site and provides the overall mi
 
 **Products On Sale**
 
-The Products On Sale section provides an asthectically pleasing carousel containing Product cards that consists of all the Products on sale. This will benefit the customer who is looking for the latest deals on the site.
+The Products On Sale section provides an aesthetically pleasing carousel containing Product cards that consist of all the Products on sale. This will benefit the customer who is looking for the latest deals on the site.
 
 ![Products On Sale](/docs/readme_screenshots/sale.webp)
 
 **Featured Products**
 
-The Featured Products section provides an asthectically pleasing carousel containing Product cards that consists of all the Faetured Products from the site stock. This will benefit the customer who is looking for the more cutting edge Products the site offers.
+The Featured Products section provides an aesthetically pleasing carousel containing Product cards that consist of all the Featured Products from the site stock. This will benefit the customer who is looking for the more cutting-edge Products the site offers.
 
 ![Featured Products](/docs/readme_screenshots/featured.webp)
 
 **Latest Products**
 
-The Latest Products section provides an asthectically pleasing carousel containing Product cards that consists of all the Latest Products from the site stock. This will benefit the customer who is looking for the latest Products that were added to the sites stock.
+The Latest Products section provides an aesthetically pleasing carousel containing Product cards that consist of all the Latest Products from the site stock. This will benefit the customer who is looking for the latest Products that were added to the site's stock.
 
 ![Latest Products](/docs/readme_screenshots/latest.webp)
 
@@ -464,7 +459,7 @@ The Latest Products section provides an asthectically pleasing carousel containi
 
 `As a Developer I can implement a newsletter on my site so that customers can subscribe for future updates and deals which should bring them back to the site for future purchases.`
 
-The Newsletter section provides an asthectically pleasing embedded form provided by Mailchimp. This allows the user to subscribe to the sites Newsletter and receive updates/latest offerings for the site. The Newsletter will be expanding upon further in the Web Marketing section.
+The Newsletter section provides an aesthetically pleasing embedded form provided by Mailchimp. This allows the user to subscribe to the site's Newsletter and receive updates/latest offerings for the site. The Newsletter will be expanded upon further in the Web Marketing section.
 
 ![Newsletter](/docs/readme_screenshots/newsletter.webp)
 
@@ -472,7 +467,7 @@ The Newsletter section provides an asthectically pleasing embedded form provided
 
 `As a User I would like the ability to search for a product so that I can see if the site sells it`
 
-At anytime the user can click the Search icon on the Navbar to reveal the Search input, here the user can enter their search query and then they will be brought to the Products Page where their search results will appear. If there are no results for the user's query text will display advising User and buttons Home and Contact Us are displayed.
+At any time the user can click the Search icon on the Navbar to reveal the Search input, here the user can enter their search query and then they will be brought to the Products Page where their search results will appear. If there are no results for the user's query text will display advising the User and buttons Home and Contact Us are displayed.
 
 ![Search](/docs/readme_screenshots/search.webp)
 ![Search Results](/docs/readme_screenshots/search_results.webp)
@@ -543,13 +538,13 @@ On the Cart page the user will have a clear view of the Products added to their 
 
 `As a Customer I would like to adjust/remove the amount of a certain item so that I can manage my items for purchase.`
 
-The Cart items are displayed as cards with details of the Product present, there is functionality in place to update item quantity or remove the item from cart. The Cart Summary and Cart section in Navbar will update dynamically based off changes made in the cart. There are 2 large buttons present above/below the Cart Summary - Keep Shopping and Secure Checkout. Keep Shopping returns user to the All Products page and the Secure Checkout button redirects user to the Checkout page.
+The Cart items are displayed as cards with details of the Product present, there is functionality in place to update item quantity or remove the item from the cart. The Cart Summary and Cart section in Navbar will update dynamically based on changes made in the cart. There are 2 large buttons present above/below the Cart Summary - Keep Shopping and Secure Checkout. Keep Shopping returns the user to the All Products page and the Secure Checkout button redirects the user to the Checkout page.
 
 `As a Developer I can add in functionality to advise customer of free delivery at a certain threshold so that customer is aware of delivery costs and can add more items if price is suitable.`
 
-Also displayed to the user is a Free Delivery Threshold, PC HAVEN offers free delivery over €100 spent. The user is advised in this in the Cart Summary and also in the Banner above the Navbar.
+Also displayed to the user is a Free Delivery Threshold, PC HAVEN offers free delivery for over €100 spent. The user is advised of this in the Cart Summary and also in the Banner above the Navbar.
 
-If the cart is empty the user is met with text advising them of that and 2 buttons are displayed Keep Shopping and Contact Us. There is some text advising user if they are looking for a Product we dont stock to get in touch through the Contact Us page.
+If the cart is empty the user is met with a text advising them of that and 2 buttons are displayed Keep Shopping and Contact Us. There is some text advising users if they are looking for a Product we don't stock to get in touch through the Contact Us page.
 
 ![Cart](/docs/readme_screenshots/cart_page.webp)
 ![Empty Cart](/docs/readme_screenshots/empty_cart.webp)
@@ -559,7 +554,7 @@ If the cart is empty the user is met with text advising them of that and 2 butto
 `As a Developer I can create a checkout page so that the customer can enter their billing/shipping/payment information to complete purchase.`
 `As a Customer, I would like to save my billing/shipping information, so that I don't need to enter these details on every purchase`
 
-The Checkout page contains the Order Summary which contains the number of items and the various costs applied. Order cart items are displayed via cards with details like quantity and price. There is a Delivery Information accordian in place that when clicked will display the Order form, at the bottom there is the option to save information as the users default information if they are registered or if guest there is an option advising the user to Create account or sign in to save information.
+The Checkout page contains the Order Summary which contains the number of items and the various costs applied. Order cart items are displayed via cards with details like quantity and price. There is a Delivery Information accordion in place that when clicked will display the Order form, at the bottom there is the option to save information as the user's default information if they are registered, or if guest there is an option advising the user to Create account or sign in to save information.
 
 `As a Developer I can implement Stripe so that it can manage payments for the site products at checkout`
 
@@ -576,7 +571,7 @@ When the checkout has been completed the Product stock level is updated to refle
 
 `As a Customer I would like to receive a confirmation of my order so that I know the purchase has went through and I can see what I ordered`
 
-When the user has securely checked out an Order Complete page will be displayed and all details of the order will be present. If the User is registered the Order will be updated in the users Profile Order History (See Profile below for screenshots). A custom email has been created so when the user has checked out they will also recieve an email containing their order details, this was created so Guest users will also have a history of exactly what they ordered.
+When the user has securely checked out an Order Complete page will be displayed and all details of the order will be present. If the User is registered the Order will be updated in the User's Profile Order History (See Profile below for screenshots). A custom email has been created so that when the user has checked out they will also receive an email containing their order details, this was created so Guest users will also have a history of exactly what they ordered.
 
 ![Order1](/docs/readme_screenshots/order1.webp)
 ![Order2](/docs/readme_screenshots/order2.webp)
@@ -588,13 +583,13 @@ When the user has securely checked out an Order Complete page will be displayed 
 
 When a user registers on the site a Profile page is automatically created for them. It can be accessed from the My Account dropdown in the Navbar - My Profile.
 
-The Profile contains 3 tab sections User Details, Order History and Wishlist. The User Details section contains all the Users information like username, full name, phone number and address. There is an Update button available which allows the user to directly update their information from this page. The Delete button opens the Delete Profile modal where the user can choose to delete their Profile. Deleting Profile removes all Order History and Wishlist items also.
+The Profile contains 3 tab sections User Details, Order History, and Wishlist. The User Details section contains all the Users' information like username, full name, phone number, and address. There is an Update button available which allows the user to directly update their information from this page. The Delete button opens the Delete Profile modal where the user can choose to delete their Profile. Deleting Profile removes all Order History and Wishlist items also.
 
-The Order History section provides the user with a history of all their Orders. Each Order is displayed with the contents of the Order and a link to the Order Complete page containing all the informtion of order including Billing/Shipping.
+The Order History section provides the user with a history of all their Orders. Each Order is displayed with the contents of the Order and a link to the Order Complete page containing all the information of order including Billing/Shipping.
 
 `As a Customer I would like the ability to add products to a Wishlist so that I can keep a list of my products to purchase in the future`
 
-The Wishlist section contains all the Products that the User has added to their Wishlist. Users can add/remove Products to their Wishist by clicking the Heart icon on a Product from either the All Products page or the Product Detail page. If the Heart icon is solid it means it is in the users Wishlist, if they click the icon again it will remove the Product from their Wishlist. Toasts will be displayed anytime a Product is added/removed from Wishlist. In the Wishlist section on the Profile page the user can manage their entire Wishlist with the option to Clear the entire Wishlist or remove individual Wishlist items as they see fit.
+The Wishlist section contains all the Products that the User has added to their Wishlist. Users can add/remove products to their wishlist by clicking the Heart icon on a Product from either the All Products page or the Product Detail page. If the Heart icon is solid it means it is in the users' Wishlist, if they click the icon again it will remove the Product from their Wishlist. Toasts will be displayed anytime a Product is added/removed from Wishlist. In the Wishlist section on the Profile page, the user can manage their entire Wishlist with the option to Clear the entire Wishlist or remove individual Wishlist items as they see fit.
 
 ![Profile](/docs/readme_screenshots/profile.webp)
 ![Delete Profile](/docs/readme_screenshots/delete_profile.webp)
@@ -607,9 +602,9 @@ The Wishlist section contains all the Products that the User has added to their 
 
 `As a Developer I can build some Blog related templates so that the site admin can display blog posts on their site for a good customer experience`
 
-The PC HAVEN Blog can be accessed from the Navbar and is available to all users. When Blog link clicked the user will be redirected to the Blog page where all Blog Posts will be displayed. Each Blog post is displayed with the post image and title, if logged in as staff a Manage Blog Post link is displayed. When the user clicks the Blog post card they are directed to the Blog Post page where the post detail is displayed along with a button at the top linking back to Blog page.
+The PC HAVEN Blog can be accessed from the Navbar and is available to all users. When the Blog link is clicked the user will be redirected to the Blog page where all Blog Posts will be displayed. Each Blog post is displayed with the post image and title, if logged in as staff a Manage Blog Post link is displayed. When the user clicks the Blog postcard they are directed to the Blog Post page where the post detail is displayed along with a button at the top linking back to the Blog page.
 
-Each Blog post contains an image, title, author and date created. At the bottom of each post the like button is displayed along with the number of likes and an Add Comment button. Only registered users can like Blog posts or add comments. When a user likes a post a toast will display confirming and like count will update, the same process occurs when the user unlikes a post.
+Each Blog post contains an image, title, author, and date created. At the bottom of each post, the like button is displayed along with the number of likes and an Add Comment button. Only registered users can like Blog posts or add comments. When a user likes a post a toast will display confirmation and like count will update, the same process occurs when the user unlikes a post.
 
 When a registered user clicks the Add Comment button they will be redirected to the Add Comment page where they will be able to add a comment for the Blog Post. Once a comment has been added a Manage Comment link will be displayed to the comment author and staff. When the user clicks the Manage Comment button they will be brought to the Edit Comment page where they can choose to update or delete the comment.
 
@@ -647,13 +642,13 @@ The Contact Us page is available to all users and can be accessed from the Conta
 
 `As a Developer I can implement message toasts so that the user/customer is alerted when they carry out and action or encounter and error.`
 
-Custom toasts were implemented throughout the site. This will provide feedback to the user when they carry out an action on the site. Below are are few toast references.
+Custom toasts were implemented throughout the site. This will provide feedback to the user when they act on the site. Below are few toast references.
 
 ![Toasts](/docs/readme_screenshots/toasts.webp)
 
 **AllAuth**
 
-The AllAuth pages have been styled inline with the site theme, included is Sign Up, Login, Logout and email/password related pages.
+The AllAuth pages have been styled in line with the site theme, included are Sign Up, Login, Logout, and email/password-related pages.
 
 ![All Auth 1](/docs/readme_screenshots/signup.webp)
 ![All Auth 2](/docs/readme_screenshots/login.webp)
@@ -685,15 +680,15 @@ A 500 error page has been displayed to alert users when an internal server error
 
 **Cookies**
 
-A Cookie Banner as been implemented to advise vistor of our cookie policy. It was created by following a tutorial on www.cssscript.com.
+A Cookie Banner has been implemented to advise visitors of our cookie policy. It was created by following a tutorial on www.cssscript.com.
 
 ![Cookie Banner](/docs/readme_screenshots/cookies.jpg)
 
 **Privacy Policy/T&Cs/FAQ**
 
-In the Information section in the footer there are links to the sites Privacy Policy, Terms & Conditions and Frequently Asked Questions.
+In the Information section in the footer, there are links to the site's Privacy Policy, Terms & Conditions, and Frequently Asked Questions.
 
-As the site collects some user data it made sense to add a Privacy Policy, this is also linked in the Cookie Banner. This was created using the [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
+As the site collects some user data it made sense to add a Privacy Policy, which is also linked in the Cookie Banner. This was created using the [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
 
 The Terms and Conditions page was built using [WebsitePolicies](https://www.websitepolicies.com/) and was added to provide further information to the user.
 
@@ -705,7 +700,7 @@ The FAQ page was created to answer questions that a user might be thinking of co
 
 **Favicon**
 
-A favicon has been added the website to enable users to easily locate the website in the browser when multiple tabs are open.
+A favicon has been added to the website to enable users to easily locate the website in the browser when multiple tabs are open.
 
 ![Favicon](/docs/readme_screenshots/favicon-img.jpg)
 
@@ -718,7 +713,7 @@ The site was created Mobile first and scaled up to larger devices using Bootstra
 
 **Django Admin Menu**
 
-Staff (super_users) can access the Djnago admin by adding "/admin" to the end of the site url. From the admin they will be able to add new Categories/Sub-Categories if required and do all of the features available to staff.
+Staff (super_users) can access the Djnago admin by adding "/admin" to the end of the site URL. From the admin, they will be able to add new Categories/Sub-Categories if required and do all of the features available to staff.
 
 [Back to top &uarr;](#contents)
 
@@ -726,7 +721,7 @@ Staff (super_users) can access the Djnago admin by adding "/admin" to the end of
 
 **Component Compatibilty**
 
-A site I am a big fan of is PC Part Picker where you can check the compatibilty of components, this kind of functionality would go well with the site and would be something I am interested in added in the future.
+A site I am a big fan of is PC Part Picker where you can check the compatibility of components, this kind of functionality would go well with the site and would be something I am interested in adding in the future.
 
 **Admin Dashboard**
 
@@ -754,13 +749,13 @@ The Lato font was used throughout the website. This font is from google fonts an
 
 #### **Imagery**
 
-The hero image was taken from the NZXT website(credited below), the About Us image used was retrieved from Google but originating from alliedgamingpc.com (credited below).
+The hero image was taken from the NZXT website(credited below), and the About Us image used was retrieved from Google but originated from alliedgamingpc.com (credited below).
 
 [Back to top &uarr;](#contents)
 
 ## **Ecommerce Business Model**
 
-This site sells Computer Components to customers, and therefore follows a Business to Customer model. With this in mind the sight has been built to make purchasing of Products simple and fast to complete, there are also features like reviewing and Blogs that may keep customers returning to the site which in turn may lead to future purposes. A Newsletter subscription is in place which will allow the customer to stay up to date with site updates, I will touch upon this further in the Marketing Strategy below.
+This site sells Computer Components to customers and therefore follows a Business to Customer model. With this in mind, the sight has been built to make purchasing of Products simple and fast to complete, there are also features like reviewing and Blogs that may keep customers returning to the site which in turn may lead to future purposes. A Newsletter subscription is in place which will allow the customer to stay up to date with site updates, I will touch upon this further in the Marketing Strategy below.
 
 [Back to top &uarr;](#contents)
 
@@ -775,9 +770,8 @@ A Facebook Business page has been created and deployed. Creating a strong social
 
 ### **Newsletter Marketing**
 
-I used [Mailchimp](https://mailchimp.com/?currency=EUR) to set up a newsletter sign-up embedded form on my site, to allow users to supply their email address if they are interested in learning more about the site and to drive repeat business.
-
-An automated Welcome email campaign was created so when a user subscribes the will recieve an email sent from Mailchimp thanking them for subscribing. Following on from this I have created a Newsletter campaign which will be manually initiated by the site owner and each subscriber will recieve the Newsletter. The hope is to build a community which in turn might lead to returning/new customers and lead to more business.
+I used [Mailchimp](https://mailchimp.com/?currency=EUR) to set up a newsletter sign-up embedded form on my site, to allow users to supply their email addresses if they are interested in learning more about the site and to drive repeat business.
+An automated Welcome email campaign was created so that when a user subscribes they will receive an email sent from Mailchimp thanking them for subscribing. Following this I have created a Newsletter campaign which will be manually initiated by the site owner and each subscriber will receive the Newsletter. The hope is to build a community which in turn might lead to returning/new customers and lead to more business.
 
 ![Newsletter 1](/docs/readme_screenshots/welcome.webp)
 ![Newsletter 2](/docs/readme_screenshots/newsletter_email.webp)
@@ -788,7 +782,7 @@ An automated Welcome email campaign was created so when a user subscribes the wi
 
 ### **Keywords**
 
-I utilised [Wordtracker](https://www.wordtracker.com/search) to identify keywords that align with my site. The keywords chosen have high enough volume and low enough competion, the KEI (Keyword Effectiveness Index) metric on Wordtracker was used to help decide on best keywords.
+I utilized [Wordtracker](https://www.wordtracker.com/search) to identify keywords that align with my site. The keywords chosen have high enough volume and low enough competition, the KEI (Keyword Effectiveness Index) metric on Wordtracker was used to help decide on the best keywords.
 
 ![Keywords](/docs/readme_screenshots/wordtracker.jpg)
 
@@ -802,7 +796,7 @@ I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml
 This was generated using my deployed site URL: https://pc-haven.herokuapp.com/
 
 After it finished crawling the entire site, it created a
-[sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
+[sitemap.xml](sitemap.xml) which I downloaded and included in the repository.
 
 ### **Robots.txt**
 
@@ -826,7 +820,7 @@ At first, I found that lighthouse was showing a fault with my robots.txt. The is
 ### **Frameworks and Tools Used**
 
 1. [Django](https://www.djangoproject.com/)
-   - Django was used as the main python framework in the development of this project
+   - Django was used as the main Python framework in the development of this project
 1. [Bootstrap](https://blog.getbootstrap.com/)
    - Bootstrap was used for general layout and spacing requirements for the site.
 1. [ElephantSQL](https://www.elephantsql.com/)
@@ -918,11 +912,11 @@ I have included details of the deployment process in a separate document called 
    - https://stackoverflow.com/questions/48870170/error-return-truncatechars-safe-by-using-built-in-template-tags-and-filters (Not needed in the end)
    - https://stackoverflow.com/questions/58077394/set-all-owl-carousel-items-with-equal-height
 1. [Slack](https://slack.com/intl/en-ie/)
-   - The slack community is great and I reached out to fellow students who had already completed their P5 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
+   - The Slack community is great and I reached out to fellow students who had already completed their P5 for their advice and got some nice tips and feedback. I attended some webinars by CI staff which I found very beneficial.
 1. [Web dev](https://www.youtube.com/@webdev07)
    - I referenced Web dev's video for more information on the implementation of the Owl carousel functionality on the site
 1. [Paradigit.ie](https://www.paradigit.ie/)
-   - Alot of the Product images and descriptions were soucred from Paradigit
+   - A lot of the Product images and descriptions were sourced from Paradigit
 1. [NZXT.com](https://nzxt.com/)
    - My landing page hero image was sourced from NZXT.com
 1. [alliedgamingpc.com](https://alliedgamingpc.com/)
@@ -930,13 +924,13 @@ I have included details of the deployment process in a separate document called 
 1. Matt Boden, davidindub, dnlbowers
    - I reviewed the above Project 5 repos for inspiration on README layouts and testing.
 1. Victoria Traynor
-   - My class mate Victoria Traynor who sent me a link from Stackoverflow on implementing discounts on Products - https://stackoverflow.com/questions/73813646/django-models-to-calculate-discount
+   - My classmate Victoria Traynor who sent me a link from Stackoverflow on implementing discounts on Products - https://stackoverflow.com/questions/73813646/django-models-to-calculate-discount
 
 ## **Acknowledgements**
 
-- To my amazing wife Denise who has supported me every day and kept me motivated. This has been a very challenging year for me working full time and using most of my spare time working on the various projects for the course. Denise has been unbelievable throughout the process taking care of our 6 year old son Alex and providing help where ever she could, I wouldnt have been able to do any of this without her.
-- My son Alex for always making me laugh and never getting mad when Dad couldnt play because he had to study.
-- My class mates Victoria Traynor & Sean Johnston who throughout the entire course have been great companions to brain storm ideas, help with testing or just a general chat.
+- To my amazing wife Denise who has supported me every day and kept me motivated. This has been a very challenging year for me working full time and using most of my spare time working on the various projects for the course. Denise has been unbelievable throughout the process taking care of our 6-year-old son Alex and providing help where ever she could, I wouldn't have been able to do any of this without her.
+- My son Alex for always making me laugh and never getting mad when Dad couldn't play because he had to study.
+- My classmates Victoria Traynor & Sean Johnston who throughout the entire course have been great companions to brainstorm ideas, help with testing, or just a general chat.
 - To my mentor Daisy Mc Girr, Daisy always goes above and beyond. Even outside of project planning she is great for advice and is a great help to the Slack community too. Daisy became my Mentor midway through P2 and has been amazing to deal with, she is a great credit to CI and the whole community.
 - To my family and friends who tested the site and provided information on bugs/errors and general feedback
 
