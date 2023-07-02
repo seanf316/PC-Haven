@@ -546,7 +546,7 @@ Any other scripts used for the site where taken from Boutique Ado or handled by 
 
 The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project. The results are outlined in below:
 
-![PEP8 Results](/docs/validation/pep_results.webp)
+![PEP8 Results](/docs/validation/linter.jpg)
 
 [Back to top &uarr;](#contents)
 
