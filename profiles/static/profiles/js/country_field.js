@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    /**
+    * Handles the Country select change
+    */
     let countrySelected = $('#id_default_country').val();
 
     if (!countrySelected) {

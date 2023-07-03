@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    /**
+    * Handles the site toasts
+    */
     let toast = $('.toast');
     let hideTimeout;
 

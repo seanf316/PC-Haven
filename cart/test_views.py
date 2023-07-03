@@ -65,7 +65,7 @@ class TestCartViews(TestCase):
         response = self.client.post(
             reverse("add_to_cart", args=[self.product.id]), {"quantity": 2}
         )
-        self.assertEqual(response.status_code, 302)  # Expect a redirect
+        self.assertEqual(response.status_code, 302)
         self.assertRedirects(
             response, reverse("product_detail", args=[self.product.id])
         )

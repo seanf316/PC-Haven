@@ -191,10 +191,10 @@ def add_comment(request, slug):
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
-            comment.blog = blog  # Set the blog field
+            comment.blog = blog
             comment.name = (
                 request.user
-            )  # Set the name field to the current user
+            )
             comment.save()
             messages.success(request, "Your comment has been added.")
             return redirect(reverse("blog_detail", args=[blog.slug]))

@@ -17,9 +17,7 @@ def error_404(request, exception):
     return render(request, "errors/404.html")
 
 
-def error_500(
-    request,
-):
+def error_500(request, exception):
     """ "
     Handles HTTP 500 errors
     """

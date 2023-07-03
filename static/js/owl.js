@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    // Owl Carousel 
+    /**
+    * Handles the Owl Carousel styling
+    */
     $('.owl-carousel').owlCarousel({
         loop: false,
         margin: 15,
