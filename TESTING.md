@@ -575,7 +575,7 @@ All pages were run through the [W3C Markup Validator](https://validator.w3.org/n
 Due to the Django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw HTML code into the validator as this will be only the HTML-rendered code.
 
 ![W3C Markup Validator](/docs/validation/html.jpg)
-![Summernote Errors](/docs/validation/html.jpg)
+![Summernote Errors](/docs/validation/summernote.jpg)
 ![Custom Widget Errors](/docs/validation/widget.jpg)
 
 [Back to top &uarr;](#contents)
