@@ -54,7 +54,7 @@
                         <div>
                             {{ blog.content|safe}}
                         </div>
-                        <form method="post" action="{% url 'like_blog' blog.slug %}" class="mb-4 ml-2">
+                        <form method="post" action="{% url 'like_blog' blog.slug %}" class="mb-4 ml-2 mt-3">
                             {% csrf_token %}
                             {% if liked %}
                             <button type="submit" name="like_button" class="text-green favourite"
